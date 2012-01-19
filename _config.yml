@@ -1,4 +1,4 @@
-permalink: /:month-:day-:year/:title
+permalink: /:year-:month-:day/:title
 
 # Theme settings
 theme:
