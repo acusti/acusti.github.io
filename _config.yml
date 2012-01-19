@@ -10,7 +10,7 @@ theme:
   google_analytics_uid: UA-28481823-1
 
   # Disqus shortname, for comments
-  disqus_shortname: acusti
+  disqus_shortname: acusti-github
 
   # Number of featured posts on homepage
   homepage_featured: 1
