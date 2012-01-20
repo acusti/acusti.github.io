@@ -1,4 +1,5 @@
-permalink: /:year-:month-:day/:title
+permalink: pretty
+auto: true
 
 # Theme settings
 theme:
@@ -13,7 +14,7 @@ theme:
   disqus_shortname: acusti-github
 
   # Number of featured posts on homepage
-  homepage_featured: 1
+  homepage_featured: 2
 
   # Number of posts on homepage (in addition to featured posts)
   homepage_posts: 3
