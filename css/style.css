@@ -85,12 +85,12 @@ h3 {
 h1 {
 	font-size: 2.4em;
 	line-height: 1.2em;
-	margin-bottom: .6em;
+	margin-bottom: 0.5em;
 }
 
 h2 {
 	font-size: 1.3em;
-	margin-bottom: .2em;
+	margin-bottom: 0.2em;
 	color: #888;
 }
 
@@ -106,9 +106,11 @@ a {
 
 blockquote {
 	font-style: italic;
+	font-size: 19px;
+	text-align: left;
 	position: relative;
 	padding: 0 2em;
-	margin-top: 2em;
+	margin-top: 1.5em;
 }
 
 cite {
@@ -122,10 +124,11 @@ cite {
 
 header {
 	background: #f18f25;
-	position: fixed;
+	position: absolute;
 	top: 0;
 	width: 100%;
-	border-bottom: solid 1px #bb4c00;
+	border-bottom: 2px solid #bb4c00;
+	-moz-box-shadow: 0 1px 8px rgba(0,0,0,0.7); -webkit-box-shadow: 0 1px 8px rgba(0,0,0,0.7); box-shadow: 0 1px 8px rgba(0,0,0,0.7);
 	z-index: 100;
 }
 
@@ -137,15 +140,15 @@ header div {
 header a {
 	color: #7e3300;
 	text-shadow: 0 0 1px #ffae5d;
-	line-height: 41px;
+	line-height: 45px;
 }
 
 #logo a {
-	font-size: 1.3em;
+	font-size: 1.4em;
 	display: block;
 	float: left;
-	line-height: 37px;
-	padding-bottom: 4px;
+	line-height: 39px;
+	padding-bottom: 6px;
 }
 
 header nav {
@@ -160,7 +163,7 @@ header nav a {
 	text-transform: uppercase;
 	font-size: .9em;
 	display: block;
-	padding-left: 1em;
+	margin-left: 1em;
 }
 
 header nav a:hover {
@@ -186,24 +189,29 @@ footer  {
 
 #content {
 	width: 560px;
-	padding: 0 40px;
-	margin: 4.5em auto 3em;
+	padding: 30px 0 45px;
+	margin: 45px auto 0;
 	text-align: justify;
 	-webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto;
 }
 
-#content p, #content ul, #content ol {
-	margin-bottom: 1em;
-}
+#content p { margin-bottom: 1em; }
+#content ul,
+#content ol { margin-bottom: 1.5em; }
 
 #content em {
 	text-decoration: underline;
 	font-style: italic;
 }
 
-#content ol {
-	list-style-type: decimal;
-	padding-left: 2em;
+#content ol,
+#content ul { padding-left: 2px; }
+#content ol { list-style-type: decimal; }
+#content ul { list-style-type: square; }
+
+#content li {
+	line-height: 1.3em;
+	margin-bottom: 0.5em;
 }
 
 #content a:hover {
