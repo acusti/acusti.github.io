@@ -78,20 +78,21 @@ body {
 h1,
 h2,
 h3 {
-	color: #f18f25;
+	color: #fff;
 	text-shadow: 1px 1px 1px #000;
 }
 
 h1 {
 	font-size: 2.4em;
 	line-height: 1.2em;
-	margin-bottom: 0.5em;
+	margin-bottom: 0.45em;
+	text-shadow: 2px 2px 1px #000;
 }
 
 h2 {
 	font-size: 1.3em;
 	margin-bottom: 0.2em;
-	color: #888;
+	color: #8b8b8b;
 }
 
 h3 {
@@ -117,6 +118,10 @@ cite {
 	margin-left: 1.9em;
 	font-size: .8em;
 	color: #666;
+}
+
+strong {
+	font-weight: bolder;
 }
 
 /* =Header
@@ -255,7 +260,7 @@ footer  {
 
 #home {
 	text-align: left;
-	background: url(/imgs/gears.png) no-repeat 0 20px;
+	background: url(/images/hands.png) no-repeat -2px 6px;
 }
 
 #home #posts {
