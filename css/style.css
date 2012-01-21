@@ -260,7 +260,11 @@ footer  {
 
 #home {
 	text-align: left;
-	background: url(/images/hands.png) no-repeat -2px 6px;
+}
+
+#home-img {
+	float: left;
+	margin-left: -375px;
 }
 
 #home #posts {
