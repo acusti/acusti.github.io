@@ -2,25 +2,23 @@
 layout: default
 ---
 
-<div id="post">
+<article id="post">
 <h2>{{ page.date | date_to_string }}</h2>
 <h1>{{ page.title }}</h1>
 <p class="baseline">{{ page.baseline }}</p>
 
 {{ content }}
 
+</article>
 {{ if site.related_posts }}
-	<div id="posts">
-		<h3>See also...</h3>
+<div id="posts">
+	<h3>See also…</h3>
 
-		{% for post in site.related_posts %}
-			{% include post_summary.html %}
-		{% endfor %}
-	</div>
-
-{{ endif }}
-
+	{% for post in site.related_posts %}
+		{% include post_summary.html %}
+	{% endfor %}
 </div>
+{{ endif }}
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">
