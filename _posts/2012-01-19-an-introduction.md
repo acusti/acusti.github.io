@@ -5,9 +5,9 @@ baseline: gotta start somewhere…
 tags: [salutation, introduction]
 ---
 
-Let me ever so briefly introduce myself by shamelessly borrowing from the text of my [about.me profile][]:
+Hi! My name is Andrew Patton, and this is my blog. I am hoping to use it as a place to voice my thoughts about web development, or more generally, about building and crafting excellent user experiences. This being the first post, let me briefly introduce myself by shamelessly borrowing from the text of my [about.me profile][]:
 
-  [about.me profile]: http://about.me/andrewpatton "Go ahead and check it out; it’s a good profile"
+  [about.me profile]: http://about.me/andrewpatton "Feel free to check it out; it’s a good profile"
 
 I am a website programmer and developer. I build pretty great websites for the Montréal-based web shop [Pure Cobalt][]. If you wish to know more about my work, you can check out some of my projects (plugins and the like) at [my github profile][github], or see [my website][].
 
