@@ -10,7 +10,7 @@
 	<![endif]-->
 	<script type="text/javascript">
 	var _gaq = _gaq || [];
-	if (window.location.hostname == 'acusti.github.com') {
+	if (window.location.hostname == '{{ site.theme.base_url }}') {
 		_gaq.push(['_setAccount', '{{ site.theme.google_analytics_uid }}']);
 		_gaq.push(['_trackPageview']);
 		(function() {
@@ -26,11 +26,11 @@
 		<div>
 			<nav>
 				<ul>
-					<li><a href="/archive" title="Archive of all posts">Archive</a></li>
-					<li><a href="/about" title="About the author, Andrew Patton">About me</a></li>
+					<li><a href="http://{{ site.theme.base_url }}/archive" title="Archive of all posts">Archive</a></li>
+					<li><a href="http://{{ site.theme.base_url }}/about" title="About the author, Andrew Patton">About me</a></li>
 				</ul>
 			</nav>
-			<p id="logo"><a href="/" title="{{ site.theme.site_name }}">{{ site.theme.site_name }}</a></p>
+			<p id="logo"><a href="http://{{ site.theme.base_url }}/" title="{{ site.theme.site_name }}">{{ site.theme.site_name }}</a></p>
 		</div>
 	</header>
 
