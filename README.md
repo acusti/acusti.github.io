@@ -1,8 +1,6 @@
-# Andrew Patton's fork of Stephan Florquin's Jekyll theme
+# Stephan Florquin's Jekyll theme
 
 See [this post for instructions](http://stephan83.github.com/12-07-2011/use-this-theme-on-github.html).
-
-_Note_: most of my modifications of Stephan's theme are limited to style.css, though I also will make changes to markup and functionality (like adding an RSS generator) as my needs and desires evolve.
 
 ## License
 
