@@ -5,7 +5,7 @@ auto: true
 theme:
 
   # Site name
-  site_name: crafting code
+  site_name: acusti.ca
   
   # Site base URL
   base_url: acusti.github.com
