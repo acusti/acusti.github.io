@@ -147,32 +147,38 @@ header a {
 	text-shadow: 0 0 1px #ffae5d;
 	line-height: 45px;
 }
+header a:hover {
+	text-decoration: underline;
+}
 
 #logo a {
 	font-size: 1.4em;
-	display: block;
-	float: left;
+	display: -moz-inline-stack;
+	display: inline-block;
+	vertical-align: top;
+	zoom: 1;
+	*display: inline;
 	line-height: 39px;
-	padding-bottom: 6px;
+	padding: 0 10px 6px;
+	margin-left: -10px;
 }
 
 header nav {
 	float: right;
+	margin-right: -0.5em;
 }
-
 header nav li {
-	float: left;
+	display: -moz-inline-stack;
+	display: inline-block;
+	vertical-align: top;
+	zoom: 1;
+	*display: inline;
 }
-
 header nav a {
 	text-transform: uppercase;
-	font-size: .9em;
+	font-size: 0.9em;
 	display: block;
-	margin-left: 1em;
-}
-
-header nav a:hover {
-	text-decoration: underline;
+	padding: 0 0.5em;
 }
 
 /* =Footer
