@@ -5,7 +5,7 @@ baseline: gotta start somewhere…
 tags: [salutation, introduction]
 ---
 
-Hi! My name is Andrew Patton, and this is my blog. I am hoping to use it as a place to voice my thoughts about web development, or more generally, about building and crafting excellent user experiences. This being the first post, let me briefly introduce myself by shamelessly borrowing from the text of my [about.me profile][]:
+Hi! My name is Andrew Patton, and this is my blog. I hope to use it as a rostrum from which I will voice my thoughts about web development, or more generally, about building and crafting excellent user experiences. This being the first post, let me briefly introduce myself by shamelessly borrowing from the text of my [about.me profile][]:
 
   [about.me profile]: http://about.me/andrewpatton "Feel free to check it out; it’s a good profile"
 
