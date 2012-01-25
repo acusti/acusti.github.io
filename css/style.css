@@ -144,7 +144,7 @@ header div {
 
 header a {
 	color: #7e3300;
-	text-shadow: 0 0 1px #ffae5d;
+	text-shadow: 1px 1px 1px #ffa54c;
 	line-height: 45px;
 }
 header a:hover {
@@ -164,9 +164,21 @@ header a:hover {
 }
 
 header nav {
-	float: right;
-	margin-right: -0.5em;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 95%;
+	text-align: right;
 }
+header nav ul {
+	margin-right: -0.5em;
+	background: #f18f25;
+	padding: 0 0.25em;
+	border-bottom: 2px solid #bb4c00;
+	-moz-box-shadow: 0 1px 8px rgba(0,0,0,0.7); -webkit-box-shadow: 0 1px 8px rgba(0,0,0,0.7); box-shadow: 0 1px 8px rgba(0,0,0,0.7);
+}
+
+header nav ul,
 header nav li {
 	display: -moz-inline-stack;
 	display: inline-block;
@@ -178,7 +190,7 @@ header nav a {
 	text-transform: uppercase;
 	font-size: 0.9em;
 	display: block;
-	padding: 0 0.5em;
+	padding: 0 0.25em;
 }
 
 /* =Footer
