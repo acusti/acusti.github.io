@@ -134,21 +134,30 @@ header {
 	width: 100%;
 	border-bottom: 2px solid #bb4c00;
 	-moz-box-shadow: 0 1px 8px rgba(0,0,0,0.7); -webkit-box-shadow: 0 1px 8px rgba(0,0,0,0.7); box-shadow: 0 1px 8px rgba(0,0,0,0.7);
-	z-index: 100;
+	z-index: 10;
 }
 
-header div {
-	width: 560px;
-	margin: 0 auto;
-}
-
-header a {
+header a,
+#top-nav-fixed a {
 	color: #7e3300;
 	text-shadow: 1px 1px 1px #ffa54c;
 	line-height: 45px;
 }
-header a:hover {
+header a:hover,
+#top-nav-fixed a:hover {
 	text-decoration: underline;
+}
+
+#logo,
+#top-nav,
+#top-nav-fixed {
+	width: 50%;
+	text-align: center;
+	display: -moz-inline-stack;
+	display: inline-block;
+	vertical-align: top;
+	zoom: 1;
+	*display: inline;
 }
 
 #logo a {
@@ -163,30 +172,38 @@ header a:hover {
 	margin-left: -10px;
 }
 
-header nav {
-	position: fixed;
+#top-nav,
+#top-nav-fixed {
+	position: absolute;
 	top: 0;
-	left: 0;
-	width: 95%;
-	text-align: right;
+	left: 51%;
+	width: 49%;
 }
-header nav ul {
+#top-nav-fixed {
+	position: fixed;
+	filter: alpha(opacity=70); -khtml-opacity: 0.7; -moz-opacity: 0.7; opacity: 0.7;
+}
+.site-nav {
 	margin-right: -0.5em;
-	background: #f18f25;
 	padding: 0 0.25em;
-	border-bottom: 2px solid #bb4c00;
-	-moz-box-shadow: 0 1px 8px rgba(0,0,0,0.7); -webkit-box-shadow: 0 1px 8px rgba(0,0,0,0.7); box-shadow: 0 1px 8px rgba(0,0,0,0.7);
+}
+#top-nav-fixed .site-nav {
+	background: #1c1c1c;
+}
+#top-nav-fixed a {
+	color: #fff;
+	text-shadow: 1px 1px 1px #000;
 }
 
-header nav ul,
-header nav li {
+ul.site-nav,
+.site-nav li {
 	display: -moz-inline-stack;
 	display: inline-block;
 	vertical-align: top;
 	zoom: 1;
 	*display: inline;
 }
-header nav a {
+.site-nav a {
 	text-transform: uppercase;
 	font-size: 0.9em;
 	display: block;

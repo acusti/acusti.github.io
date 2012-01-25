@@ -1,13 +1,25 @@
 <!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
 <html>
+<!--<![endif]-->
 <head>
 	<meta charset="UTF-8" />
 	<title>{{ page.title }} | {{ site.theme.site_name }}</title>
 	<meta name="author" content="Andrew Patton" />
-	<link href="http://{{ site.theme.base_url }}/atom.xml" rel="alternate" title="{{ site.theme.site_name }}" type="application/atom+xml" />
-	<link rel="stylesheet" href="http://{{ site.theme.base_url }}/css/syntax.css" type="text/css" />
-	<link rel="stylesheet"  href="http://{{ site.theme.base_url }}/css/style.css" type="text/css" media="all" />
-	<link href="http://fonts.googleapis.com/css?family=Poly:400,400italic" rel="stylesheet" type="text/css">
+	<link rel="alternate" href="http://{{ site.theme.base_url }}/atom.xml" title="{{ site.theme.site_name }}" type="application/atom+xml" />
+	<link rel="stylesheet" href="http://{{ site.theme.base_url }}/css/syntax.css" />
+	<link rel="stylesheet" href="http://{{ site.theme.base_url }}/css/style.css" media="all">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Poly:400,400italic">
+	<script src="http://{{ site.theme.base_url }}/js/head.js"></script>
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -26,15 +38,13 @@
 </head>
 <body>
 	<header>
-		<div>
-			<nav>
-				<ul>
-					<li><a href="http://{{ site.theme.base_url }}/archive" title="Archive of all posts">Archive</a></li>
-					<li><a href="http://{{ site.theme.base_url }}/about" title="About the author, Andrew Patton">About me</a></li>
-				</ul>
-			</nav>
-			<p id="logo"><a href="http://{{ site.theme.base_url }}/" title="{{ site.theme.site_name }}">{{ site.theme.site_name }}</a></p>
-		</div>
+		<p id="logo"><a href="http://{{ site.theme.base_url }}/" title="{{ site.theme.site_name }}">{{ site.theme.site_name }}</a></p>
+		<nav id="top-nav">
+			<ul class="site-nav">
+				<li><a href="http://{{ site.theme.base_url }}/archive" title="Archive of all posts">Archive</a></li>
+				<li><a href="http://{{ site.theme.base_url }}/about" title="About the author, Andrew Patton">About me</a></li>
+			</ul>
+		</nav>
 	</header>
 
 	<div id="content">
