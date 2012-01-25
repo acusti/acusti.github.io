@@ -8,8 +8,8 @@ theme:
   site_name: acusti.ca
   
   # Site base URL
-  #base_url: acusti.github.com
-  base_url: 0.0.0.0:4000
+  base_url: acusti.github.com
+  # base_url: 0.0.0.0:4000  dev
 
   # Google analytics UID
   google_analytics_uid: UA-28481823-1
