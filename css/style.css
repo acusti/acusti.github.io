@@ -69,7 +69,7 @@ table {
 
 body {
 	font-family: 'Poly', serif;
-	font-size: 20px;
+	font-size: 1.25em; /* 16px * 1.25 = 20px */
 	line-height: 1.5em;
 	background-color: #2a2a2a;
 	color: #eee;
@@ -107,7 +107,7 @@ a {
 
 blockquote {
 	font-style: italic;
-	font-size: 19px;
+	font-size: 0.95em; /* 20px * 0.95 = 19px */
 	text-align: left;
 	position: relative;
 	padding: 0 2em;
@@ -116,7 +116,7 @@ blockquote {
 
 cite {
 	margin-left: 1.9em;
-	font-size: .8em;
+	font-size: 0.8em;
 	color: #666;
 }
 
@@ -214,9 +214,10 @@ ul.site-nav,
 -------------------------------------------------------------- */
 
 footer  {
-	width: 560px;
+	width: 80%;
+	max-width: 600px;
 	margin: 0 auto;
-	font-size: .8em;
+	font-size: 0.8em;
 	font-style: italic;
 	color: #666;
 	text-align: center;
@@ -228,7 +229,8 @@ footer  {
 -------------------------------------------------------------- */
 
 #content {
-	width: 560px;
+	width: 80%;
+	max-width: 600px;
 	padding: 30px 0 45px;
 	margin: 45px auto 0;
 	text-align: justify;
@@ -252,6 +254,10 @@ footer  {
 #content li {
 	line-height: 1.3em;
 	margin-bottom: 0.5em;
+}
+article img {
+	max-width: 100%; /* When images are too wide for containing element, force them to fit. */
+	height: auto; /* Override height to match resized width for correct aspect ratio. */
 }
 
 #content a:hover {
@@ -299,7 +305,7 @@ footer  {
 
 #home-img {
 	float: left;
-	margin-left: -375px;
+	margin-left: -400px;
 }
 
 #home #posts {
@@ -345,4 +351,60 @@ blockquote span {
 
 .gist pre {
 	font-size: 1em;
+}
+
+/* =Mobile Safari ( iPad, iPhone and iPod Touch )
+-------------------------------------------------------------- */
+
+pre {
+	-webkit-text-size-adjust: 140%;
+}
+code {
+	-webkit-text-size-adjust: 160%;
+}
+#logo p,
+.site-nav a {
+	-webkit-text-size-adjust: 120%;
+}
+
+/* =Responsive Adjustments
+-------------------------------------------------------------- */
+
+@media (max-width: 708px) {
+	footer,
+	#content {
+		width: 560px;
+	}
+	#home-img {
+		margin-left: -320px;
+	}
+	#home #intro {
+		width: 220px;
+	}
+}
+
+@media (max-width: 580px) {
+	footer,
+	#content {
+		width: 95%;
+	}
+	#fork-github { display: none; }
+	#home-img {
+		width: 95%;
+		max-width: 300px;
+		height: auto;
+		margin: 0 auto;
+		float: none;
+		display: block;
+	}
+	#home #intro {
+		width: auto;
+	}
+
+}
+@media (max-width: 450px) {
+	
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+	
 }
