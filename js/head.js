@@ -78,6 +78,6 @@ var ready = (function () {
 ready(function() {
 	var nav = document.getElementById('top-nav').cloneNode(true);
 	nav.setAttribute('id', nav.id + '-fixed');
-
-	var h = document.getElementsByTagName('header')[0]; h.parentNode.insertBefore(nav, h);
+	//var h = document.getElementsByTagName('header')[0]; h.parentNode.insertBefore(nav, h); // insert it before header
+	document.body.appendChild(nav);
 });
