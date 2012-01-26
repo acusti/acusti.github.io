@@ -70,7 +70,7 @@ table {
 body {
 	font-family: 'Poly', serif;
 	font-size: 1.25em; /* 16px * 1.25 = 20px */
-	line-height: 1.5em;
+	line-height: 1.5;
 	background-color: #2a2a2a;
 	color: #eee;
 }
@@ -84,7 +84,7 @@ h3 {
 
 h1 {
 	font-size: 2.4em;
-	line-height: 1.2em;
+	line-height: 1.2;
 	margin-bottom: 0.45em;
 	text-shadow: 2px 2px 1px #000;
 }
@@ -132,6 +132,7 @@ header {
 	position: absolute;
 	top: 0;
 	width: 100%;
+	line-height: 2.25; /* 20 * 2.25 = 45px */
 	border-bottom: 2px solid #bb4c00;
 	-moz-box-shadow: 0 1px 8px rgba(0,0,0,0.7); -webkit-box-shadow: 0 1px 8px rgba(0,0,0,0.7); box-shadow: 0 1px 8px rgba(0,0,0,0.7);
 	z-index: 10;
@@ -141,7 +142,7 @@ header a,
 #top-nav-fixed a {
 	color: #7e3300;
 	text-shadow: 1px 1px 1px #ffa54c;
-	line-height: 45px;
+	line-height: 2.5; /* 18 * 2.5 = 45px */
 }
 header a:hover,
 #top-nav-fixed a:hover {
@@ -161,15 +162,15 @@ header a:hover,
 }
 
 #logo a {
-	font-size: 1.4em;
+	font-size: 1.4em; /* 20 * 1.4 = 28px */
 	display: -moz-inline-stack;
 	display: inline-block;
 	vertical-align: top;
 	zoom: 1;
 	*display: inline;
-	line-height: 39px;
-	padding: 0 10px 6px;
-	margin-left: -10px;
+	line-height: 1.4; /* 28 * 1.4 = 39px */
+	padding: 0 10px;
+	margin: -5 0 0 -10px;
 }
 
 #top-nav,
@@ -205,7 +206,7 @@ ul.site-nav,
 }
 .site-nav a {
 	text-transform: uppercase;
-	font-size: 0.9em;
+	font-size: 0.9em; /* 20 * .9 = 18px */
 	display: block;
 	padding: 0 0.25em;
 }
@@ -252,7 +253,7 @@ footer  {
 #content ul { list-style-type: square; }
 
 #content li {
-	line-height: 1.3em;
+	line-height: 1.3;
 	margin-bottom: 0.5em;
 }
 article img {
@@ -288,7 +289,7 @@ article img {
 
 #posts {
 	margin-bottom: 1.5em;
-	line-height: 1.2em;
+	line-height: 1.2;
 }
 
 #posts dd {
@@ -305,7 +306,7 @@ article img {
 
 #home-img {
 	float: left;
-	margin-left: -400px;
+	margin-left: -360px;
 }
 
 #home #posts {
@@ -314,7 +315,7 @@ article img {
 }
 
 #home #intro {
-	width: 240px;
+	width: 49%;
 	float: right;
 	margin-bottom: 1.4em;
 }
@@ -345,7 +346,7 @@ blockquote span {
 -------------------------------------------------------------- */
 
 .gist, pre {
-	font: normal normal normal .6em Menlo, DejaVuSansMono, Consolas, monospace;
+	font: normal normal normal 0.6em Menlo, DejaVuSansMono, Consolas, monospace;
 	margin-bottom: 1em;
 }
 
@@ -371,6 +372,12 @@ code {
 -------------------------------------------------------------- */
 
 @media (max-width: 708px) {
+	body {
+		font-size: 1.1875em; /* 16 * 1.1875 = 19px */
+	}
+	h1 {
+		font-size: 2.3em;
+	}
 	footer,
 	#content {
 		width: 560px;
@@ -384,6 +391,12 @@ code {
 }
 
 @media (max-width: 580px) {
+	body {
+		font-size: 1.111em; /* 16 * 1.111 = 18px */
+	}
+	h1 {
+		font-size: 2.2em;
+	}
 	footer,
 	#content {
 		width: 95%;
@@ -403,7 +416,12 @@ code {
 
 }
 @media (max-width: 450px) {
-	
+	body {
+		font-size: 1em;
+	}
+	h1 {
+		font-size: 2em;
+	}
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 	
