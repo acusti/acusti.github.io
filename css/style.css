@@ -368,6 +368,22 @@ code {
 	-webkit-text-size-adjust: 120%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+li,
+blockquote,
+cite,
+a,
+strong,
+em,
+span {
+	-webkit-text-size-adjust: 120%;
+}
+
 /* =Responsive Adjustments
 -------------------------------------------------------------- */
 
@@ -400,6 +416,10 @@ code {
 	footer,
 	#content {
 		width: 95%;
+		max-width: 100%;
+	}
+	#content {
+		text-align: left;
 	}
 	#fork-github { display: none; }
 	#home-img {
@@ -415,7 +435,22 @@ code {
 	}
 
 }
-@media (max-width: 450px), screen and (-webkit-min-device-pixel-ratio: 2) {
+
+/* Retina displays: */
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+	body {
+		font-size: 2em;
+	}
+	#home-img {
+		width: 90%;
+		max-width: 600px;
+	}
+	#content {
+		margin-top: 80px; 
+	}
+}
+
+@media (max-width: 450px) {
 	body {
 		font-size: 1em;
 	}
