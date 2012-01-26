@@ -390,7 +390,7 @@ code {
 	}
 }
 
-@media (max-width: 580px) {
+@media (max-width: 580px), screen and (-webkit-min-device-pixel-ratio: 2) {
 	body {
 		font-size: 1.111em; /* 16 * 1.111 = 18px */
 	}
@@ -415,7 +415,7 @@ code {
 	}
 
 }
-@media (max-width: 450px) {
+@media (max-width: 450px), screen and (-webkit-min-device-pixel-ratio: 2) {
 	body {
 		font-size: 1em;
 	}
@@ -423,6 +423,6 @@ code {
 		font-size: 2em;
 	}
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px), screen and (-webkit-min-device-pixel-ratio: 2) {
 	
 }
