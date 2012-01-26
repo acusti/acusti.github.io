@@ -78,11 +78,6 @@ var ready = (function () {
 ready(function() {
 	var nav = document.getElementById('top-nav').cloneNode(true);
 	nav.setAttribute('id', nav.id + '-fixed');
-	//var css = 'display: block; text-align: right; position: absolute; bottom: 4px; right: 4px; color: #ccc; font: 400 11px sans-serif;';
-	//if (typeof nav.style.setAttribute == 'object')
-	//	nav.style.setAttribute('cssText', css); // non-standard (IE 7)
-	//else
-	//	nav.setAttribute('style', css); // standard
-	
-	document.body.appendChild(nav);
+
+	var h = document.getElementsByTagName('header')[0]; h.parentNode.insertBefore(nav, h);
 });
