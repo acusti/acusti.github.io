@@ -122,6 +122,11 @@ strong {
 	font-weight: bolder;
 }
 
+::-moz-selection { color: #fff; background-color: rgba(128, 37, 0, .7); }
+::selection { color: #fff; background-color: rgba(128, 37, 0, .7); }
+a::-moz-selection { background-color: rgba(220, 116, 4, .7); }
+a::selection { background-color: rgba(220, 116, 4, .7); }
+
 /* =Header
 -------------------------------------------------------------- */
 
@@ -166,9 +171,9 @@ header a:hover,
 	vertical-align: top;
 	zoom: 1;
 	*display: inline;
-	line-height: 1.4; /* 28 * 1.4 = 39px */
+	line-height: 1.5; /* 28 * 1.5 = 42px */
 	padding: 0 10px;
-	margin: -5 0 0 -10px;
+	margin: -1px 0 0 -10px;
 }
 
 #top-nav,
@@ -401,6 +406,7 @@ span {
 	#home #intro {
 		width: 220px;
 	}
+	#fork-github { display: none; }
 }
 
 @media (max-width: 630px), screen and (-webkit-min-device-pixel-ratio: 2) {
@@ -440,7 +446,6 @@ span {
 	#content {
 		text-align: left;
 	}
-	#fork-github { display: none; }
 	#home-img {
 		width: 95%;
 		max-width: 300px;
