@@ -88,13 +88,11 @@ h1 {
 	margin-bottom: 0.45em;
 	text-shadow: 2px 2px 1px #000;
 }
-
 h2 {
 	font-size: 1.3em;
 	margin-bottom: 0.2em;
 	color: #8b8b8b;
 }
-
 h3 {
 	font-size: 1.3em;
 	margin: 2em 0 1em;
@@ -206,7 +204,7 @@ ul.site-nav,
 }
 .site-nav a {
 	text-transform: uppercase;
-	font-size: 0.9em; /* 20 * .9 = 18px */
+	font-size: 0.9em; /* 20 * 0.9 = 18px */
 	display: block;
 	padding: 0 0.25em;
 }
@@ -243,7 +241,6 @@ footer  {
 #content ol { margin-bottom: 1.5em; }
 
 #content em {
-	text-decoration: underline;
 	font-style: italic;
 }
 
@@ -310,8 +307,8 @@ article img {
 }
 
 #home #posts {
-	width: 240px;
-	float: left;
+	/*width: 240px;
+	float: left;*/
 }
 
 #home #intro {
@@ -406,17 +403,39 @@ span {
 	}
 }
 
+@media (max-width: 630px), screen and (-webkit-min-device-pixel-ratio: 2) {
+	#content ol,
+	#content ul {
+		margin-left: 1em;
+		padding-left: 4px;
+	}
+	#content blockquote ol,
+	#content blockquote ul {
+		margin-left: 0;
+	}
+}
+
 @media (max-width: 580px), screen and (-webkit-min-device-pixel-ratio: 2) {
 	body {
 		font-size: 1.111em; /* 16 * 1.111 = 18px */
+		line-height: 1.4;
 	}
 	h1 {
 		font-size: 2.2em;
+		margin-bottom: 0.3em;
+	}
+	h3 { margin: 1.3em 0 0.5em; }
+	#home #intro { margin-bottom: 1em; }
+	#content ul,
+	#content ol { margin-bottom: 1.2em; }
+	.baseline {
+		margin-bottom: 0.9em;
+		line-height: 1.3;
 	}
 	footer,
 	#content {
 		width: 95%;
-		max-width: 100%;
+		max-width: 100%; /* reset regular max-width value */
 	}
 	#content {
 		text-align: left;
@@ -433,10 +452,9 @@ span {
 	#home #intro {
 		width: auto;
 	}
-
 }
 
-/* Retina displays: */
+/* Retina displays only */
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
 	body {
 		font-size: 2em;
@@ -446,7 +464,13 @@ span {
 		max-width: 600px;
 	}
 	#content {
+		width: 90%;
 		margin-top: 80px; 
+	}
+	#content ol,
+	#content ul {
+		margin-left: 1em;
+		padding-left: 0.5em;
 	}
 }
 
