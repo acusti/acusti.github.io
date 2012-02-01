@@ -50,7 +50,7 @@
 	</header>
 	
 	<div id="content">
-		<h1 id="logo" class="{{ page.title | sanitize_title }}"><a href="http://{{ site.theme.base_url }}/" title="{{ site.theme.site_name }}">{{ site.theme.site_name }}</a></h1>
+		<h1 id="logo" class="{{ page.title | downcase | replace:' ','-' | escape }}"><a href="http://{{ site.theme.base_url }}/" title="{{ site.theme.site_name }}">{{ site.theme.site_name }}</a></h1>
 		{{ content }}
 	</div>
 
