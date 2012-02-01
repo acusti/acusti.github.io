@@ -39,7 +39,6 @@
 </head>
 <body>
 	<header>
-		<p id="logo"><a href="http://{{ site.theme.base_url }}/" title="{{ site.theme.site_name }}">{{ site.theme.site_name }}</a></p>
 		<nav id="top-nav">
 			<ul class="site-nav">
 				<li><a href="http://{{ site.theme.base_url }}/" title="{{ site.theme.site_name }} home" class="home">Home</a></li>
@@ -49,13 +48,14 @@
 			</ul>
 		</nav>
 	</header>
-
+	
 	<div id="content">
-	{{ content }}
+		<h1 id="logo" class="{{ page.title | sanitize_title }}"><a href="http://{{ site.theme.base_url }}/" title="{{ site.theme.site_name }}">{{ site.theme.site_name }}</a></h1>
+		{{ content }}
 	</div>
 
 	<footer>
-		<p>Design based on <a href="http://stephan83.github.com">Stephan Florquin</a>’s Jekyll theme</p>
+		<p>Design based on <a href="http://stephan83.github.com">Stephan Florquin</a>’s Jekyll theme. Source available on <a href="https://github.com/acusti/acusti.github.com/">github</a>.</p>
 	</footer>
 
 </body>
