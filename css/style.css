@@ -134,6 +134,7 @@ header {
 	background: #ff9727;
 	position: absolute;
 	top: 0;
+	left: 0;
 	width: 100%;
 	text-align: right;
 	/* height: 2.5em; */ /* 18 * 2.5 = 45px */
