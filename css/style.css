@@ -163,7 +163,6 @@ header a:hover,
 	right: 12%;
 	/*left: 51%;
 	width: 49%;*/
-	display: -moz-inline-stack;
 	display: inline-block;
 	vertical-align: top;
 	zoom: 1;
@@ -188,7 +187,6 @@ header a:hover,
 
 ul.site-nav,
 .site-nav li {
-	display: -moz-inline-stack;
 	display: inline-block;
 	vertical-align: top;
 	zoom: 1;
@@ -324,7 +322,6 @@ article img {
 	margin-bottom: 1.5em;
 	line-height: 1.2;
 }
-
 #posts dd {
 	margin-bottom: .7em;
 	padding-bottom: .7em;
