@@ -70,8 +70,8 @@ table {
 -------------------------------------------------------------- */
 
 body {
-	font-family: Poly, serif;
-	font-size: 1.25em; /* 16px * 1.25 = 20px */
+	font-family: Poly, Georgia, serif;
+	font-size: 1.25em; /* 16 x 1.25 = 20 */
 	line-height: 1.5;
 	background: #2a2a2a url(../images/bckg-texture.png);
 	color: #eee;
@@ -107,7 +107,7 @@ a {
 
 blockquote {
 	font-style: italic;
-	font-size: 0.95em; /* 20px * 0.95 = 19px */
+	font-size: 0.95em; /* 20 x 0.95 = 19 */
 	text-align: left;
 	position: relative;
 	padding: 0 2em;
@@ -116,7 +116,7 @@ blockquote {
 
 cite {
 	margin-left: 1.9em;
-	font-size: 0.8em;
+	font-size: 0.8em; /* 20 x 0.8 = 16 */
 	color: #666;
 }
 
@@ -129,6 +129,39 @@ strong {
 a::-moz-selection { background-color: rgba(220, 116, 4, .7); }
 a::selection { background-color: rgba(220, 116, 4, .7); }
 
+/* = General classes
+-------------------------------------------------------------- */
+
+#content .standout {
+	width: 100%;
+	min-width: 600px;
+	margin: 0;
+	text-align: left;
+	padding: 0.5em 0 1em;
+}
+#content .standout li {
+	list-style: none;
+	padding: 10px 12px;
+	width: 165px;
+	min-height: 60px;
+	margin: 0 7px 11px 0;
+	display: inline-block;
+	vertical-align: top;
+	zoom: 1;
+	*display: inline;
+	background: url(../images/black-20.png);
+	font-size: 0.75em; /* 20 x 0.8 = 16 */
+	line-height: 1.3em;
+}
+#content .sites li { min-height: 160px; }
+#content .features li { min-height: 120px; }
+.standout li .title {
+	display: block;
+	font-family: Poly, Georgia, serif;
+	font-size: 1.125em;
+	padding-bottom: 6px;
+}
+
 /* = Header
 -------------------------------------------------------------- */
 
@@ -139,7 +172,7 @@ header {
 	left: 0;
 	width: 100%;
 	text-align: right;
-	/* height: 2.5em; */ /* 18 * 2.5 = 45px */
+	/* height: 2.5em; */ /* 18 x 2.5 = 45 */
 	border-bottom: 2px solid #bb4c00;
 	-moz-box-shadow: 0 1px 8px rgba(0,0,0,0.7); -webkit-box-shadow: 0 1px 8px rgba(0,0,0,0.7); box-shadow: 0 1px 8px rgba(0,0,0,0.7);
 	z-index: 10;
@@ -149,7 +182,7 @@ header a,
 #top-nav-fixed a {
 	color: #7e3300;
 	text-shadow: 1px 1px 1px #ffa54c;
-	line-height: 2.5; /* 18 * 2.5 = 45px */
+	line-height: 2.5; /* 18 x 2.5 = 45 */
 }
 header a:hover,
 #top-nav-fixed a:hover {
@@ -170,7 +203,7 @@ header a:hover,
 }
 #top-nav-fixed {
 	position: fixed;
-	filter: alpha(opacity=70); -khtml-opacity: 0.7; -moz-opacity: 0.7; opacity: 0.7;
+	filter: alpha(opacity=70); opacity: 0.7;
 }
 .site-nav {
 	margin-right: -0.5em;
@@ -178,7 +211,7 @@ header a:hover,
 	text-align: left;
 }
 #top-nav-fixed .site-nav {
-	background: #1c1c1c;
+	background: url(../images/black-20.png);
 }
 #top-nav-fixed a {
 	color: #fff;
@@ -200,10 +233,9 @@ ul.site-nav,
 .site-nav li:first-child,
 #top-nav-fixed li:first-child { background: none; }
 
-
 .site-nav a {
 	text-transform: uppercase;
-	font-size: 0.9em; /* 20 * 0.9 = 18px */
+	font-size: 0.9em; /* 20 x 0.9 = 18 */
 	display: block;
 	padding: 0 0.25em;
 }
@@ -268,7 +300,6 @@ footer  {
 	width: 600px;
 	height: 126px;
 }
-
 
 #content p { margin-bottom: 1em; }
 #content ul,
@@ -401,7 +432,6 @@ blockquote span {
 	font: normal normal normal 0.6em Menlo, DejaVuSansMono, Consolas, monospace;
 	margin-bottom: 1em;
 }
-
 .gist pre {
 	font-size: 1em;
 }
@@ -464,7 +494,7 @@ span {
 /* Adjustments for smaller widths */
 @media (max-width: 708px) {
 	body {
-		font-size: 1.1875em; /* 16 * 1.1875 = 19px */
+		font-size: 1.1875em; /* 16 x 1.1875 = 19 */
 	}
 	h1 {
 		font-size: 2.3em;
@@ -478,6 +508,13 @@ span {
 	}
 	#home #intro {
 		width: 220px;
+	}
+	#content .standout {
+		margin-left: -5px;
+	}
+	#content .standout li {
+		width: 157px;
+		margin: 0 6px 9px 0;
 	}
 }
 
@@ -495,7 +532,7 @@ span {
 
 @media (max-width: 580px), screen and (-webkit-min-device-pixel-ratio: 2) {
 	body {
-		font-size: 1.111em; /* 16 * 1.111 = 18px */
+		font-size: 1.111em; /* 16 x 1.111 = 18 */
 		line-height: 1.4;
 	}
 	h1 {
@@ -529,6 +566,15 @@ span {
 	#home #intro {
 		width: auto;
 	}
+	#content .standout {
+		min-width: 392px;
+	}
+	#content .standout li {
+		width: 175px;
+		font-size: 0.8em;
+	}
+	#content .sites li { min-height: 140px; }
+	#content .features li { min-height: 100px; }
 }
 
 /* Retina displays only */
@@ -549,6 +595,9 @@ span {
 		margin-left: 1em;
 		padding-left: 0.5em;
 	}
+	#content .standout {
+		margin-left: 0; padding-left: 0;
+	}
 }
 
 @media (max-width: 450px) {
@@ -558,6 +607,15 @@ span {
 	h1 {
 		font-size: 2em;
 	}
+	#content .standout {
+		min-width: 392px;
+	}
+	#content .standout li {
+		width: 160px;
+		font-size: 0.9em;
+	}
+	#content .sites li { min-height: 150px; }
+	#content .features li { min-height: 110px; }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px), screen and (-webkit-min-device-pixel-ratio: 2) {
 	
