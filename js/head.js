@@ -80,4 +80,10 @@ ready(function() {
 	nav.setAttribute('id', nav.id + '-fixed');
 	//var h = document.getElementsByTagName('header')[0]; h.parentNode.insertBefore(nav, h); // insert it before header
 	document.body.appendChild(nav);
+	// Fill in my email address (spam protection):
+	var emails = document.getElementsByClassName('email');
+	for ( i=0, len=emails.length; i<len; ++i ) {
+		emails[i].href = 'mailto:andrew@acusti.ca' + '?subject=' + escape(document.title);
+		emails[i].innerHTML = 'andrew@acusti.ca';
+	}
 });
