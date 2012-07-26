@@ -82,6 +82,7 @@ h2,
 h3 {
 	color: #fff;
 	text-shadow: 1px 1px 1px #000;
+	text-align: left;
 }
 
 h1 {
@@ -111,7 +112,7 @@ blockquote {
 	text-align: left;
 	position: relative;
 	padding: 0 2em;
-	margin-top: 1.5em;
+	margin: 1em 0;
 }
 
 cite {
@@ -122,6 +123,22 @@ cite {
 
 strong {
 	font-weight: bolder;
+}
+
+code {
+	font-family: Menlo, "Andale Mono", "DejaVu Sans Mono", Consolas, monospace;
+	font-size: 13px;
+	display: block;
+	margin: 15px auto;
+	width: 85%;
+	padding: 11px 9px 11px 12px;
+	background-color: #1c1c1c;
+	text-align: left;
+	white-space: pre-wrap;
+	text-shadow: 0 1px 1px #000;
+}
+#content code p:last-child {
+	margin-bottom: 0;
 }
 
 ::-moz-selection { color: #fff; background-color: rgba(128, 37, 0, .7); }
@@ -160,6 +177,59 @@ a::selection { background-color: rgba(220, 116, 4, .7); }
 	font-family: Poly, Georgia, serif;
 	font-size: 1.125em;
 	padding-bottom: 6px;
+}
+
+img.in-text {
+	float: right;
+	margin: 6px 0 2px 8px;
+}
+img.demo {
+	margin-right: 0.5em;
+	border: 2px inset #ccc;
+	background:url(../images/bckg-transparent.png) repeat;
+}
+
+.legal,
+.citation {
+	font-style: italic;
+}
+.legal {
+	font-size: 0.9em;
+}
+
+.link-bottom {
+	text-align:center;
+	padding-bottom:7px;
+	margin:-4px 0 0;
+}
+.link-bottom a, .link-bottom a:visited {
+	font-weight: 400;
+}
+
+.center {
+	text-align: center;
+}
+
+.contact {
+	padding-top: 0;
+	background: transparent url(../images/separator.gif) no-repeat top center;
+}
+.contact li,
+.link-bottom {
+	display: block;
+	width: auto;
+	min-height: 0;
+	border: 0;
+	background-color: transparent;
+	margin: 0;
+	padding: 0.5em 0;
+	text-align: center;
+}
+.contact li:last-child {
+	background: transparent url(../images/separator.gif) no-repeat bottom center;
+}
+.contact a {
+	font-weight:normal;
 }
 
 /* = Header
@@ -434,6 +504,54 @@ blockquote span {
 }
 .gist pre {
 	font-size: 1em;
+}
+
+/* = Extension-specific
+-------------------------------------------------------------- */
+
+.accordion {
+	background-color: #ffecdb;
+	padding: 4px 20px 14px;
+	border-radius: 8px;-moz-border-radius: 8px;-webkit-border-radius: 8px;
+	margin: 5px auto 20px;
+}
+.accordion p,
+.accordion blockquote {
+	color: #555;
+	text-shadow: 0 1px 1px #ddd;
+}
+#content .accordion a:hover {
+	text-shadow: 1px 1px 2px #fff;
+}
+.mooblock-title {
+	color: #333B62;
+	text-align: left;
+	background: url(../images/icon-showhide1.png) no-repeat -24px 7px;
+	padding-left: 22px;
+	margin: 0.7em 0 0;
+	text-shadow: none;
+	cursor: pointer;
+}
+	.mooblock-title.expanded {
+		background: url(../images/icon-showhide1.png) no-repeat 0 -20px;
+	}
+.mooblock-el {
+	height: 0;
+	padding-left: 22px;
+}
+.showhide2 .mooblock-title {
+	color: #333B62;
+	text-align: left;
+	background: url(../images/icon-showhide2.png) no-repeat -25px 9px;
+	padding-left: 22px;
+	margin: 0.7em 0 0;
+}
+	.showhide2 .mooblock-title.expanded {
+		background: url(../images/icon-showhide2.png) no-repeat 1px -20px;
+	}
+.mooblock-el {
+	padding-left: 22px;
+	font-size: 0.85em;
 }
 
 /* =Mobile Safari ( iPad, iPhone and iPod Touch )
