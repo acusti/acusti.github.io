@@ -1,5 +1,6 @@
 permalink: pretty
 auto: true
+pygments: true
 
 # Theme settings
 theme:
