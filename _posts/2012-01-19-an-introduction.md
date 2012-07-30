@@ -13,7 +13,7 @@ I am a website programmer and developer. I build pretty great websites for the M
 
   [Pure Cobalt]: http//www.purecobalt.com
   [github]: http://github.com/acusti "Mostly WordPress plugins as of today"
-  [my website]: http://www.acusti.ca "Includes a list of many of the websites I have built"
+  [my website]: http://acusti.ca "Includes a list of most of the websites I have built"
 
 In my free time, I like to mess with music and video projects, and when feeling ambitious, [share][myspace] [them][youtube]. Also, I make [wine][], and I drink with abandon.
 
