@@ -9,7 +9,7 @@ function addEvent( obj, type, fn ) {
 	}
 	else if (obj.attachEvent) {
 		obj["e"+type+fn] = fn;
-		obj[type+fn] = function() { obj["e"+type+fn]( window.event ); }
+		obj[type+fn] = function() { obj["e"+type+fn]( window.event ); };
 		obj.attachEvent( "on"+type, obj[type+fn] );
 		EventCache.add(obj, type, fn);
 	}
@@ -31,22 +31,22 @@ var EventCache = function(){
 				item = listEvents[i];
 				if(item[0].removeEventListener){
 					item[0].removeEventListener(item[1], item[2], item[3]);
-				};
+				}
 				if(item[1].substring(0, 2) != "on"){
 					item[1] = "on" + item[1];
-				};
+				}
 				if(item[0].detachEvent){
 					item[0].detachEvent(item[1], item[2]);
-				};
+				}
 				item[0][item[1]] = null;
-			};
+			}
 		}
 	};
 }();
 addEvent(window, 'unload', EventCache.flush);
 
-// a $(document).ready() type of a function from http://stackoverflow.com/questions/799981/document-ready-equivalent-without-jquery
-// relies on addEvent(), above
+// A $(document).ready() type of a function from http://stackoverflow.com/questions/799981/document-ready-equivalent-without-jquery
+// Relies on addEvent(), above
 var ready = (function () {
 	function ready(f) {
 		if (ready.done) return f();
@@ -57,7 +57,7 @@ var ready = (function () {
 			ready.ready = [ f ];
 			ready.timer = setInterval(isDOMReady, 13);
 		}
-	};
+	}
 	function isDOMReady() {
 		if (ready.done) return false;
 		if (document && document.getElementsByTagName && document.getElementById && document.body) {
@@ -76,17 +76,18 @@ var ready = (function () {
 // --------------------------------------------------------------
 // Our document ready functions
 ready(function() {
+	// Set up fixed nav (displayed under regular header and nav)
 	var nav = document.getElementById('top-nav').cloneNode(true);
 	nav.setAttribute('id', nav.id + '-fixed');
-	//var h = document.getElementsByTagName('header')[0]; h.parentNode.insertBefore(nav, h); // insert it before header
 	document.body.appendChild(nav);
+
 	// Fill in my email address (spam protection):
 	var emails = document.getElementsByClassName('email');
-	for ( i=0, len=emails.length; i<len; ++i ) {
+	for (var i=0, len=emails.length; i<len; ++i) {
 		emails[i].href = 'mailto:andrew@acusti.ca' + '?subject=' + escape(document.title);
 		emails[i].innerHTML = 'andrew@acusti.ca';
 	}
-});
+
 	resizing();
 	// In case the image hasn't loaded yet, resize again in 1 second
 	window.setTimeout(resizing, 1000);
