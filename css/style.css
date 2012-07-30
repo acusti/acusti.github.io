@@ -69,6 +69,9 @@ table {
 /* = Generic HTML
 -------------------------------------------------------------- */
 
+html {
+	position: relative;
+}
 body {
 	font-family: Poly, Georgia, serif;
 	font-size: 1.25em; /* 16 x 1.25 = 20 */
@@ -389,8 +392,13 @@ footer  {
 	margin-bottom: 0.5em;
 }
 article img {
-	max-width: 100%; /* When images are too wide for containing element, force them to fit. */
-	height: auto; /* Override height to match resized width for correct aspect ratio. */
+	/* When images are too wide, force them to fit (see responsive section for more) */
+	max-width: 1050px;
+	/* Override height to match resized width for correct aspect ratio */
+	height: auto;
+}
+.oversized {
+	position: relative;
 }
 
 #content a:hover {

@@ -87,3 +87,83 @@ ready(function() {
 		emails[i].innerHTML = 'andrew@acusti.ca';
 	}
 });
+	resizing();
+	// In case the image hasn't loaded yet, resize again in 1 second
+	window.setTimeout(resizing, 1000);
+	// Window load / resize functions
+	addEvent(window, 'resize', function() {
+		if (resize_timer) clearTimeout(resize_timer);
+		resize_timer = setTimeout(resizing, 5);
+	});
+});
+
+// Attach resize functions to document onload event (after images are loaded)
+var resize_timer = 0;
+// Procedures to execute on ready and on resize
+var resizing = function() {
+	// Handle oversized images
+	var oversized = document.getElementsByClassName('oversized');
+	for (var i=0, len=oversized.length; i<len; ++i) {
+		var image = oversized[i],
+			wrap = image.parentNode,
+			max_width = document.body.offsetWidth - 20,
+			offset = 0,
+			image_css = '';
+		// Reset inline image CSS
+		setStyles(image, '');
+
+		if (image.offsetWidth > max_width) {
+			image_css += 'width: ' + max_width + 'px;';
+			offset = Math.floor((wrap.offsetWidth - max_width) / 2);
+		} else {
+			offset = Math.floor((wrap.offsetWidth - image.offsetWidth) / 2);
+		}
+		
+		if (offset < 0)
+			image_css += 'margin-left: ' + offset + 'px;';
+
+		setStyles(image, image_css);
+	}
+};
+
+// --------------------------------------------------------------
+// Polyfills and helpers and such
+
+// Cross browser procedure to set CSS inline styles
+var setStyles = function(el, styles) {
+	if (typeof el.style.setAttribute == 'object') {
+		// Non-standard (IE 7)
+		el.style.setAttribute('cssText', styles);
+	} else {
+		// Standard
+		el.setAttribute('style', styles);
+	}
+};
+// Add a getElementsByClassName function if the browser doesn't have one
+// Copyright: Eike Send http://eike.se/nd
+// License: MIT License
+// See https://gist.github.com/2299607
+if (!document.getElementsByClassName) {
+	document.getElementsByClassName = function(search) {
+		var d = document, elements, pattern, i, results = [];
+		if (d.querySelectorAll) { // IE8
+			return d.querySelectorAll("." + search);
+		}
+		if (d.evaluate) { // IE6, IE7
+			pattern = ".//*[contains(concat(' ', @class, ' '), ' " + search + " ')]";
+			elements = d.evaluate(pattern, d, null, 0, null);
+			while ((i = elements.iterateNext())) {
+				results.push(i);
+			}
+		} else {
+			elements = d.getElementsByTagName("*");
+			pattern = new RegExp("(^|\\s)" + search + "(\\s|$)");
+			for (i = 0; i < elements.length; i++) {
+				if ( pattern.test(elements[i].className) ) {
+					results.push(elements[i]);
+				}
+			}
+		}
+		return results;
+	};
+}
