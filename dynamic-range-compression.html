@@ -5,7 +5,7 @@ title: Dynamic Range Compression: An Explanation
 
 <article class="page" id="DRC">
 
-	{% include dynamic-range-compression.md %}
-	
+	{% capture content %}{% include dynamic-range-compression.md %}{% endcapture %}
+	{{ content | markdownify }}
 
 </article>
