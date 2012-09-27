@@ -38,18 +38,19 @@
 		<p>Design based on <a href="http://stephan83.github.com">Stephan Florquin</a>’s Jekyll theme. Source available on <a href="https://github.com/acusti/acusti.github.com/">github</a>.</p>
 	</footer>
 	
-	<script src="http://{{ site.theme.base_url }}/js/head.js?ver=0.5"></script>
 	<script>
-	var _gaq = _gaq || [];
+	var _gaq = [];
 	if (window.location.hostname == '{{ site.theme.base_url }}') {
-		_gaq.push(['_setAccount', '{{ site.theme.google_analytics_uid }}']);
-		_gaq.push(['_trackPageview']);
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
+		_gaq.push(['_setAccount', '{{ site.theme.google_analytics_uid }}'], ['_trackPageview']);
+		(function(d) {
+			var g = d.createElement('script'),
+			    s = d.getElementsByTagName('script')[0];
+			g.src = '//www.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g, s);
+		}(document));
 	}
 	</script>
+	<script src="https://api.lilbell.com/v1/ring/ZroPSWhfdlJzVDb5RVDNCRgF/.js"></script>
+	<script src="http://{{ site.theme.base_url }}/js/head.js?ver=0.5"></script>
 </body>
 </html>
