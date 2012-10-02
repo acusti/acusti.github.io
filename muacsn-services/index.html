@@ -1,0 +1,87 @@
+<!doctype html>
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Réseau Montreal Network - Services</title>
+	<!--[if lt IE 9]>
+	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="js/respond/respond.min.js"></script>
+	<![endif]-->
+	<script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)/*html.no-js to html.js*/</script>
+	<link rel="stylesheet" href="css/style.css?ver=0.5">
+</head>
+<body>
+	<header>
+		<h1>Services de santé et de guérison de Montréal <i>Montreal health and healing services</i></h1>
+		<h2 class="fr"><strong>RÉSEAU</strong> pour la stratégie urbaine de la communauté autochtone à Montréal</h2>
+		<h2 class="en">Montreal Urban Aboriginal Community Strategy <strong>NETWORK</strong></h2>
+		<b class="logo"></b>
+	</header>
+	<form id="services-search">
+		<fieldset>
+			<h2>Recherche / <i>Search</i></h2>
+			<label><b>Nom de l’organisation / <i>organization name</i></b> <input type="text" id="nom"></label>
+			<!--<label><b>Composante de la santé / <i>health issue</i></b>
+				<select id="composante" value="">
+					<option value="" selected>--- Choisir / choose ---</option>
+					<option value="physical">Santé physique/physical health</option>
+					<option value="emotional">Santé émotionnelle/emotional health</option>
+					<option value="spiritual">Santé spirituelle/spiritual health</option>
+					<option value="mental">Santé mentale/mental health</option>
+				</select>
+			</label>-->
+			<label><b>Langue du service / <i>language of service</i></b>
+				<select id="langue" value="">
+					<option value="" selected>--- Choisir / choose ---</option>
+					<option value="french">Français/French</option>
+					<option value="english">Anglais/English</option>
+					<option value="inuktitut">Inuktitut</option>
+					<option value="mohawk">Mohawk</option>
+					<option value="spanish">Espagnol/Spanish</option>
+					<option value="arabic">Arabe/Arabic</option>
+					<option value="bengali">Bengali</option>
+					<option value="cree">Cris/Cree</option>
+					<option value="vietnamese">Vietnamien/Vietnamese</option>
+				</select>
+				<!-- Should there be a free input field also to enter whichever language? -->
+			</label>
+			<p class="radio"><b>Référence nécessaire / <i>reference needed</i></b> 
+				<b class="choices">
+					<label><input type="radio" name="reference" value="1">Oui / <i>yes</i></label>
+					<label><input type="radio" name="reference" value="2">Non / <i>no</i></label>
+					<label><input type="radio" name="reference" value="0" checked>L’un ou l’autre / <i>either</i></label>
+				</b>
+			</p>
+			<label><b>Population ciblée et besoin en santé / <i>target population and health need</i></b> <input type="text" id="population"></label>
+			<p class="checklist geographic"><b>Zone géographique / <i>geographical area</i></b>
+				<b class="choices">
+					<label><input type="checkbox" name="arrondissement" value="downtown">Centre-ville / <i>downtown</i></label>
+					<label><input type="checkbox" name="arrondissement" value="plateau">Plateau</label>
+					<label><input type="checkbox" name="arrondissement" value="west island">Ouest de l'île / <i>West island</i></label>
+					<label><input type="checkbox" name="arrondissement" value="east end">Est de Montréal / <i>East end</i></label>
+					<label><input type="checkbox" name="arrondissement" value="montreal north">Nord de Montréal / <i>Montreal north</i></label>
+					<label><input type="checkbox" name="arrondissement" value="montreal south">Sud de Montréal / <i>Montreal south</i></label>
+					<label><input type="checkbox" name="arrondissement" value="greater region">Grand Montréal / <i>greater region</i></label>
+					<!-- <label><input type="checkbox" name="neighborhood" value="canada"> Canada</label> -->
+				</b>
+				<!-- Should there be a free input field also to enter whichever neighborhood -->
+			</p>
+			<p class="buttons"><input type="reset" value="Reset"> <input type="submit" value="Recherche / search ›"></p>
+		</fieldset>
+	</form>
+	<div id="results-wrap">
+		<div id="results">
+			<p class="note">Click the “Recherche / search” button to display the results.</p>
+			<p class="note">To see all of the services available, click “Recherche / search” without selecting any search criteria.</p>
+		</div>
+	</div>
+	<!-- <script src="http://www.google.com/jsapi"></script> -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery.min.js?v=1.7.2">\x3C/script>')</script>
+	<script src="js/google-spreadsheet.js"></script>
+	<script src="js/global.js?ver=0.1"></script>
+</body>
+</html>
