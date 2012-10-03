@@ -112,7 +112,7 @@ var _s = {
 	toggle_details: function($service, details_html) {
 		// First check for open details
 		if (_s.$service_expanded.length) {
-			_s.$service_expanded.animate({height: '-=' + _s.$details.outerHeight()}, 200);
+			_s.$service_expanded.animate({height: '-=' + _s.$details.outerHeight()}, 200).removeClass('expanded');
 			_s.$details.slideUp(200, function() {
 				// First, check if it isn't the just clicked service
 				var is_same_service = _s.$service_expanded[0] === $service[0];
@@ -140,7 +140,7 @@ var _s = {
 		}).slideDown(200);
 		$service.animate({height: '+=' + details_height}, 200, function() {
 			_s.$service_expanded = $service;
-		});
+		}).addClass('expanded');
 	}
 };
 

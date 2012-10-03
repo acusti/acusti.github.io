@@ -60,7 +60,8 @@ table {
  * Typography (and general)
  */
 html {
-	background: #eee url(../img/furley-warm.png);
+	/*background: #eee url(../img/furley-warm.png);*/
+	background: #ccc;
 }
 body {
 	font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
@@ -214,18 +215,25 @@ tr {
 	border-bottom: 1px solid lightgrey;
 }
 tr:nth-child(even) { background: #eee url(../img/furley.png); }
-tr:hover td {
-	background: -webkit-linear-gradient(top, rgba(190,223,191,0.9) 0%, rgba(190,223,191,0) 25%, rgba(190,223,191,0) 75%, rgba(190,223,191,0.9) 100%);
-	background: -moz-linear-gradient(top, rgba(190,223,191,0.9) 0%, rgba(190,223,191,0) 25%, rgba(190,223,191,0) 75%, rgba(190,223,191,0.9) 100%);
-	background: -o-linear-gradient(top, rgba(190,223,191,0.9) 0%, rgba(190,223,191,0) 25%, rgba(190,223,191,0) 75%, rgba(190,223,191,0.9) 100%);
-	background: -ms-linear-gradient(top, rgba(190,223,191,0.9) 0%, rgba(190,223,191,0) 25%, rgba(190,223,191,0) 75%, rgba(190,223,191,0.9) 100%);
-	background: linear-gradient(top, rgba(190,223,191,0.9) 0%, rgba(190,223,191,0) 25%, rgba(190,223,191,0) 75%, rgba(190,223,191,0.9) 100%);
-}
 td {
 	border: 0;
 	border-collapse: collapse;
 	font-size: 0.75em;
 	cursor: pointer;
+}
+tr:hover td {
+	background: -webkit-linear-gradient(top, rgba(190,223,191,0.7) 0%, rgba(190,223,191,0) 30%, rgba(190,223,191,0) 70%, rgba(190,223,191,0.7) 100%);
+	background: -moz-linear-gradient(top, rgba(190,223,191,0.7) 0%, rgba(190,223,191,0) 30%, rgba(190,223,191,0) 70%, rgba(190,223,191,0.7) 100%);
+	background: -o-linear-gradient(top, rgba(190,223,191,0.7) 0%, rgba(190,223,191,0) 30%, rgba(190,223,191,0) 70%, rgba(190,223,191,0.7) 100%);
+	background: -ms-linear-gradient(top, rgba(190,223,191,0.7) 0%, rgba(190,223,191,0) 30%, rgba(190,223,191,0) 70%, rgba(190,223,191,0.7) 100%);
+	background: linear-gradient(top, rgba(190,223,191,0.7) 0%, rgba(190,223,191,0) 30%, rgba(190,223,191,0) 70%, rgba(190,223,191,0.7) 100%);
+}
+tr.expanded:hover td {
+	background: -webkit-linear-gradient(top, rgba(190,223,191,0.7) 0%, rgba(190,223,191,0) 10%, rgba(190,223,191,0) 90%, rgba(190,223,191,0.7) 100%);
+	background: -moz-linear-gradient(top, rgba(190,223,191,0.7) 0%, rgba(190,223,191,0) 10%, rgba(190,223,191,0) 90%, rgba(190,223,191,0.7) 100%);
+	background: -o-linear-gradient(top, rgba(190,223,191,0.7) 0%, rgba(190,223,191,0) 10%, rgba(190,223,191,0) 90%, rgba(190,223,191,0.7) 100%);
+	background: -ms-linear-gradient(top, rgba(190,223,191,0.7) 0%, rgba(190,223,191,0) 10%, rgba(190,223,191,0) 90%, rgba(190,223,191,0.7) 100%);
+	background: linear-gradient(top, rgba(190,223,191,0.7) 0%, rgba(190,223,191,0) 10%, rgba(190,223,191,0) 90%, rgba(190,223,191,0.7) 100%);
 }
 #master { display: none; }
 
