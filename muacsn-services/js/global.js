@@ -76,8 +76,10 @@ var _s = {
 	detail_ids: [],
 	detail_titles: {},
 	details: [],
+	$service_expanded: [],
 	$result_table: '',
 	$results: $('#results'),
+	$details: $('#details'),
 	log: function(message) {
 		if (window.console)
 			console.log(message);
@@ -103,6 +105,41 @@ var _s = {
 			_s.$results.animate({marginLeft: '-'+$('#results-wrap').outerWidth()+'px'}, 300, function() {
 				_s.$results.trigger('results.removed');
 			});
+		});
+		
+		_s.$results.find('.note, table').remove();
+	},
+	toggle_details: function($service, details_html) {
+		// First check for open details
+		if (_s.$service_expanded.length) {
+			_s.$service_expanded.animate({height: '-=' + _s.$details.outerHeight()}, 200);
+			_s.$details.slideUp(200, function() {
+				// First, check if it isn't the just clicked service
+				var is_same_service = _s.$service_expanded[0] === $service[0];
+				// Clean up closed service element
+				_s.$service_expanded.stop(true, true).css('height', '');
+				// Remove element from 'cache'
+				_s.$service_expanded = [];
+				// Clean up details element
+			 	_s.$details.removeAttr('style');
+
+				if (!is_same_service)
+					_s.show_details($service, details_html);
+			});
+
+		} else {
+			_s.show_details($service, details_html);
+		}
+	},
+	show_details: function($service, details_html) {
+		_s.$details.html(details_html);
+		var details_height = _s.$details.outerHeight();
+		_s.$details.css({
+			top: $service.position().top + $service.outerHeight(),
+			display: 'none'
+		}).slideDown(200);
+		$service.animate({height: '+=' + details_height}, 200, function() {
+			_s.$service_expanded = $service;
 		});
 	}
 };
@@ -237,8 +274,20 @@ _s.spreadsheet.load(function(result) {
 // Create services detail view functionality
 $('#results').on('click', 'td', function(evt) {
 	var $service = $(this).parent(),
-		service_id = $service.attr('id').substr(8);
-	console.log(_s.details[service_id]);
+		service_id = $service.attr('id').substr(8),
+		details_html = '';
+	if (typeof _s.details[service_id] === 'undefined')
+		return;
+
+	for (var i = 0; i < _s.detail_ids.length; i++) {
+		details_html += '<b class="' + _s.detail_ids[i] + '"><strong>' + _s.detail_titles[_s.detail_ids[i]] + '</strong>';
+		if (_s.detail_titles[_s.detail_ids[i]].toLowerCase().indexOf('website') > -1)
+			details_html += '<a href="http://' +_s.details[service_id][_s.detail_ids[i]] + '">' + _s.details[service_id][_s.detail_ids[i]] + '</a>';
+		else
+			details_html += _s.details[service_id][_s.detail_ids[i]];
+		details_html += '</b>';
+	}
+	_s.toggle_details($service, details_html);
 });
 
 // Search form functionality
@@ -315,8 +364,7 @@ _s.$results.on('results.removed', function() {
 	}
 		
 	$('input[name="neighborhood"]');
-
-	_s.$results.html(_s.$result_table).animate({marginLeft: 0}, 300, function() {
+	_s.$results.prepend(_s.$result_table).animate({marginLeft: 0}, 300, function() {
 		_s.$results.animate({height: _s.$results.children().outerHeight()}, 500, function() {
 			$(this).css('height', 'auto');
 		});
