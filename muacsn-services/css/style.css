@@ -108,6 +108,7 @@ input,
 select {
 	font-size: 1em;
 	font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+	width: auto; overflow: visible; /* IE 7 input button fix */
 }
 input[type="submit"],
 input[type="reset"],
