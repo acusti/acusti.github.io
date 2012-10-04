@@ -191,6 +191,9 @@ header .en strong {
 }
 
 /* Results table */
+table {
+	width: 100%;
+}
 th,
 td {
 	padding: 4px 6px;
