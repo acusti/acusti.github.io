@@ -184,7 +184,7 @@ _s.spreadsheet.load(function(result) {
 		}
 		name = name.join(' ');
 
-		if (_s.column_titles.indexOf(name_key) > -1) {
+		if ($.inArray(name_key, _s.column_titles) > -1) {
 			// Process column titles
 			_s.columns[cell[0].charAt()] = name;
 			_s.column_ids.push(cell[0].charAt());
@@ -238,7 +238,7 @@ _s.spreadsheet.load(function(result) {
 		}
 		
 		// If we skipped empty cells, this loop will fill them in
-		this_col_idx = _s.column_ids.indexOf(td_class);
+		this_col_idx = $.inArray(td_class, _s.column_ids);
 		if (this_col_idx != (col_idx+1)) {
 			// Figure out if we need to fill in
 			if (this_col_idx > 0 || col_idx < (_s.column_ids.length - 1)) {
@@ -250,7 +250,7 @@ _s.spreadsheet.load(function(result) {
 		}
 		
 		// Check if this td_class index === indexOf(cell[0].charAt)
-		if (_s.column_ids.indexOf(td_class) === 0) {
+		if ($.inArray(td_class, _s.column_ids) === 0) {
 			if (!first_row)
 				table += '</tr>';
 			
@@ -322,6 +322,7 @@ $('#services-search').on('submit', function() {
 
 // Attach function to results.removed
 _s.$results.on('results.removed', function() {
+	// Use slice to clone the array
 	var ctrls = _s.column_titles.slice(),
 		$ctrl,
 		td_class;
@@ -331,7 +332,7 @@ _s.$results.on('results.removed', function() {
 	// 1. Try indexOf() searches with all ctrls:
 	$('#' + ctrls.join(',#')).each(function() {
 		// Remove this ctrl id from ctrls array so it will not be processed later
-		ctrls.remove(ctrls.indexOf(this.id));
+		ctrls.remove($.inArray(this.id, ctrls));
 		$ctrl = $(this);
 		var search = $.trim($ctrl.val());
 		if (search.length) {
