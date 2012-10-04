@@ -320,14 +320,15 @@ $('#services-search').on('submit', function() {
 	return false;
 });
 
-// attach function to results.removed
+// Attach function to results.removed
 _s.$results.on('results.removed', function() {
-	var ctrls = _s.column_titles.slice(), // use slice to clone the array
+	var ctrls = _s.column_titles.slice(),
 		$ctrl,
 		td_class;
-	// now, do your filtering
 	
-	// First try indexOf() searches with all ctrls:
+	// Now, do your filtering
+
+	// 1. Try indexOf() searches with all ctrls:
 	$('#' + ctrls.join(',#')).each(function() {
 		// Remove this ctrl id from ctrls array so it will not be processed later
 		ctrls.remove(ctrls.indexOf(this.id));
@@ -350,7 +351,7 @@ _s.$results.on('results.removed', function() {
 		
 	}*/
 	
-	// reference needed (yes or no):
+	// 2. Reference needed (yes or no):
 	$ctrl = $('input[name="reference"]:checked');
 	var ref_needed = $ctrl.val();
 	if (ref_needed > 0) {
