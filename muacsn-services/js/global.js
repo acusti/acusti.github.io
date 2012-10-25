@@ -156,13 +156,13 @@ _s.spreadsheet.load(function(result) {
 	
 	// Figure out what columns we need to display: organization name, health issue (“section”), neighborhood, language (“Language of service”), reference needed (“reference needed?”)
 
-	// figure out number of columns and set up _s.column_ids and _s.columns
+	// Figure out number of columns and set up _s.column_ids and _s.columns
 	for (var i = 0, name_key, name; i < num_cells; i++) {
 		if (!_s.data[i].length)
 			continue;
 		
 		name_key = _s.data[i][1].split('/')[0].split(' ')[0].toLowerCase().replace(/é/g, 'e');
-		// don't start counting until we find the proper beginning
+		// Don't start counting until we find the proper beginning
 		if (!cell.length && name_key != _s.column_titles[0]) {
 			_s.data[i] = [];
 			continue;
@@ -188,8 +188,8 @@ _s.spreadsheet.load(function(result) {
 			// Process column titles
 			_s.columns[cell[0].charAt()] = name;
 			_s.column_ids.push(cell[0].charAt());
-			// set up search-control column association (identifier will be lowercase 1st (or only) word of cell value
-			// using $.fn.data() instead of the faster $.data() because it isn't worth looping through the collection to get DOM elements
+			// Set up search-control column association (identifier will be lowercase 1st (or only) word of cell value
+			// Using $.fn.data() instead of the faster $.data() because it isn't worth looping through the collection to get DOM elements
 			$('#'+name_key).add('input[name="'+name_key+'"]').data('column', cell[0].charAt());
 		} else {
 			// Process detail info categories
@@ -301,22 +301,6 @@ $('#services-search').on('submit', function() {
 	// second, remove existing _s.$results (will trigger results.removed event [see below])
 	_s.remove_results();
 	
-	// meanwhile, do your filtering
-	// start with simple indexOf matching
-	/*$form.find('input, select').each(function() {
-		var $ctrl = $(this);
-		var type = $ctrl.attr('type');
-		if (typeof type != 'undefined' && (type == 'submit' || type == 'reset'))
-			return true; // skip to the next one
-		
-		_s.log('a control!');
-		_s.log($ctrl);
-	});*/
-	// don't execute bottom line until results is hidden
-	//while (_s.$results.is(':animated')) {
-	//	true;
-	//}
-	
 	return false;
 });
 
@@ -362,10 +346,9 @@ _s.$results.on('results.removed', function() {
 				return ref_needed == 1;
 			else
 				return ref_needed == 2;
-		}).parent().hide();
+		}).parent().remove();
 	}
 		
-	$('input[name="neighborhood"]');
 	_s.$results.prepend(_s.$result_table).animate({marginLeft: 0}, 300, function() {
 		_s.$results.animate({height: _s.$results.children().outerHeight()}, 500, function() {
 			$(this).css('height', 'auto');
