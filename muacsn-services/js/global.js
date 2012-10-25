@@ -309,12 +309,15 @@ _s.spreadsheet.load(function(result) {
 
 // Create services detail view functionality
 $('#results').on('click', 'td', function(evt) {
-	if (!this.id.length)
+	var $service = $(this).parent(),
+	    service_id = $service.attr('id'),
+	    details_html = '';
+	// If the parent <tr> doesn't have an id of form 'service-1', bail
+	if (typeof service_id === 'undefined' || service_id.indexOf('service-') !== 0)
 		return false;
 
-	var $service = $(this).parent(),
-		service_id = $service.attr('id').substr(8),
-		details_html = '';
+	service_id = service_id.substr(8);
+	// If can't retrieve an associated service, bail
 	if (typeof _s.details[service_id] === 'undefined')
 		return;
 
