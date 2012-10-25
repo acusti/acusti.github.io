@@ -463,10 +463,22 @@ label input[type="checkbox"] {
 .geographic label input {
 	margin-right: 5px;
 }
-input[type="submit"] {
+fieldset input[type="submit"] {
 	font-weight: 700;
 	float: right;
 	margin-right: 15px;
+}
+fieldset input[type="submit"],
+fieldset input[type="reset"],
+fieldset button,
+fieldset .button {
+	border-color: rgb(215,248,216);
+}
+fieldset input[type="submit"]:active,
+fieldset input[type="reset"]:active,
+fieldset button:active,
+fieldset .button:active {
+	border-color: rgb(165,198,166);
 }
 
 /**
