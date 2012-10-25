@@ -76,6 +76,7 @@ var _s = {
 	detail_ids: [],
 	detail_titles: {},
 	details: [],
+	terms: {},
 	$service_expanded: [],
 	$result_table: '',
 	$results: $('#results'),
@@ -191,6 +192,10 @@ _s.spreadsheet.load(function(result) {
 			// Set up search-control column association (identifier will be lowercase 1st (or only) word of cell value
 			// Using $.fn.data() instead of the faster $.data() because it isn't worth looping through the collection to get DOM elements
 			$('#'+name_key).add('input[name="'+name_key+'"]').data('column', cell[0].charAt());
+			// Set up terms array for 'population ciblee' or 'arrondissement' columns for later generating autocomplete list of tags
+			if (name_key == 'population' || name_key == 'arrondissement') {
+				_s.terms[cell[0].charAt()] = [];
+			}
 		} else {
 			// Process detail info categories
 			_s.detail_titles[cell[0].charAt()] = name;
@@ -207,7 +212,7 @@ _s.spreadsheet.load(function(result) {
 		first_row = true,
 		row_idx = 0,
 		col_idx = _s.column_ids.length - 1,
-		this_row_idx, this_col_idx, td_class, row_number;
+		this_row_idx, this_col_idx, td_class, row_number, cell_content;
 	for (var i = 0; i < num_cells; i++) {
 		if (!_s.data[i].length)
 			continue;
@@ -259,20 +264,54 @@ _s.spreadsheet.load(function(result) {
 		// If first row, adjust the td_class (don't do it before)
 		if (first_row) td_class += '-head';
 		
-		table += '<td class="' + td_class + '">' + _s.data[i][1].replace(/,([^ ])/g, ', $1') + '</td>';
-		col_idx = this_col_idx; // for lookback comparison
+		// Clean up data for display
+		cell_content = _s.data[i][1].replace(/,([^ ])/g, ', $1');
+		table += '<td class="' + td_class + '">' + cell_content + '</td>';
+
+		// Process data for generating autocomplete list of tags for appropriate columns
+		if (typeof _s.terms[td_class] !== 'undefined'/* this_col_idx === 3 || this_col_idx === 4*/) {
+			// Regularize text by converting to lower case, then split by commas first, then by '/' (comma separates different values, / separates french/english)
+			var these_terms = cell_content.toLowerCase().split(', ');
+			for (var ii = 0, ilen = these_terms.length; ii < ilen; ii++) {
+				var these_temp_terms = these_terms[ii].split('/');
+				for (var iii = 0, iilen = these_temp_terms.length; iii < iilen; iii++) {
+					// Trim term (help avoid irregularities)
+					these_temp_terms[iii] = $.trim(these_temp_terms[iii]);
+					if (these_temp_terms[iii].length && $.inArray(these_temp_terms[iii], _s.terms[td_class]) === -1) {
+						_s.terms[td_class].push(these_temp_terms[iii]);
+					}
+				}
+			}
+			//console.log(td_class + ' | ' + _s.data[i][1]);
+		}
+
+		// Set up col_idx variable for lookback comparison
+		col_idx = this_col_idx;
 	}
 	$('body').append(table);
 	
-	// for searching:
-	// each search control corresponds with a column id (A - Z), and each corresponding table element has that id as its class
-	// in order to implement a AND search, as soon as a td is found to not have the search item, do $(this).parent().hide()
+	// Set up autofill-enabled search controls
+	$('#population, #arrondissement').each(function() {
+		var name_key = this.id,
+		    col_terms = _s.terms[$.data(this, 'column')],
+		    options = '';
+		for (var i = 0, len = col_terms.length; i < len; i++) {
+			options += "\n" + '<option value="' + col_terms[i] + '">' + col_terms[i] + '</option>';
+		}
+		$(this).append(options).chosen();
+	});
+	// For searching:
+	// Each search control corresponds with a column id (A - Z), and each corresponding table element has that id as its class
+	// In order to implement a AND search, as soon as a td is found to not have the search item, do $(this).parent().hide()
 	// (first, $(table).slideUp(), then $(table).remove(), then $(master).clone(), then do the search)
 
 });
 
 // Create services detail view functionality
 $('#results').on('click', 'td', function(evt) {
+	if (!this.id.length)
+		return false;
+
 	var $service = $(this).parent(),
 		service_id = $service.attr('id').substr(8),
 		details_html = '';
@@ -318,14 +357,20 @@ _s.$results.on('results.removed', function() {
 		// Remove this ctrl id from ctrls array so it will not be processed later
 		ctrls.remove($.inArray(this.id, ctrls));
 		$ctrl = $(this);
-		var search = $.trim($ctrl.val());
-		if (search.length) {
-			//.parent().hide()
+		var search = $ctrl.val();
+		// Check if it is already an array of values or if we need to make it into an array
+		if (typeof search !== 'object')
+			search = [search];
+
+		if (search !== null && search.length) {
 			//_s.column_titles[_s.column_ids.indexOf($.data(this, 'column'))] 
 			td_class = $.data(this, 'column');
-			_s.$result_table.find('td.'+td_class).filter(function() {
-				return this.innerHTML.toLowerCase().indexOf(search.toLowerCase()) == -1;
-			}).parent().remove();
+			for (var i = 0, len = search.length; i < len; i++) {
+				search[i] = $.trim(search[i]);
+				_s.$result_table.find('td.'+td_class).filter(function() {
+					return this.innerHTML.toLowerCase().indexOf(search[i].toLowerCase()) === -1;
+				}).parent().remove();
+			}
 		}
 	});
 	
@@ -348,7 +393,10 @@ _s.$results.on('results.removed', function() {
 				return ref_needed == 2;
 		}).parent().remove();
 	}
-		
+	// If no results, add no results tr
+	if (_s.$result_table.find('tr').length < 2)
+		_s.$result_table.find('tr').after('<tr><td class="no-results" colspan="5">No services found that match the search criteria.</td></tr>');
+
 	_s.$results.prepend(_s.$result_table).animate({marginLeft: 0}, 300, function() {
 		_s.$results.animate({height: _s.$results.children().outerHeight()}, 500, function() {
 			$(this).css('height', 'auto');

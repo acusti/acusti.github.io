@@ -55,8 +55,16 @@
 					<label><input type="radio" name="reference" value="0" checked>L’un ou l’autre / <i>either</i></label>
 				</b>
 			</p>
-			<label><b>Population ciblée et besoin en santé&nbsp;/ <i>target population and health need</i></b> <input type="text" id="population"></label>
-			<label><b>Arrondissement&nbsp;/ <i>borough</i></b> <input type="text" id="arrondissement"></label>
+			<p class="input-with-suggestions">
+				<label><b>Population ciblée et besoin en santé&nbsp;/ <i>target population and health need</i></b>
+					<select id="population" multiple data-placeholder="Start typing…"></select>
+				</label>
+			</p>
+			<p class="input-with-suggestions">
+				<label><b>Arrondissement&nbsp;/ <i>borough</i></b>
+					<select id="arrondissement" multiple data-placeholder="Start typing…"></select>
+				</label>
+			</o>
 
 			<!-- <p class="checklist geographic"><b>Zone géographique / <i>geographical area</i></b>
 				<b class="choices">
