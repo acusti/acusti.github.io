@@ -113,12 +113,12 @@ var _s = {
 	toggle_details: function($service, details_html) {
 		// First check for open details
 		if (_s.$service_expanded.length) {
-			_s.$service_expanded.animate({height: '-=' + _s.$details.outerHeight()}, 200).removeClass('expanded');
+			_s.$service_expanded.animate({height: '-=' + _s.$details.outerHeight()}, 200);
 			_s.$details.slideUp(200, function() {
 				// First, check if it isn't the just clicked service
 				var is_same_service = _s.$service_expanded[0] === $service[0];
 				// Clean up closed service element
-				_s.$service_expanded.stop(true, true).css('height', '');
+				_s.$service_expanded.stop(true, true).css('height', '').removeClass('expanded');
 				// Remove element from 'cache'
 				_s.$service_expanded = [];
 				// Clean up details element
