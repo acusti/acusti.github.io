@@ -80,6 +80,7 @@ body {
 	background: #2a2a2a url(../images/bckg-texture.png);
 	color: #eee;
 	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
 
 h1,
@@ -258,7 +259,7 @@ header a,
 	color: #7e3300;
 	-webkit-font-smoothing: subpixel-antialiased;
 	text-shadow: 1px 1px 1px #ffa54c;
-	line-height: 2.5; /* 18 x 2.5 = 45 */
+	line-height: 2.5em; /* 18 x 2.5 = 45 */
 }
 header a:hover,
 #top-nav-fixed a:hover {
@@ -572,14 +573,14 @@ blockquote span {
 -------------------------------------------------------------- */
 
 pre {
-	-webkit-text-size-adjust: 140%;
+	-moz-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; text-size-adjust: 100%;
 }
 code {
-	-webkit-text-size-adjust: 160%;
+	-moz-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; text-size-adjust: 100%;
 }
 #logo p,
 .site-nav a {
-	-webkit-text-size-adjust: 120%;
+	-moz-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; text-size-adjust: 100%;
 }
 
 h1,
@@ -595,7 +596,7 @@ a,
 strong,
 em,
 span {
-	-webkit-text-size-adjust: 120%;
+	-moz-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; text-size-adjust: 100%;
 }
 
 /* = Responsive Adjustments
@@ -650,7 +651,7 @@ span {
 	}
 }
 
-@media (max-width: 630px), screen and (-webkit-min-device-pixel-ratio: 2) {
+@media (max-width: 630px) and (-webkit-min-device-pixel-ratio: 2) {
 	#content ol,
 	#content ul {
 		margin-left: 1em;
@@ -662,7 +663,7 @@ span {
 	}
 }
 
-@media (max-width: 580px), screen and (-webkit-min-device-pixel-ratio: 2) {
+@media (max-width: 580px) and (-webkit-min-device-pixel-ratio: 2) {
 	body {
 		font-size: 1.111em; /* 16 x 1.111 = 18 */
 		line-height: 1.4;
@@ -710,11 +711,16 @@ span {
 }
 
 /* Retina displays only */
-@media screen and (-webkit-min-device-pixel-ratio: 2) {
+@media (-webkit-min-device-pixel-ratio: 2) {
 	body {
-		font-size: 2em;
+		font-size: 1.25em; /* 16 x 1.25 = 20 */
 	}
-	#home-img {
+	header a,
+	#top-nav-fixed a {
+		line-height: 2.5em; /* 20 x 2.5 = 50 */
+	}
+
+	/*#home-img {
 		width: 90%;
 		max-width: 600px;
 	}
@@ -729,9 +735,19 @@ span {
 	}
 	#content .standout {
 		margin-left: 0; padding-left: 0;
-	}
+	}*/
 }
 
+@media (max-width: 800px) {
+	body {
+		font-size: 1.5em; /* 16 x 1.5 = 24 */
+	}
+	header a,
+	#top-nav-fixed a {
+		line-height: 2.08em; /* 24 x 2.08 = 50 */
+	}
+
+}
 @media (max-width: 450px) {
 	body {
 		font-size: 1em;
