@@ -33,9 +33,9 @@ G=function(b,c,a){a=F(b,c,a);a===e?delete b[c]:b[c]=a},F=function(b,c,a){var d=b
  * Array Remove - By John Resig (MIT Licensed)
  */
 Array.prototype.remove = function(from, to) {
-  var rest = this.slice((to || from) + 1 || this.length);
-  this.length = from < 0 ? this.length + from : from;
-  return this.push.apply(this, rest);
+	var rest = this.slice((to || from) + 1 || this.length);
+	this.length = from < 0 ? this.length + from : from;
+	return this.push.apply(this, rest);
 };
 
 
@@ -91,7 +91,6 @@ var _s = {
 	spreadsheet: new GoogleSpreadsheet(),
 	data: [],
 	column_titles: ['nom', 'langue', 'reference', 'population', 'arrondissement'],
-	// Add an array of values for detailed info presentation?
 	column_ids: [],
 	columns: {}, // let's try columns like this: columns[col_id] = title;
 	detail_ids: [],
@@ -167,7 +166,6 @@ var _s = {
 };
 
 // Create services table on spreadsheet load
-// For offline testing and use, set spreadsheet data as array above, commented out next 2 lines, added a document.ready line
 _s.spreadsheet.url(_s.url);
 _s.spreadsheet.load(function(result) {
 	_s.data = result.data;
