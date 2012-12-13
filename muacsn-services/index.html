@@ -23,16 +23,21 @@
 	<form id="services-search">
 		<fieldset>
 			<h2>Recherche / <i>Search</i></h2>
-			<label><b>Nom de l’organisation&nbsp;/ <i>organization name</i></b> <input type="text" id="nom"></label>
-			<!--<label><b>Composante de la santé / <i>health issue</i></b>
-				<select id="composante" value="">
-					<option value="" selected>--- Choisir / choose ---</option>
-					<option value="physical">Santé physique/physical health</option>
-					<option value="emotional">Santé émotionnelle/emotional health</option>
-					<option value="spiritual">Santé spirituelle/spiritual health</option>
-					<option value="mental">Santé mentale/mental health</option>
-				</select>
-			</label>-->
+			<p class="input-with-suggestions">
+				<label><b>Nom de l’organisation&nbsp;/ <i>organization name</i></b>
+					<select id="nom" multiple data-placeholder="Select or start typing / Sélectionnez ou commencez à écrire"></select>
+				</label>
+			</p>
+			<p class="input-with-suggestions">
+				<label><b>Population ciblée et besoin en santé&nbsp;/ <i>target population and health need</i></b>
+					<select id="population" multiple data-placeholder="Select or start typing / Sélectionnez ou commencez à écrire"></select>
+				</label>
+			</p>
+			<p class="input-with-suggestions">
+				<label><b>Arrondissement&nbsp;/ <i>borough</i></b>
+					<select id="arrondissement" multiple data-placeholder="Select or start typing / Sélectionnez ou commencez à écrire"></select>
+				</label>
+			</p>
 			<label><b>Langue du service&nbsp;/ <i>language of service</i></b>
 				<select id="langue" value="">
 					<option value="" selected>--- Choisir / choose ---</option>
@@ -55,16 +60,6 @@
 					<label><input type="radio" name="reference" value="0" checked>L’un ou l’autre / <i>either</i></label>
 				</b>
 			</p>
-			<p class="input-with-suggestions">
-				<label><b>Population ciblée et besoin en santé&nbsp;/ <i>target population and health need</i></b>
-					<select id="population" multiple data-placeholder="Start typing…"></select>
-				</label>
-			</p>
-			<p class="input-with-suggestions">
-				<label><b>Arrondissement&nbsp;/ <i>borough</i></b>
-					<select id="arrondissement" multiple data-placeholder="Start typing…"></select>
-				</label>
-			</o>
 
 			<!-- <p class="checklist geographic"><b>Zone géographique / <i>geographical area</i></b>
 				<b class="choices">
@@ -77,13 +72,11 @@
 					<label><input type="checkbox" name="arrondissement" value="greater region">Grand Montréal / <i>greater region</i></label>
 				</b>
 			</p> -->
-			<p class="buttons"><input type="reset" value="Reset"> <input type="submit" value="Recherche / search ›"></p>
+			<p class="buttons"><input type="reset" value="Reset"><input type="submit" value="Recherche / search ›"></p>
 		</fieldset>
 	</form>
 	<div id="results-wrap">
 		<div id="results">
-			<p class="note">Click the “Recherche / search” button to display the results.</p>
-			<p class="note">To see all of the services available, click “Recherche / search” without selecting any search criteria.</p>
 			<div id="details"></div>
 		</div>
 	</div>

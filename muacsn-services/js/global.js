@@ -114,7 +114,7 @@ var _s = {
 	remove_results: function() {
 		_s.shrink_results();
 		
-		var target_h = 300;
+		var target_h = 0;
 		var outer_h = _s.$results.outerHeight();
 		if (outer_h > ($form.height() - 10)) {
 			_s.$results.css('height', document.documentElement.clientHeight);
@@ -123,12 +123,13 @@ var _s = {
 		}
 	
 		_s.$results.animate({height: target_h}, 500, function() {
-			_s.$results.animate({marginLeft: '-'+$('#results-wrap').outerWidth()+'px'}, 300, function() {
-				_s.$results.trigger('results.removed');
-			});
+			_s.$results.trigger('results.removed');
 		});
 		
+		// Remove notes and table results
 		_s.$results.find('.note, table').remove();
+		// Remove open details, if deployed
+		_s.remove_details();
 	},
 	toggle_details: function($service, details_html) {
 		// First check for open details
@@ -162,6 +163,13 @@ var _s = {
 		$service.animate({height: '+=' + details_height}, 200, function() {
 			_s.$service_expanded = $service;
 		}).addClass('expanded');
+	},
+	remove_details: function() {
+		// Make sure there are details to remove
+		if (!_s.$service_expanded.length)
+			return true;
+
+		_s.toggle_details(_s.$service_expanded, '');
 	}
 };
 
@@ -202,7 +210,7 @@ _s.spreadsheet.load(function(result) {
 			if (name[ii].indexOf('/') > 0)
 				name[ii] = name[ii].replace('/', '&nbsp;/ <i>') + '</i>';
 		}
-		name = name.join(' ');
+		name = name.join('<br>');
 
 		if ($.inArray(name_key, _s.column_titles) > -1) {
 			// Process column titles
@@ -212,7 +220,7 @@ _s.spreadsheet.load(function(result) {
 			// Using $.fn.data() instead of the faster $.data() because it isn't worth looping through the collection to get DOM elements
 			$('#'+name_key).add('input[name="'+name_key+'"]').data('column', cell[0].charAt());
 			// Set up terms array for 'population ciblee' or 'arrondissement' columns for later generating autocomplete list of tags
-			if (name_key == 'population' || name_key == 'arrondissement') {
+			if (name_key == 'nom' || name_key == 'population' || name_key == 'arrondissement') {
 				_s.terms[cell[0].charAt()] = [];
 			}
 		} else {
@@ -275,8 +283,10 @@ _s.spreadsheet.load(function(result) {
 		
 		// Check if this td_class index === indexOf(cell[0].charAt)
 		if ($.inArray(td_class, _s.column_ids) === 0) {
-			if (!first_row)
-				table += '</tr>';
+			if (!first_row) {
+				// Add explanatory note to each row (need to first remove closing </td> which is 5 characters long)
+				table = table.substr(0, table.length - 5) + '<b class="explain-details">Sélectionnez la ressource pour plus de détails / <em>Click on the resource for more details</em></br></td></tr>';
+			}
 			
 			table += '<tr id="service-' + row_number + '">';
 		}
@@ -289,16 +299,12 @@ _s.spreadsheet.load(function(result) {
 
 		// Process data for generating autocomplete list of tags for appropriate columns
 		if (typeof _s.terms[td_class] !== 'undefined'/* this_col_idx === 3 || this_col_idx === 4*/) {
-			// Regularize text by converting to lower case, then split by commas first, then by '/' (comma separates different values, / separates french/english)
-			var these_terms = cell_content.toLowerCase().split(', ');
+			// Regularize text by converting to lower case (no longer), then split by commas first, then by '/' (comma separates different values, / separates french/english)
+			var these_terms = cell_content/*.toLowerCase()*/.split(', ');
 			for (var ii = 0, ilen = these_terms.length; ii < ilen; ii++) {
-				var these_temp_terms = these_terms[ii].split('/');
-				for (var iii = 0, iilen = these_temp_terms.length; iii < iilen; iii++) {
-					// Trim term (help avoid irregularities)
-					these_temp_terms[iii] = $.trim(these_temp_terms[iii]);
-					if (these_temp_terms[iii].length && $.inArray(these_temp_terms[iii], _s.terms[td_class]) === -1) {
-						_s.terms[td_class].push(these_temp_terms[iii]);
-					}
+				these_terms[ii] = $.trim(these_terms[ii]);
+				if (these_terms[ii].length && $.inArray(these_terms[ii], _s.terms[td_class]) === -1) {
+					_s.terms[td_class].push(these_terms[ii]);
 				}
 			}
 		}
@@ -309,7 +315,7 @@ _s.spreadsheet.load(function(result) {
 	$('body').append(table);
 	
 	// Set up autofill-enabled search controls
-	$('#population, #arrondissement').each(function() {
+	$('#nom, #population, #arrondissement').each(function() {
 		var name_key = this.id,
 		    col_terms = _s.terms[$.data(this, 'column')],
 		    options = '';
@@ -340,24 +346,38 @@ $('#results').on('click', 'td', function(evt) {
 		return;
 
 	for (var i = 0, col_val = ''; i < _s.detail_ids.length; i++) {
-		details_html += '<b class="' + _s.detail_ids[i] + '"><strong>' + _s.detail_titles[_s.detail_ids[i]] + '</strong>';
 		col_val = $.trim(_s.details[service_id][_s.detail_ids[i]]);
 		if (!col_val.length)
 			continue;
+		
+		details_html += '<b class="' + _s.detail_ids[i] + '"><strong>' + _s.detail_titles[_s.detail_ids[i]] + '</strong>';
 
 		// TODO: sometimes, there are multiple website URLs separated by a comma, so first, split(','), then process each in a for loop
 		if (_s.detail_titles[_s.detail_ids[i]].toLowerCase().indexOf('website') > -1) {
-			var website_href = col_val.siph;
-			if (website_href.substr(0, 4) !== 'http')
-				website_href = 'http://' + website_href;
+			col_val = col_val.split(',');
+			for (var ii = 0; ii < col_val.length; ii++) {
+				col_val[ii] = $.trim(col_val[ii]);
+				var website_href = col_val[ii];
 
-			details_html += '<a href="' + website_href + '">' + col_val + '</a>';
+				if (website_href.substr(0, 4) !== 'http')
+					website_href = 'http://' + website_href;
+
+				details_html += '<a href="' + website_href + '">' + col_val[ii] + '</a>';
+				if (ii + 1 < col_val.length) {
+					details_html += ', ';
+				}
+			}
 		} else {
 			details_html += col_val;
 		}
 		details_html += '</b>';
 	}
 	_s.toggle_details($service, details_html);
+});
+
+// Search form reset functionality
+$('#services-search').on('reset', function() {
+	$(this).find('.search-choice').remove();
 });
 
 // Search form functionality
@@ -389,13 +409,17 @@ _s.$results.on('results.removed', function() {
 		ctrls.remove($.inArray(this.id, ctrls));
 		$ctrl = $(this);
 		var search = $ctrl.val();
+		// If there is nothing to search for, continue to next control
+		if (search === null || !search.length)
+			return true;
 		// Check if it is already an array of values or if we need to make it into an array
-		if (typeof search !== 'object')
+		if (typeof search !== 'object') {
 			search = [search];
+		}
 
-		if (search !== null && search.length) {
-			//_s.column_titles[_s.column_ids.indexOf($.data(this, 'column'))] 
-			td_class = $.data(this, 'column');
+		td_class = $.data(this, 'column');
+		// If there is only one search term, do a straight indexOf search
+		if (search.length === 1) {
 			for (var i = 0, len = search.length; i < len; i++) {
 				search[i] = $.trim(search[i]);
 				_s.$result_table.find('td.'+td_class).filter(function() {
@@ -403,14 +427,21 @@ _s.$results.on('results.removed', function() {
 				}).parent().remove();
 			}
 		}
+		// If there is more than one search terms, do an inArray "OR"-style search
+		else {
+			// Prepare terms
+			for (var i = 0, len = search.length; i < len; i++) {
+				search[i] = $.trim(search[i]).toLowerCase();
+				if (!search[i].length)
+					search = search.splice(i, 1);
+			}
+			if (search.length) {
+				_s.$result_table.find('td.'+td_class).filter(function() {
+					return $.inArray(this.innerHTML.toLowerCase(), search) === -1;
+				}).parent().remove();
+			}			
+		}
 	});
-	
-	// language regex matching:
-	/*$ctrl = $('#language');
-	var lang = $ctrl.val();
-	if (lang.length) {
-		
-	}*/
 	
 	// 2. Reference needed (yes or no):
 	$ctrl = $('input[name="reference"]:checked');
@@ -428,11 +459,12 @@ _s.$results.on('results.removed', function() {
 	if (_s.$result_table.find('tr').length < 2)
 		_s.$result_table.find('tr').after('<tr><td class="no-results" colspan="5">No services found that match the search criteria.</td></tr>');
 
-	_s.$results.prepend(_s.$result_table).animate({marginLeft: 0}, 300, function() {
-		_s.$results.animate({height: _s.$results.children().outerHeight()}, 500, function() {
-			$(this).css('height', 'auto');
-		});
+	_s.$results.addClass('deployed').prepend(_s.$result_table).animate({height: _s.$results.children().outerHeight()}, 200, function() {
+		$(this).css('height', 'auto');
 	});
+	// Scroll to the results of the page
+	$('html, body').animate({scrollTop: (_s.$results.offset().top - 20) + 'px'}, 300);
+
 });
 
 //jsonUrl: "http://spreadsheets.google.com/feeds/cells/0AraHJx4zIJGFdElYNklGN1RMMzdKeW1xNTZaVzE1Y3c/od6/public/basic?alt=json-in-script"
