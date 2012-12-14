@@ -189,7 +189,7 @@ _s.spreadsheet.load(function(result) {
 		if (!_s.data[i].length)
 			continue;
 		
-		name_key = _s.data[i][1].split('/')[0].split(' ')[0].toLowerCase().replace(/é/g, 'e');
+		name_key = (_s.data[i][1] + '').split('/')[0].split(' ')[0].toLowerCase().replace(/é/g, 'e');
 		// Don't start counting until we find the proper beginning
 		if (!cell.length && name_key != _s.column_titles[0]) {
 			_s.data[i] = [];
@@ -204,7 +204,7 @@ _s.spreadsheet.load(function(result) {
 		}
 		cell = _s.data[i];
 		
-		name = cell[1].split('\n');
+		name = (cell[1] + '').split('\n');
 		// If there is a new line in the title, then there are actually multiple titles
 		for (var ii = 0; ii < name.length; ii++) {
 			if (name[ii].indexOf('/') > 0)
