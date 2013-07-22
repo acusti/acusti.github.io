@@ -1,3 +1,6 @@
 [submodule "js/respond"]
 	path = js/respond
 	url = git://github.com/scottjehl/Respond.git
+[submodule "retina"]
+	path = retina
+	url = https://github.com/joelambert/Retina-Compass-Helpers.git
