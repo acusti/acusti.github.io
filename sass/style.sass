@@ -22,6 +22,9 @@ $legacy-support-for-ie7: false
 @import "compass/reset"
 // Import vertical rhythm http://compass-style.org/reference/compass/typography/vertical_rhythm/
 @import "compass/typography/vertical_rhythm"
+// Import retina mixin https://github.com/joelambert/Retina-Compass-Helpers
+// With updated high-res media query from https://github.com/acusti/Retina-Compass-Helpers/
+@import "retina"
 
 // = Custom variables (imports are first so custom variables can use them)
 $accent-color: rgb(236, 44, 46)
@@ -59,6 +62,15 @@ $narrow-width: 525px
 /* =====================
  * Mixins
  * ====================*/
+
+@mixin image-replacement($height, $image: false, $x: "auto", $y: "auto")
+	height: 0
+	padding-top: $height
+	overflow: hidden
+	@if $image
+		background-repeat: no-repeat
+		background-position: $x $y
+		+background-image-retina($image)
 
 // If you want the alternate "sign" (i.e. button / badge) version of the icon, specify true as 2nd parameter
 @mixin icon($icon-name, $alternate: false)
