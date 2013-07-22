@@ -14,6 +14,14 @@ $default-text-shadow-h-offset: 0px
 $default-text-shadow-v-offset: 1px
 $inline-block-alignment: top
 $legacy-support-for-ie7: false
+// Susy variables
+$total-width: 1000px
+$total-columns: 6
+$column-width-abs: 150px
+$column-width: $column-width-abs / $total-width * 100%
+$gutter-width-abs: 20px
+$gutter-width: $gutter-width-abs / $total-width * 100%
+$grid-padding: 0
 
 // = Imports
 // Import core compass framework http://compass-style.org/reference/compass/
@@ -22,6 +30,8 @@ $legacy-support-for-ie7: false
 @import "compass/reset"
 // Import vertical rhythm http://compass-style.org/reference/compass/typography/vertical_rhythm/
 @import "compass/typography/vertical_rhythm"
+// Import Susy http://susy.oddbird.net/
+@import "susy"
 // Import retina mixin https://github.com/joelambert/Retina-Compass-Helpers
 // With updated high-res media query from https://github.com/acusti/Retina-Compass-Helpers/
 @import "retina"
@@ -104,6 +114,9 @@ $narrow-width: 525px
 		text-decoration: inherit
 		content: $icon-code
 		speak: none
+
+@mixin susy-grid-background
+	+grid-background($total-columns, $column-width, $gutter-width, $base-line-height, 0, $force-fluid: true)
 
 // Based on the compass/typography/lists/bullets pretty-bullets mixin
 // Modified to accept padding as 2nd argument in em, %, or px, and to assume other values based on $base-font-size and $base-line-height
