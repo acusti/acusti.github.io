@@ -17,7 +17,7 @@
 [compass]: http://compass-style.org/
 [susy]: http://susy.oddbird.net/
 [WP Forme]: https://github.com/acusti/WP-Theme-Forme
-[0]: http://{{ site.theme.base_url }}/edge-webfonts-browser/
+[0]: {{ site.base_url }}/edge-webfonts-browser/
 [adobe]: http://html.adobe.com/edge/webfonts/
 [2]: http://www.jonview.com/
 [3]: http://www.jonview.com/imagebank/search.do
@@ -41,5 +41,5 @@
 [15]: https://github.com/acusti/pp-notifications
 [16]: http://prospress.org/
 [17]: https://github.com/acusti/posthaste
-[18]: http://{{ site.theme.base_url }}/vm-full-category-list-menu-module/
-[19]: http://{{ site.theme.base_url }}/mooaccordion-joomla-accordion-article-plugin/
+[18]: {{ site.base_url }}/vm-full-category-list-menu-module/
+[19]: {{ site.base_url }}/mooaccordion-joomla-accordion-article-plugin/
