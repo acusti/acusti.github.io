@@ -5,6 +5,7 @@ title: Work
 
 <article class="page" id="work">
 
-	{% include work.html %}
+	{% capture content %}{% include work.md %}{% endcapture %}
+	{{ content | markdownify }}
 
 </article>

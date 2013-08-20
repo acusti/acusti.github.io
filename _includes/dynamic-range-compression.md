@@ -8,16 +8,16 @@ There is a tendency in contemporary audio recording and mixing to use a lot of d
 
 As a result of this trend, a lot of contemporary music will give the impression of a build-up without it being very visible in the waveform. This is accomplished through song writing, lyrical inflection (the singer or saxophonist or guitarist or whoever getting clearly passionate or intense in their playing), more notes or drum hits, an _[accelerando][]_, building to a fuller (though not louder) sound, etc., and some of that seems to be at play in _BadBadNotGood_’s “Flashing Lights”. To see what that looks like, here are waveforms of a few tracks for comparison:
 
-  [accelerando]: http://www.thefreedictionary.com/accelerando
+[accelerando]: http://www.thefreedictionary.com/accelerando
 
-<p><img src="http://{{ site.theme.base_url }}/images/waveform-comparison-full.png" alt="Dynamic range waveform comparison of four songs" class="oversized"></p>
+<p><img src="{{ site.base_url }}/images/waveform-comparison-full.png" alt="Dynamic range waveform comparison of four songs" class="oversized"></p>
 
 As you can see, the most highly compressed and normalized track is [“Flashing Lights”][], more so even than _BadBadNotGood_’s other tracks, such as [“Rotten Decay”][]. _Portico Quartet_’s [“Window Seat”][] is radically different with lots of visible crescendos and decrescendos and a very wide dynamic range. The bottom track, [“Spinner”][] is more of a fair comparison, because it also has some of the noisy distorted droniness of the BBNG track. But if you follow just the middle solid section (and more or less ignore the periodic spikes, which are the result of regular, loud percussive hits), you can still see a lot more dynamic variation.
 
-  [“Flashing Lights”]: http://badbadnotgood.bandcamp.com/track/flashing-lights
-  [“Rotten Decay”]: http://badbadnotgood.bandcamp.com/track/rotten-decay-3
-  [“Window Seat”]: http://www.youtube.com/watch?v=qpNXM-114WU
-  [“Spinner”]: http://www.youtube.com/watch?v=hVLveOhrvG8
+[“Flashing Lights”]: http://badbadnotgood.bandcamp.com/track/flashing-lights
+[“Rotten Decay”]: http://badbadnotgood.bandcamp.com/track/rotten-decay-3
+[“Window Seat”]: http://www.youtube.com/watch?v=qpNXM-114WU
+[“Spinner”]: http://www.youtube.com/watch?v=hVLveOhrvG8
 
 Interestingly, however, the use of dynamic range compression in “Flashing Lights” has a noisy chaotic effect on the feel of the track that I think is actually quite effective, and not an indication of marketing concerns overtaking artistic concerns (particularly when you consider that BBNG’s music is entirely non-commercial, and that it seems to be impossible to give the band any of your money).
 
@@ -26,5 +26,5 @@ If you are curious to know more…
 
 Wikipedia has [a good explanation][wiki], and [this animated GIF][gif] from the Wikipedia article offers a particularly striking demonstration by comparing the waveforms of remastered versions of the same Beatles song (“Something” from _Abbey Road_) over the past few decades.
 
-  [wiki]: http://en.wikipedia.org/wiki/Dynamic_range_compression#Marketing
-  [gif]: http://en.wikipedia.org/wiki/File:Cd_loudness_trend-something.gif "Waveform comparison of different CD releases of The Beatles’ “Something” from Abbey Road"
+[wiki]: http://en.wikipedia.org/wiki/Dynamic_range_compression#Marketing
+[gif]: http://en.wikipedia.org/wiki/File:Cd_loudness_trend-something.gif "Waveform comparison of different CD releases of The Beatles’ “Something” from Abbey Road"

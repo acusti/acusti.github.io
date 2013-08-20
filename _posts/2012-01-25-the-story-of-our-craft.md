@@ -7,7 +7,7 @@ tags: [thoughts, webdev]
 
 While reading the recent 24 ways article about [“Crafting the front-end”][crafting], I thought about how I view my own work and what kind of work I consider it to be. In the first part of the article, Ben Bodien, the author, identifies five essential traits that distinguish a craftsperson:
 
-  [crafting]: http://24ways.org/2011/crafting-the-front-end
+[crafting]: http://24ways.org/2011/crafting-the-front-end
 
 > *	An appreciation of __good__ work, in both the work of others and their own. And not just good as in ‘hey, that’s pretty neat’, I mean a goodness like a shining purity – the kind of good that feels right when you see it.
 > *	A belief in quality at every level: every facet of the craftsperson’s product is as crucial as any other, without exception, even those normally hidden from view.
@@ -29,7 +29,7 @@ Obviously, the latter is a description of how I see myself (am I doing this blog
 
 Certainly, if we look around at the health of other genres of craft, we can see much reason for hope and despair. Independent cobblers as a whole for example, are suffering mightily from the pressures of industrialization and globalization. At the same time, some cobbler craftspeople have taken the time to [tell their story][story] and discovered an eager market for their craft, one that is willing to spend more money on a pair of shoes than others would spend on even the latest, most coveted [pair of Jordans][] available. And that, despite Nike’s very impressive and massively expensive efforts to cultivate the story of their product lines and even to offer customization to their customers in a way very reminiscent of the experience offered by tradition made-to-measure craftspeople. _Handcrafted_ is a very powerful concept and one that is highly valued by many.
 
-  [story]: http://putthison.com/post/535994284/episode-2-shoes "The web series “Put This On” does a great job telling that story"
-  [pair of Jordans]: http://store.nike.com/us/en_us/product/jordan-fly-wade-id-shoe/?piid=23734#?pbid=INSPI_279484_v9_0_201108291717 "Note that these shoes are tailored (requires flash)"
+[story]: http://putthison.com/post/535994284/episode-2-shoes "The web series “Put This On” does a great job telling that story"
+[pair of Jordans]: http://store.nike.com/us/en_us/product/jordan-fly-wade-id-shoe/?piid=23734#?pbid=INSPI_279484_v9_0_201108291717 "Note that these shoes are tailored (requires flash)"
 
 I entreat others like myself to embrace the craftsperson ethos (start with [Bodien’s article][crafting] if you haven’t already done so) and go out and tell your story.

@@ -3,35 +3,15 @@
 <!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)/*.no-js -> .js*/</script>
-	<title>{{ page.title }} | {{ site.theme.site_name }}</title>
-	<meta name="viewport" content="initial-scale=1.0">
-	<meta name="author" content="Andrew Patton">
-	<link rel="shortcut icon" href="http://{{ site.theme.base_url }}/favicon.ico">
-	<link rel="alternate" href="http://{{ site.theme.base_url }}/atom.xml" title="{{ site.theme.site_name }}" type="application/atom+xml">
-	<link rel="stylesheet" href="http://{{ site.theme.base_url }}/css/style.css?ver=1.5" media="all">
-	<link rel="stylesheet" href="http://{{ site.theme.base_url }}/css/syntax.css">
-	<!--[if lt IE 9]>
-	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<script src="http://{{ site.theme.base_url }}/js/respond/respond.min.js"></script>
-	<![endif]-->
+	{% include head.html %}
 </head>
 <body>
 	<header>
-		<nav id="top-nav">
-			<ul class="site-nav">
-				<li><a href="http://{{ site.theme.base_url }}/" title="{{ site.theme.site_name }} home" class="home">Home</a></li>
-				<li><a href="http://{{ site.theme.base_url }}/archive" title="Archive of all posts" class="archive">Archive</a></li>
-				<li><a href="http://{{ site.theme.base_url }}/about" title="About Andrew Patton, the author" class="about">About me</a></li>
-				<li><a href="http://{{ site.theme.base_url }}/work" title="See examples of my work" class="work">Work</a></li>
-			</ul>
-		</nav>
+		{% include navigation.html %}
 	</header>
 	
 	<div id="content">
-		<h1 id="logo" class="{{ page.title | downcase | replace:' ','-' | escape }}"><a href="http://{{ site.theme.base_url }}/" title="{{ site.theme.site_name }}">{{ site.theme.site_name }}</a></h1>
+		<h1 id="logo" class="{{ page.title | downcase | replace:' ','-' | escape }}"><a href="{{ site.base_url }}/" title="{{ site.theme.site_name }}">{{ site.theme.site_name }}</a></h1>
 		{{ content }}
 	</div>
 
@@ -41,7 +21,7 @@
 	
 	<script>
 	var _gaq = [];
-	if (window.location.hostname == '{{ site.theme.base_url }}') {
+	if (window.location.hostname == '{{ site.base_url }}') {
 		_gaq.push(['_setAccount', '{{ site.theme.google_analytics_uid }}'], ['_trackPageview']);
 		(function(d) {
 			var g = d.createElement('script'),
@@ -51,7 +31,6 @@
 		}(document));
 	}
 	</script>
-	<script src="https://api.lilbell.com/v1/ring/K7SLjeC4g6tSJg90MhMYqwYj/.js"></script>
-	<script src="http://{{ site.theme.base_url }}/js/head.js?ver=0.5"></script>
+	<script src="{{ site.base_url }}/js/head.js?ver=0.5"></script>
 </body>
 </html>

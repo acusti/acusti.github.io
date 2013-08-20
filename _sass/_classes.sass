@@ -1,0 +1,156 @@
+/* = General classes
+ *-------------------------------------------------------------- */
+
+#content
+	.standout,
+	& #work ul
+		width: 100%
+		margin: 0
+		text-align: left
+		padding: 0.5em 0 1em
+
+		li
+			list-style: none
+			padding: 10px 12px
+			width: 31%
+			min-height: 60px
+			margin: 0 7px 11px 0
+			display: inline-block
+			vertical-align: top
+			zoom: 1
+			*display: inline
+			background: url(../images/black-20.png)
+
+			> a:first-child,
+			.title
+				display: block
+
+			@media (max-width: $medium-width + 150)
+				width: 47%
+
+			@media (max-width: $narrow-width)
+				width: 100%
+				background: none
+				
+				> a:first-child,
+				> p > a:first-child,
+				.title
+					margin-left: -12px
+					padding-left: 12px
+					background: url(../images/black-20.png)
+
+	.sites li
+		min-height: 160px
+	.features li
+		min-height: 120px
+
+img
+	&.in-text
+		float: right
+		margin: 6px 0 2px 8px
+	&.demo
+		margin-right: 0.5em
+		border: 2px inset #cccccc
+		background: url(../images/bckg-transparent.png) repeat
+
+.legal, .citation
+	font-style: italic
+
+.legal
+	font-size: 0.9rem
+
+.link-bottom
+	text-align: center
+	padding-bottom: 7px
+	margin: -4px 0 0
+	a
+		font-weight: 400
+		&:visited
+			font-weight: 400
+
+.center
+	text-align: center
+
+.contact
+	padding-top: 0
+	background: transparent url(../images/separator.gif) no-repeat top center
+	li
+		display: block
+		width: auto
+		min-height: 0
+		border: 0
+		background-color: transparent
+		margin: 0
+		padding: 0.5em 0
+		text-align: center
+
+.link-bottom
+	display: block
+	width: auto
+	min-height: 0
+	border: 0
+	background-color: transparent
+	margin: 0
+	padding: 0.5em 0
+	text-align: center
+
+.contact
+	li:last-child
+		background: transparent url(../images/separator.gif) no-repeat bottom center
+	a
+		font-weight: normal
+
+/* = Gists
+ *-------------------------------------------------------------- */
+
+.gist, pre
+	font: normal normal normal 0.6em Menlo, DejaVuSansMono, Consolas, monospace
+	margin-bottom: 1em
+
+.gist pre
+	font-size: 1rem
+
+/* = Extension-specific
+ *-------------------------------------------------------------- */
+
+.accordion
+	background-color: #ffecdb
+	padding: 4px 20px 14px
+	border-radius: 8px
+	-moz-border-radius: 8px
+	-webkit-border-radius: 8px
+	margin: 5px auto 20px
+	p, blockquote
+		color: #555
+		text-shadow: 0 1px 1px #dddddd
+
+#content .accordion a:hover
+	text-shadow: 1px 1px 2px white
+
+.mooblock-title
+	color: #333B62
+	text-align: left
+	background: url(../images/icon-showhide1.png) no-repeat -24px 7px
+	padding-left: 22px
+	margin: 0.7em 0 0
+	text-shadow: none
+	cursor: pointer
+	&.expanded
+		background: url(../images/icon-showhide1.png) no-repeat 0 -20px
+
+.mooblock-el
+	height: 0
+	padding-left: 22px
+
+.showhide2 .mooblock-title
+	color: #333B62
+	text-align: left
+	background: url(../images/icon-showhide2.png) no-repeat -25px 9px
+	padding-left: 22px
+	margin: 0.7em 0 0
+	&.expanded
+		background: url(../images/icon-showhide2.png) no-repeat 1px -20px
+
+.mooblock-el
+	padding-left: 22px
+	font-size: 0.85rem
