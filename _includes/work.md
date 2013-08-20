@@ -13,23 +13,23 @@
 * [C3 Solutions][11] rebuilt their website to run on a powerful and flexible CMS (based on Joomla and many output overrides)
 * [CLD Stationery][12] built the UK-based stationery company’s online webshop with Joomla, VirtueMart, and significant custom programming
 
-  [redux]: http://www.reduxmedia.com/
-  [compass]: http://compass-style.org/
-  [susy]: http://susy.oddbird.net/
-  [WP Forme]: https://github.com/acusti/WP-Theme-Forme
-  [0]: http://{{ site.theme.base_url }}/edge-webfonts-browser/
-  [adobe]: http://html.adobe.com/edge/webfonts/
-  [2]: http://www.jonview.com/
-  [3]: http://www.jonview.com/imagebank/search.do
-  [4]: http://www.cha-noir.com/
-  [5]: https://shopplugin.net/
-  [6]: http://www.canadianpickers.com/
-  [7]: http://prospress.org/
-  [8]: http://www.ableandhow.com/
-  [9]: http://www.hautetremblant.com/
-  [10]: http://www.thesecretary.org/
-  [11]: http://www.c3solutions.com/
-  [12]: http://www.cldstationery.com/
+[redux]: http://www.reduxmedia.com/
+[compass]: http://compass-style.org/
+[susy]: http://susy.oddbird.net/
+[WP Forme]: https://github.com/acusti/WP-Theme-Forme
+[0]: http://{{ site.theme.base_url }}/edge-webfonts-browser/
+[adobe]: http://html.adobe.com/edge/webfonts/
+[2]: http://www.jonview.com/
+[3]: http://www.jonview.com/imagebank/search.do
+[4]: http://www.cha-noir.com/
+[5]: https://shopplugin.net/
+[6]: http://www.canadianpickers.com/
+[7]: http://prospress.org/
+[8]: http://www.ableandhow.com/
+[9]: http://www.hautetremblant.com/
+[10]: http://www.thesecretary.org/
+[11]: http://www.c3solutions.com/
+[12]: http://www.cldstationery.com/
 
 ## CMS extensions
 
@@ -38,8 +38,8 @@
 * [VirtueMart Full Category List Module][18] a Joomla module that can display a menu for all VirtueMart categories to any depth
 * [MooAccordion Show/Hide plugin][19] an ultra lightweight Joomla plugin for creating accordion show/hide blocks in articles
 
-  [15]: https://github.com/acusti/pp-notifications
-  [16]: http://prospress.org/
-  [17]: https://github.com/acusti/posthaste
-  [18]: http://{{ site.theme.base_url }}/vm-full-category-list-menu-module/
-  [19]: http://{{ site.theme.base_url }}/mooaccordion-joomla-accordion-article-plugin/
+[15]: https://github.com/acusti/pp-notifications
+[16]: http://prospress.org/
+[17]: https://github.com/acusti/posthaste
+[18]: http://{{ site.theme.base_url }}/vm-full-category-list-menu-module/
+[19]: http://{{ site.theme.base_url }}/mooaccordion-joomla-accordion-article-plugin/
