@@ -4,8 +4,8 @@
 
 // = Defaults
 // Vertical rhythm
-$base-font-size: 12px
-$base-line-height: 18px
+$base-font-size: 18px
+$base-line-height: 27px
 // At the cost of causing some disruptions to vertical rhythm, make sure line-heights do not vary too wildly
 $round-to-nearest-half-line: true
 // General defaults
@@ -15,7 +15,7 @@ $default-text-shadow-v-offset: 1px
 $inline-block-alignment: top
 $legacy-support-for-ie7: false
 // Susy variables
-$total-width: 1000px
+$total-width: 760px
 $total-columns: 6
 $column-width-abs: 150px
 $column-width: $column-width-abs / $total-width * 100%
@@ -37,15 +37,15 @@ $grid-padding: 0
 @import "retina"
 
 // = Custom variables (imports are first so custom variables can use them)
-$accent-color: rgb(236, 44, 46)
-$bckg-color: rgb(229, 229, 229)
-$grey: rgb(179, 179, 179)
-$text-color: rgb(51, 51, 51)
+$color-accent: rgb(251, 144, 8)
+$color-bkcg: rgb(41, 41, 41)
+$color-text: rgb(255, 255, 255)
+$color-accent-dark: rgb(133, 54, 0)
 $header-height: 84px
 // Breakpoints
 $max-width: $total-width
-$medium-width: 800px
-$narrow-width: 525px
+$medium-width: 630px
+$narrow-width: 500px
 
 
 /* =====================
@@ -155,51 +155,8 @@ $narrow-width: 525px
 // @import "header"
 // @import "pages"
 
-
 /* = Content
  *-------------------------------------------------------------- */
-
-#content
-	width: 80%
-	max-width: 600px
-	padding: 5px 0 45px
-	margin: 45px auto 0
-	text-align: justify
-	-webkit-hyphens: auto
-	-moz-hyphens: auto
-	hyphens: auto
-
-#logo
-	margin-bottom: 0.3em
-	&.home
-		margin-bottom: 0.7em
-	a
-		display: block
-		text-indent: -999em
-		background: url(../images/acustica.png) no-repeat 0 4px
-		width: 300px
-		height: 70px
-	&.home a
-		background: url(../images/acustica-full.png) no-repeat 0 8px
-		width: 600px
-		height: 126px
-
-#content
-	p
-		margin-bottom: 1em
-	ul, ol
-		margin-bottom: 1.5em
-	em
-		font-style: italic
-	ol, ul
-		padding-left: 2px
-	ol
-		list-style-type: decimal
-	ul
-		list-style-type: square
-	li
-		line-height: 1.3
-		margin-bottom: 0.5em
 
 article img
 	/* When images are too wide, force them to fit (see responsive section for more) */
@@ -209,16 +166,6 @@ article img
 
 .oversized
 	position: relative
-
-#content a:hover
-	text-decoration: underline
-	text-shadow: 1px 1px 2px black
-
-.baseline
-	font-size: 1.2rem
-	font-style: italic
-	color: #aaa
-	text-shadow: 1px 1px 1px black
 
 /* = Featured
  *-------------------------------------------------------------- */
@@ -267,175 +214,43 @@ article img
 
 #home-img
 	float: left
-	margin-left: -360px
-
+	margin-left: -109%
+	@media (max-width: 720px)
+		margin-left: -113%
+	@media (max-width: $medium-width)
+		display: block
+		float: none
+		margin-left: 0
 #home
 	#posts
 		/*width: 240px;
-		 *float: left;
+		 *float: left; */
 	#intro
 		width: 52%
 		float: right
 		margin: 0 -3% 1.4em 0
 
-/* = Quotes
- *-------------------------------------------------------------- */
+		@media (max-width: $medium-width)
+			width: auto
+			float: none
+			margin: 0
 
-blockquote span
-	font-style: italic
-	color: #999
-	display: block
-	position: absolute
-
-.open
-	font-size: 4rem
-	top: .1em
-	left: -.02em
-
-.close
-	font-size: 2.5rem
-	bottom: -.7em
-	right: .2em
-
-/* = Gists
- *-------------------------------------------------------------- */
-
-.gist, pre
-	font: normal normal normal 0.6em Menlo, DejaVuSansMono, Consolas, monospace
-	margin-bottom: 1em
-
-.gist pre
-	font-size: 1rem
-
-/* = Extension-specific
- *-------------------------------------------------------------- */
-
-.accordion
-	background-color: #ffecdb
-	padding: 4px 20px 14px
-	border-radius: 8px
-	-moz-border-radius: 8px
-	-webkit-border-radius: 8px
-	margin: 5px auto 20px
-	p, blockquote
-		color: #555
-		text-shadow: 0 1px 1px #dddddd
-
-#content .accordion a:hover
-	text-shadow: 1px 1px 2px white
-
-.mooblock-title
-	color: #333B62
-	text-align: left
-	background: url(../images/icon-showhide1.png) no-repeat -24px 7px
-	padding-left: 22px
-	margin: 0.7em 0 0
-	text-shadow: none
-	cursor: pointer
-	&.expanded
-		background: url(../images/icon-showhide1.png) no-repeat 0 -20px
-
-.mooblock-el
-	height: 0
-	padding-left: 22px
-
-.showhide2 .mooblock-title
-	color: #333B62
-	text-align: left
-	background: url(../images/icon-showhide2.png) no-repeat -25px 9px
-	padding-left: 22px
-	margin: 0.7em 0 0
-	&.expanded
-		background: url(../images/icon-showhide2.png) no-repeat 1px -20px
-
-.mooblock-el
-	padding-left: 22px
-	font-size: 0.85rem
-
-/* =Mobile Safari ( iPad, iPhone and iPod Touch )
- *-------------------------------------------------------------- */
-
-pre, code, #logo p, .site-nav a, h1, h2, h3, h4, h5, p, li, blockquote, cite, a, strong, em, span
-	-moz-text-size-adjust: 100%
-	-webkit-text-size-adjust: 100%
-	-ms-text-size-adjust: 100%
-	text-size-adjust: 100%
 
 /* = Responsive Adjustments
  *-------------------------------------------------------------- */
 
 /* Retina displays only */
-@media (-webkit-min-device-pixel-ratio: 2)
-	body
-		font-size: 1.25rem /* 16 x 1.25 = 20 */
-	header a, #top-nav-fixed a
-		line-height: 2.5em /* 20 x 2.5 = 50 */
-	/*#home-img {
-	 *	width: 90%;
-	 *	max-width: 600px;
-	 *}
-	 *#content {
-	 *	width: 90%;
-	 *	margin-top: 80px; 
-	 *}
-	 *#content ol,
-	 *#content ul {
-	 *	margin-left: 1em;
-	 *	padding-left: 0.5em;
-	 *}
-	 *#content .standout {
-	 *	margin-left: 0; padding-left: 0;
-	 *}*/
+// @media (-webkit-min-device-pixel-ratio: 2)
+// 	body
+// 		+adjust-font-size-to(20px)
+// 	header a, #top-nav-fixed a
+// 		+adjust-font-size-to(20px, 2.5)
 
 /* Adjustments for smaller widths */
-@media (max-width: 800px)
-	body
-		font-size: 1.5rem /* 16 x 1.5 = 24 */
-	header a, #top-nav-fixed a
-		line-height: 2.08em /* 24 x 2.08 = 50 */
 
-@media (max-width: 708px)
-	body
-		font-size: 1.1875rem /* 16 x 1.1875 = 19 */
-	h1
-		font-size: 2.3rem
-	footer, #content
-		width: 560px
-	#home-img
-		margin-left: -320px
-	#home #intro
-		width: 220px
-	#content .standout
-		margin-left: -5px
-		li
-			width: 157px
-			margin: 0 6px 9px 0
-
-@media (max-width: 630px) and (-webkit-min-device-pixel-ratio: 2)
-	#content
-		ol, ul
-			margin-left: 1em
-			padding-left: 4px
-		blockquote
-			ol, ul
-				margin-left: 0
-
-@media (max-width: 580px) and (-webkit-min-device-pixel-ratio: 2)
-	body
-		font-size: 1.111rem /* 16 x 1.111 = 18 */
-		line-height: 1.4
-	header a, #top-nav-fixed a
-		line-height: 2.78em /* 18 x 2.78 = 50 */
-	h1
-		font-size: 2.2rem
-		margin-bottom: 0.3em
-	h3
-		margin: 1.3em 0 0.5em
+@media (max-width: $narrow-width)
 	#home #intro
 		margin-bottom: 1em
-	#content
-		ul, ol
-			margin-bottom: 1.2em
 	.baseline
 		margin-bottom: 0.9em
 		line-height: 1.3
@@ -466,20 +281,3 @@ pre, code, #logo p, .site-nav a, h1, h2, h3, h4, h5, p, li, blockquote, cite, a,
 		.features li
 			min-height: 100px
 
-@media (max-width: 450px)
-	body
-		font-size: 1rem
-	h1
-		font-size: 2rem
-	#content
-		.standout
-			min-width: 392px
-			li
-				width: 160px
-				font-size: 0.9rem
-		.sites li
-			min-height: 150px
-		.features li
-			min-height: 110px
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px), screen and (-webkit-min-device-pixel-ratio: 2)

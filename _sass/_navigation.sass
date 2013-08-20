@@ -1,46 +1,23 @@
-header
+.site-nav
 	a
-		color: #7e3300
+		color: $color-accent-dark
 		-webkit-font-smoothing: subpixel-antialiased
-		text-shadow: 1px 1px 1px #ffa54c
-		line-height: 2.5em /* 18 x 2.5 = 45 */
+		text-shadow: 1px 1px 1px lighten($color-accent-dark, 45%)
+		+adjust-font-size-to(20px, 1.7)
+		@media (max-width: $narrow-width)
+			+adjust-font-size-to(16px, 1.5)
 
-#top-nav-fixed a
-	color: #7e3300
-	-webkit-font-smoothing: subpixel-antialiased
-	text-shadow: 1px 1px 1px #ffa54c
-	line-height: 2.5em /* 18 x 2.5 = 45 */
+		&:hover
+			background-color: rgba($color-accent-dark, 0.2)
 
-header a:hover, #top-nav-fixed a:hover
-	text-decoration: underline
-
-#top-nav
+.top-nav,
+.top-nav-fixed
 	position: relative
+	+inline-block
 	top: 0
 	right: 12%
 	//left: 51%
 	//width: 49%
-	display: inline-block
-	vertical-align: top
-	zoom: 1
-	*display: inline
-
-#top-nav-fixed
-	position: relative
-	top: 0
-	right: 12%
-	//left: 51%
-	//width: 49%
-	display: inline-block
-	vertical-align: top
-	zoom: 1
-	*display: inline
-	position: fixed
-	filter: alpha(opacity = 70)
-	opacity: 0.7
-
-#top-nav,
-#top-nav-fixed
 	/* Adjust nav for large widths */
 	@media (min-width: 1130px)
 		right: 13%
@@ -63,18 +40,30 @@ header a:hover, #top-nav-fixed a:hover
 	@media (min-width: 1600px)
 		right: 22%
 
+	/* Adjust nav for samller widths */
+	@media (max-width: $narrow-width)
+		display: block
+		right: 0
+
+.top-nav-fixed
+	position: fixed
+	+opacity(0.7)
+
 .site-nav
 	margin-right: -0.5em
 	padding: 0 0.75em 0 0.25em
 	text-align: left
 
-#top-nav-fixed
+.top-nav-fixed
 	.site-nav
 		background: url(../images/black-20.png)
 	a
 		color: #fff
 		-webkit-font-smoothing: antialiased
 		text-shadow: 1px 1px 1px black
+
+		&:hover
+			background-color: rgba(255, 255, 255, 0.2)
 
 ul.site-nav
 	display: inline-block
@@ -90,27 +79,29 @@ ul.site-nav
 	background: url(../images/nav-separator.png) no-repeat 0 21px
 	padding-left: 9px
 
-#top-nav-fixed li
+	@media (max-width: $narrow-width)
+		background-position: 0 18px
+
+
+.top-nav-fixed li
 	background-image: url(../images/nav-separator-under.png)
 
-.site-nav li:first-child, #top-nav-fixed li:first-child
+.site-nav li:first-child, .top-nav-fixed li:first-child
 	background: none
 
 .site-nav
 	a
 		text-transform: uppercase
-		font-size: 0.9rem /* 20 x 0.9 = 18 */
 		display: block
 		padding: 0 0.25em
 	.home
 		text-indent: -999em
 		background: url(../images/icon-home.png) no-repeat 6px 10px
-		width: 24px
+		width: 31px
 		margin-right: 1px
-		&:hover
-			background-image: url(../images/icon-home-hover.png)
 
-#top-nav-fixed .home
+		@media (max-width: $narrow-width)
+			background-position: 6px 8px
+
+.top-nav-fixed .home
 	background-image: url(../images/icon-home-under.png)
-	&:hover
-		background-image: url(../images/icon-home-under-hover.png)
