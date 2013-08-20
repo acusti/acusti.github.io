@@ -20,17 +20,18 @@
 			zoom: 1
 			*display: inline
 			background: url(../images/black-20.png)
+
 			> a:first-child,
-			> p > a:first-child,
 			.title
 				display: block
 
-			@media (max-width: $medium-width)
+			@media (max-width: $medium-width + 150)
 				width: 47%
 
 			@media (max-width: $narrow-width)
 				width: 100%
 				background: none
+				
 				> a:first-child,
 				> p > a:first-child,
 				.title

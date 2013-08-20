@@ -105,3 +105,26 @@ ul.site-nav
 
 .top-nav-fixed .home
 	background-image: url(../images/icon-home-under.png)
+
+/* = Post navigation
+ *-------------------------------------------------------------- */
+
+#post-navigation
+	margin: 1.5em 0
+	padding: 0.5em 0 0.2em
+	border-top: 2px groove #333333
+	border-bottom: 2px groove #333333
+	list-style: none
+	li
+		display: inline-block
+		vertical-align: middle
+		zoom: 1
+		*display: inline
+		width: 50%
+		margin-right: -3px
+		text-align: left
+		+adjust-font-size-to(16px, 1.5)
+		+rhythm(0, 0, 0, 0)
+	.next
+		text-align: right
+

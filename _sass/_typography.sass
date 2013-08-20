@@ -112,8 +112,7 @@ del
 	& #work ul
 		li
 			+adjust-font-size-to(16px, 0.85)
-			> p
-				+rhythm(0, 0, 0, 0)
+
 			> a:first-child,
 			> p > a:first-child,
 			.title
@@ -122,6 +121,7 @@ del
 
 			@media (max-width: $narrow-width)
 				+adjust-font-size-to(18px, 1)
+				
 				> a:first-child,
 				> p > a:first-child,
 				.title
