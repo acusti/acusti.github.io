@@ -77,9 +77,12 @@ var ready = (function () {
 // Our document ready functions
 ready(function() {
 	// Set up fixed nav (displayed under regular header and nav)
-	var nav = document.getElementById('top-nav').cloneNode(true);
-	nav.setAttribute('id', nav.id + '-fixed');
-	document.body.appendChild(nav);
+	var nav = document.getElementsByClassName('top-nav');
+	if (nav.length) {
+		nav = nav[0].cloneNode(true);
+		nav.className += ' ' + nav.className + '-fixed';
+		document.body.appendChild(nav);
+	}
 
 	// Fill in my email address (spam protection):
 	var emails = document.getElementsByClassName('email');
