@@ -1,6 +1,12 @@
 <h1>MooAccordion show/hide (in articles) Joomla plugin</h1>
 <p class="top">MooAccordion makes it very easy to add MooTools accordion slides (show/hide blocks) to any article, which can be used to organize and display content more effectively (like in a FAQ page). The syntax is simple:</p>
-<code><p>{mooblock=Trigger Title (used to trigger the slide)}</p><p>Content of the slide block...</p><p>{/mooblock}</p></code>
+<code>
+  <pre>{mooblock=Trigger Title (used to trigger the slide)}
+
+Content of the slide block...
+
+{/mooblock}</pre>
+</code>
 <p>Each part of the mooblock should be on a separate line. Here’s how you can create a new accordion (and insure that it produces valid markup):<p>
 <ol>
 	<li>first type {mooblock=First block title}, then press enter/return,</li>
@@ -15,7 +21,7 @@
 	<li>adds CSS class for active block title, allowing you to <a href="{{ site.base_url }}/mooaccordion-css-show-hide-demo-tutorial">toggle it's icon (for ex, from a + to a - icon)</a>; more generally, the markup is fully CSS customizable</li>
 	<li>very easy for anyone to use (without technical knowledge) and very flexible</li>
 	<li>the show/hide effects and other settings are easily customizable from the plugin‘s configuration</li>
-	<li>compatible with Internet Explorer 6-9, Firefox, Chrome, Safari, Opera, etc.</li>
+	<li>compatible with Internet Explorer 6+, Firefox, Chrome, Safari, Opera, etc.</li>
 </ul>
 <p>The plugin is similar to JoomlaWork’s <a href="http://extensions.joomla.org/extensions/news-display/articles-tabs/1046">Tabs &amp; Slides (in content items) Plugin</a>, the plugin I originally used before being inspired to write this one. My biggest problem with the JW plugin was that when I added the plugin syntax into an article, the plugin would create invalid markup from it, because the WYSIWIG editor automatically wrapped it in a &lt;p&gt; tag. Also, it seemed foolish to use an old accordion script rather than the built-in accordion plugin that Joomla already comes with. This plugin solves those issues, and does so efficiently and robustly.</p>
 <p>Note: the title can contain html if desired. If it is wrapped by one html element, that element will be used as the title toggler. Otherwise, it will wrap the title in a &lt;h4&gt; tag. Also, the title cannot contain ‘}’ or the plugin will incorrectly interpret that as the end of the title. Lastly, to create separate accordions, just make sure there is some kind of content (text, a non-breaking space [&amp;nbsp;], an empty &lt;p&gt; tag, a &lt;br /&gt;, etc.) separating the mooblocks.</p>
