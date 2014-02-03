@@ -808,9 +808,7 @@ img.demo {
  *-------------------------------------------------------------- */
 /* line 58, ../_sass/style.sass */
 article img {
-  /* When images are too wide, force them to fit (see responsive section for more) */
   max-width: 1050px;
-  /* Override height to match resized width for correct aspect ratio */
   height: auto; }
 
 /* line 64, ../_sass/style.sass */
@@ -858,10 +856,6 @@ article img {
       float: none;
       margin-left: 0; } }
 
-/* line 101, ../_sass/style.sass */
-#home #posts {
-  /*width: 240px;
-   *float: left; */ }
 /* line 104, ../_sass/style.sass */
 #home #intro {
   width: 52%;
