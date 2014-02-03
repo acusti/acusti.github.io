@@ -1,5 +1,16 @@
 # Require any additional compass plugins here.
 
+## Retina compass helpers https://github.com/joelambert/Retina-Compass-Helpers
+retina_ext = File.join(File.expand_path(File.dirname(__FILE__)), "plugins", "retina")
+require File.join(retina_ext, "lib", "sass_extensions.rb")
+add_import_path File.join(retina_ext, "stylesheets")
+
+## Base64 encode sass plugin http://stackoverflow.com/a/15455580/333625
+require File.join(File.expand_path(File.dirname(__FILE__)), "plugins", "base64encode.rb")
+
+## Susy http://susy.oddbird.net/guides/getting-started/
+require "susy"
+
 # Set this to the root of your project when deployed:
 http_path = "/"
 sass_dir = "./"
@@ -20,7 +31,4 @@ output_style = environment == :production ? :compressed : :nested
 
 preferred_syntax = :sass
 
-# Add retina compass helpers https://github.com/joelambert/Retina-Compass-Helpers
-retina_ext = File.join(File.dirname(__FILE__), "retina")
-require File.join(retina_ext, "lib", "sass_extensions.rb")
-add_import_path File.join(retina_ext, "stylesheets")
+enable_sourcemaps = true

@@ -3,8 +3,6 @@
 $body-text-family: volkhov, Georgia, serif
 $header-text-family: $body-text-family
 // $header-text-family: indie-flower, sans-serif
-// Sub headings use the Tradegothic webfont with body text fallback
-$sub-header-text-family: join("Tradegothic-BC", $body-text-family, comma)
 $mono-family: Menlo, "Andale Mono", "DejaVu Sans Mono", Consolas, monospace
 $base-block-elements: "h5, p, ul, ol, dl"
 
@@ -69,11 +67,16 @@ blockquote
 	right: .2em
 /* = END - Quotes == */
 
-code
-	font-family: $mono-family
-	+adjust-font-size-to(13px, 1.5)
+// Gists / code
+
+.gist,
+pre
 	text-align: left
 	white-space: pre-wrap
+	margin-bottom: 1em
+
+code
+	font-family: $mono-family
 	text-shadow: 0 1px 1px black
 
 ins
