@@ -2,13 +2,14 @@
 	a
 		color: $color-accent-dark
 		-webkit-font-smoothing: subpixel-antialiased
-		text-shadow: 1px 1px 1px lighten($color-accent-dark, 45%)
+		text-shadow: 1px 1px 1px lighten($color-accent, 9%)
 		+adjust-font-size-to(20px, 1.7)
 		@media (max-width: $narrow-width)
 			+adjust-font-size-to(16px, 1.5)
 
 		&:hover
 			background-color: rgba($color-accent-dark, 0.2)
+			text-shadow: 1px 1px 1px $color-accent
 
 .top-nav,
 .top-nav-fixed
@@ -57,13 +58,14 @@
 .top-nav-fixed
 	.site-nav
 		background: url(../images/black-20.png)
-	a
-		color: #fff
+	a,
+	a:hover
+		color: white
 		-webkit-font-smoothing: antialiased
 		text-shadow: 1px 1px 1px black
 
 		&:hover
-			background-color: rgba(255, 255, 255, 0.2)
+			background-color: rgba(white, 0.2)
 
 ul.site-nav
 	display: inline-block
