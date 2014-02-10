@@ -3,6 +3,7 @@
 
 ## Sites / projects I have worked on
 
+* [Jewish General Hospital][jgh] built and designed a crazy fast, [multilingual][jghfr] JS-based search application (Solr backend) with [RequireJS][require] (and *without* jQuery), CSS3 animations, and full retina support
 * [Adobe Edge Webfonts Browser][0] designed and built a simple single-page JS-based UI for browsing the [Adobe Edge Web Fonts][adobe] collection
 * [ReduxMedia][redux] built a WordPress-powered, fully responsive site, using [Compass/SASS][compass], the [Susy grid][susy], and [WP Forme][], my new custom WP starter theme
 * [Cha Noir][4] built a transactional website with a shopping cart for a Montréal tea shop using WordPress and the [Shopp plugin][5]
@@ -10,9 +11,11 @@
 * [Canadian Pickers][6] built the online auction marketplace for the TV show using WordPress with the [Prospress plugin][7] and a huge amount of custom theme and plugin development
 * [Able and How][8] rebuilt their site to run entirely within WordPress, integrating their B2B communication site with their blog, and implemented their redesign
 * [Haute Tremblant][9] built a showcase site for high-end real estate in Tremblant, Québec using the simple and intuitive [The Secretary CMS][10]
-* [C3 Solutions][11] rebuilt their website to run on a powerful and flexible CMS (based on Joomla and many output overrides)
 * [CLD Stationery][12] built the UK-based stationery company’s online webshop with Joomla, VirtueMart, and significant custom programming
 
+[jgh]: http://pen.jgh.ca/search/en/
+[jghfr]: http://pen.jgh.ca/search/fr/
+[require]: http://requirejs.org
 [redux]: http://www.reduxmedia.com/
 [compass]: http://compass-style.org/
 [susy]: http://susy.oddbird.net/
@@ -28,7 +31,6 @@
 [8]: http://www.ableandhow.com/
 [9]: http://www.hautetremblant.com/
 [10]: http://www.thesecretary.org/
-[11]: http://www.c3solutions.com/
 [12]: http://www.cldstationery.com/
 
 ## CMS extensions
