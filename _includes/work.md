@@ -10,7 +10,6 @@
 * [Cha Noir][4] built a transactional website with a shopping cart for a Montréal tea shop using WordPress and the [Shopp plugin][5]
 * [Jonview][2] rebuilt the frontend [search][3] and product pages using jQuery-based JS to enhance the UI and implemented a site wide HTML5-based redesign
 * [Canadian Pickers][6] built the online auction marketplace for the TV show using WordPress with the [Prospress plugin][7] and a huge amount of custom theme and plugin development
-* [Able and How][8] rebuilt their site to run entirely within WordPress, integrating their B2B communication site with their blog, and implemented their redesign
 * [Haute Tremblant][9] built a showcase site for high-end real estate in Tremblant, Québec using the simple and intuitive [The Secretary CMS][10]
 * [CLD Stationery][12] built the UK-based stationery company’s online webshop with Joomla, VirtueMart, and significant custom programming
 
