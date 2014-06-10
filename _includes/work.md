@@ -3,6 +3,7 @@
 
 ## Sites / projects I have worked on
 
+* [Cinémathèque Québécoise][cq] built a WordPress-powered online collections site and a powerful Solr-powered [search application][cqrecherche] for Québec’s official film archives. The search front end is a custom MVC application built with [FuelPHP][]
 * [Jewish General Hospital][jgh] built and designed a crazy fast, [multilingual][jghfr] JS-based search application (Solr backend) with [RequireJS][require] (and *without* jQuery), CSS3 animations, and full retina support
 * [Adobe Edge Webfonts Browser][0] designed and built a simple single-page JS-based UI for browsing the [Adobe Edge Web Fonts][adobe] collection
 * [ReduxMedia][redux] built a WordPress-powered, fully responsive site, using [Compass/SASS][compass], the [Susy grid][susy], and [WP Forme][], my new custom WP starter theme
@@ -13,6 +14,8 @@
 * [Haute Tremblant][9] built a showcase site for high-end real estate in Tremblant, Québec using the simple and intuitive [The Secretary CMS][10]
 * [CLD Stationery][12] built the UK-based stationery company’s online webshop with Joomla, VirtueMart, and significant custom programming
 
+[cq]: http://collections.cinematheque.qc.ca/en/ "The Cinémathèque québécoise - Collections Online"
+[cqrecherche]: http://collections.cinematheque.qc.ca/recherche/en/ "Collections Online - Search"
 [jgh]: http://pen.jgh.ca/search/en/
 [jghfr]: http://pen.jgh.ca/search/fr/
 [require]: http://requirejs.org
