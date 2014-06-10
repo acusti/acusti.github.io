@@ -3,7 +3,7 @@
 
 ## Sites / projects I have worked on
 
-* [Cinémathèque Québécoise][cq] built a WordPress-powered online collections site and a powerful Solr-powered [search application][cqrecherche] for Québec’s official film archives. The search front end is a custom MVC application built with [FuelPHP][]
+* [Cinémathèque Québécoise][cq] built a WordPress-powered site for digitized publications and a powerful Solr-powered MVC [search application][cqrecherche] (with [FuelPHP][]) for Québec’s official film archives
 * [Jewish General Hospital][jgh] built and designed a crazy fast, [multilingual][jghfr] JS-based search application (Solr backend) with [RequireJS][require] (and *without* jQuery), CSS3 animations, and full retina support
 * [Adobe Edge Webfonts Browser][0] designed and built a simple single-page JS-based UI for browsing the [Adobe Edge Web Fonts][adobe] collection
 * [ReduxMedia][redux] built a WordPress-powered, fully responsive site, using [Compass/SASS][compass], the [Susy grid][susy], and [WP Forme][], my new custom WP starter theme
@@ -16,6 +16,7 @@
 
 [cq]: http://collections.cinematheque.qc.ca/en/ "The Cinémathèque québécoise - Collections Online"
 [cqrecherche]: http://collections.cinematheque.qc.ca/recherche/en/ "Collections Online - Search"
+[FuelPHP]: http://www.fuelphp.com/ "A CodeIgniter-like PHP5 MVC framework"
 [jgh]: http://pen.jgh.ca/search/en/
 [jghfr]: http://pen.jgh.ca/search/fr/
 [require]: http://requirejs.org
