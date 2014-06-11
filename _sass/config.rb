@@ -20,8 +20,8 @@ javascripts_dir = "../js"
 relative_assets = true
 
 # Development or production?
-environment = :development
-# environment = :production
+# environment = :development
+environment = :production
 
 # Compress the CSS when in production
 output_style = environment == :production ? :compressed : :nested
