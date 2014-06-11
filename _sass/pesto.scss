@@ -10,7 +10,9 @@
 @import "compass";
 @import "compass/css3/user-interface";
 
+$min-width: 20rem;
 $full-width: 48rem;
+$medium-width: $min-width + round(($full-width - $min-width) / 2);
 
 // Box sizing
 *, *:before, *:after {
@@ -58,7 +60,11 @@ $full-width: 48rem;
 }
 
 html {
-    font-size: 125%;
+    font-size: 100%;
+    
+    @media (min-width: $medium-width) {
+        font-size: 125%;
+    }
 }
 html, button, input, select, textarea {
     font-family: sans-serif;
@@ -87,12 +93,17 @@ body:after {
 }
 
 body {
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     margin-left: auto;
     margin-right: auto;
     max-width: $full-width;
     display: block;
+    
+    @media (min-width: $medium-width) {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
 }
 
 
