@@ -12,8 +12,8 @@
 
 $min-width: 20rem;
 $full-width: 48rem;
-$medium-width: $min-width + round(($full-width - $min-width) / 2);
-$large-width: $medium-width + round(($full-width - $medium-width) / 2);
+$medium-width: $min-width + ($full-width - $min-width) / 2;
+$large-width: $medium-width + ($full-width - $medium-width) / 2 * 1.5;
 
 // Box sizing
 *, *:before, *:after {
