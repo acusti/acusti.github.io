@@ -7,6 +7,16 @@
    Description: Attention to typography, easy on the eyes
 */
 
+@import "compass";
+@import "compass/css3/user-interface";
+
+$full-width: 48rem;
+
+// Box sizing
+*, *:before, *:after {
+    @include box-sizing(border-box);
+}
+
 @font-face {
     font-family: "Source Sans Pro";
     font-style: normal;
@@ -77,11 +87,11 @@ body:after {
 }
 
 body {
-    padding-left: 6rem;
-    padding-right: 6rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
     margin-left: auto;
     margin-right: auto;
-    max-width: 42rem;
+    max-width: $full-width;
     display: block;
 }
 
