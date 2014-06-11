@@ -1,0 +1,11 @@
+---
+layout: resume
+title: Résumé
+---
+
+<article class="page resume">
+
+	{% capture content %}{% include resume.md %}{% endcapture %}
+	{{ content | markdownify }}
+
+</article>
