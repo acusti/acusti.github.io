@@ -63,11 +63,12 @@ $full-width: $large-width + ($max-width - $large-width) * 0.75;
 
 html {
     font-size: 100%;
-    
-    @media (min-width: $large-width) {
+    // Change font size (which will increase other relative sizes) first
+    @media (min-width: $large-width - 75px) {
         font-size: 112.5%;
     }
-    @media (min-width: $full-width) {
+    // Change font size (which will increase other relative sizes) first
+    @media (min-width: $full-width - 75px) {
         font-size: 125%;
     }
 }
