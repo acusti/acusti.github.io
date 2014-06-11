@@ -10,8 +10,8 @@
 @import "compass";
 @import "compass/css3/user-interface";
 
-$min-width: 20rem;
-$max-width: 48rem;
+$min-width: 320px;
+$max-width: 950px;
 $medium-width: $min-width + ($max-width - $min-width) / 2;
 $large-width: $medium-width + ($max-width - $medium-width) * 0.75;
 $full-width: $large-width + ($max-width - $large-width) / 2;
