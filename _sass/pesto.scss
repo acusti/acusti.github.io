@@ -10,12 +10,18 @@
 @import "compass";
 @import "compass/css3/user-interface";
 
-$min-width: 320px;
-$max-width: 950px;
-$small-width: $min-width + ($max-width - $min-width) * 0.2;
-$medium-width: $min-width + ($max-width - $min-width) * 0.4;
-$large-width: $medium-width + ($max-width - $medium-width) * 0.6;
-$full-width: $large-width + ($max-width - $large-width) * 0.8;
+// Breakpoints
+$min-width    : 320px;
+$max-width    : 950px;
+$small-width  : $min-width + ($max-width - $min-width) * 0.2;
+$medium-width : $min-width + ($max-width - $min-width) * 0.4;
+$large-width  : $medium-width + ($max-width - $medium-width) * 0.6;
+$full-width   : $large-width + ($max-width - $large-width) * 0.8;
+
+// Colors
+$color-accent    : rgb(141, 179, 89);
+$color-text-body : rgb(87, 83, 74);
+$color-ui-grey   : rgb(221, 221, 221);
 
 // Box sizing
 *, *:before, *:after {
@@ -80,7 +86,7 @@ html, button, input, select, textarea {
 }
 
 html, body, button, input, select, textarea {
-	color: #57534A;
+	color: $color-text-body;
 	font-family: "Source Sans Pro", "Myriad Pro", "Myriad", sans-serif;
 	font-weight: 300;
 }
@@ -168,15 +174,12 @@ h6 {
 }
 /* Link underline from http://practice.typekit.com/ */
 a {
-	color: rgb(141, 179, 89);
+	color: $color-accent;
 	text-decoration: none;
 	/* Underline via gradient background */
-	background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0, 0, 0, 0)),to(rgb(221, 221, 221)));
-	background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, 0) 50%,rgb(221, 221, 221) 50%);
-	background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,rgb(221, 221, 221) 50%);
+	@include background-image(linear-gradient(top, rgba(0, 0, 0, 0) 50%, $color-ui-grey 50%));
 	background-repeat: repeat-x;
-	-webkit-background-size: 2px 2px;
-	background-size: 2px 2px;
+	@include background-size(2px 2px);
 	background-position: 0 92%;
 	/* Clear descendors */
 	text-shadow: 1px 0 rgb(255, 255, 255),2px 0 rgb(255, 255, 255),-1px 0 rgb(255, 255, 255),-2px 0 rgb(255, 255, 255);
@@ -186,10 +189,8 @@ a {
 
 a:hover {
 	outline: 0 none;
-	color: rgb(115, 149, 68);
-	background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0, 0, 0, 0)),to(rgb(115, 149, 68)));
-	background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, 0) 50%,rgb(115, 149, 68) 50%);
-	background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,rgb(115, 149, 68) 50%);
+	color: darken($color-accent, 11%);
+	@include background-image(linear-gradient(top, rgba(0, 0, 0, 0) 50%, darken($color-accent, 11%) 50%));
 }
 
 
