@@ -22,6 +22,7 @@ $full-width   : $large-width + ($max-width - $large-width) * 0.8;
 $color-accent     : rgb(141, 179, 89);
 $color-text-body  : rgb(87, 83, 74);
 $color-text-light : rgb(184, 186, 188);
+$color-ui-light   : lighten($color-text-light, 11%);
 
 // Box sizing
 *, *:before, *:after {
@@ -177,7 +178,7 @@ a {
 	color: $color-accent;
 	text-decoration: none;
 	/* Underline via gradient background */
-	@include background-image(linear-gradient(top, rgba(0, 0, 0, 0) 50%, $color-text-light 50%));
+	@include background-image(linear-gradient(top, rgba(0, 0, 0, 0) 50%, $color-ui-light 0%));
 	background-repeat: repeat-x;
 	@include background-size(1px 1px);
 	background-position: 0 92%;
@@ -190,7 +191,7 @@ a {
 a:hover {
 	outline: 0 none;
 	color: darken($color-accent, 11%);
-	@include background-image(linear-gradient(top, rgba(0, 0, 0, 0) 50%, darken($color-accent, 11%) 50%));
+	@include background-image(linear-gradient(top, rgba(0, 0, 0, 0) 50%, darken($color-accent, 6%) 50%));
 }
 
 
