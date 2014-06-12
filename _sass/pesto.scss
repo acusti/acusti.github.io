@@ -21,8 +21,7 @@ $full-width   : $large-width + ($max-width - $large-width) * 0.8;
 // Colors
 $color-accent     : rgb(141, 179, 89);
 $color-text-body  : rgb(87, 83, 74);
-$color-text-light : rgb(184, 188, 192);
-$color-ui-grey    : rgb(221, 221, 221);
+$color-text-light : rgb(184, 186, 188);
 
 // Box sizing
 *, *:before, *:after {
@@ -178,9 +177,8 @@ a {
 	color: $color-accent;
 	text-decoration: none;
 	/* Underline via gradient background */
-	@include background-image(linear-gradient(top, rgba(0, 0, 0, 0) 50%, $color-ui-grey 50%));
-	background-repeat: repeat-x;
-	@include background-size(2px 2px);
+	@include background-image(linear-gradient(top, rgba(0, 0, 0, 0) 50%, $color-text-light 50%));
+	@include background-size(100% 1px);
 	background-position: 0 92%;
 	/* Clear descendors */
 	text-shadow: 1px 0 rgb(255, 255, 255),2px 0 rgb(255, 255, 255),-1px 0 rgb(255, 255, 255),-2px 0 rgb(255, 255, 255);
