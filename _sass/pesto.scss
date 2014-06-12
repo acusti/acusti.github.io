@@ -19,9 +19,10 @@ $large-width  : $medium-width + ($max-width - $medium-width) * 0.6;
 $full-width   : $large-width + ($max-width - $large-width) * 0.8;
 
 // Colors
-$color-accent    : rgb(141, 179, 89);
-$color-text-body : rgb(87, 83, 74);
-$color-ui-grey   : rgb(221, 221, 221);
+$color-accent     : rgb(141, 179, 89);
+$color-text-body  : rgb(87, 83, 74);
+$color-text-light : rgb(184, 188, 192);
+$color-ui-grey    : rgb(221, 221, 221);
 
 // Box sizing
 *, *:before, *:after {
@@ -376,12 +377,17 @@ caption{display:table-caption;font-weight:300;font-size:1.3em;text-transform:upp
 }
 
 .projects__time-period {
-	display: block;
+	display: inline-block;
+	width: 100%;
+	font-style: italic;
+	color: $color-text-light;
 	
-	@media (min-width: $small-width) {
+	@media (min-width: $medium-width) {
 		float: right;
 		width: 11em;
+		font-style: normal;
 		font-weight: 700;
+		color: inherit;
 	}
 }
 
