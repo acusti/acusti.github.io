@@ -375,9 +375,13 @@ caption{display:table-caption;font-weight:300;font-size:1.3em;text-transform:upp
 }
 
 .projects__time-period {
-	float: right;
-	width: 11em;
-	font-weight: 700;
+	display: block;
+	
+	@media (min-width: $small-width) {
+		float: right;
+		width: 11em;
+		font-weight: 700;
+	}
 }
 
 /*.column-lists-start + h3,
