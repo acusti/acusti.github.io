@@ -12,9 +12,6 @@ Current Employment
 Selected Projects at Pure Cobalt
 --------------------------------
 
-**[Cinémathèque Québecoise][cq]** <span class="projects__time-period">Oct. 2013 – June 2014</span>  
-Lead developer on a WordPress-powered online collections site and a powerful Solr-powered [search application][cqrecherche] for Québec’s official film archives. The search front end is a custom MVC application built with [FuelPHP][].
-
 **[WP Theme Forme][forme]** <span class="projects__time-period">June 2013 – Ongoing</span>  
 Created a WordPress starter theme framework with built-in support for tools like Compass/SASS, Susy, and icon fonts, plus sensible and scalable SASS/HTML scaffolding.
 
@@ -29,6 +26,9 @@ Optimized a widget-based dashboard for the Bombardier sales team for performance
 
 **[Redux Media][redux]** <span class="projects__time-period">April – July 2013</span>  
 A responsive advertising website for the Redux ad network built on WordPress. This was the first fully responsive website I built based on someone else’s design. During development, I created WP Theme Forme (above).
+**[Cinémathèque Québecoise][cq]** <span class="projects__time-period">Oct. 2013 – June 2014</span>  
+Lead developer and architect on a Solr-powered search custom MVC application built with the [FuelPHP][] framework for Québec’s official film archives. Lead developer on a sibling WordPress-powered publication site with a complex relational content model.
+
 
 **[Adobe Edge Web Font Browser][edgebrowser]** <span class="projects__time-period">March – April 2013</span>  
 Designed and built a responsive single-page application to help web designers and developers find and use fonts from the [Adobe Edge Web Fonts collection][edgefonts] (which were only browseable from within Adobe Edge apps).
