@@ -12,9 +12,6 @@ Current Employment
 Selected Projects at Pure Cobalt
 --------------------------------
 
-**[WP Theme Forme][forme]** <span class="projects__time-period">June 2013 – Ongoing</span>  
-Created a WordPress starter theme framework with built-in support for tools like Compass/SASS, Susy, and icon fonts, plus sensible and scalable SASS/HTML scaffolding.
-
 **[Web-Based Learning (WBL) course codebase][siemens]** <span class="projects__time-period">March – April 2014</span>  
 Refactored a JS-heavy, jQuery spaghetti-based online course codebase using the Module design pattern and a MV*-based architecture using RequireJS, [SMACSS/BEM principles][objects in space], and a feature-rich Grunt build process, including bespoke templating and markup generation, intended to make the platform easy to develop on and maintain. The work also involved contributing to some [existing][svn-tag] [node][svn-project-root] [modules][svn-changelog], which introduced me to BDD-style unit testing via Mocha and Chai. Implemented unit tests on the JS modules using Mocha, Chai, and Squire.
 
@@ -22,8 +19,6 @@ Refactored a JS-heavy, jQuery spaghetti-based online course codebase using the M
 Built a fast and maintainable multilingual Solr-powered search front end, based on my initial design, for a hospital library using RequireJS and Handlebars.
 
 
-**[Redux Media][redux]** <span class="projects__time-period">April – July 2013</span>  
-A responsive advertising website for the Redux ad network built on WordPress. This was the first fully responsive website I built based on someone else’s design. During development, I created WP Theme Forme (above).
 **[Cinémathèque Québecoise][cq]** <span class="projects__time-period">Oct. 2013 – June 2014</span>  
 Lead developer and architect on a Solr-powered search custom MVC application built with the [FuelPHP][] framework for Québec’s official film archives. Lead developer on a sibling WordPress-powered publication site with a complex relational content model.
 
@@ -32,6 +27,12 @@ Optimized a widget-based dashboard for the Bombardier sales team for performance
 
 **[Adobe Edge Web Font Browser][edgebrowser]** <span class="projects__time-period">March – April 2013</span>  
 Designed and built a responsive single-page application to help web designers and developers find and use fonts from the [Adobe Edge Web Fonts collection][edgefonts] (which were only browseable from within Adobe Edge apps).
+
+**[WP Theme Forme][forme]** <span class="projects__time-period">June 2013 – Ongoing</span>  
+Created a WordPress starter theme framework with built-in support for tools like Compass/SASS, Susy, and icon fonts, plus sensible and scalable SASS/HTML scaffolding.
+
+**[Redux Media][redux]** <span class="projects__time-period">April – July 2013</span>  
+A responsive advertising website for the Redux ad network built on WordPress. This was the first fully responsive website I built based on someone else’s design. During development, I created WP Theme Forme (above).
 
 ### Other Projects
 
