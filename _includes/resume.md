@@ -21,14 +21,14 @@ Refactored a JS-heavy, jQuery spaghetti-based online course codebase using the M
 **[Jewish General Hospital search application][jgh]** <span class="projects__time-period">Dec. 2013 – March 2014</span>  
 Built a fast and maintainable multilingual Solr-powered search front end, based on my initial design, for a hospital library using RequireJS and Handlebars.
 
-**Salesforce dashboard for Bombardier** <span class="projects__time-period">Nov. 2013 – Feb. 2014</span>  
-Optimized a widget-based dashboard for the Bombardier sales team for performance. Changes were two-fold: front end JavaScript optimizations based on JS profiling, and back end support for paginated results within widgets to reduce initial load time based on new unit tests.
 
 **[Redux Media][redux]** <span class="projects__time-period">April – July 2013</span>  
 A responsive advertising website for the Redux ad network built on WordPress. This was the first fully responsive website I built based on someone else’s design. During development, I created WP Theme Forme (above).
 **[Cinémathèque Québecoise][cq]** <span class="projects__time-period">Oct. 2013 – June 2014</span>  
 Lead developer and architect on a Solr-powered search custom MVC application built with the [FuelPHP][] framework for Québec’s official film archives. Lead developer on a sibling WordPress-powered publication site with a complex relational content model.
 
+**Salesforce dashboard for Bombardier** <span class="projects__time-period">Nov. 2013 – Feb. 2014</span>  
+Optimized a widget-based dashboard for the Bombardier sales team for performance. Changes were two-fold: front end JavaScript optimizations based on JS profiling, and back end support for paginated results within widgets to reduce initial load time.
 
 **[Adobe Edge Web Font Browser][edgebrowser]** <span class="projects__time-period">March – April 2013</span>  
 Designed and built a responsive single-page application to help web designers and developers find and use fonts from the [Adobe Edge Web Fonts collection][edgefonts] (which were only browseable from within Adobe Edge apps).
