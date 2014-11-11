@@ -68,7 +68,7 @@ Other Interests
 ---------------
 
 **Music production and composition**  
-I love music and play piano. I’ve played a couple of shows in Montreal with a previous iteration of the [Sontag Shogun][] project and was coach of the band [Slowest Runner][]. Also, as I explain on my [about.me page][aboutme], I like making music, and, when feeling ambitious, [sharing the results][music].
+I love music and play piano. I’ve played a couple of shows in Montreal with a previous iteration of the [Sontag Shogun][] project and was coach of the band [Slowest Runner][]. Also, I like making music, and, when feeling ambitious, [sharing the results][music].
 
 Education
 ---------
@@ -110,5 +110,4 @@ I speak and understand Spanish and French fluently.
 [smartererhtml5]: http://smarterer.com/scores/e845f3f8ddfdd990507608356c24bc26
 [Sontag Shogun]: http://sontagshogun.bandcamp.com/
 [Slowest Runner]: http://theslowestrunner.bandcamp.com/
-[aboutme]: http://about.me/andrewpatton
 [music]: https://soundcloud.com/acusti
