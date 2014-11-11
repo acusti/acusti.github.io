@@ -18,8 +18,8 @@ Lead developer on a WordPress-powered online collections site and a powerful Sol
 **[WP Theme Forme][forme]** <span class="projects__time-period">June 2013 – Ongoing</span>  
 Created a WordPress starter theme framework with built-in support for tools like Compass/SASS, Susy, and icon fonts, plus sensible and scalable SASS/HTML scaffolding.
 
-**[Web-Based Learning (WBL) course prototype][siemens]** <span class="projects__time-period">March – April 2014</span>  
-Built a site prototype with RequireJS, [SMACSS/BEM principles][objects in space], and a feature-rich Grunt build process intended to make the platform easy to develop on and maintain. The work involved contributing to some [existing][svn-tag] [node][svn-project-root] [modules][svn-changelog], which introduced me to BDD-style unit testing via Mocha and Chai.
+**[Web-Based Learning (WBL) course codebase][siemens]** <span class="projects__time-period">March – April 2014</span>  
+Refactored a JS-heavy, jQuery spaghetti-based online course codebase using the Module design pattern and a MV*-based architecture using RequireJS, [SMACSS/BEM principles][objects in space], and a feature-rich Grunt build process, including bespoke templating and markup generation, intended to make the platform easy to develop on and maintain. The work also involved contributing to some [existing][svn-tag] [node][svn-project-root] [modules][svn-changelog], which introduced me to BDD-style unit testing via Mocha and Chai. Implemented unit tests on the JS modules using Mocha, Chai, and Squire.
 
 **[Jewish General Hospital search application][jgh]** <span class="projects__time-period">Dec. 2013 – March 2014</span>  
 Built a fast and maintainable multilingual Solr-powered search front end, based on my initial design, for a hospital library using RequireJS and Handlebars.
