@@ -44,9 +44,8 @@ Computer Languages and Software
 ### Front end
 
 - JavaScript ([“Expert”][smartererjs])
-    - With jQuery ([“Expert”][smartererjq]) and without (using `querySelectorAll` or helpers like [Qwery][] and [Bean][])
+    - With jQuery ([“Expert”][smartererjq]) and without (using custom, lightweight DOM utilities)
     - Grunt / Gulp
-    - CoffeeScript
     - AMD via RequireJS
     - Backbone + Marionette
     - Handlebars
@@ -54,13 +53,14 @@ Computer Languages and Software
 - CSS ([“Master”][smarterercss])
     - SASS with Compass
     - [Modular][SMACSS]/[component][north]-based [methodologies][objects in space] for styles and markup
+- Web Components (with and without Polymer)
 - HTML ([“Expert”][smartererhtml5])
 
 ### Back end
 
-- PHP and MySQL (WordPress, [WooCommerce][], [FuelPHP][])
 - NodeJS
-- Salesforce Apex and Apex unit testing (TTD)
+- PHP and MySQL (using traditional MVC frameworks and CMSs)
+- Salesforce Apex and Apex unit testing (TDD)
 - C# and .NET
 - SSH-based server management (DNS, virtual server management in CentOS, etc)
 
@@ -99,8 +99,6 @@ I speak and understand Spanish and French fluently.
 [forme]: https://github.com/acusti/WP-Theme-Forme
 [edgebrowser]: http://www.acusti.ca/edge-webfonts-browser/
 [edgefonts]: http://html.adobe.com/edge/webfonts/
-[Qwery]: https://github.com/ded/qwery
-[Bean]: https://github.com/fat/bean
 [SMACSS]: http://smacss.com/book/
 [north]: https://github.com/north/north#components
 [objects in space]: https://medium.com/objects-in-space/objects-in-space-f6f404727
