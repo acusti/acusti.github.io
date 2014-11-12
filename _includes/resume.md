@@ -18,7 +18,6 @@ Refactored a JS-heavy online course codebase that was full of jQuery spaghetti u
 **[Jewish General Hospital search application][jgh]** <span class="projects__time-period">Dec. 2013 – March 2014</span>  
 Built a fast and maintainable multilingual Solr-powered search front end, based on my initial design, for a hospital library using RequireJS and Handlebars.
 
-
 **[Cinémathèque Québecoise][cq]** <span class="projects__time-period">Oct. 2013 – June 2014</span>  
 Lead developer and architect on a Solr-powered search custom MVC application built with the [FuelPHP][] framework for Québec’s official film archives. Lead developer on a sibling WordPress-powered publication site with a complex relational content model.
 
@@ -28,7 +27,7 @@ Optimized a widget-based dashboard for the Bombardier sales team for performance
 **[Adobe Edge Web Font Browser][edgebrowser]** <span class="projects__time-period">March – April 2013</span>  
 Designed and built a responsive single-page application to help web designers and developers find and use fonts from the [Adobe Edge Web Fonts collection][edgefonts] (which were only browseable from within Adobe Edge apps).
 
-**[WP Theme Forme][forme]** <span class="projects__time-period">June 2013 – Ongoing</span>  
+**[WP Theme Forme][forme]** <span class="projects__time-period">June – Sep. 2013</span>  
 Created a WordPress starter theme framework with built-in support for tools like Compass/SASS, Susy, and icon fonts, plus sensible and scalable SASS/HTML scaffolding.
 
 **[Redux Media][redux]** <span class="projects__time-period">April – July 2013</span>  
