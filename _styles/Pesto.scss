@@ -49,19 +49,21 @@ $color-ui-light   : lighten($color-text-light, 11%);
    http://www.adobe.com/type/browser/legal/pdfs/OpenFontLicense.pdf
 */
 
-// Non-retina regular weight fonts (use 300)
-@media (-webkit-max-device-pixel-ratio: 1.49),
-       (max-resolution: 143dpi) {
-	// Body text
-	@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-Light.otf.woff", "woff"), false, 300, normal);
-	// Body text italic
-	@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-LightIt.otf.woff", "woff"), false, 300, italic);
-	// Monospace
-	@include font-face("Source Code Pro", inline-font-files("SourceCodePro-Light.otf.woff", "woff"), false, 300, normal);
-}
-// Retina regular weight fonts (use 400)
-@media (-webkit-min-device-pixel-ratio: 1.5),
-       (min-resolution: 144dpi) {
+// Body text
+@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-Light.otf.woff", woff), false, 300, normal);
+// Body text italic
+@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-LightIt.otf.woff", woff), false, 300, italic);
+// Body text bold
+@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-Bold.otf.woff", woff), false, 700, normal);
+// Body text bold italic
+@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-BoldIt.otf.woff", woff), false, 700, italic);
+// Monospace
+@include font-face("Source Code Pro", inline-font-files("SourceCodePro-Light.otf.woff", woff), false, 300, normal);
+// Monospace bold
+@include font-face("Source Code Pro", inline-font-files("SourceCodePro-Bold.otf.woff", woff), false, 700, normal);
+
+// Regular weight fonts for printing
+@media print {
 	// Body text
 	@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-Regular.otf.woff", "woff"), false, 400, normal);
 	// Body text italic
@@ -69,35 +71,35 @@ $color-ui-light   : lighten($color-text-light, 11%);
 	// Monospace
 	@include font-face("Source Code Pro", inline-font-files("SourceCodePro-Regular.otf.woff", "woff"), false, 400, normal);
 }
-// Body text bold
-@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-Bold.otf.woff", "woff"), false, 700, normal);
-// Body text bold italic
-@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-BoldIt.otf.woff", "woff"), false, 700, italic);
-// Monospace
-@include font-face("Source Code Pro", inline-font-files("SourceCodePro-Bold.otf.woff", "woff"), false, 700, normal);
 
 
 html {
 	font-size: 100%;
 	// Change font size (which will increase other relative sizes) first
-	@media (min-width: $large-width - 75px) {
+	@media screen and (min-width: $large-width - 75px) {
 		font-size: 112.5%;
 	}
 	// Change font size (which will increase other relative sizes) first
-	@media (min-width: $full-width - 75px) {
+	@media screen and (min-width: $full-width - 75px) {
 		font-size: 125%;
+	}
+	@media print {
+		font-size: 90% !important;
 	}
 	// Don't adjust font size on device orientation change in webkit
 	-webkit-text-size-adjust: 100%;
 }
-html, button, input, select, textarea {
-	font-family: sans-serif;
-}
 
 html, body, button, input, select, textarea {
 	color: $color-text-body;
-	font-family: "Source Sans Pro", "Myriad Pro", "Myriad", sans-serif;
+	font-family: "Source Sans Pro", "Myriad Set Pro", "Myriad Pro", Myriad, Helvetica, Arial, sans-serif;
 	font-weight: 300;
+	// Clear descendors from underlines (like with links)
+	text-shadow: 1px 0 white, 2px 0 white, -1px 0 white, -2px 0 white;
+
+	@media print {
+		font-weight: 400 !important;
+	}
 }
 
 body{
@@ -117,11 +119,11 @@ body:after {
 }
 
 body {
+	display: block;
 	padding: map-get($body-padding-horizontal, "base") 1.25rem;
 	margin-left: auto;
 	margin-right: auto;
 	max-width: $max-width;
-	display: block;
 
 	@each $width, $padding in $body-padding-horizontal {
 		@media (min-width: #{$width}) {
@@ -129,19 +131,29 @@ body {
 			padding-right : $padding;
 		}
 	}
+	@media print {
+		padding: 3rem !important;
+
+		h1:first-child {
+			margin-top: 0;
+		}
+	}
 }
 
 
-h1, h2, h3, dt {
-	color: #423F37;
+h1, h2, h3, h4, h5, dt {
 	font-weight: 700;
+	// Should links in bold headings have underlines?
+	// a {
+	// 	background-image: none;
+	// }
 }
 
 h1 {
 	font-size: 2em;
 	margin: 0.67em 0;
 }
-/* = Resume-specific styles = */
+/* BEGIN - Resume-specific styles */
 /* Heading 1 and first block of content immediately following have no margin between them */
 .resume h1 {
 	margin-bottom: 0;
@@ -150,6 +162,7 @@ h1 {
 .resume h1 + section > :first-child {
 	margin-top: 0;
 }
+/* END - Resume-specific styles */
 h2,
 .article-list .article-title {
 	font-size: 1.45em;
@@ -171,25 +184,26 @@ h6 {
 	font-size: 0.75em;
 	margin: 2.33em 0;
 }
-/* Link underline from http://practice.typekit.com/ */
 a {
 	color: $color-accent;
 	text-decoration: none;
 	/* Underline via gradient background */
-	background-image: linear-gradient(to bottom, transparent 50%, $color-ui-light 50%);
+	background-image: linear-gradient(to bottom, transparent 49%, $color-ui-light 50%);
 	background-repeat: repeat-x;
 	background-size: 1px 1px;
-	background-position: 0 92%;
-	/* Clear descendors */
-	text-shadow: 1px 0 white, 2px 0 white, -1px 0 white, -2px 0 white;
+	// For non-retina screens in Safari, gradient background needs 2 pixels of height to show any underline
+	@media (-webkit-max-device-pixel-ratio: 1.49),
+       (max-resolution: 143dpi) {
+		background-size: 1px 2px;
+	}
+	background-position: 0 93%;
 	cursor: pointer;
 	outline: 0 none;
 }
-
 a:hover {
 	outline: 0 none;
 	color: darken($color-accent, 11%);
-	background-image: linear-gradient(to bottom, transparent 50%, darken($color-accent, 6%) 50%);
+	background-image: linear-gradient(to bottom, transparent 49%, darken($color-accent, 6%) 50%);
 }
 
 
@@ -197,13 +211,13 @@ p, pre {
 	margin: 1em 0;
 }
 code, kbd, pre, samp, tt {
-	font-family: "Source Code Pro", monospace;
+	font-family: "Source Code Pro", Menlo, Consolas, monospace;
 	font-size: 1em;
 	margin: 0;
 	padding: 0;
 }
 pre {
-	background-color: #F8F5F0;
+	background-color: #f8f8f8;
 	font-size: 0.7rem;
 	overflow-x: auto;
 	padding: 1.3rem;
@@ -219,7 +233,7 @@ code, tt {
 	background-color: #f8f8f8;
 	border-radius: 3px;
 	font-size: 0.85em;
-	color: #423F37;
+	color: $color-text-body;
 	padding: 0 5px;
 }
 pre > code {
@@ -239,12 +253,12 @@ aside {
 
 b, strong {
 	font-weight: bold;
-	color: #423F37;
+	color: $color-text-body;
 	font-weight: 700;
 }
 
 blockquote {
-	color: #423F37;
+	color: $color-text-body;
 	font-size: 1.25em;
 	font-weight: 700;
 	margin: 1em 40px;
@@ -271,15 +285,11 @@ figure {
 
 
 hr {
-	-moz-border-bottom-colors: none;
-	-moz-border-left-colors: none;
-	-moz-border-right-colors: none;
-	-moz-border-top-colors: none;
-	border-color: -moz-use-text-color -moz-use-text-color #ECE6DA;
-	border-image: none;
-	border-style: none none solid;
-	border-width: medium medium 1px;
-	margin: 3em 6em;
+	height: 0;
+	border: 0;
+	padding-top: 1px;
+	margin: 2.5em 0;
+	background: linear-gradient(to right, rgba($color-ui-light, 0) 10%, $color-ui-light 50%, rgba($color-ui-light, 0) 90%);
 }
 
 
@@ -291,7 +301,7 @@ img {
 
 
 ol > li:before {
-	color: #423F37;
+	color: $color-text-body;
 	content: counter(ol, decimal) ".";
 	counter-increment: ol;
 	font-weight: 700;
@@ -301,7 +311,7 @@ ol > li:before {
 }
 
 ul > li:before {
-	background-color: #423F37;
+	background-color: $color-text-body;
 	border-radius: 50%;
 	content: "";
 	height: 0.3em;
