@@ -19,7 +19,7 @@ Refactored a JS-heavy online course codebase that was full of jQuery spaghetti u
 Built a fast and maintainable multilingual Solr-powered search front end, based on my initial design, for a hospital library using RequireJS and Handlebars.
 
 **[Cinémathèque Québecoise][cq]** <span class="projects__time-period">Oct. 2013 – June 2014</span>  
-Lead developer and architect on a Solr-powered search custom MVC application built with the [FuelPHP][] framework for Québec’s official film archives. Lead developer on a sibling WordPress-powered publication site with a complex relational content model.
+Lead developer and architect of a Solr-powered MVC search application built with [FuelPHP][] for Québec’s official film archives. Lead developer of a sibling WordPress-powered publication site with a complex relational content model.
 
 **Salesforce dashboard for Bombardier** <span class="projects__time-period">Nov. 2013 – Feb. 2014</span>  
 Optimized a widget-based dashboard for the Bombardier sales team for performance. Changes were two-fold: front end JavaScript optimizations based on JS profiling, and back end support for paginated results within widgets to reduce initial load time.

@@ -3,13 +3,12 @@
 
 ## Sites / projects I have worked on
 
-* [Cinémathèque Québécoise][cq] built a WordPress site with digitized archival content and blog-like content and a powerful Solr-powered MVC [search application][cqrecherche] powered by [FuelPHP][]
-* [Jewish General Hospital][jgh] built and designed a crazy fast, [multilingual][jghfr] JS-based search application (Solr backend) with [RequireJS][require] (and *without* jQuery), CSS3 animations, and full retina support
+* [Cinémathèque Québécoise][cq] lead developer and architect of a Solr-powered MVC [search application][cqrecherche] built with [FuelPHP][] and a sibling WordPress-powered publication site for Québec’s official film archives
+* [Jewish General Hospital][jgh] built and designed a fast, [multilingual][jghfr] JS-based search application (Solr backend) with [RequireJS][require] (and *without* jQuery), CSS3 animations, and full retina support
 * [Adobe Edge Webfonts Browser][0] designed and built a simple single-page JS-based UI for browsing the [Adobe Edge Web Fonts][adobe] collection
-* [ReduxMedia][redux] built a WordPress-powered, fully responsive site, using [Compass/SASS][compass], the [Susy grid][susy], and [WP Forme][], my new custom WP starter theme
+* [WP Theme Forme][forme] created a WordPress starter theme framework with built-in support for tools like Compass/SASS, Susy, and icon fonts, plus sensible and scalable SASS/HTML scaffolding
+* [ReduxMedia][redux] built a responsive marketing website for the Redux ad network built on WordPress, creating WP Theme Forme (above) at the same time
 * [Cha Noir][4] built a transactional website with a shopping cart for a Montréal tea shop using WordPress and the [Shopp plugin][5]
-* [Jonview][2] rebuilt the frontend [search][3] and product pages using jQuery-based JS to enhance the UI and implemented a site wide HTML5-based redesign
-* [Canadian Pickers][6] built the online auction marketplace for the TV show using WordPress with the [Prospress plugin][7] and a huge amount of custom theme and plugin development
 * [Haute Tremblant][9] built a showcase site for high-end real estate in Tremblant, Québec using the simple and intuitive [The Secretary CMS][10]
 * [CLD Stationery][12] built the UK-based stationery company’s online webshop with Joomla, VirtueMart, and significant custom programming
 
@@ -22,16 +21,11 @@
 [redux]: http://www.reduxmedia.com/
 [compass]: http://compass-style.org/
 [susy]: http://susy.oddbird.net/
-[WP Forme]: https://github.com/acusti/WP-Theme-Forme
+[forme]: https://github.com/acusti/WP-Theme-Forme
 [0]: {{ site.base_url }}/edge-webfonts-browser/
 [adobe]: http://html.adobe.com/edge/webfonts/
-[2]: http://www.jonview.com/
-[3]: http://www.jonview.com/imagebank/search.do
 [4]: http://www.cha-noir.com/
 [5]: https://shopplugin.net/
-[6]: http://www.canadianpickers.com/
-[7]: http://prospress.org/
-[8]: http://www.ableandhow.com/
 [9]: http://www.hautetremblant.com/
 [10]: http://www.thesecretary.org/
 [12]: http://www.cldstationery.com/
