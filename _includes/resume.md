@@ -12,7 +12,7 @@ Current Employment
 Selected Projects at Pure Cobalt
 --------------------------------
 
-**[Web-Based Learning (WBL) course codebase][siemens]** <span class="projects__time-period">March – April 2014</span>  
+**[Online course single-page application][siemens]** <span class="projects__time-period">April – Sep. 2014</span>  
 Refactored a JS-heavy online course codebase that was full of jQuery spaghetti using the Module design pattern (via RequireJS), an MV*-based architecture, and [SMACSS/BEM principles][objects in space]. Developed a feature-rich Grunt build process, including bespoke templating and markup generation to make the platform easy to develop on and maintain. Contributed to some [existing][svn-tag] [node][svn-project-root] [modules][svn-changelog]. Implemented unit tests on many of the JS modules using Mocha, Chai, and [Squire][].
 
 **[Jewish General Hospital search application][jgh]** <span class="projects__time-period">Dec. 2013 – March 2014</span>  
