@@ -13,7 +13,7 @@ Selected Projects at Pure Cobalt
 --------------------------------
 
 **[Web-Based Learning (WBL) course codebase][siemens]** <span class="projects__time-period">March – April 2014</span>  
-Refactored a JS-heavy, jQuery spaghetti-based online course codebase using the Module design pattern and an MV*-based architecture using RequireJS, [SMACSS/BEM principles][objects in space], and a feature-rich Grunt build process, including bespoke templating and markup generation, intended to make the platform easy to develop on and maintain. The work also involved contributing to some [existing][svn-tag] [node][svn-project-root] [modules][svn-changelog], which introduced me to BDD-style unit testing via Mocha and Chai. Implemented unit tests on the JS modules using Mocha, Chai, and Squire.
+Refactored a JS-heavy online course codebase that was full of jQuery spaghetti using the Module design pattern (via RequireJS), an MV*-based architecture, and [SMACSS/BEM principles][objects in space]. Developed a feature-rich Grunt build process, including bespoke templating and markup generation to make the platform easy to develop on and maintain. Contributed to some [existing][svn-tag] [node][svn-project-root] [modules][svn-changelog]. Implemented unit tests on many of the JS modules using Mocha, Chai, and [Squire][].
 
 **[Jewish General Hospital search application][jgh]** <span class="projects__time-period">Dec. 2013 – March 2014</span>  
 Built a fast and maintainable multilingual Solr-powered search front end, based on my initial design, for a hospital library using RequireJS and Handlebars.
@@ -32,7 +32,7 @@ Designed and built a responsive single-page application to help web designers an
 Created a WordPress starter theme framework with built-in support for tools like Compass/SASS, Susy, and icon fonts, plus sensible and scalable SASS/HTML scaffolding.
 
 **[Redux Media][redux]** <span class="projects__time-period">April – July 2013</span>  
-A responsive advertising website for the Redux ad network built on WordPress. This was the first fully responsive website I built based on someone else’s design. During development, I created WP Theme Forme (above).
+Built a responsive marketing website for the Redux ad network built on WordPress. This was the first fully responsive website I built based on someone else’s design. During development, I created WP Theme Forme (above).
 
 ### Other Projects
 
@@ -85,6 +85,7 @@ I speak and understand Spanish and French fluently.
 [svn-tag]: https://github.com/iVantage/grunt-svn-tag/commits?author=acusti
 [svn-project-root]: https://github.com/jtrussell/node-svn-project-root/commits?author=acusti
 [svn-changelog]: https://github.com/iVantage/grunt-ivantage-svn-changelog/commits?author=acusti
+[Squire]: https://github.com/iammerrick/Squire.js/
 [FuelPHP]: http://fuelphp.com/
 [portfolio]: http://www.acusti.ca/work/
 [github]: https://github.com/acusti
