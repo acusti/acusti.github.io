@@ -24,6 +24,9 @@ $small-width  : $min-width + ($max-width - $min-width) * 0.2;
 $medium-width : $min-width + ($max-width - $min-width) * 0.4;
 $large-width  : $medium-width + ($max-width - $medium-width) * 0.6;
 $full-width   : $large-width + ($max-width - $large-width) * 0.8;
+// Font step breakpoints
+$medium-fontsize-width : $large-width - 75px;
+$large-fontsize-width  : $full-width - 75px;
 
 // Structure
 $body-padding-horizontal : (
@@ -40,28 +43,14 @@ $color-text-body  : rgb(87, 83, 74);
 $color-text-light : rgb(184, 186, 188);
 $color-ui-light   : lighten($color-text-light, 11%);
 
+// Font sizing
+@import "pesto-font-sizing";
+
 // Box sizing
 *, *:before, *:after {
 	@include box-sizing(border-box);
 }
 
-
-html {
-	font-size: 100%;
-	// Change font size (which will increase other relative sizes) first
-	@media screen and (min-width: $large-width - 75px) {
-		font-size: 112.5%;
-	}
-	// Change font size (which will increase other relative sizes) first
-	@media screen and (min-width: $full-width - 75px) {
-		font-size: 125%;
-	}
-	@media print {
-		font-size: 90% !important;
-	}
-	// Don't adjust font size on device orientation change in webkit
-	-webkit-text-size-adjust: 100%;
-}
 
 html, body, button, input, select, textarea {
 	color: $color-text-body;
