@@ -15,7 +15,7 @@ Selected Projects at Pure Cobalt
 **[Online course single-page application][siemens]** <span class="projects__time-period">April – Sep. 2014</span>  
 Refactored a JS-heavy online course codebase that was full of jQuery spaghetti using the Module design pattern (via RequireJS), an MV*-based architecture, and [SMACSS/BEM principles][objects in space]. Developed a feature-rich Grunt build process, including bespoke templating and markup generation to make the platform easy to develop on and maintain. Contributed to some [existing][svn-tag] [node][svn-project-root] [modules][svn-changelog]. Implemented unit tests on many of the JS modules using Mocha, Chai, and [Squire][].
 
-**[Jewish General Hospital search application][jgh]** <span class="projects__time-period">Dec. 2013 – March 2014</span>  
+**[Jewish General Hospital library search][jgh]** <span class="projects__time-period">Dec. 2013 – March 2014</span>  
 Built a fast and maintainable multilingual Solr-powered search front end, based on my initial design, for a hospital library using RequireJS and Handlebars.
 
 **[Cinémathèque Québecoise][cq]** <span class="projects__time-period">Oct. 2013 – June 2014</span>  
