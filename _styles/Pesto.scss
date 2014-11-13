@@ -12,7 +12,10 @@
 @import "compass/css3/selection";
 
 // Syntax highlighting (https://github.com/aahan/pygments-github-style)
-@import "syntax";
+@import "pesto-syntax";
+
+// Web fonts
+@import "pesto-fonts";
 
 // Breakpoints
 $min-width    : 320px;
@@ -41,34 +44,6 @@ $color-ui-light   : lighten($color-text-light, 11%);
 *, *:before, *:after {
 	@include box-sizing(border-box);
 }
-
-// ============
-// Font Embeds
-// ============
-
-/*!
-   Fonts used are Adobe's Source Sans Pro and Source Code Pro, which are:
-   Copyright © 2010, Adobe Systems, Inc. (http://www.adobe.com/)
-   Licensed under the SIL Open Font License, Version 1.1:
-   http://www.adobe.com/type/browser/legal/pdfs/OpenFontLicense.pdf
-*/
-
-// Body text
-@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-Light.ttf.woff", woff), false, 300, normal);
-// Body text italic
-@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-LightIt.ttf.woff", woff), false, 300, italic);
-// Body text bold
-@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-Bold.ttf.woff", woff), false, 700, normal);
-// Body text bold italic
-@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-BoldIt.ttf.woff", woff), false, 700, italic);
-// Monospace
-// @include font-face("Source Code Pro", inline-font-files("SourceCodePro-Regular.ttf.woff", woff), false, 400, normal);
-// Monospace bold
-// @include font-face("Source Code Pro", inline-font-files("SourceCodePro-Bold.ttf.woff", woff), false, 700, normal);
-
-// Don’t embed 400 weight regular + italic or monospace fonts
-// They’re only used for print and mobile or code snippets
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic|Source+Code+Pro:400,700");
 
 
 html {
