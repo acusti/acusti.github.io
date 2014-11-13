@@ -51,27 +51,21 @@ $color-ui-light   : lighten($color-text-light, 11%);
 */
 
 // Body text
-@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-Light.otf.woff", woff), false, 300, normal);
+@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-Light.ttf.woff", woff), false, 300, normal);
 // Body text italic
-@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-LightIt.otf.woff", woff), false, 300, italic);
+@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-LightIt.ttf.woff", woff), false, 300, italic);
 // Body text bold
-@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-Bold.otf.woff", woff), false, 700, normal);
+@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-Bold.ttf.woff", woff), false, 700, normal);
 // Body text bold italic
-@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-BoldIt.otf.woff", woff), false, 700, italic);
+@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-BoldIt.ttf.woff", woff), false, 700, italic);
 // Monospace
-@include font-face("Source Code Pro", inline-font-files("SourceCodePro-Light.otf.woff", woff), false, 300, normal);
+// @include font-face("Source Code Pro", inline-font-files("SourceCodePro-Regular.ttf.woff", woff), false, 400, normal);
 // Monospace bold
-@include font-face("Source Code Pro", inline-font-files("SourceCodePro-Bold.otf.woff", woff), false, 700, normal);
+// @include font-face("Source Code Pro", inline-font-files("SourceCodePro-Bold.ttf.woff", woff), false, 700, normal);
 
-// Regular weight fonts for printing
-@media print {
-	// Body text
-	@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-Regular.otf.woff", "woff"), false, 400, normal);
-	// Body text italic
-	@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-It.otf.woff", "woff"), false, 400, italic);
-	// Monospace
-	@include font-face("Source Code Pro", inline-font-files("SourceCodePro-Regular.otf.woff", "woff"), false, 400, normal);
-}
+// Don’t embed 400 weight regular + italic or monospace fonts
+// They’re only used for print and mobile or code snippets
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic|Source+Code+Pro:400,700");
 
 
 html {
@@ -95,13 +89,14 @@ html, body, button, input, select, textarea {
 	color: $color-text-body;
 	font-family: "Source Sans Pro", "Myriad Set Pro", "Myriad Pro", Myriad, Helvetica, Arial, sans-serif;
 	font-weight: 300;
-
-	@media print {
+	// Use regular weight for print and mobile
+	@media print,
+	       screen and (max-width: $small-width) {
 		font-weight: 400 !important;
 	}
 }
 
-body{
+body {
 	margin: 0 auto;
 	background-color: white;
 }
