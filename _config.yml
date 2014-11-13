@@ -5,19 +5,19 @@ theme:
 
   # Site name
   site_name: acusti.ca
-  
+
   # Google analytics UID
   google_analytics_uid: UA-28481823-1
-  
+
   # Disqus shortname, for comments
   disqus_shortname: acusti-github
-  
+
   # Number of featured posts on homepage
   homepage_featured: 2
-  
+
   # Number of posts on homepage (in addition to featured posts)
   homepage_posts: 3
-  
+
   # Number of words to display in post summaries
   featured_wordcount: 30
 
@@ -25,21 +25,7 @@ theme:
 timezone:    America/Montreal
 future:      false
 highlighter: pygments
-markdown:    kramdown
+markdown:    redcarpet
 
 # http://jekyllrb.com/docs/permalinks/
 permalink:   pretty
-
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  use_coderay: false
-
-  coderay:
-    coderay_line_numbers: 
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: class
