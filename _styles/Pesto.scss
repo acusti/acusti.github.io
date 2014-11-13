@@ -55,11 +55,10 @@ $color-ui-light   : lighten($color-text-light, 11%);
 html, body, button, input, select, textarea {
 	color: $color-text-body;
 	font-family: "Source Sans Pro", "Myriad Set Pro", "Myriad Pro", Myriad, Helvetica, Arial, sans-serif;
-	font-weight: 300;
-	// Use regular weight for print and mobile
-	@media print,
-	       screen and (max-width: $small-width) {
-		font-weight: 400 !important;
+	font-weight: 400;
+	// Use light weight for medium font size and up (screen only)
+	@media screen and (min-width: $medium-fontsize-width) {
+		font-weight: 300;
 	}
 }
 
