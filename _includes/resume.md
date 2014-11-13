@@ -1,36 +1,36 @@
 Andrew Patton
 =============
-1974 Rue Le Caron // Montréal, QC H4E 1K6  
-Mobile: (514) 577-5784 // Home: (514) 933-1847
+1974 Rue Le Caron // Montréal, QC <span class="nobr">H4E 1K6</span><br>
+Mobile: <span class="nobr">(514) 577-5784</span> // Home: <span class="nobr">(514) 933-1847</span>
 
 Current Employment
 ------------------
 
-**Pure Cobalt - Web developer** <span class="projects__time-period">June 2009 – Present</span>  
+**Pure Cobalt - Web developer** <span class="projects__time-period">June 2009 – Present</span><br>
 *[Pure Cobalt][] is a web agency based in Montréal, Québec, with a broad range of expertise and clientele.*
 
 Selected Projects at Pure Cobalt
 --------------------------------
 
-**[Online course single-page application][siemens]** <span class="projects__time-period">April – Sep. 2014</span>  
+**[Online course single-page application][siemens]** <span class="projects__time-period">April – Sep. 2014</span><br>
 Refactored a JS-heavy online course codebase that was full of jQuery spaghetti using the Module design pattern (via RequireJS), an MV*-based architecture, and [SMACSS/BEM principles][objects in space]. Developed a feature-rich Grunt build process, including bespoke templating and markup generation to make the platform easy to develop on and maintain. Contributed to some [existing][svn-tag] [node][svn-project-root] [modules][svn-changelog]. Implemented unit tests on many of the JS modules using Mocha, Chai, and [Squire][].
 
-**[Jewish General Hospital library search][jgh]** <span class="projects__time-period">Dec. 2013 – March 2014</span>  
+**[Jewish General Hospital library search][jgh]** <span class="projects__time-period">Dec. 2013 – March 2014</span><br>
 Built a fast and maintainable multilingual Solr-powered search front end, based on my initial design, for a hospital library using RequireJS and Handlebars.
 
-**[Cinémathèque Québecoise][cq]** <span class="projects__time-period">Oct. 2013 – June 2014</span>  
+**[Cinémathèque Québecoise][cq]** <span class="projects__time-period">Oct. 2013 – June 2014</span><br>
 Lead developer and architect of a Solr-powered MVC search application built with [FuelPHP][] for Québec’s official film archives. Lead developer of a sibling WordPress-powered publication site with a complex relational content model.
 
-**Salesforce dashboard for Bombardier** <span class="projects__time-period">Nov. 2013 – Feb. 2014</span>  
+**Salesforce dashboard for Bombardier** <span class="projects__time-period">Nov. 2013 – Feb. 2014</span><br>
 Optimized a widget-based dashboard for the Bombardier sales team for performance. Changes were two-fold: front end JavaScript optimizations based on JS profiling, and back end support for paginated results within widgets to reduce initial load time.
 
-**[Adobe Edge Web Font Browser][edgebrowser]** <span class="projects__time-period">March – April 2013</span>  
+**[Adobe Edge Web Font Browser][edgebrowser]** <span class="projects__time-period">March – April 2013</span><br>
 Designed and built a responsive single-page application to help web designers and developers find and use fonts from the [Adobe Edge Web Fonts collection][edgefonts] (which were only browseable from within Adobe Edge apps).
 
-**[WP Theme Forme][forme]** <span class="projects__time-period">June – Sep. 2013</span>  
+**[WP Theme Forme][forme]** <span class="projects__time-period">June – Sep. 2013</span><br>
 Created a WordPress starter theme framework with built-in support for tools like Compass/SASS, Susy, and icon fonts, plus sensible and scalable SASS/HTML scaffolding.
 
-**[Redux Media][redux]** <span class="projects__time-period">April – July 2013</span>  
+**[Redux Media][redux]** <span class="projects__time-period">April – July 2013</span><br>
 Built a responsive marketing website for the Redux ad network built on WordPress. This was the first fully responsive website I built based on someone else’s design. During development, I created WP Theme Forme (above).
 
 ### Other Projects
