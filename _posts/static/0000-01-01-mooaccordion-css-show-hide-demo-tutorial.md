@@ -1,9 +1,24 @@
-<h1>MooAccordion show/hide plugin demo and tutorial</h1>
-<p class="top">This is a demo for the <a href="{{ site.base_url }}/mooaccordion-joomla-accordion-article-plugin">MooAccordion show/hide (in articles) Joomla plugin</a> to show it in action and explain how to use css to add image icons to illustrate when the accordion sections are expanded and collapsed (and indicate that they are meant to be toggled). The toggling is achieved using CSS image sprites, so both states of the icon are contained in one file, and the image change is achieved just by modifying the CSS background-position.</p>
-<p>In order to achieve this effect on your own site, you will need to put a copy of the icon image file somewhere on your server and then update your template’s CSS to include the CSS code specified at the end of this tutorial. You can edit your template’s css by going to Extensions &rarr; Template Manager, selecting your template, and then selecting the “Edit CSS” button. Note: make sure to modify the image icon url specified in the lines that say <code>background: url()</code> to point to wherever you uploaded the image on your server.</p>
-<p>These are the image files used:</p>
-<p><a class="imagelink" href="{{ site.base_url }}/images/icon-showhide1.png"><img class="demo" src="{{ site.base_url }}/images/icon-showhide1.png" alt=""></a><a class="imagelink" href="{{ site.base_url }}/images/icon-showhide2.png"><img class="demo" src="{{ site.base_url }}/images/icon-showhide2.png" alt=""></a></p>
-<p class="bottom">Here is an example of what the final product looks like:</p>
+---
+published: true
+layout: page
+title: MooAccordion show/hide plugin demo and tutorial
+permalink: mooaccordion-css-show-hide-demo-tutorial
+---
+
+This is a demo for the [MooAccordion show/hide (in articles) Joomla plugin][mooaccordion] to show it in action and explain how to use css to add image icons to illustrate when the accordion sections are expanded and collapsed (and indicate that they are meant to be toggled). The toggling is achieved using CSS image sprites, so both states of the icon are contained in one file, and the image change is achieved just by modifying the CSS background-position.
+
+In order to achieve this effect on your own site, you will need to put a copy of the icon image file somewhere on your server and then update your template’s CSS to include the CSS code specified at the end of this tutorial. You can edit your template’s css by going to Extensions → Template Manager, selecting your template, and then selecting the “Edit CSS” button. Note: make sure to modify the image icon url specified in the lines that say `background: url()` to point to wherever you uploaded the image on your server.
+
+These are the image files used:
+
+[<img class="demo" src="{{ site.base_url }}/images/icon-showhide1.png" alt="">][icon1][<img class="demo" src="{{ site.base_url }}/images/icon-showhide2.png" alt="">][icon2]
+
+[mooaccordion]: {{ site.base_url }}/mooaccordion-joomla-accordion-article-plugin/
+[icon1]: {{ site.base_url }}/images/icon-showhide1.png
+[icon1]: {{ site.base_url }}/images/icon-showhide2.png
+
+Here is an example of what the final product looks like:
+
 <div class="accordion">
 	<h4 class="mooblock-title mb1_1t">[The] Slowest Runner [in all the World]</h4>
 	<div class="mooblock-el mb1_1e">
@@ -34,11 +49,11 @@
 	<div class="mooblock-el mb1_2e">
 		<p>…mus netus inceptos, sodales sodales accumsan laborum nam hendrerit. Tincidunt deserunt orci eros lacus hymenaeos, placerat wisi nascetur mollit nibh accumsan. Cillum augue wisi nullam, maecenas at reprehenderit nostra tempor cillum irure a potenti natoque est proin pluribus vitae praesent.</p>
 		<p>Potenti augue ante adipisicing, urna fusce placerat exercitation. Laborum dapibus gravida, magnis lobortis dictum lectus purus mollit congue fermentum montes sem aenean libero faucibus mauris. Leo magna tortor laboris ligula sagittis, arcu neque et fusce.</p>
-		
+
 <p>Aptent egestas nisi, culpa elit cras incididunt interdum. Nec nunc quis pariatur pluribus, senectus tincidunt eiusmod nonummy montes facilisis diam augue tempor ultrices proin auctor sociosqu. Sollicitudin dolor veniam fames, est non wisi.</p>
 	</div>
 	<h4 class="mooblock-title mb1_2t">Tempus arcu praesent neque semper aute</h4>
-	<div class="mooblock-el mb1_2e">	
+	<div class="mooblock-el mb1_2e">
 		<p>…do ullamcorper sunt occaecat suspendisse occaecat eleifend hac. Ex nibh rutrum sit dignissim hac cillum laoreet malesuada lacinia dolor imperdiet ligula euismod, sollicitudin turpis aute laoreet facilisi lacinia deserunt laoreet sed id. In nam molestie incididunt, accumsan cupidatat cum. Mattis justo nunc pharetra convallis nibh volutpat lobortis nulla fermentum cursus semper dolore, venenatis nascetur aliqua aliquet. Accumsan congue voluptate sem at mauris, fugiat dictumst pede etiam penatibus sagittis ullamco porta eu do class. Fringilla lacus arcu odio scelerisque proin class luctus cursus nulla, et a deserunt vehicula sociosqu irure rutrum.</p>
 	</div>
 </div>
