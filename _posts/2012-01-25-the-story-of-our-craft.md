@@ -2,6 +2,7 @@
 layout: post
 title: The story of our craft
 baseline: crafting, building, engineering, and how I work
+category: blog
 tags: [thoughts, webdev]
 ---
 

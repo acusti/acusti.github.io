@@ -2,6 +2,7 @@
 layout: post
 title: GitHub and readable light text on dark backgrounds
 baseline: optimizing type for Chrome and Safari
+category: blog
 tags: [typography, accessibility]
 ---
 

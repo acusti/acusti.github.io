@@ -2,6 +2,7 @@
 layout: post
 title: Dynamic Range Compression&#x003A; An Explanation
 baseline: inspired by BadBadNotGood
+category: blog
 tags: [music, explanation]
 ---
 

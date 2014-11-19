@@ -2,6 +2,7 @@
 layout: post
 title: An introduction
 baseline: gotta start somewhere…
+category: blog
 tags: [salutation, introduction]
 ---
 
