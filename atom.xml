@@ -11,9 +11,9 @@ layout: none
   <author>
     <name>Andrew Patton</name>
     <email>andrew@acusti.ca</email>
-  </author> 
+  </author>
 
-  {% for post in site.posts %}
+  {% for post in site.categories.blog %}
   <entry>
     <title>{{ post.title }}</title>
     <link href="{{ site.base_url }}{{ post.url }}"/>
@@ -22,5 +22,5 @@ layout: none
     <content type="html">{{ post.content | xml_escape }}</content>
   </entry>
   {% endfor %}
- 
+
 </feed>
