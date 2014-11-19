@@ -9,16 +9,16 @@
 	<header>
 		{% include navigation.html %}
 	</header>
-	
+
 	<div id="content">
-		<h1 id="logo" class="{{ page.title | downcase | replace:' ','-' | escape }}"><a href="{{ site.base_url }}/" title="{{ site.theme.site_name }}">{{ site.theme.site_name }}</a></h1>
+		<h1 id="logo"><a href="{{ site.base_url }}/" title="{{ site.theme.site_name }}">{{ site.theme.site_name }}</a></h1>
 		{{ content }}
 	</div>
 
 	<footer>
 		<p>Design based on <a href="http://stephan83.github.com">Stephan Florquin</a>’s Jekyll theme. Source available on <a href="https://github.com/acusti/acusti.github.com/">github</a>.</p>
 	</footer>
-	
+
 	<script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
