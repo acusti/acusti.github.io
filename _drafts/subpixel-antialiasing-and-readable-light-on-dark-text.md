@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GitHub and readable light text on dark backgrounds
+title: Readable light text on dark backgrounds&#x003A; a case study
 baseline: optimizing type for Chrome and Safari
 category: blog
 tags: [typography, accessibility]
