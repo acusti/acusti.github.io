@@ -11,6 +11,11 @@
 			background-color: rgba($color-accent-dark, 0.2)
 			text-shadow: 1px 1px 1px $color-accent
 
+	// Don't show last (resume) link on mobile
+	@media (max-width: $narrow-width)
+		li:last-child
+			display: none
+
 .top-nav,
 .top-nav-fixed
 	position: relative
