@@ -84,7 +84,7 @@ ready(function() {
 		document.body.appendChild(nav);
 	}
 
-	// Fill in my email address (spam protection):
+	// Fill in my email address (cheapo spam protection):
 	var emails = document.getElementsByClassName('email');
 	for (var i=0, len=emails.length; i<len; ++i) {
 		emails[i].href = 'mailto:andrew@acusti.ca' + '?subject=' + escape(document.title);
@@ -142,31 +142,3 @@ var setStyles = function(el, styles) {
 		el.setAttribute('style', styles);
 	}
 };
-// Add a getElementsByClassName function if the browser doesn't have one
-// Copyright: Eike Send http://eike.se/nd
-// License: MIT License
-// See https://gist.github.com/2299607
-if (!document.getElementsByClassName) {
-	document.getElementsByClassName = function(search) {
-		var d = document, elements, pattern, i, results = [];
-		if (d.querySelectorAll) { // IE8
-			return d.querySelectorAll("." + search);
-		}
-		if (d.evaluate) { // IE6, IE7
-			pattern = ".//*[contains(concat(' ', @class, ' '), ' " + search + " ')]";
-			elements = d.evaluate(pattern, d, null, 0, null);
-			while ((i = elements.iterateNext())) {
-				results.push(i);
-			}
-		} else {
-			elements = d.getElementsByTagName("*");
-			pattern = new RegExp("(^|\\s)" + search + "(\\s|$)");
-			for (i = 0; i < elements.length; i++) {
-				if ( pattern.test(elements[i].className) ) {
-					results.push(elements[i]);
-				}
-			}
-		}
-		return results;
-	};
-}
