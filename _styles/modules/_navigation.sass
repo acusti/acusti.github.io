@@ -118,7 +118,7 @@ ul.site-nav
 
 #post-navigation
 	margin: 1.5em 0
-	padding: 0.5em 0 0.2em
+	padding: 0.5em 0 0.5em
 	border-top: 2px groove #333333
 	border-bottom: 2px groove #333333
 	list-style: none
@@ -130,8 +130,26 @@ ul.site-nav
 		width: 50%
 		margin-right: -3px
 		text-align: left
-		+adjust-font-size-to(16px, 1.5)
+		+adjust-font-size-to(16px, 1)
 		+rhythm(0, 0, 0, 0)
+
+	a
+		display: block
+		position: relative
+
+	.previous
+		a
+			padding-left: 1.5em
+			&:before
+				content: "←"
+				position: absolute
+				left: 0
+
 	.next
 		text-align: right
-
+		a
+			padding-right: 1.5em
+			&:after
+				content: "→"
+				position: absolute
+				right: 0

@@ -14,12 +14,12 @@ layout: default
 <ul id="post-navigation">
 	<li class="previous">
 		{% if page.previous %}
-		<a href="{{ page.previous.url }}">← {{ page.previous.title }}</a>
+		<a href="{{ page.previous.url }}">{{ page.previous.title }}</a>
 		{% endif %}
 	</li>
 	<li class="next">
 		{% if page.next %}
-		<a href="{{ page.next.url }}">{{ page.next.title }} →</a>
+		<a href="{{ page.next.url }}">{{ page.next.title }}</a>
 		{% endif %}
 	</li>
 </ul>
