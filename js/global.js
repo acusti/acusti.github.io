@@ -91,6 +91,7 @@ ready(function() {
 		emails[i].innerHTML = 'andrew@acusti.ca';
 	}
 
+	// Dynamic positioning logic
 	resizing();
 	// In case the image hasn't loaded yet, resize again in 1 second
 	window.setTimeout(resizing, 1000);
@@ -106,27 +107,25 @@ var resize_timer = 0;
 // Procedures to execute on ready and on resize
 var resizing = function() {
 	// Handle oversized images
-	var oversized = document.getElementsByClassName('oversized');
-	for (var i=0, len=oversized.length; i<len; ++i) {
-		var image = oversized[i],
-			wrap = image.parentNode,
-			max_width = document.body.offsetWidth - 20,
-			offset = 0,
-			image_css = '';
-		// Reset inline image CSS
-		setStyles(image, '');
-
-		if (image.offsetWidth > max_width) {
-			image_css += 'width: ' + max_width + 'px;';
-			offset = Math.floor((wrap.offsetWidth - max_width) / 2);
-		} else {
-			offset = Math.floor((wrap.offsetWidth - image.offsetWidth) / 2);
+	var oversized = document.getElementsByClassName('oversized'),
+	    wrap,
+		image,
+		next_element,
+	    i;
+	for (i = 0; i < oversized.length; i++) {
+		if (!oversized[i].childNodes.length) {
+			continue;
 		}
-		
-		if (offset < 0)
-			image_css += 'margin-left: ' + offset + 'px;';
+		wrap         = oversized[i];
+		image        = wrap.childNodes[0];
+		next_element = oversized[i].nextElementSibling;
+		// Update margin of next element
+		setStyles(next_element, 'margin-top: ' + (image.height + 55) + 'px;');
+	}
+};
 
-		setStyles(image, image_css);
+		}
+
 	}
 };
 
