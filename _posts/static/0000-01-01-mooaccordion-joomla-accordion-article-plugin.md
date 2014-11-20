@@ -27,7 +27,7 @@ Each part of the mooblock should be on a separate line. Here’s how you can cre
 <ul class="standout features">
 	<li>adds minimal markup (and intelligently strips unnecessary markup added by editors like tinyMCE and JCE, if present) to keep the html clean and valid</li>
 	<li>uses Joomla core MooTools library, which means this plugin adds <i>no</i> HTTP requests, minimizes dependencies, prevents JS conflicts, and is very lightweight</li>
-	<li>adds CSS class for active block title, allowing you to <a href="{{ site.base_url }}/mooaccordion-css-show-hide-demo-tutorial/">toggle it’s icon (e.g., from a + to a - icon)</a>; more generally, the markup is fully CSS customizable</li>
+	<li>adds CSS class for active block title, allowing you to <span></span><a href="{{ site.base_url }}/mooaccordion-css-show-hide-demo-tutorial/">toggle it’s icon (e.g., from a + to a - icon)</a>; more generally, the markup is fully CSS customizable</li>
 	<li>easy for anyone to use (without technical knowledge) and flexible</li>
 	<li>the show/hide effects and other settings are easily customizable from the plugin‘s configuration</li>
 	<li>compatible with Internet Explorer 6+, Firefox, Chrome, Safari, Opera, etc.</li>
