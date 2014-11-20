@@ -91,6 +91,9 @@ ready(function() {
 		emails[i].innerHTML = 'andrew@acusti.ca';
 	}
 
+	// Set up image comparison toggles
+	initImageComparison();
+
 	// Dynamic positioning logic
 	resizing();
 	// In case the image hasn't loaded yet, resize again in 1 second
@@ -124,8 +127,42 @@ var resizing = function() {
 	}
 };
 
+// Image comparison toggle
+var initImageComparison = function() {
+	var comparison_toggles = document.getElementsByClassName('image-comparison-toggle'),
+	    comparison_image_wrap,
+	    i;
+	for (i = 0; i < comparison_toggles.length; i++) {
+		comparison_image_wrap = comparison_toggles[i].parentElement.previousElementSibling;
+		// If markup does not match what we expect, bail
+		if (comparison_image_wrap === null) {
+			continue;
 		}
+		// Set image comparison class
+		comparison_image_wrap.className += ' image-comparison-wrap';
+		// Cache current content of toggle as 'data-text' attribute
+		comparison_toggles[i].setAttribute('data-text', comparison_toggles[i].innerHTML);
+		addEvent(comparison_toggles[i], 'click', toggleImageComparison);
+	}
+};
 
+var toggleImageComparison = function() {
+	var comparison_image_wrap = this.parentElement.previousElementSibling,
+	    toggle_class = ' is-toggled',
+		next_text;
+	
+	if (comparison_image_wrap === null) {
+		return;
+	}
+	if (comparison_image_wrap.className.indexOf(toggle_class) > -1) {
+		comparison_image_wrap.className = comparison_image_wrap.className.replace(toggle_class, '');
+		next_text = this.getAttribute('data-text');
+	} else {
+		comparison_image_wrap.className += toggle_class;
+		next_text = this.getAttribute('data-text-toggled');
+	}
+	if (next_text && next_text.length) {
+		this.innerHTML = next_text;
 	}
 };
 

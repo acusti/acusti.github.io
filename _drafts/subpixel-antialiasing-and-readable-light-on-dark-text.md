@@ -8,11 +8,14 @@ tags: [typography, accessibility]
 
 While browsing the [Issues](https://github.com/videojs/video.js/issues) page for [VideoJS](http://www.videojs.com) on GitHub today, I was having trouble reading the text of the inline labels that appear next to the titles of some issues. These labels have white text on colourful backgrounds, and in Chrome and Safari, that white text looked blurred with poorly defined edges that bled into each other, because they are being rendered with subpixel antialiasing. A very easy fix is to specify `-webkit-font-smoothing: antialiased;` for all text that will be display as light on black.
 
-I applied that CSS to the Issues page and took before and after screenshots (in Chrome v30). Toggle the “apply `-webkit-font-smoothing: antialiased`” control to see how it is rendered with and without subpixel antialiasing.
+I applied that CSS to the Issues page and took before and after screenshots (in Chrome v30). Toggle the “Apply `-webkit-font-smoothing: antialiased`” control to see how it is rendered with and without subpixel antialiasing.
 
-![](github-issues-subpixel-antialiasing)
+![With subpixel-antialiasing]({{ site.base_url }}/media/github-issues-subpixel-antialiasing.png)
+![With only antialiasing]({{ site.base_url }}/media/github-issues-antialiasing.png)
 
-John Gruber [linked](http://daringfireball.net/linked/2012/11/14/font-smoothing) to [a UsabilityPost piece](http://www.usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/) a while back that asks web developers to stop ab/using `-webkit-font-smoothing: antialiased;`
+<button class="image-comparison-toggle" data-text-toggled="Restore default font smoothing">Apply <code>-webkit-font-smoothing: antialiased</code></button>
+
+John Gruber [linked](http://daringfireball.net/linked/2012/11/14/font-smoothing) to [a UsabilityPost piece](http://www.usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/) a while back that asks web developers to stop using and abusing `-webkit-font-smoothing: antialiased;`
 
 And in the piece Gruber linked to, Dmitry Fadeyev observes that  dark text on light backgrounds benefits significantly from the default `subpixel-antialiased` rendering of Chrome and Safari:
 

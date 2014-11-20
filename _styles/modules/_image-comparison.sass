@@ -1,0 +1,16 @@
+.image-comparison-toggle
+	@extend %button
+
+.image-comparison-wrap
+	img
+		display: none
+
+		&:first-child
+			display: block
+
+	&.is-toggled
+		img
+			display: block
+
+			&:first-child
+				display: none
