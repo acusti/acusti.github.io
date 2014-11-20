@@ -15,7 +15,7 @@ blockquote
 
 cite
 	margin-left: 1.9em
-	font-size: 0.8rem /* 20 x 0.8 = 16 */
+	font-size: 0.8rem // 20 x 0.8 = 16
 	color: #666
 
 strong
@@ -25,6 +25,9 @@ code
 	background-color: #1c1c1c
 	padding: 0 0.35em
 	margin: 0 0.15em
+
+	+selection
+		background-color: darken($color-selection, 8%)
 
 pre
 	> code
@@ -36,15 +39,12 @@ pre
 #content code p:last-child
 	margin-bottom: 0
 
-::-moz-selection
-	color: #fff
-	background-color: rgba(128, 37, 0, 0.7)
-
-::selection
-	color: #fff
-	background-color: rgba(128, 37, 0, 0.7)
+*
+	+selection
+		color: white
+		background-color: $color-selection
+		text-shadow: none
 
 a
-	&::-moz-selection,
-	&::selection
-		background-color: rgba(220, 116, 4, 0.7)
+	+selection
+		background-color: $color-accent-selection
