@@ -11,11 +11,11 @@ In order to achieve this effect on your own site, you will need to put a copy of
 
 These are the image files used:
 
-[<img class="demo" src="{{ site.base_url }}/images/icon-showhide1.png" alt="">][icon1][<img class="demo" src="{{ site.base_url }}/images/icon-showhide2.png" alt="">][icon2]
+[<img class="demo" src="{{ site.base_url }}/images/icon-showhide1.png" alt="">][icon1] [<img class="demo" src="{{ site.base_url }}/images/icon-showhide2.png" alt="">][icon2]
 
 [mooaccordion]: {{ site.base_url }}/mooaccordion-joomla-accordion-article-plugin/
 [icon1]: {{ site.base_url }}/images/icon-showhide1.png
-[icon1]: {{ site.base_url }}/images/icon-showhide2.png
+[icon2]: {{ site.base_url }}/images/icon-showhide2.png
 
 Here is an example of what the final product looks like:
 
@@ -73,8 +73,11 @@ Here is an example of what the final product looks like:
 	padding-left: 22px;
 }
 {% endhighlight %}
-<p>The CSS for adding the second icon is almost the same, though both background positions are slightly different. Instead of “<code>-24px -1px</code>”, use “<code>-25px 1px</code>”, and instead of “<code>0 -28px</code>”, use “<code>1px -28px</code>”. Also, update the image url to “<code>icon-showhide2.png</code>”. And lastly, you may want to remove “<code>color: #333b62;</code>” and just rely on your template’s default text color.</p>
-<p class="bottom">As you can see from the CSS code, the class that is added to the title elements when they are expanded is, appropriately, “<code>expanded</code>”. You can specify any styles you want only for that class, and they will apply only to active titles. Also, the general class for all titles is “<code>mooblock-title</code>”, and for all show/hide blocks is “<code>mooblock-el</code>”.</p>
+
+The CSS for adding the second icon is almost the same, though both background positions are slightly different. Instead of `-24px -1px`, use `-25px 1px`, and instead of `0 -28px`, use `1px -28px`. Also, update the image url to `icon-showhide2.png`. And lastly, you may want to remove `color: #333b62;` and just rely on your template’s default text color.
+
+As you can see from the CSS code, the class that is added to the title elements when they are expanded is, appropriately, `expanded`. You can specify any styles you want only for that class, and they will apply only to active titles. Also, the general class for all titles is `mooblock-title`, and for all show/hide blocks is `mooblock-el`
+
 <ul>
 	<li class="link-bottom"><a href="{{ site.base_url }}/mooaccordion-joomla-accordion-article-plugin">MooAccordion show/hide (in articles) Joomla plugin</a></li>
 </ul>
