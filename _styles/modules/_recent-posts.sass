@@ -1,0 +1,22 @@
+.recent-posts,
+.recent-posts--featured
+	clear: both
+
+.recent-posts--featured
+	article
+		margin-bottom: 1em
+	h1
+		+adjust-font-size-to(36px, 1.5)
+
+	.post__date
+		+margin-leader(-0.75)
+
+.recent-posts
+	margin-bottom: 1.5em
+	line-height: 1.2
+	dt.post__date
+		margin-bottom: 0
+		color: $color-text-muted
+	dd
+		+padding-trailer(0.5)
+		+margin-trailer(0.5)

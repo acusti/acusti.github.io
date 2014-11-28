@@ -1,0 +1,52 @@
+article .standout,
+.page--work .page > ul
+	width: 100%
+	margin: 0
+	text-align: left
+	padding: 0.5em 0 1em
+
+	@media (max-width: $narrow-width)
+		min-width: 392px
+
+	li
+		list-style: none
+		padding: 10px 12px
+		width: 31%
+		min-height: 60px
+		margin: 0 7px 11px 0
+		display: inline-block
+		vertical-align: top
+		zoom: 1
+		*display: inline
+		background: url(../images/black-20.png)
+
+		> a:first-child,
+		.title
+			display: block
+
+		@media (max-width: $medium-width + 150)
+			width: 47%
+
+		@media (max-width: $narrow-width)
+			width: 100%
+			background: none
+
+			> a:first-child,
+			> p > a:first-child,
+			.title
+				margin-left: -12px
+				padding-left: 12px
+				background: url(../images/black-20.png)
+
+article
+	.sites li
+		min-height: 160px
+
+		@media (max-width: $narrow-width)
+			min-height: 140px
+
+	.features li
+		min-height: 120px
+
+		@media (max-width: $narrow-width)
+			min-height: 120px

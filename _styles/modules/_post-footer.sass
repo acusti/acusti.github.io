@@ -1,0 +1,47 @@
+.contact,
+.link-bottom
+	position: relative
+	max-width: 250px
+	margin-right: auto
+	margin-left: auto
+	padding-top: 0
+	padding-left: 0
+	&:before,
+	&:after
+		content: ""
+		position: absolute
+		display: block
+		height: 2px
+		width: 100%
+		+background-image(linear-gradient(to right, transparent,  $color-text-disabled 35%, $color-text-disabled 65%, transparent 100%))
+		background-repeat: repeat-x
+		background-size: 4px 1px
+
+.contact
+	li
+		display: block
+		width: auto
+		min-height: 0
+		border: 0
+		background-color: transparent
+		margin: 0
+		padding: 0.5em 0
+		text-align: center
+
+	a
+		font-weight: normal
+
+.link-bottom
+	display: block
+	width: auto
+	min-height: 0
+	border: 0
+	background-color: transparent
+	margin: 0
+	padding: 0.5em 0
+	text-align: center
+	margin: -4px 0 0
+
+	a,
+	a:visited
+		font-weight: 400
