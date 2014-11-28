@@ -1,0 +1,29 @@
+article img
+	// When images are too wide, force them to fit (see responsive section for more)
+	max-width: 100%
+	// Override height to match resized width for correct aspect ratio
+	height: auto
+
+img
+	&.in-text
+		float: right
+		margin: 6px 0 2px 8px
+	&.demo
+		margin-right: 0.5em
+		border: 2px inset #cccccc
+		background: url(../images/bckg-transparent.png) repeat
+
+.oversized
+	position: absolute
+	left: 10px
+	right: 10px
+
+	img
+		display: block
+		margin: 0 auto
+
+.post__splash
+	left: 0
+	right: 0
+	overflow: hidden
+	max-height: 350px

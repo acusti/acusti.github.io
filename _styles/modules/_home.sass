@@ -1,0 +1,28 @@
+.image--home
+	float: left
+	margin-left: -109%
+	@media (max-width: 720px)
+		margin-left: -113%
+	@media (max-width: $medium-width)
+		display: block
+		float: none
+		margin-left: 0
+	@media (max-width: $narrow-width)
+		width: 95%
+		max-width: 300px
+		height: auto
+		margin: 0 auto
+
+body.page--home
+	.intro
+		width: 52%
+		float: right
+		margin: 0 -3% 1.4em 0
+
+		@media (max-width: $medium-width)
+			width: auto
+			float: none
+			margin: 0
+
+		@media (max-width: $narrow-width)
+			margin-bottom: 1em

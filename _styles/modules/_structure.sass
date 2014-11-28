@@ -32,6 +32,11 @@ footer
 	padding: 0.3em 0 0.6em
 	clear: both
 
+	@media (max-width: $narrow-width)
+		width: 95%
+		// Reset regular max-width value
+		max-width: 100%
+
 
 /* = Main Content Area
  *-------------------------------------------------------------- */
@@ -40,24 +45,39 @@ footer
 	width: 80%
 	max-width: $max-width
 	padding: 5px 0 45px
-	margin: 45px auto 0
+	margin: 42px auto 0
 	text-align: justify
-	-webkit-hyphens: auto
-	-moz-hyphens: auto
-	hyphens: auto
+	+hyphens(auto)
+
+	@media (max-width: $narrow-width)
+		width: 95%
+		// Reset regular max-width value
+		max-width: 100%
+		text-align: left
 
 #logo
-	margin-bottom: 0.3em
-	&.home
-		margin-bottom: 0.7em
+	margin-bottom: 0
+	body.page--home &
+		margin-bottom: 0.5em
 	a
+		position: absolute
 		display: block
-		text-indent: -999em
+		overflow: hidden
+		height: 0
 		background: url(../images/acustica-full.png) no-repeat 0 4px
-		background-size: 300px 56px
+		background-size: 300px auto
 		width: 300px
-		height: 70px
-	&.home a
-		background: url(../images/acustica-full.png) no-repeat 0 8px
-		width: 600px
-		height: 126px
+		margin-top: 3px
+		padding-top: 70px
+
+		body.page--home &
+			position: static
+			background-position: 0 8px
+			background-size: 600px auto
+			width: 600px
+			padding-top: 120px
+
+.post,
+.page
+	> h1:first-child
+		padding-top: 93px
