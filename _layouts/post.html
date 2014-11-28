@@ -17,8 +17,8 @@ layout: default
 			<img src="{{ splash_src }}" alt="">
 		</div>
 	{% endif %}
-	<h2>{{ page.date | date_to_string }}</h2>
 	<h1><a href="{{ page.url }}" title="Permalink for this post">{{ page.title }}</a></h1>
+	<h2 class="post__date">{{ page.date | date_to_string }}</h2>
 	<p class="baseline">{{ page.baseline }}</p>
 
 	{{ content }}
