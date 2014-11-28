@@ -1,3 +1,5 @@
+$mooaccordion-color-title: #333B62
+
 .accordion
 	background-color: rgb(230, 228, 230)
 	padding: 4px 20px 14px
@@ -10,7 +12,7 @@
 	text-shadow: 1px 1px 2px white
 
 .mooblock-title
-	color: #333B62
+	color: $mooaccordion-color-title
 	text-align: left
 	background: url(../images/icon-showhide1.png) no-repeat -24px 5px
 	padding-left: 22px
@@ -18,20 +20,17 @@
 	text-shadow: none
 	cursor: pointer
 	&.expanded
-		background: url(../images/icon-showhide1.png) no-repeat 0 -22px
+		background-position: 0 -22px
 
 .mooblock-el
 	height: 0
 	padding-left: 22px
 
 .showhide2 .mooblock-title
-	color: #333B62
-	text-align: left
-	background: url(../images/icon-showhide2.png) no-repeat -25px 8px
-	padding-left: 22px
-	margin: 0.7em 0 0
+	background-image: url(../images/icon-showhide2.png)
+	background-position: -25px 8px
 	&.expanded
-		background: url(../images/icon-showhide2.png) no-repeat 1px -21px
+		background-position: 1px -21px
 
 .mooblock-el
 	padding-left: 22px
