@@ -3,11 +3,21 @@ layout: default
 ---
 
 <article id="post">
-<h2>{{ page.date | date_to_string }}</h2>
-<h1><a href="{{ page.url }}" title="Permalink for this post">{{ page.title }}</a></h1>
-<p class="baseline">{{ page.baseline }}</p>
+	{% if page.splash %}
+		{% if page.splash contains 'http' %}
+			{% capture url %}{{page.splash}}{% endcapture %}
+		{% else %}
+			{% capture url %}{{site.baseurl}}{{page.splash}}/{% endcapture %}
+		{% endif %}
+		<div class="post__splash">
+			<img src="{{url}}" alt="">
+		</div>
+	{% endif %}
+	<h2>{{ page.date | date_to_string }}</h2>
+	<h1><a href="{{ page.url }}" title="Permalink for this post">{{ page.title }}</a></h1>
+	<p class="baseline">{{ page.baseline }}</p>
 
-{{ content }}
+	{{ content }}
 
 </article>
 
