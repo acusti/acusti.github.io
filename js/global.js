@@ -111,19 +111,15 @@ var resize_timer = 0;
 var resizing = function() {
 	// Handle oversized images
 	var oversized = document.getElementsByClassName('oversized'),
-	    wrap,
-		image,
 		next_element,
 	    i;
 	for (i = 0; i < oversized.length; i++) {
-		if (!oversized[i].childNodes.length) {
+		if (oversized[i].firstElementChild === null) {
 			continue;
 		}
-		wrap         = oversized[i];
-		image        = wrap.childNodes[0];
 		next_element = oversized[i].nextElementSibling;
 		// Update margin of next element
-		setStyles(next_element, 'margin-top: ' + (image.height + 55) + 'px;');
+		setStyles(next_element, 'padding-top: ' + (oversized[i].clientHeight + 55) + 'px;');
 	}
 };
 
@@ -150,7 +146,7 @@ var toggleImageComparison = function() {
 	var comparison_image_wrap = this.parentElement.previousElementSibling,
 	    toggle_class = ' is-toggled',
 		next_text;
-	
+
 	if (comparison_image_wrap === null) {
 		return;
 	}
