@@ -5,7 +5,15 @@
 <head>
 	{% include head.html %}
 </head>
-<body>
+{% comment %}I organized this logic like so because normal if/else was not working{% endcomment %}
+{% capture slug %}{{ page.permalink | replace_first:'/','' | replace:'/','-' }}{% endcapture %}
+{% if slug == '' %}
+	{% capture slug %}{{ page.url | replace_first:'/','' | replace:'/','-' }}{% endcapture %}
+{% endif %}
+{% if slug == '' %}
+	{% assign slug = 'home' %}
+{% endif %}
+<body class="page--{{ slug }}">
 	<header>
 		{% include navigation.html %}
 	</header>
