@@ -122,11 +122,27 @@ ul.site-nav
  *-------------------------------------------------------------- */
 
 #post-navigation
+	position: relative
 	margin: 1.5em 0
 	padding: 0.5em 0 0.5em
-	border-top: 2px groove #333333
-	border-bottom: 2px groove #333333
 	list-style: none
+
+	&:before,
+	&:after
+		content: ""
+		position: absolute
+		display: block
+		height: 2px
+		width: 100%
+		+background-image(linear-gradient(darken($color-bkg, 5%), darken($color-bkg, 5%) 50%, lighten($color-bkg, 5%) 50%, lighten($color-bkg, 5%) 100%))
+		background-size: 1px 2px
+		background-repeat: repeat-x
+
+	&:before
+		top: 0
+	&:after
+		bottom: 0
+
 	li
 		display: inline-block
 		vertical-align: middle
