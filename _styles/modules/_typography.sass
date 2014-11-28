@@ -19,7 +19,7 @@ body
 			+adjust-font-size-to(18px, 2.78) // 18 x 2.78 = 50
 
 h1, h2, h3
-	color: #fff
+	color: $color-text
 	text-shadow: 1px 1px 1px black
 	-webkit-font-smoothing: subpixel-antialiased
 	text-align: left
@@ -29,17 +29,17 @@ h1
 
 h1
 	+adjust-font-size-to(48px, 2)
-	+rhythm(0, 0, 0, 1, 48px)
+	+rhythm(0, 0, 0, 1)
 	text-shadow: 2px 2px 1px black
 
 h2
 	+adjust-font-size-to(28px, 1.5)
-	+rhythm(0, 0, 0, 1, 28px)
+	+rhythm(0, 0, 0, 1)
 	color: $color-text-muted
 
 h3
 	+adjust-font-size-to(23px, 1.5)
-	+rhythm(1, 0, 0, 1, 23px)
+	+rhythm(1, 0, 0, 1)
 
 a
 	text-decoration: none
@@ -139,6 +139,9 @@ article
 	color: $color-text-muted
 	text-shadow: 1px 1px 1px black
 
+	@media (max-width: $narrow-width)
+		margin-bottom: 0.9em
+		line-height: 1.3
 
 /* Home page typography */
 #intro
