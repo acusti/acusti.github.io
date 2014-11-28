@@ -3,3 +3,16 @@
 		content: '\a0 ›'
 		font-size: 1.2em
 		line-height: 1
+
+.download--target
+	display: inline-block
+	border-radius: 50%
+	padding: 1em
+	background-color: $color-accent-dark
+	+transition(background-color 0.3s)
+
+	&:hover
+		background-color: $color-accent
+
+	> img
+		display: block
