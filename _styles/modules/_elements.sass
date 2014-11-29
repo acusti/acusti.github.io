@@ -10,8 +10,12 @@ body
 
 blockquote
 	position: relative
-	padding: 0 2em
+	padding: 0 1.5em 0 2em
 	margin: 1em 0
+
+	@media (max-width: $narrow-width)
+		padding-right: 1em
+		padding-left: 1.5em
 
 cite
 	margin-left: 1.9em
