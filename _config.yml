@@ -71,6 +71,8 @@ prose:
               value: "code-snippet"
             - name: "Usability"
               value: "usability"
+            - name: "Readability"
+              value: "readability"
             - name: "Accessibility"
               value: "accessibility"
             - name: "Typography"
