@@ -119,7 +119,7 @@ var resizing = function() {
 		}
 		next_element = oversized[i].nextElementSibling;
 		// Update margin of next element
-		setStyles(next_element, 'padding-top: ' + (oversized[i].clientHeight + 55) + 'px;');
+		setStyles(next_element, 'padding-top: ' + (oversized[i].clientHeight + 30) + 'px;');
 	}
 };
 
