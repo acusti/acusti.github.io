@@ -41,7 +41,7 @@ This plugin is listed on the [Joomla Extensions Directory][jed].
 
 ### You can download it here (currently v1.0.4):
 
-<p class="center"><a href="{{ site.base_url }}/extensions/plg_mooaccordion_v1_0_4_UNZIPFIRST.zip" class="download download--target"><img src="{{ site.base_url }}/media/mooaccordion.png" alt="" title="MooAccordion Content Plugin" style="max-width: 250px"></a></p>
+<p class="action-buttons"><a href="{{ site.base_url }}/extensions/plg_mooaccordion_v1_0_4_UNZIPFIRST.zip" class="download download--target"><img src="{{ site.base_url }}/media/mooaccordion.png" alt="" title="MooAccordion Content Plugin" style="max-width: 250px"></a></p>
 
 <address class="vcard">
 	<p class="top">If you have any problems using the plugin, wish to report a bug, or have any feature requests, please contact me, <span class="fn">Andrew Patton</span>, at:</p>
