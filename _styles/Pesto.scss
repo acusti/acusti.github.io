@@ -56,7 +56,7 @@ html, body, button, input, select, textarea {
 	color: $color-text-body;
 	font-family: "Source Sans Pro", "Myriad Set Pro", "Myriad Pro", Myriad, Helvetica, Arial, sans-serif;
 	font-weight: 400;
-	// Use light weight for medium font size and up (screen only)
+	// Use light weight for medium width and up (screen only)
 	@media screen and (min-width: $medium-fontsize-width) {
 		font-weight: 300;
 	}
@@ -160,11 +160,11 @@ a {
 	background-size: 1px 1px;
 	// For non-retina screens in Safari, gradient background needs 2 pixels of height to show any underline
 	@media (-webkit-max-device-pixel-ratio: 1.49),
-	(max-resolution: 143dpi) {
+	       (max-resolution: 143dpi) {
 		background-size: 1px 2px;
 	}
 	background-position: 0 90%;
-	// Clear descendors from underline
+	// Clear descenders from underline
 	text-shadow: 1px 0 white, 2px 0 white, -1px 0 white, -2px 0 white;
 	cursor: pointer;
 	outline: 0 none;
