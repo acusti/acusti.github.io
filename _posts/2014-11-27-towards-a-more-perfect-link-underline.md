@@ -35,7 +35,7 @@ In that example, those fat underlines are sitting right underneath text rendered
 
 With that in mind, I should make it clear that I have been frequently delighted thanks to the simple change, particularly because any app using a WebView automatically gets the newly cleared descenders. The current situation is far from my platonic idea, but it is also a significant improvement. Underlined text in my mail applications and elsewhere looks cleaner, more readable, and less cluttered.
 
-But if you still desire the extent of control that Wichary hopes for, give the `linear-gradient` background trick a try. Accompanied with four `1px` text-shadows positioned around the link text in the color of your background, you even get a nice descender clearing effect. And you can vary the weight and distance of the underline depending on the weight of the text. I have been able to use that technique to nice effect in my [Pesto stylesheet][], which I use for previewing Markdown files in apps such as [Marked 2][]. You can see Pesto with its custom underlines in effect on my [resume][]. The technique has some gotchas (browser inconsistencies in retina vs non-retina and ugliness with text selection), but I’ve been able to address all of the issues that I uncovered. Here’s the final SCSS that I settled on as of this writing:
+But if you still desire the extent of control that Wichary hopes for, give the `linear-gradient` background trick a try. Accompanied with four text-shadows positioned to the left and right of the link text in the color of your background, you even get a nice descender clearing effect. And you can vary the weight and distance of the underline depending on the weight of the text. I have been able to use that technique to nice effect in my [Pesto stylesheet][], which I use for previewing Markdown files in apps such as [Marked 2][]. I made a [codepen demo][] to illustrate my custom underlines and make it easy to compare them to their native browser counterparts. The technique has some gotchas (browser inconsistencies in retina vs non-retina and ugliness with text selection), but I’ve been able to address all of the issues that I uncovered. Here’s the final SCSS that I settled on as of this writing:
 
 ```scss
 a {
@@ -51,12 +51,18 @@ a {
 		background-size: 1px 2px;
 	}
 	background-position: 0 90%;
-	// Clear descendors from underline
+	// Clear descenders from underline
 	text-shadow: 1px 0 white, 2px 0 white, -1px 0 white, -2px 0 white;
 	cursor: pointer;
 	outline: 0 none;
 	// Style selected links (or else text-shadow makes it look crazy ugly)
-	@include selection {
+    // Pseudo selectors must go separately, or they break each other
+	&::selection {
+		background-color: lighten($color-accent, 25%);
+		color: $color-text-body;
+		text-shadow: none;
+	}
+	&::-moz-selection {
 		background-color: lighten($color-accent, 25%);
 		color: $color-text-body;
 		text-shadow: none;
@@ -67,7 +73,8 @@ a {
 	}
 }
 h1, h2, h3, h4, h5, dt, strong, b {
-	a {
+	a,
+    a & {
 		background-size: 1px 2px;
 		background-position: 0 91%;
 	}
@@ -80,4 +87,4 @@ h1, h2, h3, h4, h5, dt, strong, b {
 [Angel List]: https://angel.co/jobs
 [Pesto stylesheet]: https://github.com/acusti/Custom-Marked-Styles
 [Marked 2]: http://marked2app.com
-[resume]: {{ site.base_url }}/resume/
+[codepen]: http://codepen.io/acusti/editor/gbabKQ
