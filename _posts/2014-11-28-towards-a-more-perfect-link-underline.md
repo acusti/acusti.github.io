@@ -35,51 +35,10 @@ In that example, those fat underlines are sitting right underneath text rendered
 
 With that in mind, I should make it clear that I have been frequently delighted thanks to the simple change, particularly because any app using a WebView automatically gets the newly cleared descenders. The current situation is far from my platonic idea, but it is also a significant improvement. Underlined text in my mail applications and elsewhere looks cleaner, more readable, and less cluttered.
 
-But if you still desire the extent of control that Wichary hopes for, give the `linear-gradient` background trick a try. Accompanied with four text-shadows positioned to the left and right of the link text in the color of your background, you even get a nice descender clearing effect. And you can vary the weight and distance of the underline depending on the weight of the text. I have been able to use that technique to nice effect in my [Pesto stylesheet][], which I use for previewing Markdown files in apps such as [Marked 2][]. I made a [codepen demo][] to illustrate my custom underlines and make it easy to compare them to their native browser counterparts. The technique has some gotchas (browser inconsistencies in retina vs non-retina and ugliness with text selection), but I’ve been able to address all of the issues that I uncovered. Here’s the final SCSS that I settled on as of this writing:
+But if you still desire the extent of control that Wichary hopes for, give the `linear-gradient` background trick a try. Accompanied with four text-shadows positioned to the left and right of the link text in the color of your background, you even get a nice descender clearing effect. And you can vary the weight and distance of the underline depending on the weight of the text. I have been able to use that technique to nice effect in my [Pesto stylesheet][], which I use for previewing Markdown files in apps such as [Marked 2][]. I made a codepen demo to illustrate my custom underlines and make it easy to compare them to their native browser counterparts. The technique has some gotchas (browser inconsistencies in retina vs non-retina and ugliness with text selection), but I’ve been able to address all of the issues that I uncovered. I’ve embedded the demo below. Use the button to toggle between the default browser underline and my custom one, and find the SCSS that powers it under the `SCSS` tab.
 
-```scss
-a {
-	color: $color-accent;
-	text-decoration: none;
-	// Underline via gradient background
-	background-image: linear-gradient(to bottom, transparent 49%, $color-accent 50%);
-	background-repeat: repeat-x;
-	background-size: 1px 1px;
-	// For non-retina screens in Safari, gradient background needs 2 pixels of height to show any underline
-	@media (-webkit-max-device-pixel-ratio: 1.49),
-	(max-resolution: 143dpi) {
-		background-size: 1px 2px;
-	}
-	background-position: 0 90%;
-	// Clear descenders from underline
-	text-shadow: 1px 0 white, 2px 0 white, -1px 0 white, -2px 0 white;
-	cursor: pointer;
-	outline: 0 none;
-	// Style selected links (or else text-shadow makes it look crazy ugly)
-    // Pseudo selectors must go separately, or they break each other
-	&::selection {
-		background-color: lighten($color-accent, 25%);
-		color: $color-text-body;
-		text-shadow: none;
-	}
-	&::-moz-selection {
-		background-color: lighten($color-accent, 25%);
-		color: $color-text-body;
-		text-shadow: none;
-	}
-	&:hover {
-		color: darken($color-accent, 11%);
-		background-image: linear-gradient(to bottom, transparent 49%, darken($color-accent, 6%) 50%);
-	}
-}
-h1, h2, h3, h4, h5, dt, strong, b {
-	a,
-    a & {
-		background-size: 1px 2px;
-		background-position: 0 91%;
-	}
-}
-```
+<p data-height="433" data-theme-id="10369" data-slug-hash="gbabKQ" data-default-tab="result" data-user="acusti" class='codepen'>See the Pen <a href='http://codepen.io/acusti/pen/gbabKQ/'>Towards a more perfect link underline</a> by Andrew Patton (<a href='http://codepen.io/acusti'>@acusti</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 [medium-post-underlines]: https://medium.com/designing-medium/crafting-link-underlines-on-medium-7c03a9274f9
 [descenders]: https://en.wikipedia.org/wiki/Descender
@@ -87,4 +46,3 @@ h1, h2, h3, h4, h5, dt, strong, b {
 [Angel List]: https://angel.co/jobs
 [Pesto stylesheet]: https://github.com/acusti/Custom-Marked-Styles
 [Marked 2]: http://marked2app.com
-[codepen demo]: http://codepen.io/acusti/pen/gbabKQ
