@@ -87,4 +87,4 @@ h1, h2, h3, h4, h5, dt, strong, b {
 [Angel List]: https://angel.co/jobs
 [Pesto stylesheet]: https://github.com/acusti/Custom-Marked-Styles
 [Marked 2]: http://marked2app.com
-[codepen]: http://codepen.io/acusti/editor/gbabKQ
+[codepen demo]: http://codepen.io/acusti/editor/gbabKQ
