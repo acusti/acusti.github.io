@@ -18,6 +18,11 @@ img
 	left: 10px
 	right: 10px
 
+	.no-js &
+		position: relative
+		width: 124%
+		left: -12%
+
 	img
 		display: block
 		margin: 0 auto
@@ -27,8 +32,11 @@ img
 			width: 120%
 			margin-left: -10%
 
-	.no-js &
-		position: relative
+			.no-js &
+				max-width: 100%
+				width: 100%
+				margin-left: 0
+
 
 	// Animate padding-top of following block-level element
 	+ h1,
@@ -47,3 +55,7 @@ img
 	right: 0
 	overflow: hidden
 	max-height: 375px
+
+	.no-js &
+		// With no-js version, compensate for extra padding on title
+		margin-bottom: -75px
