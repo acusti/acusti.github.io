@@ -7,7 +7,7 @@ title: Home of web developer Andrew Patton
 	{% include home.html %}
 </div>
 
-<div class="recent-posts--featured">
+<div class="posts-list--featured">
 	<h3>Latest</h3>
 
 	{% for post in site.categories.blog offset: 0 limit: site.theme.homepage_featured %}
@@ -15,7 +15,7 @@ title: Home of web developer Andrew Patton
 	{% endfor %}
 </div>
 
-<div class="recent-posts">
+<div class="posts-list">
 	<h3>Older thoughts</h3>
 
 	<dl>
