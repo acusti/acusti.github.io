@@ -51,17 +51,16 @@
 
 .top-nav-fixed
 	position: fixed
-	+opacity(0.7)
 
-
-.top-nav-fixed
 	.site-nav
-		background-color: rgba($color-bkg, 0.87)
-	a,
-	a:hover
-		color: white
-		-webkit-font-smoothing: antialiased
-		text-shadow: 1px 1px 1px black
+		background-color: rgba($color-bkg, 0.83)
+	a
+		+adjust-leading-to(1.6)
+		&,
+		&:hover
+			color: $color-text-muted
+			-webkit-font-smoothing: antialiased
+			text-shadow: 1px 1px 1px black
 
 		&:hover
 			background-color: rgba(white, 0.2)
@@ -87,13 +86,22 @@ ul.site-nav
 		border-right: 1px solid lighten($color-accent, 9%)
 		border-bottom: 1px solid lighten($color-accent, 9%)
 
+		@media (max-width: $narrow-width)
+			margin-top: 18px
+
 	&:first-child:before
 		display: none
 
-	@media (max-width: $narrow-width)
-		margin-top: 18px
-
-
+.top-nav-fixed
+	li
+		// Don't show Archive link in fixed nav
+		&:nth-child(2)
+			display: none
+		&:before
+			background-color: $color-text-muted
+			border-right: 1px solid black
+			border-bottom: 1px solid black
+			margin-top: 20px
 
 .site-nav
 	a
@@ -115,6 +123,7 @@ ul.site-nav
 
 .top-nav-fixed .home
 	background-image: url(../images/icon-home-under.png)
+	background-position: 6px 8px
 
 /* = Post navigation
  *-------------------------------------------------------------- */
