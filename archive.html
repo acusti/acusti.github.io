@@ -3,10 +3,12 @@ layout: default
 title: Archive
 ---
 
-<h1>Archive</h1>
+<section class="page">
+    <h1>Archive</h1>
 
-<dl id="posts">
-  {% for post in site.categories.blog %}
-		{% include post_summary.html %}
-  {% endfor %}
-</dl>
+    <dl class="posts">
+      {% for post in site.categories.blog %}
+    		{% include post_summary.html %}
+      {% endfor %}
+    </dl>
+</section>
