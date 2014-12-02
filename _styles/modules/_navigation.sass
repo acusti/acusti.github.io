@@ -81,21 +81,26 @@ ul.site-nav
 
 .site-nav li
 	display: inline-block
-	vertical-align: top
-	zoom: 1
-	*display: inline
-	background: url(../images/nav-separator.png) no-repeat 0 21px
 	padding-left: 9px
 
+	&:before
+		position: absolute
+		content: ""
+		margin-top: 21px
+		margin-left: -8px
+		width: 4px
+		height: 4px
+		background-color: $color-accent-dark
+		border-right: 1px solid lighten($color-accent, 9%)
+		border-bottom: 1px solid lighten($color-accent, 9%)
+
+	&:first-child:before
+		display: none
+
 	@media (max-width: $narrow-width)
-		background-position: 0 18px
+		margin-top: 18px
 
 
-.top-nav-fixed li
-	background-image: url(../images/nav-separator-under.png)
-
-.site-nav li:first-child, .top-nav-fixed li:first-child
-	background: none
 
 .site-nav
 	a
