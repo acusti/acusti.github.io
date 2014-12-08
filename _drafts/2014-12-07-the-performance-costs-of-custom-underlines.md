@@ -1,10 +1,10 @@
 ---
 layout: post
 category: blog
-published: false
+published: true
 title: The performance costs of custom underlines
 splash: "media/dev-tools-timeline-for-custom-underline.png"
-tags: 
+tags:
   - typography
   - performance
 baseline: "performance testing CSS text-shadow and linear-gradient"
@@ -16,9 +16,10 @@ So I started by creating two test cases in codepen with unreasonably link-heavy 
 
 I wanted to get a feeling for how that translated to actual load times, so I lined up some tests on [WebPagetest.org][] with a Motorola E and Nexus 7 (both using Chrome), with the assumption that the penalty would be greatest for mobile devices. The results, however, illustrated the flaws in my logic.
 
-|   | Average load times |
+Here are the average load times for each device in each test:
+
 |   | Moto E | Nexus 7 |
-| - | ------ | ------- |
+|---|--------|---------|
 | Control | … | … |
 | Custom  | … | … |
 

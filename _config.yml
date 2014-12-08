@@ -7,6 +7,9 @@ future:      false
 highlighter: pygments
 markdown:    redcarpet
 
+redcarpet:
+  extensions: [tables]
+
 # Theme settings
 theme:
 
