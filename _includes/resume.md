@@ -51,7 +51,7 @@ Computer Languages and Software
     - Mocha + Chai unit testing (BBD)
 - CSS (“[Master][smarterercss]”)
     - SASS with Compass
-    - [Modular][SMACSS]/[component][north]-based [methodologies][objects in space] for styles and markup
+    - [Modular][SMACSS] / [component][north]-based [methodologies][objects in space] for styles and markup
 - Web Components (with and without Polymer)
 - HTML (“[Expert][smartererhtml5]”)
 
