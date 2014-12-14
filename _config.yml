@@ -8,7 +8,7 @@ highlighter: pygments
 markdown:    redcarpet
 
 redcarpet:
-  extensions: [tables]
+  extensions: [tables, footnotes]
 
 # Theme settings
 theme:
