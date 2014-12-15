@@ -5,13 +5,18 @@ article .standout,
 	text-align: left
 	padding: 0.5em 0 1em
 
-	@media (max-width: $narrow-width)
-		min-width: 392px
+	@media (min-width: $medium-width + 150)
+		width: 110%
+		margin-left: -5%
+
+	@media (min-width: $total-width * 1.2 + 30)
+		width: 120%
+		margin-left: -10%
 
 	li
 		list-style: none
 		padding: 10px 12px
-		width: 31%
+		width: 31.75%
 		min-height: 60px
 		margin: 0 7px 11px 0
 		display: inline-block
@@ -22,7 +27,13 @@ article .standout,
 		.title
 			display: block
 
+		@media (min-width: $total-width + 100)
+			width: 32%
+
 		@media (max-width: $medium-width + 150)
+			width: 48%
+
+		@media (max-width: $medium-width - 120)
 			width: 47%
 
 		@media (max-width: $narrow-width)
@@ -34,7 +45,6 @@ article .standout,
 			.title
 				margin-left: -12px
 				padding-left: 12px
-				background-color: rgba(black, 0.15)
 
 article
 	.sites li
