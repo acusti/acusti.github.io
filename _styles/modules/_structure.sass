@@ -74,9 +74,13 @@ footer
 		body.page--home &
 			position: static
 			background-position: 0 8px
-			background-size: 600px auto
-			width: 600px
+			background-size: 100% auto
+			max-width: 600px
+			width: 100%
 			padding-top: 120px
+
+			@media (max-width: 600px)
+				padding-top: 22%
 
 .post,
 .page
