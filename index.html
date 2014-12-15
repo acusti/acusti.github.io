@@ -3,9 +3,10 @@ layout: default
 title: Home of web developer Andrew Patton
 ---
 
-<div class="intro">
-	{% include home.html %}
-</div>
+<article class="intro">
+	{% capture content %}{% include home.md %}{% endcapture %}
+	{{ content | markdownify }}
+</article>
 
 <div class="posts-list--featured">
 	<h3>Latest</h3>
