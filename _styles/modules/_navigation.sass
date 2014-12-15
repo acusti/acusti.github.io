@@ -15,9 +15,9 @@
 			background-color: rgba($color-accent-dark, 0.2)
 			text-shadow: 1px 1px 1px $color-accent
 
-	// Don't show last (resume) link on mobile
+	// Don't show 2nd (resume) link on mobile
 	@media (max-width: $narrow-width)
-		li:last-child
+		li:nth-child(2)
 			display: none
 
 .top-nav,
@@ -55,7 +55,7 @@
 	.site-nav
 		background-color: rgba($color-bkg, 0.83)
 	a
-		+adjust-leading-to(1.6)
+		//+adjust-leading-to(1.6)
 		&,
 		&:hover
 			color: $color-text-muted
@@ -94,8 +94,11 @@ ul.site-nav
 
 .top-nav-fixed
 	li
-		// Don't show Archive link in fixed nav
-		&:nth-child(2)
+		display: none
+		// Only show last two links in fixed nav
+		&:nth-last-child(-n+2)
+			display: inline-block
+		&:nth-last-child(2):before
 			display: none
 		&:before
 			background-color: $color-text-muted
