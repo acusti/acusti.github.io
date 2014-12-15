@@ -6,6 +6,21 @@ $header-text-family: $body-text-family
 $mono-family: Menlo, "Andale Mono", "DejaVu Sans Mono", Consolas, monospace
 $base-block-elements: "h5, p, ul, ol, dl"
 
+// Placeholders
+%drop-cap
+	&::first-letter
+		float: left
+		font-size: 5.29em
+		line-height: 1
+		margin: -0.05em 0 -0.15em
+		padding: 0 0.07em 0 0
+		// Once widely supported, use initial letter
+		// initial-letter: 3
+		color: $color-accent-dark
+		@media (max-width: $narrow-width)
+			initial-letter: 2
+
+
 // Vertical rhythm baseline
 +establish-baseline
 
@@ -97,6 +112,10 @@ del
 article
 	p
 		+rhythm(0, 0, 0, 1)
+
+	> p:first-of-type
+		@extend %drop-cap
+
 	ul, ol
 		+rhythm(0, 0, 0, 1.5)
 		@media (max-width: $narrow-width)
