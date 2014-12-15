@@ -138,12 +138,7 @@ ul.site-nav
 	&:after
 		content: ""
 		position: absolute
-		display: block
-		height: 2px
-		width: 100%
-		+background-image(linear-gradient(darken($color-bkg, 5%), darken($color-bkg, 5%) 50%, lighten($color-bkg, 5%) 50%, lighten($color-bkg, 5%) 100%))
-		background-size: 1px 2px
-		background-repeat: repeat-x
+		@extend %horizontal-border
 
 	&:before
 		top: 0
