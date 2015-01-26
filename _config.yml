@@ -62,7 +62,7 @@ prose:
           element: "text"
           label: "Splash image"
           value: ""
-      - name: "credits"
+      - name: "credit"
         field:
           element: "text"
           label: "Splash image credits"
@@ -97,6 +97,8 @@ prose:
               value: "explanation"
             - name: "Rant"
               value: "rant"
+            - name: "PSA"
+              value: "PSA"
     _posts/static:
       - name: "layout"
         field:
