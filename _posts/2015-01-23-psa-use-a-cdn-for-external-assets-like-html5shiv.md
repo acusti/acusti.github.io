@@ -11,7 +11,7 @@ tags:
 baseline: "The fast, easy, and free way to load external assets"
 ---
 
-To my fellow builders of websites: when you want to include an external resource on a webpage, do *not* use a publicly-accessible version control system to serve the resource. I see this problem most frequently on sites with the inclusion of the [HTML5 shiv][] (shim) script, used to enable HTML5 elements in IE 8 and older. The script was originally hosted on Google Code, and the project description recommended using a link to the version of the file in SVN at `html5shiv.googlecode.com​/svn​/trunk​/html5.js`. This is not a good way to include any resource in a webpage. Check out the response headers for the file:
+To my fellow builders of websites: when you want to include an external resource on a webpage, do *not* use a publicly-accessible version control system to serve the resource. I see this problem most frequently on sites with the inclusion of the [HTML5 shiv][] (shim) script, used to enable HTML5 elements in IE 8 and older. The script was originally hosted on Google Code, and the project description recommended using a link to the version of the file in SVN at [`html5shiv.googlecode.com​/svn​/trunk​/html5.js`][html5shiv-svn]. This is not a good way to include any resource in a webpage. Check out the response headers for the file:
 
 ```
 HTTP/1.1 200 OK
@@ -28,7 +28,7 @@ Cache-Control: public, max-age=180
 Alternate-Protocol: 80:quic,p=0.02
 ```
 
-The browser cache is set to expire in 3 hours. Compare this to the headers of the same file from [jsDelivr][], the free open source CDN:
+The browser cache is set to expire in 3 hours. Compare this to the headers of the same file from [jsDelivr][html5shiv-jsdelivr], the free, open source CDN:
 
 ```
 HTTP/1.1 200 OK
@@ -55,14 +55,15 @@ There are three major free CDN servies I know of for including a wide range of t
 - [CDNJS][], powered by Cloudflare
 - [RawGit][], powered by MaxCDN
 
-RawGit is different (and special) because it “serves raw files directly from GitHub with proper Content-Type headers”. This makes it particularly suited for use in your own software projects. As long as you host your work in a public GitHub repo, you can then serve those resources using a fast and professional CDN. There are two address schemes you can use: one is for development purposes, and basically serves the files from GitHub, adding proper headers; the other is for production, and only fetches the file from GitHub once, caching it indefinitely from then on. This means you should use a GitHub link with the appropiate commit hash in the URL, like `https://github.com/​acusti/​acusti.github.com/​blob/​22fccc69da2363f917a60ab46​ac6cb9018c9981d/​_styles/​Pesto.scss`. Also, be aware that while the RawGit CDN is powered by MaxCDN, the site and the development version of its service is provided without charge or renumeration by a generous individual named [Ryan Grove][], so be aware that it won’t last forever and in the meantime, don’t abuse it! See the [RawGit FAQ][] to better understand how to use it.
+RawGit is different (and special) because it “serves raw files directly from GitHub with proper Content-Type headers”. This makes it particularly suited for use in your own software projects. As long as you host your work in a public GitHub repo, you can then serve those resources using a fast and professional CDN. There are two address schemes you can use: one is for development purposes, and basically serves the files from GitHub, adding proper headers; the other is for production, and only fetches the file from GitHub once, caching it indefinitely from then on. This means you should use a GitHub link with the appropiate commit hash in the URL, like [`https://github.com/​acusti/​acusti.github.com/​blob/​22fccc69da2363f917a60ab46​ac6cb9018c9981d/​_styles/​Pesto.scss`][pesto-url]. Also, be aware that while the RawGit CDN is powered by MaxCDN, the site and the development version of its service is provided without charge or renumeration by a generous individual named [Ryan Grove][], so be aware that it won’t last forever and in the meantime, don’t abuse it! See the [RawGit FAQ][] to better understand how to use it.
 
 Lastly, there is also a site called [Open Source Software CDN][OSSCDN], powered by MaxCDN, but it says in its footer that it’s powered by jsDelivr.
 
 Did I miss any resources? Any other suggestions? Let me know in the comments or on [Twitter][].
 
-
+[html5shiv-svn]: //html5shiv.googlecode.com/svn/trunk/html5.js
 [HTML5 shiv]: https://github.com/aFarkas/html5shiv
+[html5shiv-jsdelivr]: http://www.jsdelivr.com/#!html5shiv
 [jsDelivr]: http://www.jsdelivr.com
 [MaxCDN]: https://www.maxcdn.com
 [Cloudflare]: http://cloudflare.com
@@ -71,5 +72,6 @@ Did I miss any resources? Any other suggestions? Let me know in the comments or 
 [OSSCDN]: http://osscdn.com
 [Ryan Grove]: http://wonko.com
 [RawGit]: https://rawgit.com
+[pesto-url]: https://github.com/acusti/acusti.github.com/blob/22fccc69da2363f917a60ab46ac6cb9018c9981d/_styles/Pesto.scss
 [RawGit FAQ]: https://rawgit.com/faq
 [Twitter]: https://twitter.com/andpatton
