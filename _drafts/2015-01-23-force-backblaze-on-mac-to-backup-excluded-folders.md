@@ -1,7 +1,7 @@
 ---
 layout: post
 category: blog
-published: false
+published: true
 title: Force Backblaze on Mac to backup excluded folders
 ---
 
