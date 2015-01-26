@@ -2,12 +2,13 @@
 layout: post
 category: blog
 published: true
-title: ""
+title: "PSA: Use a CDN for external assets like HTML5shiv"
 splash: media/rocketship.svg
 credit: "Rocketship created by [Jean-Philippe Cabaroc](http://thenounproject.com/cabaroc/) from the [Noun Project](http://thenounproject.com/term/rocket/7427/)"
 tags: 
   - performance
   - PSA
+baseline: "The fast, easy, and free way to load external assets"
 ---
 
 To my fellow builders of websites: when you want to include an external resource on a webpage, do *not* use a publicly-accessible version control system to serve the resource. I see this problem most frequently on sites with the inclusion of the [HTML5 shiv][] (shim) script, used to enable HTML5 elements in IE 8 and older. The script was originally hosted on Google Code, and the project description recommended using a link to the version of the file in SVN at `html5shiv.googlecode.com​/svn​/trunk​/html5.js`. This is not a good way to include any resource in a webpage. Check out the response headers for the file:
