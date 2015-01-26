@@ -10,7 +10,7 @@ tags:
   - PSA
 ---
 
-To my fellow builders of websites: when you want to include an external resource on a webpage, do *not* use a publicly-accessible version control system to serve the resource. I see this problem most frequently on sites with the inclusion of the [HTML5 shiv][] (shim) script, used to enable HTML5 elements in IE 8 and older. The script was originally hosted on Google Code, and the project description recommended using a link to the version of the file in SVN at `html5shiv.googlecode.com​/svn​/trunk​/html5.js`. This is not a good way to include any resource in a webpage. Check out the response headers for the file:
+To my fellow builders of websites: when you want to include an external resource on a webpage, do *not* use a publicly-accessible version control system to serve the resource. I see this problem most frequently on sites with the inclusion of the [HTML5 shiv][] (shim) script, used to enable HTML5 elements in IE 8 and older. The script was originally hosted on Google Code, and the project description recommended using a link to the version of the file in SVN at `html5shiv.googlecode.com​/svn​/trunk​/html5.js`. This is a terrible way to include any resource in a webpage. Check out the response headers for the file:
 
 ```
 HTTP/1.1 200 OK
@@ -48,7 +48,7 @@ Content-Encoding: gzip
 
 JsDelivr serves the file as it should, gzipped and with a far-future (60 year) expiration date. There are countless sites on the internet using the HTML5 shiv for their older IE users, and if people would generally use a proper CDN for including that file, those unfortunate users stuck browsing the internet with decrepit browsers would at least pretty much never have to wait for an HTTP request for the HTML5shiv again (unless anyone thinks IE8 will still be around in 2075).
 
-There are three major free CDN servies I know of for including a wide range of third party resources on your site. They are:
+There are three major free CDN servies I know of for including a wide range of third party resources on your site. They have committed to serving up a huge variety of useful open source static resources (JS, CSS, images, etc) using fast and reliable global CDN services:
 
 - [jsDelivr][], powered by both [Cloudflare][] and [MaxCDN][], with load balancing/failover support provided by [Cedexis][]
 - [CDNJS][], powered by Cloudflare
@@ -56,7 +56,7 @@ There are three major free CDN servies I know of for including a wide range of t
 
 RawGit is different (and special) because it “serves raw files directly from GitHub with proper Content-Type headers”. This makes it particularly suited for use in your own software projects. As long as you host your work in a public GitHub repo, you can then serve those resources using a fast and professional CDN. There are two address schemes you can use: one is for development purposes, and basically serves the files from GitHub, adding proper headers; the other is for production, and only fetches the file from GitHub once, caching it indefinitely from then on. This means you should use a GitHub link with the appropiate commit hash in the URL, like `https://github.com/​acusti/​acusti.github.com/​blob/​22fccc69da2363f917a60ab46​ac6cb9018c9981d/​_styles/​Pesto.scss`. Also, be aware that while the RawGit CDN is powered by MaxCDN, the site and the development version of its service is provided without charge or renumeration by a generous individual named [Ryan Grove][], so be aware that it won’t last forever and in the meantime, don’t abuse it! See the [RawGit FAQ][] to better understand how to use it.
 
-Lastly, there is also a site called [Open Source Software CDN][OSSCDN], powered by MaxCDN, but it says in its footer that it’s powered by jsDelivr.
+Lastly, I also found a site called [Open Source Software CDN][OSSCDN], powered by MaxCDN, but it says in its footer that it’s powered by jsDelivr.
 
 Did I miss any resources? Any other suggestions? Let me know in the comments or on [Twitter][].
 
