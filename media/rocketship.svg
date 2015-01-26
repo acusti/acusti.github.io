@@ -1,5 +1,127 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Calque_1" x="0px" y="0px" viewBox="-50.83465 6 156.693 55" enable-background="new 0 0 56.693 56.693" xml:space="preserve">
 <g transform="rotate(40 28.3465 28.3465)">
+    <!-- 1st animation -->
+    <animateTransform
+           attributeName="transform"
+           attributeType="XML"
+           type="translate"
+           from="-80 110"
+           to="100 -200"
+           dur="3s"
+           fill="freeze"
+           restart="whenNotActive"
+           calcMode="spline"
+           keySplines="0.670, 0.080, 0.755, 0.465"
+           keyTimes="0;1"
+           />
+    <animateTransform
+           attributeName="transform"
+           attributeType="XML"
+           type="scale"
+           from="0.8 0.8"
+           to="2 2"
+           dur="3s"
+           fill="freeze"
+           restart="whenNotActive"
+           calcMode="spline"
+           keySplines="0.670, 0.080, 0.755, 0.465"
+           keyTimes="0;1"
+           additive="sum"
+           />
+    <animateTransform
+           attributeName="transform"
+           attributeType="XML"
+           type="rotate"
+           from="25 28.3465 28.3465"
+           to="50 28.3465 28.3465"
+           dur="3s"
+           fill="freeze"
+           restart="whenNotActive"
+           calcMode="spline"
+           keySplines="0.670, 0.080, 0.755, 0.465"
+           keyTimes="0;1"
+           additive="sum"
+           />
+    <!-- 2nd animation -->
+    <animateTransform
+           attributeName="transform"
+           attributeType="XML"
+           type="translate"
+           from="180 0"
+           to="-150 -15"
+           dur="2.5s"
+           begin="3s"
+           end="5.5s"
+           fill="freeze"
+           restart="whenNotActive"
+           calcMode="spline"
+           keySplines="0.670, 0.080, 0.755, 0.465"
+           keyTimes="0;1"
+           />
+    <animateTransform
+           attributeName="transform"
+           attributeType="XML"
+           type="scale"
+           from="2 2"
+           to="1 1"
+           dur="2.5s"
+           begin="3s"
+           end="5.5s"
+           fill="freeze"
+           restart="whenNotActive"
+           calcMode="spline"
+           keySplines="0.670, 0.080, 0.755, 0.465"
+           keyTimes="0;1"
+           additive="sum"
+           />
+    <animateTransform
+           attributeName="transform"
+           attributeType="XML"
+           type="rotate"
+           from="-78 28.3465 28.3465"
+           to="-87 28.3465 28.3465"
+           dur="2.5s"
+           begin="3s"
+           end="5.5s"
+           fill="freeze"
+           restart="whenNotActive"
+           calcMode="spline"
+           keySplines="0.670, 0.080, 0.755, 0.465"
+           keyTimes="0;1"
+           additive="sum"
+           />
+    <!-- 3rd animation -->
+    <animateTransform
+           attributeName="transform"
+           attributeType="XML"
+           type="translate"
+           from="-100 110"
+           to="0 0"
+           dur="2s"
+           begin="6s"
+           end="8s"
+           fill="freeze"
+           restart="whenNotActive"
+           calcMode="spline"
+           keySplines="0.650, 0.065, 0.355, 0.930"
+           keyTimes="0;1"
+           />
+    <animateTransform
+           attributeName="transform"
+           attributeType="XML"
+           type="rotate"
+           from="35 28.3465 28.3465"
+           to="45 28.3465 28.3465"
+           dur="2s"
+           begin="6s"
+           end="8s"
+           fill="freeze"
+           restart="whenNotActive"
+           calcMode="spline"
+           keySplines="0.650, 0.065, 0.355, 0.930"
+           keyTimes="0;1"
+           additive="sum"
+           />
 	<path fill="rgb(251,144,8)" d="M30.503,42.734c0.333,0.446,0.539,1.035,0.539,1.771c0,0.032-0.014,0.067-0.016,0.099   c-0.088,1.766-2.547,4.137-2.547,4.137s-2.459-2.371-2.547-4.137c-0.002-0.032-0.016-0.067-0.016-0.099   c0-0.737,0.206-1.325,0.539-1.771c-1.208,0.613-1.951,1.794-1.951,3.331c0,2.207,3.168,7.372,3.529,7.954l0.446,0.717l0.446-0.717   c0.361-0.582,3.529-5.747,3.529-7.954C32.454,44.529,31.711,43.347,30.503,42.734z"/>
 	<path fill="rgb(251,144,8)" d="M28.477,39.509c-1.189,0-2.377-0.084-3.556-0.241c-0.426-0.057-0.852-0.121-1.276-0.198   c0.235,0.765,0.514,1.519,0.856,2.252l0.116,0.249l0.267,0.067c0.807,0.202,1.632,0.311,2.462,0.375   c0.377,0.029,0.754,0.07,1.133,0.07s0.755-0.041,1.133-0.07c0.83-0.064,1.656-0.172,2.463-0.375l0.267-0.067l0.116-0.25   c0.341-0.734,0.62-1.488,0.855-2.252c-0.423,0.077-0.849,0.14-1.275,0.197C30.857,39.424,29.667,39.509,28.477,39.509z"/>
 	<path fill="rgb(251,144,8)" d="M38.951,26.251c-0.032,0.619-0.083,1.234-0.152,1.847c-0.338,3.021-1.125,5.966-2.335,8.806   c-0.142,0.334-0.279,0.668-0.433,0.999l-0.032,0.067l6.27,1.878v-8.646L38.951,26.251z"/>
