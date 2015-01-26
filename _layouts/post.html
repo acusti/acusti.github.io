@@ -17,6 +17,11 @@ layout: default
 			<img src="{{ splash_src }}" alt="">
 		</div>
 	{% endif %}
+	{% if page.credit %}
+		<div class="post__splash--credit">
+			{{ page.credit | markdownify }}
+		</div>
+	{% endif %}
 	<h1><a href="{{ page.url }}" title="Permalink for this post">{{ page.title }}</a></h1>
 	<div class="post__date">{{ page.date | date_to_string }}</div>
 	<h2 class="baseline">{{ page.baseline }}</h2>

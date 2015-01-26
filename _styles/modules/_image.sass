@@ -54,8 +54,21 @@ img
 	left: 0
 	right: 0
 	overflow: hidden
-	max-height: 375px
+
+	> img
+		max-height: 375px
 
 	.no-js &
 		// With no-js version, compensate for extra padding on title
 		margin-bottom: -75px
+
+.post__splash--credit
+	+adjust-font-size-to(13px, 0.75)
+	font-style: italic
+	color: $color-text-disabled
+	text-shadow: 1px 1px 1px black
+	// Compensate for huge top padding on post heading (next element)
+	margin-bottom: -81px
+
+	p
+		margin: 0

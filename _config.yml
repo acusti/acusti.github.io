@@ -62,6 +62,11 @@ prose:
           element: "text"
           label: "Splash image"
           value: ""
+      - name: "credits"
+        field:
+          element: "text"
+          label: "Splash image credits"
+          value: ""
       - name: "tags"
         field:
           element: "multiselect"
