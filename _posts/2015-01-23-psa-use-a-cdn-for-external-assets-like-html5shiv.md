@@ -28,7 +28,7 @@ Cache-Control: public, max-age=180
 Alternate-Protocol: 80:quic,p=0.02
 ```
 
-The browser cache is set to expire in *3 minutes*. Compare this to the headers of the same file from [jsDelivr][html5shiv-jsdelivr], the free, open source CDN:
+The browser cache is set to expire in 3 minutes. Compare this to the headers of the same file from [jsDelivr][html5shiv-jsdelivr], the free, open source CDN:
 
 ```
 HTTP/1.1 200 OK
