@@ -95,11 +95,12 @@ ul.site-nav
 .top-nav-fixed
 	li
 		display: none
-		// Only show last two links in fixed nav
-		&:nth-last-child(-n+2)
+		// Only show last two (correction, one) links in fixed nav
+		// &:nth-last-child(-n+2)
+		&:last-child
 			display: inline-block
-		&:nth-last-child(2):before
-			display: none
+			&:before
+				display: none
 		&:before
 			background-color: $color-text-muted
 			border-right: 1px solid black
