@@ -99,6 +99,8 @@ prose:
               value: "rant"
             - name: "PSA"
               value: "PSA"
+            - name: "Guide"
+              value: "guide"
     _posts/static:
       - name: "layout"
         field:
