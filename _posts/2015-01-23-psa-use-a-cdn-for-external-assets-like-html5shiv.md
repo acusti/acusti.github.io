@@ -47,7 +47,7 @@ CF-RAY: 1adf6cd2176c0f99-YYZ
 Content-Encoding: gzip
 ```
 
-JsDelivr serves the file as it should, gzipped and with a far-future (60 year) expiration date. There are countless sites on the internet using the HTML5 shiv for their older IE users, and if people would generally use a proper CDN for including that file, those unfortunate users stuck browsing the internet with decrepit browsers would at least pretty much never have to wait for an HTTP request for the HTML5shiv again (unless anyone thinks IE8 will still be around in 2075).
+JsDelivr serves the file as it should, gzipped with a far-future (60 year) max-age and no expires field. There are countless sites on the internet using the HTML5 shiv for their older IE users, and if people would generally use a proper CDN for including that file, those unfortunate users stuck browsing the internet with decrepit browsers would at least pretty much never have to wait for an HTTP request for the HTML5shiv again (unless anyone thinks IE8 will still be around in 2075).
 
 There are three major free CDN servies I know of for including a wide range of third party resources on your site. They are:
 
