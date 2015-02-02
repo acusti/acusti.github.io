@@ -5,7 +5,7 @@ published: true
 title: "PSA: Use a CDN for external assets like HTML5shiv"
 splash: media/rocketship.svg
 credit: "Rocketship created by [Jean-Philippe Cabaroc](http://thenounproject.com/cabaroc/) from the [Noun Project](http://thenounproject.com/term/rocket/7427/)"
-tags: 
+tags:
   - performance
   - PSA
 baseline: "The fast, easy, and free way to load external assets"
@@ -28,7 +28,7 @@ Cache-Control: public, max-age=180
 Alternate-Protocol: 80:quic,p=0.02
 ```
 
-The browser cache is set to expire in 3 hours. Compare this to the headers of the same file from [jsDelivr][html5shiv-jsdelivr], the free, open source CDN:
+The browser cache is set to expire in *3 minutes*. Compare this to the headers of the same file from [jsDelivr][html5shiv-jsdelivr], the free, open source CDN:
 
 ```
 HTTP/1.1 200 OK
