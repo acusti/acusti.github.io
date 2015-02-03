@@ -2,7 +2,7 @@
 layout: post
 category: blog
 published: true
-title: ""
+title: "Force Backblaze on Mac to backup excluded folders"
 baseline: How to edit default Backblaze exclusions
 credit: "Blazing like a [1974 fire department demonstration](https://www.flickr.com/photos/usnationalarchives/4271777745)"
 splash: "media/car-on-fire-demo-1974.jpg"
