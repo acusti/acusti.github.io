@@ -112,14 +112,16 @@ var resizing = function() {
 	// Handle oversized images
 	var oversized = document.getElementsByClassName('oversized'),
 		next_element,
+		extra_padding,
 	    i;
 	for (i = 0; i < oversized.length; i++) {
 		if (oversized[i].firstElementChild === null) {
 			continue;
 		}
 		next_element = oversized[i].nextElementSibling;
-		// Update margin of next element
-		setStyles(next_element, 'padding-top: ' + (oversized[i].clientHeight + 30) + 'px;');
+		// Update padding of next element
+		extra_padding = /\bpost__splash--credit\b/.test(next_element.className) ? 15 : 30;
+		setStyles(next_element, 'padding-top: ' + (oversized[i].clientHeight + extra_padding) + 'px;');
 	}
 };
 
