@@ -101,6 +101,8 @@ prose:
               value: "PSA"
             - name: "Guide"
               value: "guide"
+            - name: "Backup"
+              value: "backup"
     _posts/static:
       - name: "layout"
         field:
