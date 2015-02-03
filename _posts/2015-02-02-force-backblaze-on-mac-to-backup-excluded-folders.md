@@ -8,6 +8,7 @@ credit: "Blazing like a [1974 fire department demonstration](https://www.flickr.
 splash: "media/car-on-fire-demo-1974.jpg"
 tags: 
   - guide
+  - backup
 ---
 
 **Please note:** this functionality is entirely undocumented and unsupported, and as such, it could destroy your Backblaze backups. Do not use this if you are not willing to accept that risk. That said, it is also quite useful, so for those confident in their system of multiple redundant backups and comfortable editing XML, here are the instructions for your consideration.
