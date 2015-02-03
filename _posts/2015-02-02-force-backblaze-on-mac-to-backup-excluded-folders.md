@@ -2,7 +2,7 @@
 layout: post
 category: blog
 published: true
-title: "Force Backblaze on Mac to backup excluded folders"
+title: Force Backblaze on Mac to backup excluded folders
 baseline: How to edit default Backblaze exclusions
 credit: "Blazing like a [1974 fire department demonstration](https://www.flickr.com/photos/usnationalarchives/4271777745)"
 splash: "media/car-on-fire-demo-1974.jpg"
@@ -14,7 +14,7 @@ On a [recent episode][atp-episode] of the Accidental Tech Podcast, [John Siracus
 
 1. Backblaze’s data is stored in the package `/Library/Backblaze.bzpkg`. To see that data, go to the root `Library` folder, right-click the `Backblaze.bzpkg`, and click “Show Package Contents”.
 2. Go to the `bzdata` folder and open the `bzinfo.xml` file in a text editor.
-3. Find the `<do_backup>` section (node) and remove any `<bzdirfilter>` nodes with `whichfiles="none"` that you don’t want (or switch `whichfiles="none"` to `whichfiles="all"`.
+3. Find the `<do_backup>` section (node) and remove any `<bzdirfilter>` nodes with `whichfiles="none"` that you don’t want (or switch `whichfiles="none"` to `whichfiles="all"`).
 4. If you have the Backblaze preferences pane open, quit System Preferences, then reopen the Backblaze preferences pane, click Settings, and confirm that your new settings have taken effect.
 
 Enjoy your newly found back up freedom!
