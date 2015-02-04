@@ -59,6 +59,11 @@ article .standout,
 			+rhythm(0, 0, 0.25, 0, 18px)
 			+adjust-font-size-to(18px, 0.9)
 
+		> a:first-child:hover,
+		> p > a:first-child:hover
+			background-image: none
+			text-decoration: underline
+
 		@media (max-width: $narrow-width)
 			+adjust-font-size-to(18px, 1)
 
