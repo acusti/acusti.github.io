@@ -144,26 +144,6 @@ article
 		line-height: inherit
 		margin-bottom: 0.5em
 
-	.standout,
-	&#work ul
-		li
-			+adjust-font-size-to(16px, 0.85)
-
-			> a:first-child,
-			> p > a:first-child,
-			.title
-				+rhythm(0, 0, 0.25, 0, 18px)
-				+adjust-font-size-to(18px, 0.85)
-
-			@media (max-width: $narrow-width)
-				+adjust-font-size-to(18px, 1)
-
-				> a:first-child,
-				> p > a:first-child,
-				.title
-					+adjust-font-size-to(20px, 1)
-					+rhythm(0, 0.25, 0.25, 0, 18px)
-
 .baseline
 	+adjust-font-size-to(22px)
 	+rhythm-margins(0, 0.5, 22px)

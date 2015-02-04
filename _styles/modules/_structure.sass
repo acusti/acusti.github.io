@@ -40,27 +40,39 @@ footer
 /* = Main Content Area
  *-------------------------------------------------------------- */
 
-#content
-	width: 88%
-	max-width: $max-width
+.main-content
 	padding: 5px 0 45px
-	margin: 42px auto 0
+	margin-top: 42px
 	text-align: justify
 	+hyphens(auto)
 
 	@media (max-width: $narrow-width)
-		width: 95%
-		// Reset regular max-width value
-		max-width: 100%
 		text-align: left
 		margin-top: 38px
+
+	> section,
+	> h1,
+	> h2,
+	> ul,
+	> ol,
+	> p,
+	> div,
+	> article > *
+		margin-left: auto
+		margin-right: auto
+		width: 88%
+		max-width: $max-width
+
+		@media (max-width: $narrow-width)
+			width: 95%
+			// Reset regular max-width value
+			max-width: 100%
 
 #logo
 	margin-bottom: 0
 	body.page--home &
 		margin-bottom: 0.5em
 	a
-		position: absolute
 		display: block
 		overflow: hidden
 		height: 0
@@ -80,8 +92,3 @@ footer
 
 			@media (max-width: 600px)
 				padding-top: 22%
-
-.post,
-.page
-	> h1:first-of-type
-		padding-top: 93px

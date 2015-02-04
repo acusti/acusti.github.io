@@ -1,17 +1,21 @@
 article .standout,
 .page--work .page > ul
-	width: 100%
-	margin: 0
+	// Override widths from _structure.sass:60
+	width: 91%
+	max-width: $total-width * 1.2 + 30
 	text-align: left
-	padding: 0.5em 0 1em
+	// Left padding is just to better center items
+	padding: 0 0 1em 8px
+	margin-bottom: 0
 
-	@media (min-width: $medium-width + 150)
-		width: 110%
-		margin-left: -5%
+	@media (max-width: $narrow-width)
+		width: 100%
+		padding-left: 0
+		// Reset regular max-width value
+		max-width: 100%
 
 	@media (min-width: $total-width * 1.2 + 30)
-		width: 120%
-		margin-left: -10%
+		// width: 120%
 
 	li
 		list-style: none
@@ -45,6 +49,26 @@ article .standout,
 			.title
 				margin-left: -12px
 				padding-left: 12px
+
+		// Typography
+		+adjust-font-size-to(16px, 0.95)
+
+		> a:first-child,
+		> p > a:first-child,
+		.title
+			+rhythm(0, 0, 0.25, 0, 18px)
+			+adjust-font-size-to(18px, 0.9)
+
+		@media (max-width: $narrow-width)
+			+adjust-font-size-to(18px, 1)
+
+			> a:first-child,
+			> p > a:first-child,
+			.title
+				+adjust-font-size-to(20px, 1)
+				+rhythm(0, 0.25, 0.25, 0, 18px)
+
+
 
 article
 	.sites li

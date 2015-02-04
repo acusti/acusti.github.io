@@ -13,19 +13,41 @@ img
 		border: 2px inset #cccccc
 		background: url(../images/bckg-transparent.png) repeat
 
-.oversized
-	position: absolute
-	left: 10px
-	right: 10px
+.main-content > article
+	.oversized
+		+box-sizing(border-box)
+		width: 100%
+		max-width: 100%
+		padding: 0 10px
+		margin-bottom: 2em
 
-	.no-js &
+		img
+			display: block
+			margin: 0 auto
+
+		@media (max-width: $narrow-width)
+			padding: 0
+
+			img
+				position: relative
+				max-width: 150%
+				// Center it horizontally
+				left: 50%
+				transform: translate(-50%, 0)
+
+	.post__splash
 		position: relative
 		width: 124%
 		left: -12%
+		padding: 0
+		margin-bottom: 1em
+		overflow: hidden
+		max-height: 400px
 
-	img
-		display: block
-		margin: 0 auto
+		> img
+			margin-left: auto
+			margin-right: auto
+
 
 		@media (max-width: $narrow-width)
 			max-width: 120%
