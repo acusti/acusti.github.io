@@ -24,7 +24,7 @@ layout: default
 	{% endif %}
 	<h1><a href="{{ page.url }}" title="Permalink for this post">{{ page.title }}</a></h1>
 	<h2 class="baseline">{{ page.baseline }}</h2>
-	<div class="post__date">{{ page.date | date_to_string }}</div>
+	<div class="post__date">{{ page.date | date: "%-d %b %Y" }}</div>
 
 	{{ content }}
 
