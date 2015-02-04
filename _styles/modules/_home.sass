@@ -8,14 +8,21 @@
 
 body.page--home
 	.intro
-		width: 52%
+		@extend %main-column
+
+		> p
+			clear: right
+			width: 52%
+			float: right
+			margin: 0 -3% 1.4em 0
+
+			@media (max-width: $medium-width)
+				width: auto
+				float: none
+				margin: 0
+
+			@media (max-width: $narrow-width)
+				margin-bottom: 1em
+
+	.link--more
 		float: right
-		margin: 0 -3% 1.4em 0
-
-		@media (max-width: $medium-width)
-			width: auto
-			float: none
-			margin: 0
-
-		@media (max-width: $narrow-width)
-			margin-bottom: 1em
