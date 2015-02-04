@@ -1,10 +1,61 @@
+// Custom link underline
+// ---------------------
+%link
+	color: $color-accent
+	text-decoration: none
+	// Underline via gradient background
+	background-repeat: repeat-x
+	background-size: 1px 1px
+	background-position: 0 95%
+
+	// Clear descendors from underline
+	text-shadow: 3px 0 $color-bkg, 2px 0 $color-bkg, 1px 0 $color-bkg, -1px 0 $color-bkg, -2px 0 $color-bkg, -3px 0 $color-bkg
+
+	&:hover
+		color: $color-accent
+		background-image: linear-gradient(to bottom, $color-accent 0%, $color-accent 100%)
+		text-decoration: none
+
+		// Tweak position + thickness for high res (1.75x and up) displays
+		@media (-webkit-min-device-pixel-ratio: 1.75), (min-resolution: 168dpi)
+			background-image: linear-gradient(rgba($color-accent, 0.25) 0%, $color-accent 100%)
+			background-position: 0 93%
+
+	// Style selected links (or else text-shadow makes it look crazy ugly)
+	&,
+	> *
+		@include selection
+			background-color: $color-accent-selection
+			color: $color-text
+			text-shadow: none
+
+
+a
+	color: $color-accent
+	text-decoration: none
+
+.main-content,
+footer
+	a
+		@extend %link
+
+	h1, h2, h3
+		a
+			background-size: 1px 2px
+			@media (-webkit-min-device-pixel-ratio: 1.75), (min-resolution: 168dpi)
+				background-position: 0 93%
+				background-size: 1px 1px
+
+				&:hover
+					background-image: linear-gradient($color-accent 0%, $color-accent 100%)
+
 .link--more
 	&:after
 		content: '\a0 ›'
 		font-size: 1.2em
 		line-height: 1
 
-.download--target
+a.download--target
 	display: inline-block
 	border-radius: 50%
 	padding: 1em
@@ -13,6 +64,7 @@
 
 	&:hover
 		background-color: $color-accent
+		background-image: none
 
 	> img
 		display: block

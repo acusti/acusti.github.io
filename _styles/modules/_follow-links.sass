@@ -11,7 +11,7 @@ $follow-link-width: 50px
 		@media (max-width: $narrow-width)
 			margin-top: -4.25em
 
-.follow-link
+a.follow-link
 	display: inline-block
 	padding-left: $follow-link-width
 	width: 0
@@ -49,3 +49,6 @@ $follow-link-width: 50px
 		background-image: inline-image("github-white.svg")
 	&.github:hover::before
 		background-image: inline-image("github-color.svg")
+
+	&:hover
+		background-image: none
