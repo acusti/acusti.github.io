@@ -1,5 +1,5 @@
-// --------------------------------------------------------------
-// General event handling:
+// General event handling
+// ----------------------
 
 // Rock solid addEvent() from http://www.dustindiaz.com/rock-solid-addevent/
 function addEvent( obj, type, fn ) {
@@ -45,7 +45,8 @@ var EventCache = function(){
 }();
 addEvent(window, 'unload', EventCache.flush);
 
-// A $(document).ready() type of a function from http://stackoverflow.com/questions/799981/document-ready-equivalent-without-jquery
+// A $(document).ready() type of a function
+// from http://stackoverflow.com/questions/799981/document-ready-equivalent-without-jquery
 // Relies on addEvent(), above
 var ready = (function () {
 	function ready(f) {
