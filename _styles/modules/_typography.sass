@@ -33,11 +33,17 @@ body
 		header a, #top-nav-fixed a
 			+adjust-font-size-to(18px, 2.78) // 18 x 2.78 = 50
 
-h1, h2, h3
+h1, h2, h3, h4, h5
 	color: $color-text
 	text-shadow: 1px 1px 1px black
-	-webkit-font-smoothing: subpixel-antialiased
 	text-align: left
+
+h1, h2
+	font-weight: 400
+	-webkit-font-smoothing: subpixel-antialiased
+
+h3, h4, h5
+	font-weight: 700
 
 h1
 	font-family: $header-text-family
@@ -51,10 +57,19 @@ h2
 	+adjust-font-size-to(28px, 1.5)
 	+rhythm(0, 0, 0, 1)
 	color: $color-text-muted
+	@media (max-width: $narrow-width)
+		+adjust-font-size-to(24px, 1.25)
 
 h3
-	+adjust-font-size-to(23px, 1.5)
+	+adjust-font-size-to(23px, 1.25)
 	+rhythm(1, 0, 0, 1)
+
+h4
+	+adjust-font-size-to(20px, 1.25)
+	+rhythm(0, 0, 0, 1)
+
+h5
+	+rhythm(0, 0, 0, 0.5)
 
 a
 	text-decoration: none
