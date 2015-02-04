@@ -115,14 +115,13 @@ var setStyles = function(el, styles) {
 		initImageComparison();
 
 		// Scrolling parallax image effects
-		// Attach them on window load (need image dimensions)
-		addEvent(window, 'load', function() {
-			document.body.className += ' is-loaded';
-			if (imageParallax()) {
-				addEvent(window, 'scroll', imageParallax);
-			}
-		});
-		addEvent(window, 'resize', imageParallaxCalculate);
+		// Attach them on image load (need image dimensions)
+		image_splash = document.querySelector('.post__splash > img');
+		if (image_splash !== null) {
+			imageParallax();
+			addEvent(window, 'scroll', imageParallax);
+			addEvent(window, 'resize', imageParallaxCalculate);
+		}
 	});
 
 	// Parallax effect (on scroll)
@@ -131,19 +130,26 @@ var setStyles = function(el, styles) {
 	    parallax_speed = 0.3,
 	    pageYOffset_previous;
 
-	// Returns boolean indicating the existence of a post__splash image
+	// Initializes parallax and implements it on scroll
+	// @uses imageParallaxCalculate
 	var imageParallax = function() {
 		// Initialize
-		if (image_splash === undefined) {
-			image_splash = document.querySelector('.post__splash > img');
+		if (image_splash_wrap === undefined) {
 			if (image_splash === null || (image_splash_wrap = image_splash.parentElement) === null) {
 				return false;
 			}
-			imageParallaxCalculate();
+			// Adding our calculations to window load doesn't work when command clicking a post link to open it in a new tab in Chrome
+			// So instead, verify we have a usable image object and if not, use a timeout to check again in 150ms
+			if (image_splash.naturalWidth) {
+				document.body.className += ' is-loaded';
+			} else {
+				window.setTimeout(imageParallax, 150);
+			}
 			// Special case for svgs
 			if (image_splash.src.substring(image_splash.src.length - 4) === '.svg') {
 				image_splash_wrap.className += ' is-svg';
 			}
+			imageParallaxCalculate();
 			pageYOffset_previous = window.pageYOffset;
 		}
 
@@ -151,15 +157,13 @@ var setStyles = function(el, styles) {
 		// 1. pageYOffset change is too small to matter
 		// 2. post__splash image isn't cropped
 		if (Math.abs(window.pageYOffset - pageYOffset_previous) * parallax_speed < 1.5 || image_splash.clientHeight - 20 < image_splash_wrap.clientHeight) {
-			return true;
+			return;
 		}
 		// Cache pageYOffset
 		pageYOffset_previous = window.pageYOffset;
 
 		// Parallaxify
 		image_splash.style.bottom = Math.floor(pageYOffset_previous * parallax_speed * -1) + 'px';
-
-		return true;
 	};
 
 	// Function to calculate dimensions and values for parallax
@@ -169,7 +173,8 @@ var setStyles = function(el, styles) {
 		}
 		// Make sure image is at least 20 pixels too tall to crop it
 		if (image_splash.clientHeight - 20 < image_splash_wrap.clientHeight) {
-			image_splash_wrap.className = image_splash_wrap.className.replace(' is-cropped', '').replace(' is-full-bleed', '');
+			image_splash_wrap.className = image_splash_wrap.className.replace(/ is-cropped/g, '').replace(/ is-full-bleed/g, '');
+			image_splash_wrap.style.height = '';
 			return;
 		}
 
