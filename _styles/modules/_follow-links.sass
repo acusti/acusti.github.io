@@ -1,23 +1,21 @@
-$profile-link-width: 50px
+$follow-link-width: 50px
 
-.profile-links
-	position: absolute
-	max-width: $total-width
-	width: 88%
-	margin: auto
-	top: 140px
-	text-align: right
-	@media (max-width: $narrow-width)
-		top: 130px
-		width: 95%
+.follow-links
+	text-align: center
 
-	@media (max-width: $narrow-width - 100)
-		width: 97%
+	.page--about &
+		margin-top: -4.75em
+		text-align: right
+		height: 4em
 
-.profile-link
+		@media (max-width: $narrow-width)
+			margin-top: -4.25em
+
+.follow-link
 	display: inline-block
-	padding-left: $profile-link-width
+	padding-left: $follow-link-width
 	width: 0
+	height: $follow-link-width
 	overflow: hidden
 	margin: 0 0.3em
 
@@ -30,24 +28,24 @@ $profile-link-width: 50px
 	&::before
 		display: inline-block
 		content: ""
-		width: $profile-link-width
-		margin-left: -$profile-link-width
-		height: $profile-link-width
+		width: $follow-link-width
+		margin-left: -$follow-link-width
+		height: $follow-link-width
 		background-repeat: no-repeat
 		background-position: center center
 
 	&.twitter::before
-		background-size: auto $profile-link-width - 10
+		background-size: auto $follow-link-width - 10
 		@media (max-width: $narrow-width)
-			background-size: auto $profile-link-width - 15
+			background-size: auto $follow-link-width - 15
 		background-image: inline-image("twitter-white.svg")
 	&.twitter:hover::before
 		background-image: inline-image("twitter-color.svg")
 
 	&.github::before
-		background-size: auto $profile-link-width - 5
+		background-size: auto $follow-link-width - 5
 		@media (max-width: $narrow-width)
-			background-size: auto $profile-link-width - 10
+			background-size: auto $follow-link-width - 10
 		background-image: inline-image("github-white.svg")
 	&.github:hover::before
 		background-image: inline-image("github-color.svg")
