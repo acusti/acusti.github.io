@@ -40,6 +40,17 @@ footer
 /* = Main Content Area
  *-------------------------------------------------------------- */
 
+%main-column
+	margin-left: auto
+	margin-right: auto
+	width: 88%
+	max-width: $max-width
+
+	@media (max-width: $narrow-width)
+		width: 95%
+		// Reset regular max-width value
+		max-width: 100%
+
 .main-content
 	padding: 5px 0 45px
 	margin-top: 42px
@@ -58,15 +69,7 @@ footer
 	> p,
 	> div,
 	> article > *
-		margin-left: auto
-		margin-right: auto
-		width: 88%
-		max-width: $max-width
-
-		@media (max-width: $narrow-width)
-			width: 95%
-			// Reset regular max-width value
-			max-width: 100%
+		@extend %main-column
 
 #logo
 	margin-bottom: 0
