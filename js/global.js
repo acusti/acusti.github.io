@@ -73,103 +73,12 @@ var ready = (function () {
 	return ready;
 })();
 
-// --------------------------------------------------------------
-// Our document ready functions
-ready(function() {
-	// Set up fixed nav (displayed under regular header and nav)
-	var nav = document.getElementsByClassName('top-nav');
-	if (nav.length) {
-		nav = nav[0].cloneNode(true);
-		nav.className += ' ' + nav.className + '-fixed';
-		document.body.appendChild(nav);
-	}
-
-	// Fill in my email address (cheapo spam protection):
-	var emails = document.getElementsByClassName('email');
-	for (var i=0, len=emails.length; i<len; ++i) {
-		emails[i].href = 'mailto:andrew@acusti.ca' + '?subject=' + escape(document.title);
-		emails[i].innerHTML = 'andrew@acusti.ca';
-	}
-
-	// Set up image comparison toggles
-	initImageComparison();
-
-	// Dynamic positioning logic
-	resizing();
-	// In case the image hasn't loaded yet, resize again in 1 second
-	window.setTimeout(resizing, 1000);
-	// Window load / resize functions
-	addEvent(window, 'resize', function() {
-		if (resize_timer) clearTimeout(resize_timer);
-		resize_timer = setTimeout(resizing, 5);
-	});
-});
-
-// Attach resize functions to document onload event (after images are loaded)
-var resize_timer = 0;
-// Procedures to execute on ready and on resize
-var resizing = function() {
-	// Handle oversized images
-	var oversized = document.getElementsByClassName('oversized'),
-		next_element,
-		extra_padding,
-	    i;
-	for (i = 0; i < oversized.length; i++) {
-		if (oversized[i].firstElementChild === null) {
-			continue;
-		}
-		next_element = oversized[i].nextElementSibling;
-		// Update padding of next element
-		extra_padding = /\bpost__splash--credit\b/.test(next_element.className) ? 15 : 30;
-		setStyles(next_element, 'padding-top: ' + (oversized[i].clientHeight + extra_padding) + 'px;');
-	}
-};
-
-// Image comparison toggle
-var initImageComparison = function() {
-	var comparison_toggles = document.getElementsByClassName('image-comparison-toggle'),
-	    comparison_image_wrap,
-	    i;
-	for (i = 0; i < comparison_toggles.length; i++) {
-		comparison_image_wrap = comparison_toggles[i].parentElement.previousElementSibling;
-		// If markup does not match what we expect, bail
-		if (comparison_image_wrap === null) {
-			continue;
-		}
-		// Set image comparison class
-		comparison_image_wrap.className += ' image-comparison-wrap';
-		// Cache current content of toggle as 'data-text' attribute
-		comparison_toggles[i].setAttribute('data-text', comparison_toggles[i].innerHTML);
-		addEvent(comparison_toggles[i], 'click', toggleImageComparison);
-	}
-};
-
-var toggleImageComparison = function() {
-	var comparison_image_wrap = this.parentElement.previousElementSibling,
-	    toggle_class = ' is-toggled',
-		next_text;
-
-	if (comparison_image_wrap === null) {
-		return;
-	}
-	if (comparison_image_wrap.className.indexOf(toggle_class) > -1) {
-		comparison_image_wrap.className = comparison_image_wrap.className.replace(toggle_class, '');
-		next_text = this.getAttribute('data-text');
-	} else {
-		comparison_image_wrap.className += toggle_class;
-		next_text = this.getAttribute('data-text-toggled');
-	}
-	if (next_text && next_text.length) {
-		this.innerHTML = next_text;
-	}
-};
-
-// --------------------------------------------------------------
-// Polyfills and helpers and such
+// Other helpers
+// -------------
 
 // Cross browser procedure to set CSS inline styles
 var setStyles = function(el, styles) {
-	if (typeof el.style.setAttribute == 'object') {
+	if (typeof el.style.setAttribute === 'object') {
 		// Non-standard (IE 7)
 		el.style.setAttribute('cssText', styles);
 	} else {
@@ -177,3 +86,148 @@ var setStyles = function(el, styles) {
 		el.setAttribute('style', styles);
 	}
 };
+
+
+// End of global variables
+// Beginning of functionality
+
+(function() {
+	// On document ready
+	// -----------------
+	ready(function() {
+		// Set up fixed nav (displayed under regular header and nav)
+		var nav = document.getElementsByClassName('top-nav');
+		if (nav.length) {
+			nav = nav[0].cloneNode(true);
+			nav.className += ' ' + nav.className + '-fixed';
+			document.body.appendChild(nav);
+		}
+
+		// Fill in my email address (cheapo spam protection):
+		var emails = document.getElementsByClassName('email');
+		for (var i=0, len=emails.length; i<len; ++i) {
+			emails[i].href = 'mailto:andrew@acusti.ca' + '?subject=' + escape(document.title);
+			emails[i].innerHTML = 'andrew@acusti.ca';
+		}
+
+		// Set up image comparison toggles
+		initImageComparison();
+
+		// Scrolling parallax image effects
+		// Attach them on window load (need image dimensions)
+		addEvent(window, 'load', function() {
+			document.body.className += ' is-loaded';
+			if (imageParallax()) {
+				addEvent(window, 'scroll', imageParallax);
+			}
+		});
+		addEvent(window, 'resize', imageParallaxCalculate);
+	});
+
+	// Parallax effect (on scroll)
+	var image_splash,
+	    image_splash_wrap,
+	    parallax_speed = 0.3,
+	    pageYOffset_previous;
+
+	// Returns boolean indicating the existence of a post__splash image
+	var imageParallax = function() {
+		// Initialize
+		if (image_splash === undefined) {
+			image_splash = document.querySelector('.post__splash > img');
+			if (image_splash === null || (image_splash_wrap = image_splash.parentElement) === null) {
+				return false;
+			}
+			imageParallaxCalculate();
+			// Special case for svgs
+			if (image_splash.src.substring(image_splash.src.length - 4) === '.svg') {
+				image_splash_wrap.className += ' is-svg';
+			}
+			pageYOffset_previous = window.pageYOffset;
+		}
+
+		// Don't do any work if:
+		// 1. pageYOffset change is too small to matter
+		// 2. post__splash image isn't cropped
+		if (Math.abs(window.pageYOffset - pageYOffset_previous) * parallax_speed < 1.5 || image_splash.clientHeight - 20 < image_splash_wrap.clientHeight) {
+			return true;
+		}
+		// Cache pageYOffset
+		pageYOffset_previous = window.pageYOffset;
+
+		// Parallaxify
+		image_splash.style.bottom = Math.floor(pageYOffset_previous * parallax_speed * -1) + 'px';
+
+		return true;
+	};
+
+	// Function to calculate dimensions and values for parallax
+	var imageParallaxCalculate = function() {
+		if (image_splash === null || image_splash_wrap === null) {
+			return;
+		}
+		// Make sure image is at least 20 pixels too tall to crop it
+		if (image_splash.clientHeight - 20 < image_splash_wrap.clientHeight) {
+			image_splash_wrap.className = image_splash_wrap.className.replace(' is-cropped', '').replace(' is-full-bleed', '');
+			return;
+		}
+
+		// Calculations
+		image_splash_wrap.style.height = image_splash_wrap.clientHeight + 'px';
+		image_splash_wrap.className += ' is-cropped';
+		if (image_splash.clientWidth < image_splash_wrap.clientWidth) {
+			image_splash_wrap.style.width = image_splash.clientWidth + 'px';
+		} else {
+			// image_splash_wrap.className += ' is-full-bleed';
+			image_splash_wrap.style.width = '';
+			// If image is high-res (double resolution or thereabouts, set max-width at the smallest of clientHeight and full width * 0.5)
+			if (image_splash.naturalWidth > 2100 && image_splash.naturalWidth / 2 < image_splash_wrap.clientWidth) {
+				image_splash.style.maxWidth = image_splash.naturalWidth / 2 + 'px';
+				image_splash_wrap.style.width = image_splash.naturalWidth / 2 + 'px';
+			} else {
+				image_splash.style.maxWidth = '';
+				image_splash_wrap.style.width = '';
+			}
+		}
+	};
+
+	// Image comparison toggle
+	var initImageComparison = function() {
+		var comparison_toggles = document.getElementsByClassName('image-comparison-toggle'),
+		    comparison_image_wrap,
+		    i;
+		for (i = 0; i < comparison_toggles.length; i++) {
+			comparison_image_wrap = comparison_toggles[i].parentElement.previousElementSibling;
+			// If markup does not match what we expect, bail
+			if (comparison_image_wrap === null) {
+				continue;
+			}
+			// Set image comparison class
+			comparison_image_wrap.className += ' image-comparison-wrap';
+			// Cache current content of toggle as 'data-text' attribute
+			comparison_toggles[i].setAttribute('data-text', comparison_toggles[i].innerHTML);
+			addEvent(comparison_toggles[i], 'click', toggleImageComparison);
+		}
+	};
+
+	var toggleImageComparison = function() {
+		var comparison_image_wrap = this.parentElement.previousElementSibling,
+		    toggle_class = ' is-toggled',
+			next_text;
+
+		if (comparison_image_wrap === null) {
+			return;
+		}
+		if (comparison_image_wrap.className.indexOf(toggle_class) > -1) {
+			comparison_image_wrap.className = comparison_image_wrap.className.replace(toggle_class, '');
+			next_text = this.getAttribute('data-text');
+		} else {
+			comparison_image_wrap.className += toggle_class;
+			next_text = this.getAttribute('data-text-toggled');
+		}
+		if (next_text && next_text.length) {
+			this.innerHTML = next_text;
+		}
+	};
+
+})();
