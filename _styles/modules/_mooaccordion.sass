@@ -1,15 +1,21 @@
 $mooaccordion-color-title: #333B62
+$mooaccordion-bkg: rgb(230, 228, 230)
 
 .accordion
-	background-color: rgb(230, 228, 230)
+	background-color: $mooaccordion-bkg
 	padding: 4px 20px 14px
 	margin: 5px auto 20px
 	p, blockquote
 		color: #555
-		text-shadow: 0 1px 1px #dddddd
+		text-shadow: 0 1px 1px white
 
-.main-content .accordion a:hover
-	text-shadow: 1px 1px 2px white
+.main-content .accordion a
+	color: $mooaccordion-color-title
+
+	&,
+	&:hover
+		text-shadow: 3px 0 $mooaccordion-bkg, 2px 0 $mooaccordion-bkg, 1px 0 $mooaccordion-bkg, -1px 0 $mooaccordion-bkg, -2px 0 $mooaccordion-bkg, -3px 0 $mooaccordion-bkg
+		background-image: linear-gradient(to bottom, $mooaccordion-color-title 0%, $mooaccordion-color-title 100%)
 
 .mooblock-title
 	color: $mooaccordion-color-title
