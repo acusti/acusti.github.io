@@ -32,4 +32,4 @@ output_style = environment == :production ? :compressed : :nested
 
 preferred_syntax = :sass
 
-enable_sourcemaps = true
+sourcemap = true
