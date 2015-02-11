@@ -39,7 +39,8 @@ a.follow-link
 		@media (max-width: $narrow-width)
 			background-size: auto $follow-link-width - 15
 		background-image: inline-image("twitter-white.svg")
-	&.twitter:hover::before
+	&.twitter:hover::before,
+	&.twitter:active::before
 		background-image: inline-image("twitter-color.svg")
 
 	&.github::before
@@ -47,7 +48,8 @@ a.follow-link
 		@media (max-width: $narrow-width)
 			background-size: auto $follow-link-width - 10
 		background-image: inline-image("github-white.svg")
-	&.github:hover::before
+	&.github:hover::before,
+	&.github:active::before
 		background-image: inline-image("github-color.svg")
 
 	&:hover
