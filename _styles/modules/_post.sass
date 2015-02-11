@@ -1,5 +1,16 @@
-.post
+.category-blog
+	#logo
+		display: none
+
+article.post
 	+margin-trailer(2)
+
+	// No post splash
+	> h1:first-child
+		margin-top: 0.5em
+
+	.baseline
+		+margin-leader(-0.5)
 
 .post__date
 	font-weight: 200
@@ -7,6 +18,3 @@
 	+margin-trailer(0.5)
 	color: $color-text-muted
 	-webkit-font-smoothing: antialiased
-
-.post .baseline
-	+margin-leader(-0.5)

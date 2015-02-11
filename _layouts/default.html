@@ -18,7 +18,7 @@
 		{% include navigation.html %}
 	</header>
 
-	<div class="main-content{% if page.splash %} has-post__splash{% endif %}">
+	<div class="main-content{% if page.splash %} has-post__splash{% endif %}{% if page.category == 'blog' %} category-blog{% endif %}">
 		<h1 id="logo"><a href="{{ site.base_url }}/" title="{{ site.theme.site_name }}">{{ site.theme.site_name }}</a></h1>
 		{{ content }}
 	</div>
