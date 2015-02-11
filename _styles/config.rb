@@ -10,7 +10,7 @@ require File.join(File.expand_path(File.dirname(__FILE__)), "plugins", "base64en
 
 # Set this to the root of your project when deployed:
 http_path = "/"
-sass_dir = "./"
+sass_dir = ""
 fonts_dir = "./fonts"
 css_dir = "../css"
 images_dir = "../images"
