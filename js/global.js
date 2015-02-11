@@ -1,4 +1,10 @@
 (function() {
+	// Quick and dirty addEventListener polyfill (basically just for IE8)
+	if (window.addEventListener === undefined) {
+		window.Element.prototype.addEventListener = function(event_name, callback) {
+			this.attachEvent('on' + event_name, callback);
+		};
+	}
 	// Poor man's document ready (this is last thing on page, so should work fine)
 	window.setTimeout(function() {
 		// Set up fixed nav (displayed under regular header and nav)
@@ -19,8 +25,8 @@
 		// Set up image comparison toggles
 		initImageComparison();
 
-		// Bail now if no support for addEventListener or pageYOffset
-		if (window.addEventListener === undefined || window.pageYOffset === undefined) {
+		// Bail now if no support for pageYOffset
+		if (window.pageYOffset === undefined) {
 			return;
 		}
 
@@ -141,7 +147,7 @@
 	};
 
 	var toggleImageComparison = function() {
-		var comparison_image_wrap = this.parentElement.previousElementSibling,
+		var comparison_image_wrap = previousSibling(this.parentElement),
 		    toggle_class = ' is-toggled',
 			next_text;
 
