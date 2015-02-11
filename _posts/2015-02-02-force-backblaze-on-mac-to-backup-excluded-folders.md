@@ -6,7 +6,7 @@ title: Force Backblaze on Mac to backup excluded folders
 baseline: How to edit default Backblaze exclusions
 credit: "Blazing like a [1974 fire department demonstration](https://www.flickr.com/photos/usnationalarchives/4271777745)"
 splash: "media/car-on-fire-demo-1974.jpg"
-tags: 
+tags:
   - guide
   - backup
 ---
@@ -20,7 +20,7 @@ On a [recent episode][atp-episode] of the Accidental Tech Podcast, [John Siracus
 3. Find the `<do_backup>` section (node) and remove any `<bzdirfilter>` nodes with `whichfiles="none"` that you don’t want (or switch `whichfiles="none"` to `whichfiles="all"`).
 4. If you have the Backblaze preferences pane open, quit System Preferences, then reopen the Backblaze preferences pane, click Settings, and confirm that your new settings have taken effect.
 
-Lastly, keep in mind that having a single backup is not a backup strategy! Losing a backup is a fairly common occurence, and if that’s all you’ve got, you’ll be shit out of luck when you actually need it. Please, at a minimum, maintain one local and one offsite backup. For most readers of this post who I assume already use Backblaze, the simplest minimal backup strategy is time machine + Backblaze.
+Lastly, keep in mind that having a single backup is not a backup strategy! Losing a backup is a fairly common occurence, and if that’s all you’ve got, you’ll be shit out of luck when you actually need it. Please, at a minimum, maintain one local and one offsite backup. For most readers of this post who I assume already use Backblaze for Mac, the simplest MVBS (Minimal Viable Backup Strategy) is Time Machine + Backblaze.
 
 [atp-episode]: http://atp.fm/episodes/97
 [John Siracusa]: http://hypercritical.co/about/
