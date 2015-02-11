@@ -108,12 +108,26 @@
 	};
 
 	// Image comparison toggle
+
+	// Polyfill missing previousElementSibling property for IE8
+	var previousSibling = function(element) {
+		if (element.previousElementSibling !== undefined) {
+			return element.previousElementSibling;
+		}
+		// Browser doesn't support previousElementSibling
+		do {
+			element = element.previousSibling;
+		} while (element !== null && (element.nodeName === '#comment' || element.nodeName === '#text'));
+
+		return element;
+	};
+
 	var initImageComparison = function() {
-			var comparison_toggles = document.querySelectorAll('.image-comparison-toggle'),
+		var comparison_toggles = document.querySelectorAll('.image-comparison-toggle'),
 		    comparison_image_wrap,
 		    i;
 		for (i = 0; i < comparison_toggles.length; i++) {
-			comparison_image_wrap = comparison_toggles[i].parentElement.previousElementSibling;
+			comparison_image_wrap = previousSibling(comparison_toggles[i].parentElement);
 			// If markup does not match what we expect, bail
 			if (comparison_image_wrap === null) {
 				continue;
