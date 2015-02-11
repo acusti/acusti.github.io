@@ -11,6 +11,7 @@
 			});
 		};
 	}
+
 	// Poor man's document ready (this is last thing on page, so should work fine)
 	window.setTimeout(function() {
 		// Set up fixed nav (displayed under regular header and nav)
@@ -122,7 +123,7 @@
 	// Image comparison toggle
 
 	// Polyfill missing previousElementSibling property for IE8
-	var previousSibling = function(element) {
+	var previousElementSibling = function(element) {
 		if (element.previousElementSibling !== undefined) {
 			return element.previousElementSibling;
 		}
@@ -139,7 +140,7 @@
 		    comparison_image_wrap,
 		    i;
 		for (i = 0; i < comparison_toggles.length; i++) {
-			comparison_image_wrap = previousSibling(comparison_toggles[i].parentElement);
+			comparison_image_wrap = previousElementSibling(comparison_toggles[i].parentElement);
 			// If markup does not match what we expect, bail
 			if (comparison_image_wrap === null) {
 				continue;
@@ -153,7 +154,7 @@
 	};
 
 	var toggleImageComparison = function() {
-		var comparison_image_wrap = previousSibling(this.parentElement),
+		var comparison_image_wrap = previousElementSibling(this.parentElement),
 		    toggle_class = ' is-toggled',
 			next_text;
 
