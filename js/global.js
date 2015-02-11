@@ -19,6 +19,11 @@
 		// Set up image comparison toggles
 		initImageComparison();
 
+		// Bail now if no support for addEventListener or pageYOffset
+		if (window.addEventListener === undefined || window.pageYOffset === undefined) {
+			return;
+		}
+
 		// Scrolling parallax image effects
 		// Attach them on image load (need image dimensions)
 		image_splash = document.querySelector('.post__splash > img');
@@ -55,17 +60,17 @@
 				image_splash_wrap.className += ' is-svg';
 			}
 			imageParallaxCalculate();
-			scrollY_previous = window.scrollY;
+			scrollY_previous = window.pageYOffset;
 		}
 
 		// Don't do any work if:
 		// 1. pageYOffset change is too small to matter
 		// 2. post__splash image isn't cropped
-		if (Math.abs(window.scrollY - scrollY_previous) * parallax_speed < 1.5 || image_splash.clientHeight - 20 < image_splash_wrap.clientHeight) {
+		if (Math.abs(window.pageYOffset - scrollY_previous) * parallax_speed < 1.5 || image_splash.clientHeight - 20 < image_splash_wrap.clientHeight) {
 			return;
 		}
 		// Cache pageYOffset
-		scrollY_previous = window.scrollY;
+		scrollY_previous = window.pageYOffset;
 
 		// Parallaxify
 		image_splash.style.bottom = Math.floor(scrollY_previous * parallax_speed * -1) + 'px';
