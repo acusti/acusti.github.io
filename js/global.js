@@ -104,7 +104,7 @@
 
 	// Image comparison toggle
 	var initImageComparison = function() {
-		var comparison_toggles = document.getElementsByClassName('image-comparison-toggle'),
+			var comparison_toggles = document.querySelectorAll('.image-comparison-toggle'),
 		    comparison_image_wrap,
 		    i;
 		for (i = 0; i < comparison_toggles.length; i++) {
