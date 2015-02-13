@@ -366,76 +366,66 @@
 System.register("scripts/insert-email", [], function (_export) {
 	"use strict";
 
-	_export("insertEmail", insertEmail);
-
-	function insertEmail(elements) {
-		var host = window.location.hostname.replace("www.", ""),
-		    href = "mai",
-		    html = "and",
-		    updateHref,
-		    i;
-
-		// Intentionally opaque
-		href += String.fromCharCode(108) + "to" + String.fromCharCode(58) + html;
-		href += "rew" + String.fromCharCode(64) + host;
-		html += "rew";
-		html += "&#64;" + host;
-		// Finish href with encoded document title
-		href += "?subject=" + encodeURI(document.title);
-
-		updateHref = function () {
-			this.href = href;
-		};
-
-		// Fill it in (with link on click)
-		for (i = 0; i < elements.length; ++i) {
-			elements[i].addEventListener("click", updateHref);
-			elements[i].innerHTML = html;
-		}
-	}
 	return {
 		setters: [],
-		execute: function () {}
+		execute: function () {
+			_export("default", function (elements) {
+				var host = window.location.hostname.replace("www.", ""),
+				    href = "mai",
+				    html = "and",
+				    updateHref,
+				    i;
+
+				// Intentionally opaque
+				href += String.fromCharCode(108) + "to" + String.fromCharCode(58) + html;
+				href += "rew" + String.fromCharCode(64) + host;
+				html += "rew";
+				html += "&#64;" + host;
+				// Finish href with encoded document title
+				href += "?subject=" + encodeURI(document.title);
+
+				updateHref = function () {
+					this.href = href;
+				};
+
+				// Fill it in (with link on click)
+				for (i = 0; i < elements.length; ++i) {
+					elements[i].addEventListener("click", updateHref);
+					elements[i].innerHTML = html;
+				}
+			});
+		}
 	};
 });
-(function() {
-function define(){};  define.amd = {};
-System.register("scripts/util", [], false, function(require) {
-  'use strict';
-  var previousElementSibling = function(element) {
-    if (element.previousElementSibling !== undefined) {
-      return element.previousElementSibling;
-    }
-    do {
-      element = element.previousSibling;
-    } while (element && element.nodeType !== 1);
-    return element;
-  };
-  return {previousElementSibling: previousElementSibling};
+System.register("scripts/util", [], function (_export) {
+	"use strict";
+
+	var previousElementSibling;
+	return {
+		setters: [],
+		execute: function () {
+			// IE8 compatible method to fetch previousElementSibling
+			previousElementSibling = function (element) {
+				if (element.previousElementSibling !== undefined) {
+					return element.previousElementSibling;
+				}
+				// Browser doesn't support previousElementSibling
+				do {
+					element = element.previousSibling;
+				} while (element && element.nodeType !== 1);
+
+				return element;
+			};
+
+			// Expose utilities
+			_export("previousElementSibling", previousElementSibling);
+		}
+	};
 });
-
-
-})();
 System.register("scripts/image-parallax", [], function (_export) {
 	"use strict";
 
 	var image, image_wrap, parallax_speed, scrollY_previous, imageParallax, imageParallaxCalculate;
-
-
-	// Return a function that initializes the effect
-	_export("initImageParallax", initImageParallax);
-
-	function initImageParallax(imageElement) {
-		// Bail now if no image to work on or no support for pageYOffset
-		if (!imageElement || window.pageYOffset === undefined) {
-			return;
-		}
-		image = imageElement;
-		// Kick off scrolling parallax image effects
-		imageParallax();
-		window.addEventListener("scroll", imageParallax);
-		window.addEventListener("resize", imageParallaxCalculate);
-	}
 	return {
 		setters: [],
 		execute: function () {
@@ -509,6 +499,19 @@ System.register("scripts/image-parallax", [], function (_export) {
 					}
 				}
 			};
+
+			// Return a function that initializes the effect
+			_export("default", function (imageElement) {
+				// Bail now if no image to work on or no support for pageYOffset
+				if (!imageElement || window.pageYOffset === undefined) {
+					return;
+				}
+				image = imageElement;
+				// Kick off scrolling parallax image effects
+				imageParallax();
+				window.addEventListener("scroll", imageParallax);
+				window.addEventListener("resize", imageParallaxCalculate);
+			});
 		}
 	};
 });
@@ -516,16 +519,6 @@ System.register("scripts/affixing-menubar", [], function (_export) {
 	"use strict";
 
 	var scrollYPrev, upScrollCount, affixedClass, isNavAffixed, isNavTransitioning, navBar, handleScroll, initScrollChecking, checkNavPosition, affixNavBar, unAffixNavBar;
-	_export("initAffixingMenubar", initAffixingMenubar);
-
-	function initAffixingMenubar(navElement) {
-		if (!navElement) {
-			return;
-		}
-		navBar = navElement;
-		window.addEventListener("scroll", initScrollChecking);
-		document.body.addEventListener("touchmove", initScrollChecking);
-	}
 	return {
 		setters: [],
 		execute: function () {
@@ -614,63 +607,54 @@ System.register("scripts/affixing-menubar", [], function (_export) {
 				window.removeEventListener("scroll", initScrollChecking);
 				document.body.removeEventListener("touchmove", initScrollChecking);
 			};
+
+			_export("default", function (navElement) {
+				if (!navElement) {
+					return;
+				}
+				navBar = navElement;
+				window.addEventListener("scroll", initScrollChecking);
+				document.body.addEventListener("touchmove", initScrollChecking);
+			});
 		}
 	};
 });
 
 //downScrollCount    = 0,
-(function() {
-function define(){};  define.amd = {};
-System.register("scripts/polyfills", [], false, function(require) {
-  'use strict';
-  if (window.addEventListener === undefined) {
-    window.Element.prototype.addEventListener = function(event_name, callback) {
-      var self = this;
-      self.attachEvent('on' + event_name, function(evt) {
-        evt = evt || window.event;
-        evt.preventDefault = evt.preventDefault || function() {
-          evt.returnValue = false;
-        };
-        evt.stopPropagation = evt.stopPropagation || function() {
-          evt.cancelBubble = true;
-        };
-        callback.call(self, evt);
-      });
-    };
-  }
+System.register("scripts/polyfills", [], false, function(__require, __exports, __module) {
+  System.get("@@global-helpers").prepareGlobal(__module.id, []);
+  (function() {
+    'use strict';
+    if (window.addEventListener === undefined) {
+      window.Element.prototype.addEventListener = function(event_name, callback) {
+        var self = this;
+        self.attachEvent('on' + event_name, function(evt) {
+          evt = evt || window.event;
+          evt.preventDefault = evt.preventDefault || function() {
+            evt.returnValue = false;
+          };
+          evt.stopPropagation = evt.stopPropagation || function() {
+            evt.cancelBubble = true;
+          };
+          callback.call(self, evt);
+        });
+      };
+    }
+  }).call(System.global);
+  return System.get("@@global-helpers").retrieveGlobal(__module.id, false);
 });
 
 
-})();
+
 System.register("scripts/image-comparison", ["scripts/util"], function (_export) {
 	"use strict";
 
-	var util, previousElementSibling, toggleImageComparison;
-	_export("initImageComparison", initImageComparison);
-
-	function initImageComparison() {
-		var comparison_toggles = document.querySelectorAll(".image-comparison-toggle"),
-		    comparison_image_wrap,
-		    i;
-		for (i = 0; i < comparison_toggles.length; i++) {
-			comparison_image_wrap = previousElementSibling(comparison_toggles[i].parentElement);
-			// If markup does not match what we expect, bail
-			if (comparison_image_wrap === null) {
-				continue;
-			}
-			// Set image comparison class
-			comparison_image_wrap.className += " image-comparison-wrap";
-			// Cache current content of toggle as 'data-text' attribute
-			comparison_toggles[i].setAttribute("data-text", comparison_toggles[i].innerHTML);
-			comparison_toggles[i].addEventListener("click", toggleImageComparison);
-		}
-	}
+	var previousElementSibling, toggleImageComparison;
 	return {
 		setters: [function (_scriptsUtil) {
-			util = _scriptsUtil["default"];
+			previousElementSibling = _scriptsUtil.previousElementSibling;
 		}],
 		execute: function () {
-			previousElementSibling = util.previousElementSibling;
 			toggleImageComparison = function () {
 				var comparison_image_wrap = previousElementSibling(this.parentElement),
 				    toggle_class = " is-toggled",
@@ -690,6 +674,24 @@ System.register("scripts/image-comparison", ["scripts/util"], function (_export)
 					this.innerHTML = next_text;
 				}
 			};
+
+			_export("default", function () {
+				var comparison_toggles = document.querySelectorAll(".image-comparison-toggle"),
+				    comparison_image_wrap,
+				    i;
+				for (i = 0; i < comparison_toggles.length; i++) {
+					comparison_image_wrap = previousElementSibling(comparison_toggles[i].parentElement);
+					// If markup does not match what we expect, bail
+					if (comparison_image_wrap === null) {
+						continue;
+					}
+					// Set image comparison class
+					comparison_image_wrap.className += " image-comparison-wrap";
+					// Cache current content of toggle as 'data-text' attribute
+					comparison_toggles[i].setAttribute("data-text", comparison_toggles[i].innerHTML);
+					comparison_toggles[i].addEventListener("click", toggleImageComparison);
+				}
+			});
 		}
 	};
 });
@@ -699,19 +701,17 @@ System.register("scripts/main", ["scripts/insert-email", "scripts/image-comparis
 	var insertEmail, initImageComparison, initImageParallax, initAffixingMenubar;
 	return {
 		setters: [function (_scriptsInsertEmail) {
-			insertEmail = _scriptsInsertEmail.insertEmail;
+			insertEmail = _scriptsInsertEmail["default"];
 		}, function (_scriptsImageComparison) {
-			initImageComparison = _scriptsImageComparison.initImageComparison;
+			initImageComparison = _scriptsImageComparison["default"];
 		}, function (_scriptsImageParallax) {
-			initImageParallax = _scriptsImageParallax.initImageParallax;
+			initImageParallax = _scriptsImageParallax["default"];
 		}, function (_scriptsAffixingMenubar) {
-			initAffixingMenubar = _scriptsAffixingMenubar.initAffixingMenubar;
+			initAffixingMenubar = _scriptsAffixingMenubar["default"];
 		}, function (_scriptsPolyfills) {}],
 		execute: function () {
 			// Poor man's document ready (this is last thing on page, so should work fine)
 			window.setTimeout(function () {
-				"use strict";
-
 				// Kick it all off
 				insertEmail(document.querySelectorAll(".get-in-touch-link"));
 				initImageComparison();
@@ -726,6 +726,71 @@ System.register("scripts/main", ["scripts/insert-email", "scripts/image-comparis
 
 
 // Polyfills module returns nothing (just polyfills object prototypes where necessary)
+(function() {
+  var loader = System;
+  var hasOwnProperty = loader.global.hasOwnProperty;
+  var moduleGlobals = {};
+  var curGlobalObj;
+  var ignoredGlobalProps;
+  if (typeof indexOf == 'undefined')
+    indexOf = Array.prototype.indexOf;
+  System.set("@@global-helpers", System.newModule({
+    prepareGlobal: function(moduleName, deps) {
+      for (var i = 0; i < deps.length; i++) {
+        var moduleGlobal = moduleGlobals[deps[i]];
+        if (moduleGlobal)
+          for (var m in moduleGlobal)
+            loader.global[m] = moduleGlobal[m];
+      }
+      curGlobalObj = {};
+      ignoredGlobalProps = ["indexedDB", "sessionStorage", "localStorage", "clipboardData", "frames", "webkitStorageInfo"];
+      for (var g in loader.global) {
+        if (indexOf.call(ignoredGlobalProps, g) != -1) { continue; }
+        if (!hasOwnProperty || loader.global.hasOwnProperty(g)) {
+          try {
+            curGlobalObj[g] = loader.global[g];
+          } catch (e) {
+            ignoredGlobalProps.push(g);
+          }
+        }
+      }
+    },
+    retrieveGlobal: function(moduleName, exportName, init) {
+      var singleGlobal;
+      var multipleExports;
+      var exports = {};
+      if (init) {
+        var depModules = [];
+        for (var i = 0; i < deps.length; i++)
+          depModules.push(require(deps[i]));
+        singleGlobal = init.apply(loader.global, depModules);
+      }
+      else if (exportName) {
+        var firstPart = exportName.split(".")[0];
+        singleGlobal = eval.call(loader.global, exportName);
+        exports[firstPart] = loader.global[firstPart];
+      }
+      else {
+        for (var g in loader.global) {
+          if (indexOf.call(ignoredGlobalProps, g) != -1)
+            continue;
+          if ((!hasOwnProperty || loader.global.hasOwnProperty(g)) && g != loader.global && curGlobalObj[g] != loader.global[g]) {
+            exports[g] = loader.global[g];
+            if (singleGlobal) {
+              if (singleGlobal !== loader.global[g])
+                multipleExports = true;
+            }
+            else if (singleGlobal !== false) {
+              singleGlobal = loader.global[g];
+            }
+          }
+        }
+      }
+      moduleGlobals[moduleName] = exports;
+      return multipleExports ? exports : singleGlobal;
+    }
+  }));
+})();
 
 });
 //# sourceMappingURL=app-built.js.map

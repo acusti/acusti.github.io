@@ -1,8 +1,6 @@
 'use strict';
 
-import util from './util';
-
-var previousElementSibling = util.previousElementSibling;
+import { previousElementSibling } from './util';
 
 var toggleImageComparison = function() {
 	var comparison_image_wrap = previousElementSibling(this.parentElement),
@@ -24,7 +22,7 @@ var toggleImageComparison = function() {
 	}
 };
 
-export function initImageComparison() {
+export default function() {
 	var comparison_toggles = document.querySelectorAll('.image-comparison-toggle'),
 	    comparison_image_wrap,
 	    i;

@@ -1,6 +1,6 @@
 'use strict';
 
-export function insertEmail(elements) {
+export default function(elements) {
 	var host = window.location.hostname.replace('www.', ''),
 	    href = 'mai',
 		html = 'and',

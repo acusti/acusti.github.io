@@ -92,7 +92,7 @@ initScrollChecking = function() {
 	document.body.removeEventListener('touchmove', initScrollChecking);
 };
 
-export function initAffixingMenubar(navElement) {
+export default function(navElement) {
 	if (!navElement) {
 		return;
 	}
