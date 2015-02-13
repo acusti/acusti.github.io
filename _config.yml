@@ -1,5 +1,5 @@
 # Site environment
-env:         development
+env:         production
 # Jekyll config
 base_url:    http://www.acusti.ca
 # http://jekyllrb.com/docs/permalinks/
