@@ -45,7 +45,7 @@ This plugin is listed on the [Joomla Extensions Directory][jed].
 
 <address class="vcard">
 	<p class="top">If you have any problems using the plugin, wish to report a bug, or have any feature requests, please contact me, <span class="fn">Andrew Patton</span>, at:</p>
-	<ul class="contact"><li><a class="email"></a></li></ul>
+	<ul class="contact"><li><a class="get-in-touch-link"></a></li></ul>
 	<p class="legal bottom">This plugin is offered in the hope it will be useful but without any warranty whatsoever</p>
 </address>
 

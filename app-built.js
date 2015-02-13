@@ -600,7 +600,7 @@ System.register("scripts/main", ["scripts/insert-email", "scripts/image-comparis
 				"use strict";
 
 				// Kick it all off
-				insertEmail(document.querySelectorAll(".email"));
+				insertEmail(document.querySelectorAll(".get-in-touch-link"));
 				initImageComparison();
 				initImageParallax(document.querySelector(".post__splash > img"));
 			}, 1);
