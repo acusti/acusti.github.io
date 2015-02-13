@@ -77,8 +77,8 @@ imageParallaxCalculate = function() {
 
 // Return a function that initializes the effect
 export function initImageParallax(imageElement) {
-	// Bail now if no support for pageYOffset
-	if (window.pageYOffset === undefined || !imageElement) {
+	// Bail now if no image to work on or no support for pageYOffset
+	if (!imageElement || window.pageYOffset === undefined) {
 		return;
 	}
 	image = imageElement;
