@@ -1,4 +1,7 @@
-base_url: http://www.acusti.ca
+# Site environment
+env:         development
+# Jekyll config
+base_url:    http://www.acusti.ca
 # http://jekyllrb.com/docs/permalinks/
 permalink:   pretty
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones

@@ -1,3 +1,6 @@
+# Site environment
+env:      development
+# Jekyll config
 base_url: http://0.0.0.0:4000
 
 # Theme settings
@@ -5,4 +8,3 @@ theme:
 
   # Disable google analytics UID when running locally
   google_analytics_uid: no-analytics
-
