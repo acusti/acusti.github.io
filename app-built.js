@@ -372,6 +372,7 @@ System.register("scripts/insert-email", [], function (_export) {
 		var host = window.location.hostname.replace("www.", ""),
 		    href = "mai",
 		    html = "and",
+		    updateHref,
 		    i;
 
 		// Intentionally opaque
@@ -382,16 +383,19 @@ System.register("scripts/insert-email", [], function (_export) {
 		// Finish href with encoded document title
 		href += "?subject=" + encodeURI(document.title);
 
+		updateHref = function () {
+			this.href = href;
+		};
+
 		// Fill it in (with link on click)
 		for (i = 0; i < elements.length; ++i) {
-			elements[i].href = href;
+			elements[i].addEventListener("click", updateHref);
 			elements[i].innerHTML = html;
 		}
-	}return {
+	}
+	return {
 		setters: [],
-		execute: function () {
-			;
-		}
+		execute: function () {}
 	};
 });
 (function() {
