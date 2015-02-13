@@ -37,6 +37,14 @@
 	ga('require', 'displayfeatures');
 	ga('send', 'pageview');
 	</script>
-	<script src="{{ site.base_url }}/js/global.js?ver=0.5"></script>
+	{% if site.env == 'development' %}
+	<script src="{{ site.base_url }}/jspm_packages/system.js"></script>
+	<script src="{{ site.base_url }}/config.js"></script>
+	<script>
+		System.import('main');
+	</script>
+	{% else %}
+	<script src="{{ site.base_url }}/app-built.js?ver=1.0"></script>
+	{% endif %}
 </body>
 </html>

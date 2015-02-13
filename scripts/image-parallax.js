@@ -1,0 +1,89 @@
+'use strict';
+
+// Parallax effect (on scroll)
+var image,
+    image_wrap,
+    parallax_speed = 0.3,
+    scrollY_previous,
+	imageParallax,
+	imageParallaxCalculate;
+
+// Initializes parallax and implements it on scroll
+// @uses imageParallaxCalculate
+imageParallax = function() {
+	// Initialize
+	if (image_wrap === undefined) {
+		if (image === null || (image_wrap = image.parentElement) === null) {
+			return false;
+		}
+		// Adding our calculations to window load doesn't work when command clicking a post link to open it in a new tab in Chrome
+		// So instead, verify we have a usable image object and if not, use a timeout to check again in 150ms
+		if (image.naturalWidth) {
+			document.body.className += ' is-loaded';
+		} else {
+			window.setTimeout(imageParallax, 150);
+		}
+		// Special case for svgs
+		if (image.src.substring(image.src.length - 4) === '.svg') {
+			image_wrap.className += ' is-svg';
+		}
+		imageParallaxCalculate();
+		scrollY_previous = window.pageYOffset;
+	}
+
+	// Don't do any work if:
+	// 1. pageYOffset change is too small to matter
+	// 2. post__splash image isn't cropped
+	if (Math.abs(window.pageYOffset - scrollY_previous) * parallax_speed < 1.5 || image.clientHeight - 20 < image_wrap.clientHeight) {
+		return;
+	}
+	// Cache pageYOffset
+	scrollY_previous = window.pageYOffset;
+
+	// Parallaxify
+	image.style.bottom = Math.floor(scrollY_previous * parallax_speed * -1) + 'px';
+};
+
+// Function to calculate dimensions and values for parallax
+imageParallaxCalculate = function() {
+	if (image === null || image_wrap === null) {
+		return;
+	}
+	// Make sure image is at least 15 pixels too tall to crop it
+	if (image.clientHeight - 15 < image_wrap.clientHeight) {
+		image_wrap.className = image_wrap.className.replace(/ is-cropped/g, '').replace(/ is-full-bleed/g, '');
+		image_wrap.style.height = '';
+		return;
+	}
+
+	// Calculations
+	image_wrap.style.height = image_wrap.clientHeight + 'px';
+	image_wrap.className += ' is-cropped';
+	if (image.clientWidth < image_wrap.clientWidth) {
+		image_wrap.style.width = image.clientWidth + 'px';
+	} else {
+		// image_wrap.className += ' is-full-bleed';
+		image_wrap.style.width = '';
+		// If image is high-res (double resolution or thereabouts, set max-width at the smallest of clientHeight and full width * 0.5)
+		if (image.naturalWidth > 2100 && image.naturalWidth / 2 < image_wrap.clientWidth) {
+			image.style.maxWidth = image.naturalWidth / 2 + 'px';
+			image_wrap.style.width = image.naturalWidth / 2 + 'px';
+		} else {
+			image.style.maxWidth = '';
+			image_wrap.style.width = '';
+		}
+	}
+};
+
+// Return a function that initializes the effect
+export function initImageParallax(imageElement) {
+	// Bail now if no support for pageYOffset
+	if (window.pageYOffset === undefined || !imageElement) {
+		return;
+	}
+	image = imageElement;
+	// Kick off scrolling parallax image effects
+	imageParallax();
+	window.addEventListener('scroll', imageParallax);
+	window.addEventListener('resize', imageParallaxCalculate);
+}
