@@ -2,6 +2,7 @@
 import {insertEmail} from './insert-email';
 import {initImageComparison} from './image-comparison';
 import {initImageParallax} from './image-parallax';
+import {initAffixingMenubar} from './affixing-menubar';
 
 // Polyfills module returns nothing (just polyfills object prototypes where necessary)
 import './polyfills';
@@ -14,4 +15,5 @@ window.setTimeout(function() {
 	insertEmail(document.querySelectorAll('.get-in-touch-link'));
 	initImageComparison();
 	initImageParallax(document.querySelector('.post__splash > img'));
+	initAffixingMenubar(document.querySelector('.header-menubar'));
 }, 1);

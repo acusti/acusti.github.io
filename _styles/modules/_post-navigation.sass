@@ -1,0 +1,56 @@
+/* = Post navigation
+ *-------------------------------------------------------------- */
+
+#post-navigation
+	position: relative
+	margin-top: 1.5em
+	margin-bottom: 1.5em
+	padding: 0.5em 0 0.5em
+	list-style: none
+
+	&:before,
+	&:after
+		content: ""
+		position: absolute
+		@extend %horizontal-border
+
+	&:before
+		top: 0
+	&:after
+		bottom: 0
+
+	li
+		display: inline-block
+		vertical-align: middle
+		zoom: 1
+		*display: inline
+		width: 50%
+		margin-right: -3px
+		text-align: left
+		+adjust-font-size-to(16px, 1)
+		+rhythm(0, 0, 0, 0)
+
+	a
+		display: block
+		position: relative
+
+		&:hover
+			background-image: none
+			text-decoration: underline
+
+	.previous
+		a
+			padding-left: 1.5em
+			&:before
+				content: "←"
+				position: absolute
+				left: 0
+
+	.next
+		text-align: right
+		a
+			padding-right: 1.5em
+			&:after
+				content: "→"
+				position: absolute
+				right: 0
