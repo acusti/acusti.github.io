@@ -4,7 +4,6 @@
 var scrollYPrev        = 0,
     upScrollCount      = 0,
     //downScrollCount    = 0,
-    affixedClass       = ' is-affixed',
     isNavAffixed       = true,
     isNavTransitioning = false,
     navBar,
@@ -56,10 +55,10 @@ checkNavPosition = function() {
 };
 
 affixNavBar = function() {
-	isNavAffixed = true;
-	isNavTransitioning = false;
-	navBar.style.top = 0;
-	navBar.className += affixedClass;
+    isNavAffixed          = true;
+    isNavTransitioning    = false;
+    navBar.style.top      = 0;
+    navBar.style.position = 'fixed';
 };
 
 unAffixNavBar = function() {
@@ -80,7 +79,7 @@ unAffixNavBar = function() {
 	} else {
 		isNavTransitioning = false;
 	}
-	navBar.className = navBar.className.replace(affixedClass, '');
+	navBar.style.position = '';
 };
 
 initScrollChecking = function() {
