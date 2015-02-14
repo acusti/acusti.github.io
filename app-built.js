@@ -518,14 +518,13 @@ System.register("scripts/image-parallax", [], function (_export) {
 System.register("scripts/affixing-menubar", [], function (_export) {
 	"use strict";
 
-	var scrollYPrev, upScrollCount, affixedClass, isNavAffixed, isNavTransitioning, navBar, handleScroll, initScrollChecking, checkNavPosition, affixNavBar, unAffixNavBar;
+	var scrollYPrev, upScrollCount, isNavAffixed, isNavTransitioning, navBar, handleScroll, initScrollChecking, checkNavPosition, affixNavBar, unAffixNavBar;
 	return {
 		setters: [],
 		execute: function () {
 			// Keep track of state of nav bar, scrolling direction, "deliberateness" of scroll in current direction (for affixing nav bar, it should be deliberate, i.e. not just a casual slip). Also, track when transitioning for adjusting position
 			scrollYPrev = 0;
 			upScrollCount = 0;
-			affixedClass = " is-affixed";
 			isNavAffixed = true;
 			isNavTransitioning = false;
 
@@ -575,7 +574,7 @@ System.register("scripts/affixing-menubar", [], function (_export) {
 				isNavAffixed = true;
 				isNavTransitioning = false;
 				navBar.style.top = 0;
-				navBar.className += affixedClass;
+				navBar.style.position = "fixed";
 			};
 
 			unAffixNavBar = function () {
@@ -596,7 +595,7 @@ System.register("scripts/affixing-menubar", [], function (_export) {
 				} else {
 					isNavTransitioning = false;
 				}
-				navBar.className = navBar.className.replace(affixedClass, "");
+				navBar.style.position = "";
 			};
 
 			initScrollChecking = function () {
