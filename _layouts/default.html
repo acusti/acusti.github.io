@@ -6,9 +6,13 @@
 	{% include head.html %}
 </head>
 {% comment %}I organized this logic like so because normal if/else was not working{% endcomment %}
-{% capture slug %}{{ page.permalink | replace_first:'/','' | replace:'/','-' }}{% endcapture %}
-{% if slug == '' %}
-	{% capture slug %}{{ page.url | replace_first:'/','' | replace:'/','-' }}{% endcapture %}
+{% assign slug_array = page.permalink | remove_first:'/' | split:'/' %}
+{% if slug_array.size == 0 %}
+	{% assign slug_array = page.url | remove_first:'/' | split:'/' %}
+{% endif %}
+{% assign slug = '' %}
+{% if slug_array.size > 0 %}
+	{% assign slug = slug_array | join:'-' %}
 {% endif %}
 {% if slug == '' %}
 	{% assign slug = 'home' %}
