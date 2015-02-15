@@ -11,16 +11,20 @@ $follow-link-width: 50px
 		@media (max-width: $narrow-width)
 			margin-top: -4.25em
 
+		.follow-link
+			margin-left: 0.3em
+			margin-right: 0.3em
+
+			@media (max-width: $narrow-width)
+				margin: 0
+
 a.follow-link
 	display: inline-block
 	padding-left: $follow-link-width
 	width: 0
 	height: $follow-link-width
 	overflow: hidden
-	margin: 0 0.3em
-
-	@media (max-width: $narrow-width)
-		margin: 0
+	margin: 0 0.75em
 
 	&:last-child
 		margin-right: 0
