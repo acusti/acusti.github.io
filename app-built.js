@@ -422,134 +422,96 @@ System.register("scripts/util", [], function (_export) {
 		}
 	};
 });
-System.register("scripts/image-parallax", [], function (_export) {
+System.register("scripts/requestVerticalScrollFrame", [], function (_export) {
 	"use strict";
 
-	var image, image_wrap, parallax_speed, scrollY_previous, imageParallax, imageParallaxCalculate;
+	var isSupported, isListening, scrollY, callbackQueue, checkForScroll, initScrollChecking, attachScrollYFrame;
 	return {
 		setters: [],
 		execute: function () {
-			// Parallax effect (on scroll)
-			parallax_speed = 0.3;
+			isSupported = window.requestAnimationFrame !== undefined;
+			isListening = false;
+			scrollY = window.pageYOffset;
+			callbackQueue = [];
 
 
-			// Initializes parallax and implements it on scroll
-			// @uses imageParallaxCalculate
-			imageParallax = function () {
-				// Initialize
-				if (image_wrap === undefined) {
-					if (image === null || (image_wrap = image.parentElement) === null) {
-						return false;
-					}
-					// Adding our calculations to window load doesn't work when command clicking a post link to open it in a new tab in Chrome
-					// So instead, verify we have a usable image object and if not, use a timeout to check again in 150ms
-					if (image.naturalWidth) {
-						document.body.className += " is-loaded";
-					} else {
-						window.setTimeout(imageParallax, 150);
-					}
-					// Special case for svgs
-					if (image.src.substring(image.src.length - 4) === ".svg") {
-						image_wrap.className += " is-svg";
-					}
-					imageParallaxCalculate();
-					scrollY_previous = window.pageYOffset;
-				}
+			checkForScroll = function () {
+				var i;
+				// Set up next cycle
+				window.requestAnimationFrame(checkForScroll);
 
-				// Don't do any work if:
-				// 1. pageYOffset change is too small to matter
-				// 2. post__splash image isn't cropped
-				if (Math.abs(window.pageYOffset - scrollY_previous) * parallax_speed < 1.5 || image.clientHeight - 20 < image_wrap.clientHeight) {
+				if (scrollY === window.pageYOffset) {
 					return;
 				}
-				// Cache pageYOffset
-				scrollY_previous = window.pageYOffset;
+				scrollY = window.pageYOffset;
 
-				// Parallaxify
-				image.style.bottom = Math.floor(scrollY_previous * parallax_speed * -1) + "px";
-			};
-
-			// Function to calculate dimensions and values for parallax
-			imageParallaxCalculate = function () {
-				if (image === null || image_wrap === null) {
-					return;
-				}
-				// Make sure image is at least 15 pixels too tall to crop it
-				if (image.clientHeight - 15 < image_wrap.clientHeight) {
-					image_wrap.className = image_wrap.className.replace(/ is-cropped/g, "").replace(/ is-full-bleed/g, "");
-					image_wrap.style.height = "";
-					return;
-				}
-
-				// Calculations
-				image_wrap.style.height = image_wrap.clientHeight + "px";
-				image_wrap.className += " is-cropped";
-				if (image.clientWidth < image_wrap.clientWidth) {
-					image_wrap.style.width = image.clientWidth + "px";
-				} else {
-					// image_wrap.className += ' is-full-bleed';
-					image_wrap.style.width = "";
-					// If image is high-res (double resolution or thereabouts, set max-width at the smallest of clientHeight and full width * 0.5)
-					if (image.naturalWidth > 2100 && image.naturalWidth / 2 < image_wrap.clientWidth) {
-						image.style.maxWidth = image.naturalWidth / 2 + "px";
-						image_wrap.style.width = image.naturalWidth / 2 + "px";
-					} else {
-						image.style.maxWidth = "";
-						image_wrap.style.width = "";
-					}
+				for (i = 0; i < callbackQueue.length; i++) {
+					callbackQueue[i](scrollY);
 				}
 			};
 
-			// Return a function that initializes the effect
-			_export("default", function (imageElement) {
-				// Bail now if no image to work on or no support for pageYOffset
-				if (!imageElement || window.pageYOffset === undefined) {
+			initScrollChecking = function () {
+				if (window.pageYOffset <= 0) {
 					return;
 				}
-				image = imageElement;
-				// Kick off scrolling parallax image effects
-				imageParallax();
-				window.addEventListener("scroll", imageParallax);
-				window.addEventListener("resize", imageParallaxCalculate);
-			});
+				window.requestAnimationFrame(checkForScroll);
+				window.removeEventListener("scroll", initScrollChecking);
+				document.body.removeEventListener("touchmove", initScrollChecking);
+			};
+
+			attachScrollYFrame = function (callback) {
+				if (!isSupported) {
+					return;
+				}
+				if (!isListening) {
+					window.addEventListener("scroll", initScrollChecking);
+					document.body.addEventListener("touchmove", initScrollChecking);
+					isListening = true;
+				}
+				callbackQueue.push(callback);
+			};
+
+			_export("default", attachScrollYFrame);
 		}
 	};
 });
-System.register("scripts/affixing-menubar", [], function (_export) {
+System.register("scripts/affixing-menubar", ["scripts/requestVerticalScrollFrame"], function (_export) {
 	"use strict";
 
-	var scrollYPrev, upScrollCount, isNavAffixed, isNavTransitioning, navBar, handleScroll, initScrollChecking, checkNavPosition, affixNavBar, unAffixNavBar;
+	var attachScrollFrame, scrollYPrev, scrollY, upScrollCount, isNavAffixed, isNavTransitioning, navBar, handleScroll, checkNavPosition, affixNavBar, unAffixNavBar;
 	return {
-		setters: [],
+		setters: [function (_scriptsRequestVerticalScrollFrame) {
+			attachScrollFrame = _scriptsRequestVerticalScrollFrame["default"];
+		}],
 		execute: function () {
 			// Keep track of state of nav bar, scrolling direction, "deliberateness" of scroll in current direction (for affixing nav bar, it should be deliberate, i.e. not just a casual slip). Also, track when transitioning for adjusting position
 			scrollYPrev = 0;
+			scrollY = 0;
 			upScrollCount = 0;
 			isNavAffixed = true;
 			isNavTransitioning = false;
 
 
-			handleScroll = function () {
+			handleScroll = function (scrollYCurrent) {
+				scrollY = scrollYCurrent;
 				// Make sure that the nav bar doesn't wind up stranded in the middle of the page
 				checkNavPosition();
-				// Set up next cycle
-				window.requestAnimationFrame(handleScroll);
-				// No scroll change or bounce scrolling, time to bail
-				if (window.scrollY === scrollYPrev || window.scrollY < 0 || window.scrollY + window.innerHeight > document.documentElement.offsetHeight) {
+				// If this is bounce scrolling, bail
+				if (scrollY < 0 || scrollY + window.innerHeight > document.documentElement.offsetHeight) {
 					return;
 				}
-				if (window.scrollY < scrollYPrev) {
+				if (scrollY < scrollYPrev) {
 					// If the user has scrolled up quickly / jumped up (like shift-spacebar)
 					// Or we are transitioning and have reached the top of the bar
-					if (!isNavAffixed && window.scrollY + navBar.clientHeight < scrollYPrev || isNavTransitioning && window.scrollY <= navBar.offsetTop + 2) {
+					if (!isNavAffixed && scrollY + navBar.clientHeight < scrollYPrev || isNavTransitioning && scrollY <= navBar.offsetTop + 2) {
 						affixNavBar();
 					} else if (!isNavAffixed) {
 						if (upScrollCount > 6) {
 							//downScrollCount = 0;
 							isNavAffixed = true;
 							// If the navbar is not currently visible, set the top to just above the viewport so it appears as we scroll up
-							if (window.scrollY > navBar.offsetTop + navBar.clientHeight + 5) {
-								navBar.style.top = window.scrollY - navBar.clientHeight + "px";
+							if (scrollY > navBar.offsetTop + navBar.clientHeight + 5) {
+								navBar.style.top = scrollY - navBar.clientHeight + "px";
 							}
 							isNavTransitioning = true;
 						}
@@ -561,11 +523,11 @@ System.register("scripts/affixing-menubar", [], function (_export) {
 					//}
 					//downScrollCount++;
 				}
-				scrollYPrev = window.scrollY;
+				scrollYPrev = scrollY;
 			};
 
 			checkNavPosition = function () {
-				if (!isNavAffixed && navBar.offsetTop > window.scrollY) {
+				if (!isNavAffixed && navBar.offsetTop > scrollY) {
 					affixNavBar();
 				}
 			};
@@ -587,10 +549,10 @@ System.register("scripts/affixing-menubar", [], function (_export) {
 				// Only set top position for switch from fixed absolute if not transitioning
 				if (!isNavTransitioning) {
 					// If user jumped down the page (e.g. paging with spacebar)
-					if (window.scrollY > scrollYPrev + navBar.clientHeight + 5) {
+					if (scrollY > scrollYPrev + navBar.clientHeight + 5) {
 						navBar.style.top = scrollYPrev + 5 + "px";
 					} else {
-						navBar.style.top = window.scrollY + "px";
+						navBar.style.top = scrollY + "px";
 					}
 				} else {
 					isNavTransitioning = false;
@@ -598,22 +560,13 @@ System.register("scripts/affixing-menubar", [], function (_export) {
 				navBar.style.position = "";
 			};
 
-			initScrollChecking = function () {
-				if (window.scrollY <= 0) {
-					return;
-				}
-				window.requestAnimationFrame(handleScroll);
-				window.removeEventListener("scroll", initScrollChecking);
-				document.body.removeEventListener("touchmove", initScrollChecking);
-			};
-
 			_export("default", function (navElement) {
 				if (!navElement) {
 					return;
 				}
 				navBar = navElement;
-				window.addEventListener("scroll", initScrollChecking);
-				document.body.addEventListener("touchmove", initScrollChecking);
+				// Use attachScrollFrame helper to listen for scroll changes
+				attachScrollFrame(handleScroll);
 			});
 		}
 	};
@@ -690,6 +643,101 @@ System.register("scripts/image-comparison", ["scripts/util"], function (_export)
 					comparison_toggles[i].setAttribute("data-text", comparison_toggles[i].innerHTML);
 					comparison_toggles[i].addEventListener("click", toggleImageComparison);
 				}
+			});
+		}
+	};
+});
+System.register("scripts/image-parallax", ["scripts/requestVerticalScrollFrame"], function (_export) {
+	"use strict";
+
+	var attachScrollFrame, image, image_wrap, parallax_speed, scrollY, scrollY_previous, imageParallax, imageParallaxCalculate;
+	return {
+		setters: [function (_scriptsRequestVerticalScrollFrame) {
+			attachScrollFrame = _scriptsRequestVerticalScrollFrame["default"];
+		}],
+		execute: function () {
+			// Parallax effect (on scroll)
+			parallax_speed = 0.3;
+
+
+			// Initializes parallax and implements it on scroll
+			// @uses imageParallaxCalculate
+			imageParallax = function (scrollYCurrent) {
+				scrollY = scrollYCurrent;
+				// Initialize
+				if (image_wrap === undefined) {
+					if (image === null || (image_wrap = image.parentElement) === null) {
+						return false;
+					}
+					// Adding our calculations to window load doesn't work when command clicking a post link to open it in a new tab in Chrome
+					// So instead, verify we have a usable image object and if not, use a timeout to check again in 150ms
+					if (image.naturalWidth) {
+						document.body.className += " is-loaded";
+					} else {
+						window.setTimeout(imageParallax, 150);
+					}
+					// Special case for svgs
+					if (image.src.substring(image.src.length - 4) === ".svg") {
+						image_wrap.className += " is-svg";
+					}
+					imageParallaxCalculate();
+					scrollY_previous = scrollY;
+				}
+
+				// Don't do any work if:
+				// 1. scrollY change is too small to matter
+				// 2. post__splash image isn't cropped
+				if (Math.abs(scrollY - scrollY_previous) * parallax_speed < 1.5 || image.clientHeight - 20 < image_wrap.clientHeight) {
+					return;
+				}
+				// Cache scrollY
+				scrollY_previous = scrollY;
+
+				// Parallaxify
+				image.style.bottom = Math.floor(scrollY_previous * parallax_speed * -1) + "px";
+			};
+
+			// Function to calculate dimensions and values for parallax
+			imageParallaxCalculate = function () {
+				if (image === null || image_wrap === null) {
+					return;
+				}
+				// Make sure image is at least 15 pixels too tall to crop it
+				if (image.clientHeight - 15 < image_wrap.clientHeight) {
+					image_wrap.className = image_wrap.className.replace(/ is-cropped/g, "").replace(/ is-full-bleed/g, "");
+					image_wrap.style.height = "";
+					return;
+				}
+
+				// Calculations
+				image_wrap.style.height = image_wrap.clientHeight + "px";
+				image_wrap.className += " is-cropped";
+				if (image.clientWidth < image_wrap.clientWidth) {
+					image_wrap.style.width = image.clientWidth + "px";
+				} else {
+					// image_wrap.className += ' is-full-bleed';
+					image_wrap.style.width = "";
+					// If image is high-res (double resolution or thereabouts, set max-width at the smallest of clientHeight and full width * 0.5)
+					if (image.naturalWidth > 2100 && image.naturalWidth / 2 < image_wrap.clientWidth) {
+						image.style.maxWidth = image.naturalWidth / 2 + "px";
+						image_wrap.style.width = image.naturalWidth / 2 + "px";
+					} else {
+						image.style.maxWidth = "";
+						image_wrap.style.width = "";
+					}
+				}
+			};
+
+			// Return a function that initializes the effect
+			_export("default", function (imageElement) {
+				// Bail now if no image to work on
+				if (!imageElement) {
+					return;
+				}
+				image = imageElement;
+				// Set up scrolling parallax image effects
+				attachScrollFrame(imageParallax);
+				imageParallax(window.pageYOffset);
 			});
 		}
 	};

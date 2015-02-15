@@ -1,16 +1,20 @@
 'use strict';
 
+import attachScrollFrame from './requestVerticalScrollFrame';
+
 // Parallax effect (on scroll)
 var image,
     image_wrap,
     parallax_speed = 0.3,
+    scrollY,
     scrollY_previous,
 	imageParallax,
 	imageParallaxCalculate;
 
 // Initializes parallax and implements it on scroll
 // @uses imageParallaxCalculate
-imageParallax = function() {
+imageParallax = function(scrollYCurrent) {
+    scrollY = scrollYCurrent;
 	// Initialize
 	if (image_wrap === undefined) {
 		if (image === null || (image_wrap = image.parentElement) === null) {
@@ -28,17 +32,17 @@ imageParallax = function() {
 			image_wrap.className += ' is-svg';
 		}
 		imageParallaxCalculate();
-		scrollY_previous = window.pageYOffset;
+		scrollY_previous = scrollY;
 	}
 
 	// Don't do any work if:
-	// 1. pageYOffset change is too small to matter
+	// 1. scrollY change is too small to matter
 	// 2. post__splash image isn't cropped
-	if (Math.abs(window.pageYOffset - scrollY_previous) * parallax_speed < 1.5 || image.clientHeight - 20 < image_wrap.clientHeight) {
+	if (Math.abs(scrollY - scrollY_previous) * parallax_speed < 1.5 || image.clientHeight - 20 < image_wrap.clientHeight) {
 		return;
 	}
-	// Cache pageYOffset
-	scrollY_previous = window.pageYOffset;
+	// Cache scrollY
+	scrollY_previous = scrollY;
 
 	// Parallaxify
 	image.style.bottom = Math.floor(scrollY_previous * parallax_speed * -1) + 'px';
@@ -77,13 +81,12 @@ imageParallaxCalculate = function() {
 
 // Return a function that initializes the effect
 export default function(imageElement) {
-	// Bail now if no image to work on or no support for pageYOffset
-	if (!imageElement || window.pageYOffset === undefined) {
+	// Bail now if no image to work on
+	if (!imageElement) {
 		return;
 	}
 	image = imageElement;
-	// Kick off scrolling parallax image effects
-	imageParallax();
-	window.addEventListener('scroll', imageParallax);
-	window.addEventListener('resize', imageParallaxCalculate);
+	// Set up scrolling parallax image effects
+    attachScrollFrame(imageParallax);
+	imageParallax( window.pageYOffset);
 }
