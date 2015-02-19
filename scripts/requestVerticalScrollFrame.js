@@ -1,6 +1,7 @@
 'use strict';
 
-var isSupported   = window.requestAnimationFrame !== undefined,
+var requestFrame  = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame,
+    isSupported   = requestFrame !== undefined,
     isListening   = false,
     scrollY       = window.pageYOffset,
 	callbackQueue = [],
@@ -11,7 +12,7 @@ var isSupported   = window.requestAnimationFrame !== undefined,
 checkForScroll = function() {
 	var i;
 	// Set up next cycle
-	window.requestAnimationFrame(checkForScroll);
+	requestFrame(checkForScroll);
 
 	if (scrollY === window.pageYOffset) {
 		return;
@@ -27,7 +28,7 @@ initScrollChecking = function() {
 	if (window.pageYOffset <= 0) {
 		return;
 	}
-	window.requestAnimationFrame(checkForScroll);
+	requestFrame(checkForScroll);
 	window.removeEventListener('scroll', initScrollChecking);
 	document.body.removeEventListener('touchmove', initScrollChecking);
 };
