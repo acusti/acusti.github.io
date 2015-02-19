@@ -398,7 +398,7 @@ caption{display:table-caption;font-weight:300;font-size:1.3em;text-transform:upp
 	font-style: italic;
 	color: $color-text-light;
 
-	@media (min-width: $medium-width) {
+	@media print, screen and (min-width: $medium-width) {
 		float: right;
 		width: 11em;
 		font-style: normal;
