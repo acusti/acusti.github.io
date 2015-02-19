@@ -91,7 +91,7 @@ I speak and understand Spanish and French fluently.
 [acusti]: http://www.acusti.ca
 [cq]: http://collections.cinematheque.qc.ca/en/ "The Cinémathèque québécoise - Collections Online"
 [cqrecherche]: http://collections.cinematheque.qc.ca/recherche/en/ "Collections Online - Search"
-[jgh]: http://pen.jgh.ca/search/en/ "Jewish General Hospital"
+[jgh]: http://pen.jgh.ca/search/en/ "Montreal Jewish General Hospital"
 [siemens]: http://storytelling.purecobalt.com/ "Alpha prototype with sample content"
 [trica]: http://www.tricafurniture.com/ "Trica Furniture"
 [redux]: http://www.reduxmedia.com/ "Redux Media"
