@@ -37,31 +37,31 @@ Built a responsive marketing website for the Redux ad network built on WordPress
 
 My [personal site][acusti], which I originally designed and built in February 2012, has [a portfolio][portfolio] of sites and plugins that I’ve built. My [GitHub profile][github] has additional projects.
 
-Computer Languages and Software
--------------------------------
+Programming Languages and Technologies
+--------------------------------------
 
 ### Front end
 
 - JavaScript (“[Expert][smartererjs]”)
-    - With jQuery (“[Expert][smartererjq]”) and without (using custom, lightweight DOM utilities)
+    - With jQuery (“[Expert][smartererjq]”) and without
     - Grunt / Gulp
-    - AMD via RequireJS
-    - Backbone + Marionette
+    - Module systems (ES6 via jspm, AMD via RequireJS)
+    - React
     - Handlebars
     - Mocha + Chai unit testing (BBD)
 - CSS (“[Master][smarterercss]”)
-    - SASS with Compass
+    - SASS (plain and with frameworks like Compass and Susy)
     - [Modular][SMACSS] / [component][north]-based [methodologies][objects in space] for styles and markup
-- Web Components (with and without Polymer)
 - HTML (“[Expert][smartererhtml5]”)
 
 ### Back end
 
-- NodeJS
 - PHP and MySQL (using traditional MVC frameworks and CMSs)
-- Salesforce Apex and Apex unit testing (TDD)
+- NodeJS
+- Salesforce Apex
 - C# and .NET
 - SSH-based server management (DNS, virtual server management in CentOS, etc)
+- iOS with Swift
 
 Other Interests
 ---------------
@@ -73,7 +73,7 @@ Education
 ---------
 
 **McGill University, 2003 – 2007**  
-BA in *Cultural Studies*, with a Minor in *Music Technology*
+BA in Cultural Studies, with a Minor in Music Technology
 
 Languages
 ---------
