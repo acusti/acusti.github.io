@@ -360,15 +360,12 @@
 
 ('scripts/main', function(System) {
 
-
-
-
 System.register("scripts/insert-email", [], function (_export) {
-	"use strict";
-
 	return {
 		setters: [],
 		execute: function () {
+			"use strict";
+
 			_export("default", function (elements) {
 				var host = window.location.hostname.replace("www.", ""),
 				    href = "mai",
@@ -398,14 +395,15 @@ System.register("scripts/insert-email", [], function (_export) {
 	};
 });
 System.register("scripts/util", [], function (_export) {
-	"use strict";
-
 	var previousElementSibling;
 	return {
 		setters: [],
 		execute: function () {
+			"use strict";
+
 			// IE8 compatible method to fetch previousElementSibling
-			previousElementSibling = function (element) {
+
+			previousElementSibling = function previousElementSibling(element) {
 				if (element.previousElementSibling !== undefined) {
 					return element.previousElementSibling;
 				}
@@ -418,27 +416,28 @@ System.register("scripts/util", [], function (_export) {
 			};
 
 			// Expose utilities
+
 			_export("previousElementSibling", previousElementSibling);
 		}
 	};
 });
 System.register("scripts/requestVerticalScrollFrame", [], function (_export) {
-	"use strict";
-
-	var isSupported, isListening, scrollY, callbackQueue, checkForScroll, initScrollChecking, attachScrollYFrame;
+	var requestFrame, isSupported, isListening, scrollY, callbackQueue, checkForScroll, initScrollChecking, attachScrollYFrame;
 	return {
 		setters: [],
 		execute: function () {
-			isSupported = window.requestAnimationFrame !== undefined;
+			"use strict";
+
+			requestFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+			isSupported = requestFrame !== undefined;
 			isListening = false;
 			scrollY = window.pageYOffset;
 			callbackQueue = [];
 
-
 			checkForScroll = function () {
 				var i;
 				// Set up next cycle
-				window.requestAnimationFrame(checkForScroll);
+				requestFrame(checkForScroll);
 
 				if (scrollY === window.pageYOffset) {
 					return;
@@ -454,7 +453,7 @@ System.register("scripts/requestVerticalScrollFrame", [], function (_export) {
 				if (window.pageYOffset <= 0) {
 					return;
 				}
-				window.requestAnimationFrame(checkForScroll);
+				requestFrame(checkForScroll);
 				window.removeEventListener("scroll", initScrollChecking);
 				document.body.removeEventListener("touchmove", initScrollChecking);
 			};
@@ -476,21 +475,20 @@ System.register("scripts/requestVerticalScrollFrame", [], function (_export) {
 	};
 });
 System.register("scripts/affixing-menubar", ["scripts/requestVerticalScrollFrame"], function (_export) {
-	"use strict";
-
 	var attachScrollFrame, scrollYPrev, scrollY, upScrollCount, isNavAffixed, isNavTransitioning, navBar, handleScroll, checkNavPosition, affixNavBar, unAffixNavBar;
 	return {
 		setters: [function (_scriptsRequestVerticalScrollFrame) {
 			attachScrollFrame = _scriptsRequestVerticalScrollFrame["default"];
 		}],
 		execute: function () {
+			"use strict";
+
 			// Keep track of state of nav bar, scrolling direction, "deliberateness" of scroll in current direction (for affixing nav bar, it should be deliberate, i.e. not just a casual slip). Also, track when transitioning for adjusting position
 			scrollYPrev = 0;
 			scrollY = 0;
 			upScrollCount = 0;
 			isNavAffixed = true;
 			isNavTransitioning = false;
-
 
 			handleScroll = function (scrollYCurrent) {
 				scrollY = scrollYCurrent;
@@ -599,15 +597,15 @@ System.register("scripts/polyfills", [], false, function(__require, __exports, _
 
 
 System.register("scripts/image-comparison", ["scripts/util"], function (_export) {
-	"use strict";
-
 	var previousElementSibling, toggleImageComparison;
 	return {
 		setters: [function (_scriptsUtil) {
 			previousElementSibling = _scriptsUtil.previousElementSibling;
 		}],
 		execute: function () {
-			toggleImageComparison = function () {
+			"use strict";
+
+			toggleImageComparison = function toggleImageComparison() {
 				var comparison_image_wrap = previousElementSibling(this.parentElement),
 				    toggle_class = " is-toggled",
 				    next_text;
@@ -648,17 +646,16 @@ System.register("scripts/image-comparison", ["scripts/util"], function (_export)
 	};
 });
 System.register("scripts/image-parallax", ["scripts/requestVerticalScrollFrame"], function (_export) {
-	"use strict";
-
 	var attachScrollFrame, image, image_wrap, parallax_speed, scrollY, scrollY_previous, imageParallax, imageParallaxCalculate;
 	return {
 		setters: [function (_scriptsRequestVerticalScrollFrame) {
 			attachScrollFrame = _scriptsRequestVerticalScrollFrame["default"];
 		}],
 		execute: function () {
+			"use strict";
+
 			// Parallax effect (on scroll)
 			parallax_speed = 0.3;
-
 
 			// Initializes parallax and implements it on scroll
 			// @uses imageParallaxCalculate
@@ -729,6 +726,7 @@ System.register("scripts/image-parallax", ["scripts/requestVerticalScrollFrame"]
 			};
 
 			// Return a function that initializes the effect
+
 			_export("default", function (imageElement) {
 				// Bail now if no image to work on
 				if (!imageElement) {
@@ -743,8 +741,6 @@ System.register("scripts/image-parallax", ["scripts/requestVerticalScrollFrame"]
 	};
 });
 System.register("scripts/main", ["scripts/insert-email", "scripts/image-comparison", "scripts/image-parallax", "scripts/affixing-menubar", "scripts/polyfills"], function (_export) {
-	"use strict";
-
 	var insertEmail, initImageComparison, initImageParallax, initAffixingMenubar;
 	return {
 		setters: [function (_scriptsInsertEmail) {
@@ -757,6 +753,8 @@ System.register("scripts/main", ["scripts/insert-email", "scripts/image-comparis
 			initAffixingMenubar = _scriptsAffixingMenubar["default"];
 		}, function (_scriptsPolyfills) {}],
 		execute: function () {
+			"use strict";
+
 			// Poor man's document ready (this is last thing on page, so should work fine)
 			window.setTimeout(function () {
 				// Kick it all off
@@ -770,7 +768,6 @@ System.register("scripts/main", ["scripts/insert-email", "scripts/image-comparis
 });
 
 // Use ES6 imports
-
 
 // Polyfills module returns nothing (just polyfills object prototypes where necessary)
 (function() {

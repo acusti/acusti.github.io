@@ -1,6 +1,6 @@
 System.config({
   "baseURL": "/scripts/",
-  "transpiler": "6to5",
+  "transpiler": "babel",
   "paths": {
     "*": "*.js"
   }
