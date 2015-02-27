@@ -34,7 +34,7 @@ $ compass watch
 To build the production self-executing bundled JS:
 
 ```bash
-jspm bundle-sfx scripts/main app-built.js
+jspm bundle-sfx scripts/main app-built.js --minify
 ```
 
 To test the JS bundle locally, open `_config-local.yml` and comment out `env: development`, then restart the jekyll server
