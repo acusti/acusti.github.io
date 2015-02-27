@@ -5,7 +5,7 @@ import { previousElementSibling } from './util';
 var toggleImageComparison = function() {
 	var comparison_image_wrap = previousElementSibling(this.parentElement),
 	    toggle_class          = 'is-toggled',
-	    next_text_attr_name   = 'data-text' + comparison_image_wrap.classList.contains(toggle_class) ? '-toggled' : '',
+	    next_text_attr_name   = 'data-text' + (comparison_image_wrap.classList.contains(toggle_class) ? '' : '-toggled'),
 		next_text;
 
 	if (comparison_image_wrap === null) {
