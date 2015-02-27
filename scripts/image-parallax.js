@@ -88,5 +88,6 @@ export default function(imageElement) {
 	image = imageElement;
 	// Set up scrolling parallax image effects
     attachScrollFrame(imageParallax);
-	imageParallax( window.pageYOffset);
+	imageParallax(window.pageYOffset);
+    window.addEventListener('resize', imageParallaxCalculate);
 }
