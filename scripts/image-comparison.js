@@ -4,19 +4,15 @@ import { previousElementSibling } from './util';
 
 var toggleImageComparison = function() {
 	var comparison_image_wrap = previousElementSibling(this.parentElement),
-	    toggle_class = ' is-toggled',
+	    toggle_class          = 'is-toggled',
+	    next_text_attr_name   = 'data-text' + comparison_image_wrap.classList.contains(toggle_class) ? '-toggled' : '',
 		next_text;
 
 	if (comparison_image_wrap === null) {
 		return;
 	}
-	if (comparison_image_wrap.className.indexOf(toggle_class) > -1) {
-		comparison_image_wrap.className = comparison_image_wrap.className.replace(toggle_class, '');
-		next_text = this.getAttribute('data-text');
-	} else {
-		comparison_image_wrap.className += toggle_class;
-		next_text = this.getAttribute('data-text-toggled');
-	}
+	comparison_image_wrap.classList.toggle(toggle_class);
+	next_text = this.getAttribute(next_text_attr_name);
 	if (next_text && next_text.length) {
 		this.innerHTML = next_text;
 	}
@@ -33,7 +29,7 @@ export default function() {
 			continue;
 		}
 		// Set image comparison class
-		comparison_image_wrap.className += ' image-comparison-wrap';
+		comparison_image_wrap.classList.add('image-comparison-wrap');
 		// Cache current content of toggle as 'data-text' attribute
 		comparison_toggles[i].setAttribute('data-text', comparison_toggles[i].innerHTML);
 		comparison_toggles[i].addEventListener('click', toggleImageComparison);
