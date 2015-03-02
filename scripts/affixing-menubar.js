@@ -80,14 +80,17 @@ unAffixNavBar = function() {
 	} else {
 		isNavTransitioning = false;
 	}
-	navBar.style.position = '';
+	navBar.style.position = 'absolute';
 };
 
 export default function(navElement) {
 	if (!navElement) {
 		return;
 	}
-	navBar = navElement;
+    // Set initial state
+	navBar                = navElement;
+    navBar.style.top      = 0;
+    navBar.style.position = 'absolute';
     // Use attachScrollFrame helper to listen for scroll changes
 	attachScrollFrame(handleScroll);
 }
