@@ -1,6 +1,6 @@
 'use strict';
 
-import attachScrollFrame from './requestVerticalScrollFrame';
+import attachScrollFrame from 'onscrolling';
 
 // Parallax effect (on scroll)
 var image,
