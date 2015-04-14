@@ -9,11 +9,11 @@ add_import_path File.join(retina_ext, "stylesheets")
 require File.join(File.expand_path(File.dirname(__FILE__)), "plugins", "base64encode.rb")
 
 # Set this to the root of your project when deployed:
-http_path = "/"
-sass_dir = ""
-fonts_dir = "./fonts"
-css_dir = "../css"
-images_dir = "../images"
+http_path       = "/"
+sass_dir        = ""
+fonts_dir       = "./fonts"
+css_dir         = "../css"
+images_dir      = "../images"
 javascripts_dir = "../js"
 relative_assets = true
 
