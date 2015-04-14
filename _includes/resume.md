@@ -12,8 +12,14 @@ Current Employment
 Selected Projects at Pure Cobalt
 --------------------------------
 
-**[Online course single-page application][siemens]** <span class="projects__time-period">April – Sep. 2014</span><br>
-Refactored a JS-heavy online course codebase that was full of jQuery spaghetti using the Module design pattern (via RequireJS), an MV*-based architecture, and [SMACSS/BEM principles][objects in space]. Developed a feature-rich Grunt build process, including bespoke templating and markup generation to make the platform easy to develop on and maintain. Contributed to some [existing][svn-tag] [node][svn-project-root] [modules][svn-changelog]. Implemented unit tests on many of the JS modules using Mocha, Chai, and [Squire][].
+**[Front end UI npm modules][npm-acusti]** <span class="projects__time-period">March 2014 – Present</span><br>
+Built [onscrolling][] and [affixing-header][], two modules for constructing performant front end UIs with solid UX. Both modules are tested, with Continuous Integration via Travis and, for Affixing Header, Selenium integration tests hooked up to SauceLabs for cross browser testing. They are written as ES2015 (ES6) modules, then transpiled to the UMD format.
+
+**[Gratituity][]** <span class="projects__time-period">Nov. 2014 – Jan. 2015</span><br>
+Designed and built my first iOS app, a minimally complex, maximally efficient tip calculator.
+
+**Online course single-page application** <span class="projects__time-period">April – Sep. 2014</span><br>
+Refactored a JS-powered online course codebase using the module design pattern (via RequireJS), an MV*-based architecture, a custom router, and [SMACSS/BEM principles][objects in space]. Developed a feature-rich Grunt build process, including bespoke templating and markup generation, to make the platform easy to develop on and maintain. Implemented unit tests on business logic using Mocha, Chai, and [Squire][].
 
 **[Jewish General Hospital library search][jgh]** <span class="projects__time-period">Dec. 2013 – March 2014</span><br>
 Built a fast and maintainable multilingual Solr-powered search front end, based on my initial design, for a hospital library using RequireJS and Handlebars.
@@ -49,6 +55,7 @@ Programming Languages and Technologies
     - React
     - Handlebars
     - Mocha + Chai unit testing (BBD)
+    - Selenium Webdriver integration testing
 - CSS (“[Master][smarterercss]”)
     - SASS (plain and with frameworks like Compass and Susy)
     - [Modular][SMACSS] / [component][north]-based [methodologies][objects in space] for styles and markup
@@ -81,9 +88,10 @@ Languages
 I speak and understand Spanish and French fluently.
 
 [Pure Cobalt]: http://www.purecobalt.com
-[svn-tag]: https://github.com/iVantage/grunt-svn-tag/commits?author=acusti
-[svn-project-root]: https://github.com/jtrussell/node-svn-project-root/commits?author=acusti
-[svn-changelog]: https://github.com/iVantage/grunt-ivantage-svn-changelog/commits?author=acusti
+[npm-acusti]: https://www.npmjs.com/~acusti
+[onscrolling]: https://github.com/acusti/onscrolling
+[affixing-header]: https://github.com/acusti/affixing-header
+[Gratituity]: https://github.com/acusti/gratituity
 [Squire]: https://github.com/iammerrick/Squire.js/
 [FuelPHP]: http://fuelphp.com/
 [portfolio]: http://www.acusti.ca/work/
@@ -92,7 +100,6 @@ I speak and understand Spanish and French fluently.
 [cq]: http://collections.cinematheque.qc.ca/en/ "The Cinémathèque québécoise - Collections Online"
 [cqrecherche]: http://collections.cinematheque.qc.ca/recherche/en/ "Collections Online - Search"
 [jgh]: http://pen.jgh.ca/search/en/ "Montreal Jewish General Hospital"
-[siemens]: http://storytelling.purecobalt.com/ "Alpha prototype with sample content"
 [trica]: http://www.tricafurniture.com/ "Trica Furniture"
 [redux]: http://www.reduxmedia.com/ "Redux Media"
 [haute]: http://www.hautetremblant.com/ "Haute Tremblant"
