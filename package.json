@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "build": "jspm bundle-sfx scripts/main app-built.js --minify",
+    "serve": "jekyll serve --watch --config _config.yml,_config-local.yml,_config-dev.yml --drafts",
+    "serve:prod": "npm run build && jekyll serve --config _config.yml,_config-local.yml"
+  },
   "jspm": {
     "directories": {
       "lib": "scripts"
