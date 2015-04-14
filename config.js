@@ -9,10 +9,10 @@ System.config({
 
 System.config({
   "map": {
-    "affixing-header": "npm:affixing-header@0.3.1",
-    "onscrolling": "npm:onscrolling@0.3.1",
-    "npm:affixing-header@0.3.1": {
-      "onscrolling": "npm:onscrolling@0.3.1"
+    "affixing-header": "npm:affixing-header@0.3.2",
+    "onscrolling": "npm:onscrolling@0.3.2",
+    "npm:affixing-header@0.3.2": {
+      "onscrolling": "npm:onscrolling@0.3.2"
     }
   }
 });
