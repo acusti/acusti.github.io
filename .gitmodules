@@ -1,6 +1,0 @@
-[submodule "js/respond"]
-	path = js/respond
-	url = https://github.com/scottjehl/Respond.git
-[submodule "_sass/plugins/retina"]
-	path = _styles/plugins/retina
-	url = https://github.com/joelambert/Retina-Compass-Helpers.git
