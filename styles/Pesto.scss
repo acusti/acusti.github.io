@@ -92,13 +92,19 @@ body {
 	}
 }
 
-
 h1, h2, h3, h4, h5, dt {
+	margin: 1rem 0;
 	font-weight: 700;
 	// Should links in bold headings have underlines?
 	// a {
 	// 	background-image: none;
 	// }
+	+ p,
+	+ ul,
+	+ ol,
+	+ dl {
+		margin-top: 0;
+	}
 }
 
 h1 {
@@ -121,23 +127,20 @@ article > h1:first-child {
 h2,
 .article-list .article-title {
 	font-size: 1.45em;
-	margin: 1.25em 0 0.5em;
+	margin: 1.25rem 0 0.75rem;
 }
 h3, dt {
 	font-size: 1.17em;
-	margin: 0.94em 0;
 }
 h4 {
 	font-size: 1em;
-	margin: 1.33em 0;
 }
 h5 {
 	font-size: 0.83em;
-	margin: 1.67em 0;
 }
 h6 {
 	font-size: 0.75em;
-	margin: 2.33em 0;
+	margin: 1rem 0;
 }
 // Links
 // -----
