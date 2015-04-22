@@ -40,7 +40,7 @@ Built a responsive marketing website for the Redux ad network built on WordPress
 
 ### Other Projects
 
-My [personal site][acusti], which I originally designed and built in February 2012, has [a portfolio][portfolio] of sites and plugins that I’ve built. My [GitHub profile][github] has additional projects.
+My [personal site][acusti], which I designed and built, has [a portfolio][portfolio] of sites and plugins that I’ve created. My [GitHub profile][github] has additional projects.
 
 Programming Languages and Technologies
 --------------------------------------
