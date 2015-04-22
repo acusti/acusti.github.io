@@ -1,7 +1,6 @@
 Andrew Patton
 =============
-1974 Rue Le Caron // Montréal, QC <span class="nobr">H4E 1K6</span><br>
-Mobile: <span class="nobr">(514) 577-5784</span> // Home: <span class="nobr">(514) 933-1847</span>
+[andrew@acusti.ca][mailto] // <span class="nobr">(514) 577-5784</span>
 
 Current Employment
 ------------------
@@ -87,6 +86,7 @@ Languages
 
 I speak and understand Spanish and French fluently.
 
+[mailto]: mailto:andrew@acusti.ca
 [Pure Cobalt]: http://www.purecobalt.com
 [npm-acusti]: https://www.npmjs.com/~acusti
 [onscrolling]: https://github.com/acusti/onscrolling
