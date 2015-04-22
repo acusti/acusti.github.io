@@ -25,7 +25,7 @@ jekyll serve --watch --config _config.yml,_config-local.yml --drafts
 To build and watch styles:
 
 ```bash
-$ cd _styles
+$ cd styles
 $ compass watch
 ```
 
