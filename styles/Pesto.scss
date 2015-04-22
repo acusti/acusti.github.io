@@ -415,12 +415,15 @@ caption{display:table-caption;font-weight:300;font-size:1.3em;text-transform:upp
 	}
 }
 
-/*.column-lists-start + h3,
-.column-lists-start + h3 + ul,
-.column-lists-start + h3 + ol {
-	display: inline-block;
-	vertical-align: top;
-}*/
+@media print, screen and (min-width: $medium-fontsize-width) {
+	.list-blocks__block {
+		display: inline-block;
+		vertical-align: top;
+		width: 50%;
+		padding-right: 14px;
+		margin-right: -4px;
+	}
+}
 
 /* == Print -- */
 @media print {

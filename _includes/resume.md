@@ -45,29 +45,42 @@ My [personal site][acusti], which I designed and built, has [a portfolio][portfo
 Programming Languages and Technologies
 --------------------------------------
 
-### Front end
-
-- JavaScript (“[Expert][smartererjs]”)
-    - With jQuery (“[Expert][smartererjq]”) and without
-    - Grunt / Gulp
-    - Module systems (ES6 via jspm, AMD via RequireJS)
-    - React
-    - Handlebars
-    - Mocha + Chai unit testing (BBD)
-    - Selenium Webdriver integration testing
-- CSS (“[Master][smarterercss]”)
-    - SASS (plain and with frameworks like Compass and Susy)
-    - [Modular][SMACSS] / [component][north]-based [methodologies][objects in space] for styles and markup
-- HTML (“[Expert][smartererhtml5]”)
-
-### Back end
-
-- PHP and MySQL (using traditional MVC frameworks and CMSs)
-- NodeJS
-- Salesforce Apex
-- C# and .NET
-- SSH-based server management (DNS, virtual server management in CentOS, etc)
-- iOS with Swift
+<div class="list-blocks">
+    <div class="list-blocks__block">
+        <h3>Front end</h3>
+        <ul>
+            <li>JavaScript (“<a href="http://smarterer.com/scores/7da6e8b41c9ef498619f0013dbca1c4f">Expert</a>”)
+                <ul>
+                    <li>With jQuery (“<a href="http://smarterer.com/scores/f31d0578e128db198b9733b7fe4b13c2">Expert</a>”) and without</li>
+                    <li>Grunt / Gulp</li>
+                    <li>Module systems (ES6 via jspm, AMD via RequireJS)</li>
+                    <li>React</li>
+                    <li>Handlebars</li>
+                    <li>Mocha + Chai unit testing (BBD)</li>
+                    <li>Selenium Webdriver integration testing</li>
+                </ul>
+            </li>
+            <li>CSS (“<a href="http://smarterer.com/scores/3fe1d25f533ed4e2f65ce4f656b6410f">Master</a>”)
+                <ul>
+                    <li>SASS (plain and with frameworks like Compass and Susy)</li>
+                    <li><a href="http://smacss.com/book/">Modular</a> / <a href="https://github.com/north/north#components">component</a>-based <a href="https://medium.com/objects-in-space/objects-in-space-f6f404727">methodologies</a> for styles and markup</li>
+                </ul>
+            </li>
+            <li>HTML (“<a href="http://smarterer.com/scores/e845f3f8ddfdd990507608356c24bc26">Expert</a>”)</li>
+        </ul>
+    </div>
+    <div class="list-blocks__block">
+        <h3>Back end</h3>
+        <ul>
+            <li>PHP and MySQL (using traditional MVC frameworks and CMSs)</li>
+            <li>NodeJS</li>
+            <li>Salesforce Apex</li>
+            <li>C# and .NET</li>
+            <li>SSH-based server management (DNS, virtual server management in CentOS, etc)</li>
+            <li>iOS with Swift</li>
+        </ul>
+    </div>
+</div>
 
 Other Interests
 ---------------
