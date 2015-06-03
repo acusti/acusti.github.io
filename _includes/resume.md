@@ -8,35 +8,29 @@ Current Employment
 **Pure Cobalt - Web developer** <span class="projects__time-period">June 2009 – Present</span><br>
 *[Pure Cobalt][] is a web agency based in Montréal, Québec, with a broad range of expertise and clientele.*
 
-Selected Projects at Pure Cobalt
---------------------------------
+Selected Projects
+-----------------
 
-**[Front end UI npm modules][npm-acusti]** <span class="projects__time-period">March 2014 – Present</span><br>
+**[Front end UI npm modules][npm-acusti]** <span class="projects__time-period">March 2015 – Present</span><br>
 Built [onscrolling][] and [affixing-header][], two modules for constructing performant front end UIs with solid UX. Both modules are tested, with Continuous Integration via Travis and, for Affixing Header, Selenium integration tests hooked up to SauceLabs for cross browser testing. They are written as ES2015 (ES6) modules, then transpiled to the UMD format.
 
+**[Primal Multiplication][primal-multiplication]** <span class="projects__time-period">May – June 2015</span><br>
+Built an experimental web app with ReactJS using ES 2015 features that generates a multiplication table of prime numbers. As documented in the [commit history][primal-multiplication-tdd], I used a TDD-based process throughout, writing tests to spec out new features, then implementing those features to make the tests pass.
+
+**[XMedius][]** <span class="projects__time-period">Jan. – May 2015</span><br>
+Team lead for a WordPress-powered marketing site for the XMedius family of Fax Over IP products, with fully responsive design and a [BEM-based][BEM] SASS architecture.
+
 **[Gratituity][]** <span class="projects__time-period">Nov. 2014 – Jan. 2015</span><br>
-Designed and built my first iOS app, a minimally complex, maximally efficient tip calculator.
-
-**Online course single-page application** <span class="projects__time-period">April – Sep. 2014</span><br>
-Refactored a JS-powered online course codebase using the module design pattern (via RequireJS), an MV*-based architecture, a custom router, and [SMACSS/BEM principles][objects in space]. Developed a feature-rich Grunt build process, including bespoke templating and markup generation, to make the platform easy to develop on and maintain. Implemented unit tests on business logic using Mocha, Chai, and [Squire][].
-
-**[Jewish General Hospital library search][jgh]** <span class="projects__time-period">Dec. 2013 – March 2014</span><br>
-Built a fast and maintainable multilingual Solr-powered search front end, based on my initial design, for a hospital library using RequireJS and Handlebars.
+Designed and built my first iOS app, a minimally complex, maximally efficient tip calculator, in Swift.
 
 **[Cinémathèque Québecoise][cq]** <span class="projects__time-period">Oct. 2013 – June 2014</span><br>
-Lead developer and architect of a Solr-powered MVC search application built with [FuelPHP][] for Québec’s official film archives. Lead developer of a sibling WordPress-powered publication site with a complex relational content model.
+Lead developer and architect of a Solr-powered MVC search application built with [FuelPHP][] and a sibling WordPress-powered publication site for Québec’s official film archives.
 
-**Salesforce dashboard for Bombardier** <span class="projects__time-period">Nov. 2013 – Feb. 2014</span><br>
-Optimized a widget-based dashboard for the Bombardier sales team for performance. Changes were two-fold: front end JavaScript optimizations based on JS profiling, and back end support for paginated results within widgets to reduce initial load time.
+**[Jewish General Hospital library search][jgh]** <span class="projects__time-period">Dec. 2013 – March 2014</span><br>
+Built a fast and maintainable multilingual Solr-powered search front end, based on my initial design, for a hospital library using RequireJS,  and Handlebars.
 
 **[Adobe Edge Web Font Browser][edgebrowser]** <span class="projects__time-period">March – April 2013</span><br>
 Designed and built a responsive single-page application to help web designers and developers find and use fonts from the [Adobe Edge Web Fonts collection][edgefonts] (which were only browseable from within Adobe Edge apps).
-
-**[WP Theme Forme][forme]** <span class="projects__time-period">June – Sep. 2013</span><br>
-Created a WordPress starter theme framework with built-in support for tools like Compass/SASS, Susy, and icon fonts, plus sensible and scalable SASS/HTML scaffolding.
-
-**[Redux Media][redux]** <span class="projects__time-period">April – July 2013</span><br>
-Built a responsive marketing website for the Redux ad network built on WordPress. This was the first fully responsive website I built based on someone else’s design. During development, I created WP Theme Forme (above).
 
 ### Other Projects
 
@@ -52,11 +46,12 @@ Programming Languages and Technologies
             <li>JavaScript (“<a href="http://smarterer.com/scores/7da6e8b41c9ef498619f0013dbca1c4f">Expert</a>”)
                 <ul>
                     <li>With jQuery (“<a href="http://smarterer.com/scores/f31d0578e128db198b9733b7fe4b13c2">Expert</a>”) and without</li>
-                    <li>Grunt / Gulp</li>
+                    <li>Grunt / Gulp / Webpack</li>
+                    <li>ES Next (ES6/2015) transpiled via Babel</li>
                     <li>Module systems (ES6 via jspm, AMD via RequireJS)</li>
                     <li>React</li>
                     <li>Handlebars</li>
-                    <li>Mocha + Chai unit testing (BBD)</li>
+                    <li>Mocha + Chai unit testing (BDD)</li>
                     <li>Selenium Webdriver integration testing</li>
                 </ul>
             </li>
@@ -100,12 +95,14 @@ Languages
 I speak and understand Spanish and French fluently.
 
 [mailto]: mailto:andrew@acusti.ca
-[Pure Cobalt]: http://www.purecobalt.com
+[Pure Cobalt]: http://www.purecobalt.com/
 [npm-acusti]: https://www.npmjs.com/~acusti
 [onscrolling]: https://github.com/acusti/onscrolling
 [affixing-header]: https://github.com/acusti/affixing-header
 [Gratituity]: https://github.com/acusti/gratituity
-[Squire]: https://github.com/iammerrick/Squire.js/
+[primal-multiplication]: https://github.com/acusti/primal-multiplication
+[primal-multiplication-tdd]: https://github.com/acusti/primal-multiplication/commits/master
+[XMedius]: http://www.xmedius.com/
 [FuelPHP]: http://fuelphp.com/
 [portfolio]: http://www.acusti.ca/work/
 [github]: https://github.com/acusti
@@ -114,11 +111,9 @@ I speak and understand Spanish and French fluently.
 [cqrecherche]: http://collections.cinematheque.qc.ca/recherche/en/ "Collections Online - Search"
 [jgh]: http://pen.jgh.ca/search/en/ "Montreal Jewish General Hospital"
 [trica]: http://www.tricafurniture.com/ "Trica Furniture"
-[redux]: http://www.reduxmedia.com/ "Redux Media"
-[haute]: http://www.hautetremblant.com/ "Haute Tremblant"
-[forme]: https://github.com/acusti/WP-Theme-Forme
 [edgebrowser]: http://www.acusti.ca/edge-webfonts-browser/
 [edgefonts]: http://html.adobe.com/edge/webfonts/
+[BEM]: http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
 [SMACSS]: http://smacss.com/book/
 [north]: https://github.com/north/north#components
 [objects in space]: https://medium.com/objects-in-space/objects-in-space-f6f404727
