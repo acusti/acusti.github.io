@@ -2,7 +2,7 @@
 published: true
 layout: page
 title: MooAccordion show/hide (in articles) Joomla plugin
-permalink: mooaccordion-joomla-accordion-article-plugin
+permalink: mooaccordion-joomla-accordion-article-plugin/
 ---
 
 <p class="top">MooAccordion makes it easy to add MooTools accordion slides (show/hide blocks) to any article, which can be used to organize and display content more effectively (like in a FAQ page). The syntax is simple:</p>
