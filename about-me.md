@@ -1,0 +1,23 @@
+---
+published: true
+layout: page
+title: About me
+permalink: about
+---
+{% include follow-links.html %}
+<p class="vcard">I am <span class="fn">Andrew Patton</span>, <span class="title">lead front-end engineer</span> at <a class="org url" href="http://www.purecobalt.com">Brandcast</a>. I have lead the front-end effort of putting together a powerful new desktop-class web application for creating, designing, and managing websites based on a fully modern stack (React, Redux, Immutable.js, Flow-type).</p>
+
+If you wish to know more about my work, you can check out some of my projects (plugins and the like) at my [github profile][] or [on this website][work]. Also, I try to contribute occasionally to [stack overflow][].
+
+I have many passions, but considering that this site is all about developing, let me start with my coding passions: client-side web development with JavaScript, CSS, and HTML and server-side web development with Node or Python. I also enjoy building iOS apps. Regardless of the language or project, I relentlessly pursue perfection, and find myself compelled to iterate meticulously over everything I build.
+
+In my free time, I like to mess with music and video projects, and when feeling ambitious, [share][soundcloud] [them][youtube]. Also, I love fermentation and the wonderful things it produces.
+
+You can find more links and info about me at my [about.me profile][aboutme].
+
+[github profile]: https://github.com/acusti "WordPress plugins, mini sites, node.js-related forks, etc."
+[work]: {{ site.base_url }}/work "Includes a list of the most recent websites I have built"
+[stack overflow]: http://stackoverflow.com/users/333625/andrew-p
+[soundcloud]: https://soundcloud.com/acusti "Soundcloud. Includes a very wide range of styles and polish, mostly from projects at university"
+[youtube]: http://www.youtube.com/user/waveweaverjr "Youtube. I’m most proud of “freedom reruns”"
+[aboutme]: http://about.me/andrewpatton "Most useful for its non-techy links and excellent background image"
