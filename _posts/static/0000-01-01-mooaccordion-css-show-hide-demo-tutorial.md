@@ -2,7 +2,7 @@
 published: true
 layout: page
 title: MooAccordion show/hide plugin demo and tutorial
-permalink: mooaccordion-css-show-hide-demo-tutorial
+permalink: mooaccordion-css-show-hide-demo-tutorial/
 ---
 
 This is a demo for the [MooAccordion show/hide (in articles) Joomla plugin][mooaccordion] to show it in action and explain how to use css to add image icons to illustrate when the accordion sections are expanded and collapsed (and indicate that they are meant to be toggled). The toggling is achieved using CSS image sprites, so both states of the icon are contained in one file, and the image change is achieved just by modifying the CSS background-position.
