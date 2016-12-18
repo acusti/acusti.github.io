@@ -2,7 +2,7 @@
 published: true
 layout: page
 title: VirtueMart Full Category List Menu Module
-permalink: vm-full-category-list-menu-module
+permalink: vm-full-category-list-menu-module/
 ---
 
 <p class="top">A Joomla module that can display the entire category structure of your virtuemart store, including all levels of subcategories, as a fully CSS customizable structured unordered list. As of version 1.1.0 (April 27, 2010), you can now specify any range of category levels that you wish to display (i.e., top-level only, 2nd to 4th level, etc).</p>
