@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)/*.no-js -> .js*/</script>
-	<title>{{ page.title }} | {{ site.theme.site_name }}</title>
+	<title>{{ page.title }} | {{ site.meta.site_name }}</title>
 	<meta name="viewport" content="initial-scale=1.0">
 	<meta name="author" content="Andrew Patton">
 	<link rel="shortcut icon" href="{{ site.base_url }}/favicon.ico">
@@ -23,7 +23,7 @@
 	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	ga('create', '{{ site.theme.google_analytics_uid }}', 'auto');
+	ga('create', '{{ site.meta.google_analytics_uid }}', 'auto');
 	ga('require', 'displayfeatures');
 	ga('send', 'pageview');
 	</script>

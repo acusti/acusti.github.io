@@ -14,8 +14,8 @@ exclude:     [vendor]
 redcarpet:
   extensions: [tables, footnotes]
 
-# Theme settings
-theme:
+# Site metadata
+meta:
 
   # Site name
   site_name: acusti.ca
