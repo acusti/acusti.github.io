@@ -9,6 +9,7 @@ timezone:    America/Montreal
 future:      false
 highlighter: pygments
 markdown:    redcarpet
+exclude:     [vendor]
 
 redcarpet:
   extensions: [tables, footnotes]
