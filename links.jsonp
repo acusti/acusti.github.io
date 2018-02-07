@@ -1,10 +1,11 @@
 ---
 ---
 callback([
-{% for post in site.posts reversed | sort: title %}
+{% assign posts = site.posts | sort: 'title' | reverse %}
+{% for post in posts %}
   {
     "text": "{{post.title | replace:'"','\"'}}",
-    "href": "{{site.baseurl}}{{post.url}}"
+    "href": "{{site.base_url}}{{post.url}}"
   } {% unless forloop.last %},{% endunless%}
 {% endfor %}
 ])
