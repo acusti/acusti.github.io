@@ -1,12 +1,14 @@
 Andrew Patton’s github user page source
 =======================================
 
+[![Build Status](https://travis-ci.org/acusti/acusti.github.io.svg?branch=master)](https://travis-ci.org/acusti/acusti.github.io)
+
 __Requirements__:
 
 - Jekyll: `gem install jekyll`
 - Compass: `gem install compass` (prefix with `sudo` if it doesn’t work)
-- Node or io.js: `brew install node` or `brew install iojs`
-- [jspm][]: `npm install jspm -g`
+- Node: `brew install node`
+- [jspm][]: `npm install -g jspm`
 
 ## First time use
 
