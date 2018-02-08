@@ -7,7 +7,7 @@ permalink:   pretty
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/Montreal
 future:      false
-highlighter: pygments
+highlighter: rouge
 markdown:    kramdown
 exclude:     [vendor]
 
