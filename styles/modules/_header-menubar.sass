@@ -34,6 +34,11 @@
 			background-color: rgba($color-accent-dark, 0.2)
 			text-shadow: 1px 1px 1px $color-accent
 
+	// Don't show home link on mobile
+	@media (max-width: $narrow-width)
+		li:last-child
+			display: none
+
 .top-nav
 	position: relative
 	display: inline-block
