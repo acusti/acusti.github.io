@@ -8,11 +8,8 @@ permalink:   pretty
 timezone:    America/Montreal
 future:      false
 highlighter: pygments
-markdown:    redcarpet
+markdown:    kramdown
 exclude:     [vendor]
-
-redcarpet:
-  extensions: [tables, footnotes]
 
 # Site metadata
 meta:
