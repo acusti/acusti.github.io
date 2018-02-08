@@ -3,12 +3,12 @@
 import attachScrollFrame from 'onscrolling';
 
 // Parallax effect (on scroll)
-var image,
-    image_wrap,
+var image          = null,
+    image_wrap     = null,
     parallax_speed = 0.3,
     dimensions     = {
         image: {},
-        image_wrap: {}
+        image_wrap: {},
     },
     scrollY,
     scrollY_previous,
@@ -19,17 +19,16 @@ var image,
 function imageParallax(scrollYCurrent) {
     scrollY = scrollYCurrent;
 	// Initialize
-	if (image_wrap === undefined) {
-		if (image === null || (image_wrap = image.parentElement) === null) {
+	if (image_wrap === null) {
+        // Adding our calculations to window load doesn't work when command clicking a post link to open it in a new tab in Chrome
+        // So instead, verify we have a usable image object and if not, use a timeout to check again in 150ms
+		if (image === null || !image.naturalWidth) {
+            window.setTimeout(imageParallax, 150);
 			return false;
 		}
-		// Adding our calculations to window load doesn't work when command clicking a post link to open it in a new tab in Chrome
-		// So instead, verify we have a usable image object and if not, use a timeout to check again in 150ms
-		if (image.naturalWidth) {
-			document.body.classList.add('is-loaded');
-		} else {
-			window.setTimeout(imageParallax, 150);
-		}
+        image_wrap = image.parentElement;
+		document.body.classList.add('is-loaded');
+
 		// Special case for svgs
 		if (image.src.substring(image.src.length - 4) === '.svg') {
 			image_wrap.classList.add('is-svg');

@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "npm run serve",
-    "build": "jspm bundle-sfx scripts/main app-built.js --minify",
+    "build": "jspm install && jspm bundle-sfx scripts/main app-built.js --minify",
     "serve": "jekyll serve --watch --config _config.yml,_config-local.yml,_config-dev.yml --drafts",
     "serve:prod": "npm run build && jekyll serve --config _config.yml,_config-local.yml"
   },
@@ -12,7 +12,14 @@
     "dependencies": {
       "affixing-header": "npm:affixing-header@^0.3.1",
       "onscrolling": "npm:onscrolling@^0.3.0"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
     }
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "jspm": "^0.16.53"
+  }
 }
