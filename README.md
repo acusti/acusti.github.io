@@ -6,45 +6,34 @@ Andrew Patton’s github user page source
 __Requirements__:
 
 - Jekyll: `gem install jekyll`
-- Compass: `gem install compass` (prefix with `sudo` if it doesn’t work)
+- Compass: `gem install compass`
 - Node: `brew install node`
-- [jspm][]: `npm install -g jspm`
 
 ## First time use
 
-*If you do not have Compass or jspm, install them first (see above)*
+*If you do not have Compass or Jekyll, install them first (see above)*
 
-Run `jspm install` from the root directory to fetch all the required jspm_packages (currently just [SystemJS][] for ES6 modules)
+Run `yarn` or `npm install` from the root directory to locally install jspm.
 
-## Development workflow
+## Workflow
+
+To build the production JS and CSS bundles:
+
+```bash
+yarn build
+```
 
 To start the jekyll server with development configuration and drafts support:
 
 ```bash
-jekyll serve --watch --config _config.yml,_config-local.yml --drafts
+yarn serve
 ```
 
-To build and watch styles:
+To start the jekyll server with production configuration:
 
 ```bash
-$ cd styles
-$ compass watch
+yarn serve:prod
 ```
-
-## Production workflow
-
-To build the production self-executing bundled JS:
-
-```bash
-jspm bundle-sfx scripts/main app-built.js --minify
-```
-
-To test the JS bundle locally, open `_config-local.yml` and comment out `env: development`, then restart the jekyll server
-
-[jspm]: https://github.com/jspm/jspm-cli/wiki/Getting-Started
-[SystemJS]: https://github.com/systemjs/systemjs
-
-Design originally based on [Stephan Florquin’s](https://github.com/stephan83) Jekyll theme.
 
 License
 -------
