@@ -1,8 +1,6 @@
 _site/*
 .DS_Store
 .sass-cache
-_sass/config.codekit
-
-*.codekit
 
 jspm_packages
+node_modules
