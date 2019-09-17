@@ -5,8 +5,8 @@ Andrew Patton
 Current Employment
 ------------------
 
-**Pure Cobalt - Web developer** <span class="projects__time-period">June 2009 – Present</span><br>
-*[Pure Cobalt][] is a web agency based in Montréal, Québec, with a broad range of expertise and clientele.*
+**Brandcast - Lead Front-End Architect** <span class="projects__time-period">July 2015 – Present</span><br>
+*[Brandcast][] is a platform that powers the entire web publishing process from design to launch and beyond*
 
 Selected Projects
 -----------------
@@ -97,7 +97,7 @@ Languages
 I speak and understand Spanish and French fluently.
 
 [mailto]: mailto:andrew@acusti.ca
-[Pure Cobalt]: http://www.purecobalt.com/
+[Brandcast]: https://brandcast.com
 [npm-acusti]: https://www.npmjs.com/~acusti
 [onscrolling]: https://github.com/acusti/onscrolling
 [affixing-header]: https://github.com/acusti/affixing-header
