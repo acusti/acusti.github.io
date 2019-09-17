@@ -50,7 +50,7 @@ Programming Languages and Technologies
                     <li>Module bundling with webpack</li>
                     <li>Static typing with flow and typescript</li>
                     <li>Unit testing (BDD) with jest</li>
-                    <li>Automated end-to-end tests with cypress</li>
+                    <li>End-to-end testing with cypress</li>
                 </ul>
             </li>
             <li>CSS
