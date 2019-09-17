@@ -6,12 +6,12 @@ Current Employment
 ------------------
 
 **Brandcast — Lead Front-End Architect** <span class="projects__time-period">July 2015 – Present</span><br>
-*[Brandcast][] is a platform that powers the entire web publishing process from design to launch and beyond*
+*[Brandcast][] is a collaborative web publishing platform that enables teams to design, build, publish, and maintain their web properties*
 
 Selected Projects
 -----------------
 
-**[Brandcast Design Studio][]** <span class="projects__time-period">June 2016 – Present</span><br>
+**[Brandcast Platform][]** <span class="projects__time-period">June 2016 – Present</span><br>
 Build and architect experiences across the Brandcast platform, including the page editor, content editor, media library, and team member manager. Work with the rest of the front-end team to plan and code review maintainable solutions for new product needs. Collaborate closely with our lead product designer to create and design new features and UXs.
 
 **[React.js Iframe Support][]** <span class="projects__time-period">Oct. 2016 – August 2018</span><br>
@@ -92,10 +92,10 @@ I speak and understand Spanish and French fluently.
 
 [mailto]: mailto:andrew@acusti.ca
 [Brandcast]: https://brandcast.com
+[Brandcast Platform]: https://app.brandcast.io/signup/
 [npm-acusti]: https://www.npmjs.com/~acusti
 [onscrolling]: https://github.com/acusti/onscrolling
 [affixing-header]: https://github.com/acusti/affixing-header
-[Brandcast Design Studio]: https://app.brandcast.io/signup/
 [React.js iframe support]: https://github.com/facebook/react/pull/12037
 
 [primal-multiplication]: https://github.com/acusti/primal-multiplication
