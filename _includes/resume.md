@@ -47,11 +47,10 @@ Programming Languages and Technologies
                 <ul>
                     <li>Functional programming with immutable.js for immutability</li>
                     <li>React.js with Redux and immutable.js for global state</li>
-                    <li>Dependency management with yarn and npm</li>
-                    <li>Module bundling with webpack (previously grunt and gulp)</li>
+                    <li>Module bundling with webpack</li>
                     <li>Static typing with flow and typescript</li>
-                    <li>Unit testing (BDD) with jest (previously mocha and chai)</li>
-                    <li>Automated end-to-end tests with cypress (previously selenium webdriver)</li>
+                    <li>Unit testing (BDD) with jest</li>
+                    <li>Automated end-to-end tests with cypress</li>
                 </ul>
             </li>
             <li>CSS
