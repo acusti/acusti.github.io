@@ -41,7 +41,7 @@ Programming Languages and Technologies
 
 <div class="list-blocks">
     <div class="list-blocks__block">
-        <h3>Front-end</h3>
+        <h4>Front-End</h4>
         <ul>
             <li>JavaScript
                 <ul>
@@ -53,23 +53,21 @@ Programming Languages and Technologies
                     <li>End-to-end testing with cypress</li>
                 </ul>
             </li>
-            <li>CSS
+            <li>CSS and HTML
                 <ul>
                     <li>SASS (plain and with frameworks like susy and compass)</li>
                     <li><a href="http://smacss.com/book/">Modular</a> / <a href="https://github.com/north/north#components">component</a>-based <a href="https://medium.com/objects-in-space/objects-in-space-f6f404727">methodologies</a> for styles and markup</li>
                 </ul>
             </li>
-            <li>HTML</li>
         </ul>
     </div>
     <div class="list-blocks__block">
-        <h3>Back-end</h3>
+        <h4>Back-End</h4>
         <ul>
             <li>Node.js</li>
             <li>GraphQL (previously REST)</li>
             <li>PHP and MySQL (using traditional MVC frameworks and CMSs)</li>
             <li>MongoDB</li>
-            <li>Bash and scripting</li>
             <li>iOS with Swift</li>
         </ul>
     </div>
