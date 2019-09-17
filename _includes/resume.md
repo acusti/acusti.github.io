@@ -5,7 +5,7 @@ Andrew Patton
 Current Employment
 ------------------
 
-**Brandcast - Lead Front-End Architect** <span class="projects__time-period">July 2015 – Present</span><br>
+**Brandcast — Lead Front-End Architect** <span class="projects__time-period">July 2015 – Present</span><br>
 *[Brandcast][] is a platform that powers the entire web publishing process from design to launch and beyond*
 
 Selected Projects
@@ -14,11 +14,11 @@ Selected Projects
 **[Brandcast Design Studio][]** <span class="projects__time-period">June 2016 – Present</span><br>
 Build and architect experiences across the Brandcast platform, including the page editor, content editor, media library, and team member manager. Work with the rest of the front-end team to plan and code review maintainable solutions for new product needs. I work constantly to avoid and address code debt and keep the codebase flexible, scalable, and well-tested.
 
-**[React.js iframe support][]** <span class="projects__time-period">October 2016 – August 2018</span><br>
-Modified the `react-dom` library to make it possible to render React components into a nested browsing context, i.e. an `iframe`, and worked with the core React.js team to get the changes merged.
+**[React.js iframe support][]** <span class="projects__time-period">Oct. 2016 – August 2018</span><br>
+Modified the `react-dom` library to make it possible to render React components into a nested browsing context, i.e. an `iframe`, and worked with the core React.js team to land those changes in facebook/react.
 
-**[Front end UI npm modules][npm-acusti]** <span class="projects__time-period">March 2015 – Present</span><br>
-Built [onscrolling][] and [affixing-header][], two modules for constructing performant front end UIs with solid UX. Both modules are tested, with Continuous Integration via Travis and, for Affixing Header, Selenium integration tests hooked up to SauceLabs for cross browser testing. They are written as ES2015 (ES6) modules, then transpiled to the UMD format.
+**[Front end UI npm modules][npm-acusti]** <span class="projects__time-period">March 2015 – Jan. 2016</span><br>
+Built [onscrolling][] and [affixing-header][], two modules for constructing performant front-end UIs with solid UX. Both modules are tested, with Continuous Integration via Travis and, for Affixing Header, Selenium integration tests hooked up to SauceLabs for cross-browser testing.
 
 **[Primal Multiplication][primal-multiplication]** <span class="projects__time-period">May – June 2015</span><br>
 Built an experimental web app with ReactJS using ES 2015 features that generates a multiplication table of prime numbers. As documented in the [commit history][primal-multiplication-tdd], I used a TDD-based process throughout, writing tests to spec out new features, then implementing those features to make the tests pass.
