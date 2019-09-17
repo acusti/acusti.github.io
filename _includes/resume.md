@@ -39,39 +39,41 @@ My [personal site][acusti], which I designed and built, has [a portfolio][portfo
 Programming Languages and Technologies
 --------------------------------------
 
+- Git and the [GitHub flow][] for version control, including interactive rebasing, managing remotes, cherry-picking, git hygiene
+- The command-line interface (bash)
+
 <div class="list-blocks">
     <div class="list-blocks__block">
-        <h3>Front end</h3>
+        <h3>Front-end</h3>
         <ul>
-            <li>JavaScript (“<a href="http://smarterer.com/scores/7da6e8b41c9ef498619f0013dbca1c4f">Expert</a>”)
+            <li>JavaScript
                 <ul>
-                    <li>With jQuery (“<a href="http://smarterer.com/scores/f31d0578e128db198b9733b7fe4b13c2">Expert</a>”) and without</li>
-                    <li>Grunt / Gulp / Webpack</li>
-                    <li>ES Next (ES6/2015) transpiled via Babel</li>
-                    <li>Module systems (ES6 via jspm, AMD via RequireJS)</li>
-                    <li>React</li>
-                    <li>Handlebars</li>
-                    <li>Mocha + Chai unit testing (BDD)</li>
-                    <li>Selenium Webdriver integration testing</li>
+                    <li>Functional programming with immutable.js for immutability</li>
+                    <li>React.js with Redux and immutable.js for global state</li>
+                    <li>Dependency management with yarn and npm</li>
+                    <li>Module bundling with webpack (previously grunt and gulp)</li>
+                    <li>Static typing with flow and typescript</li>
+                    <li>Unit testing (BDD) with jest (previously mocha and chai)</li>
+                    <li>Automated end-to-end tests with cypress (previously selenium webdriver)</li>
                 </ul>
             </li>
-            <li>CSS (“<a href="http://smarterer.com/scores/3fe1d25f533ed4e2f65ce4f656b6410f">Master</a>”)
+            <li>CSS
                 <ul>
-                    <li>SASS (plain and with frameworks like Compass and Susy)</li>
+                    <li>SASS (plain and with frameworks like susy and compass)</li>
                     <li><a href="http://smacss.com/book/">Modular</a> / <a href="https://github.com/north/north#components">component</a>-based <a href="https://medium.com/objects-in-space/objects-in-space-f6f404727">methodologies</a> for styles and markup</li>
                 </ul>
             </li>
-            <li>HTML (“<a href="http://smarterer.com/scores/e845f3f8ddfdd990507608356c24bc26">Expert</a>”)</li>
+            <li>HTML</li>
         </ul>
     </div>
     <div class="list-blocks__block">
-        <h3>Back end</h3>
+        <h3>Back-end</h3>
         <ul>
+            <li>Node.js</li>
+            <li>GraphQL (previously REST)</li>
             <li>PHP and MySQL (using traditional MVC frameworks and CMSs)</li>
-            <li>NodeJS</li>
-            <li>Salesforce Apex</li>
-            <li>C# and .NET</li>
-            <li>SSH-based server management (DNS, virtual server management in CentOS, etc)</li>
+            <li>MongoDB</li>
+            <li>Bash and scripting</li>
             <li>iOS with Swift</li>
         </ul>
     </div>
@@ -113,16 +115,14 @@ I speak and understand Spanish and French fluently.
 [trica]: http://www.tricafurniture.com/ "Trica Furniture"
 [edgebrowser]: http://www.acusti.ca/edge-webfonts-browser/
 [edgefonts]: http://html.adobe.com/edge/webfonts/
+
+[GitHub flow]: https://guides.github.com/introduction/flow/
 [BEM]: http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
 [SMACSS]: http://smacss.com/book/
 [north]: https://github.com/north/north#components
 [objects in space]: https://medium.com/objects-in-space/objects-in-space-f6f404727
+
 [WooCommerce]: http://www.woothemes.com/woocommerce/
-[smartererjs]: http://smarterer.com/scores/7da6e8b41c9ef498619f0013dbca1c4f
-[smartererjq]: http://smarterer.com/scores/f31d0578e128db198b9733b7fe4b13c2
-[smarterercss]: http://smarterer.com/scores/3fe1d25f533ed4e2f65ce4f656b6410f
-[smartererhtml]: http://smarterer.com/scores/2d630a88a567d2dc1116d382a5cb7cd9
-[smartererhtml5]: http://smarterer.com/scores/e845f3f8ddfdd990507608356c24bc26
 [Sontag Shogun]: http://sontagshogun.bandcamp.com/
 [Slowest Runner]: http://theslowestrunner.bandcamp.com/
 [music]: https://soundcloud.com/acusti
