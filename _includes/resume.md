@@ -15,13 +15,13 @@ Selected Projects
 Build and architect experiences across the Brandcast platform, including the page editor, content editor, media library, and team member manager. Work with the rest of the front-end team to plan and code review maintainable solutions for new product needs. Collaborate closely with our lead product designer to create and design new features and UXs.
 
 **[React.js Iframe Support][]** <span class="projects__time-period">Oct. 2016 – August 2018</span><br>
-Modified the `react-dom` library to make it possible to render React components into a nested browsing context, i.e. an `iframe`, and worked with the core React.js team to land those changes in facebook/react.
+Modified the `react-dom` library to make it possible to render React components into an `iframe` and worked with the core React.js team to land those changes in facebook/react.
 
 **[Front-End UI NPM Modules][npm-acusti]** <span class="projects__time-period">March 2015 – Jan. 2016</span><br>
 Built [onscrolling][] and [affixing-header][], two modules for constructing performant front-end UIs with solid UX. Both modules are tested, with Continuous Integration via Travis and, for Affixing Header, Selenium integration tests run with SauceLabs for cross-browser testing.
 
 **[Primal Multiplication][primal-multiplication]** <span class="projects__time-period">May – June 2015</span><br>
-Built an experimental web app with ReactJS using ES 2015 features that generates a multiplication table of prime numbers. As documented in the [commit history][primal-multiplication-tdd], I used a TDD-based process throughout, writing tests to spec out new features, then implementing those features to make the tests pass.
+Built an experimental web app with ReactJS using ES 2015 features that generates a multiplication table of prime numbers, using a [TDD-based process][primal-multiplication-tdd] throughout.
 
 **[Cinémathèque Québecoise][cq]** <span class="projects__time-period">Oct. 2013 – June 2014</span><br>
 Lead developer and architect of a Solr-powered MVC search application built with [FuelPHP][] and a sibling WordPress-powered publication site for Québec’s official film archives.
@@ -36,7 +36,7 @@ My [personal site][acusti], which I designed and built, has [a portfolio][portfo
 Programming Languages and Technologies
 --------------------------------------
 
-- Git and the [GitHub flow][] for version control, including interactive rebasing, managing remotes, cherry-picking, git hygiene
+- Git and the [GitHub flow][], including interactive rebasing, managing remotes, git hygiene
 - The command-line interface (bash)
 
 <div class="list-blocks">
