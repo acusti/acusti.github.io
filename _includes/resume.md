@@ -11,26 +11,23 @@ Current Employment
 Selected Projects
 -----------------
 
+**[Brandcast Design Studio][]** <span class="projects__time-period">June 2016 – Present</span><br>
+Build and architect experiences across the Brandcast platform, including the page editor, content editor, media library, and team member manager. Work with the rest of the front-end team to plan and code review maintainable solutions for new product needs. I work constantly to avoid and address code debt and keep the codebase flexible, scalable, and well-tested.
+
+**[React.js iframe support][]** <span class="projects__time-period">October 2016 – August 2018</span><br>
+Modified the `react-dom` library to make it possible to render React components into a nested browsing context, i.e. an `iframe`, and worked with the core React.js team to get the changes merged.
+
 **[Front end UI npm modules][npm-acusti]** <span class="projects__time-period">March 2015 – Present</span><br>
 Built [onscrolling][] and [affixing-header][], two modules for constructing performant front end UIs with solid UX. Both modules are tested, with Continuous Integration via Travis and, for Affixing Header, Selenium integration tests hooked up to SauceLabs for cross browser testing. They are written as ES2015 (ES6) modules, then transpiled to the UMD format.
 
 **[Primal Multiplication][primal-multiplication]** <span class="projects__time-period">May – June 2015</span><br>
 Built an experimental web app with ReactJS using ES 2015 features that generates a multiplication table of prime numbers. As documented in the [commit history][primal-multiplication-tdd], I used a TDD-based process throughout, writing tests to spec out new features, then implementing those features to make the tests pass.
 
-**[XMedius][]** <span class="projects__time-period">Jan. – May 2015</span><br>
-Team lead for a WordPress-powered marketing site for the XMedius family of Fax Over IP products, with fully responsive design and a [BEM-based][BEM] SASS architecture.
-
-**[Gratituity][]** <span class="projects__time-period">Nov. 2014 – Jan. 2015</span><br>
-Designed and built my first iOS app, a minimally complex, maximally efficient tip calculator, in Swift.
-
 **[Cinémathèque Québecoise][cq]** <span class="projects__time-period">Oct. 2013 – June 2014</span><br>
 Lead developer and architect of a Solr-powered MVC search application built with [FuelPHP][] and a sibling WordPress-powered publication site for Québec’s official film archives.
 
 **[Jewish General Hospital library search][jgh]** <span class="projects__time-period">Dec. 2013 – March 2014</span><br>
-Built a fast and maintainable multilingual Solr-powered search front end, based on my initial design, for a hospital library using RequireJS,  and Handlebars.
-
-**[Adobe Edge Web Font Browser][edgebrowser]** <span class="projects__time-period">March – April 2013</span><br>
-Designed and built a responsive single-page application to help web designers and developers find and use fonts from the [Adobe Edge Web Fonts collection][edgefonts] (which were only browseable from within Adobe Edge apps).
+Built a fast and maintainable multilingual Solr-powered search front end, based on my initial design, for a hospital library using Handlebars and vanilla JS.
 
 ### Other Projects
 
@@ -101,10 +98,11 @@ I speak and understand Spanish and French fluently.
 [npm-acusti]: https://www.npmjs.com/~acusti
 [onscrolling]: https://github.com/acusti/onscrolling
 [affixing-header]: https://github.com/acusti/affixing-header
-[Gratituity]: https://github.com/acusti/gratituity
+[Brandcast Design Studio]: https://app.brandcast.io/signup/
+[React.js iframe support]: https://github.com/facebook/react/pull/12037
+
 [primal-multiplication]: https://github.com/acusti/primal-multiplication
 [primal-multiplication-tdd]: https://github.com/acusti/primal-multiplication/commits/master
-[XMedius]: http://www.xmedius.com/
 [FuelPHP]: http://fuelphp.com/
 [portfolio]: http://www.acusti.ca/work/
 [github]: https://github.com/acusti
@@ -113,8 +111,6 @@ I speak and understand Spanish and French fluently.
 [cqrecherche]: http://collections.cinematheque.qc.ca/recherche/en/ "Collections Online - Search"
 [jgh]: http://pen.jgh.ca/search/en/ "Montreal Jewish General Hospital"
 [trica]: http://www.tricafurniture.com/ "Trica Furniture"
-[edgebrowser]: http://www.acusti.ca/edge-webfonts-browser/
-[edgefonts]: http://html.adobe.com/edge/webfonts/
 
 [GitHub flow]: https://guides.github.com/introduction/flow/
 [BEM]: http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
