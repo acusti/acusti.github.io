@@ -17,8 +17,8 @@ Build and architect experiences across the Brandcast platform, including the pag
 **[React.js Iframe Support][]** <span class="projects__time-period">Oct. 2016 – August 2018</span><br>
 Modified the `react-dom` library to make it possible to render React components into an `iframe` and worked with the core React.js team to land those changes in facebook/react.
 
-**[Front-End UI NPM Modules][npm-acusti]** <span class="projects__time-period">March 2015 – Jan. 2016</span><br>
-Built [onscrolling][] and [affixing-header][], two modules for constructing performant front-end UIs with solid UX. Both modules are tested, with Continuous Integration via Travis and, for Affixing Header, Selenium integration tests run with SauceLabs for cross-browser testing.
+**[Front-End UI NPM Modules][npm-acusti]** <span class="projects__time-period">March 2015 – Present</span><br>
+Maintain [react-higher-event][], which provides a declarative API to listen to events outside of a React component. Built [onscrolling][] and [affixing-header][] for performant scroll-based interactions.
 
 **[Cinémathèque Québecoise][cq]** <span class="projects__time-period">Oct. 2014 – June 2015</span><br>
 Lead developer and architect of a multilingual Solr-powered [search application][cqrecherche] built with [FuelPHP][] and a sibling WordPress-powered [publication site][cq] for Québec’s official film archives.
@@ -94,6 +94,7 @@ I speak and understand Spanish and French fluently.
 [Brandcast]: https://brandcast.com
 [Brandcast Platform]: https://app.brandcast.io/signup/
 [npm-acusti]: https://www.npmjs.com/~acusti
+[react-higher-event]: https://github.com/bloodyowl/react-higher-event
 [onscrolling]: https://github.com/acusti/onscrolling
 [affixing-header]: https://github.com/acusti/affixing-header
 [React.js iframe support]: https://github.com/facebook/react/pull/12037
