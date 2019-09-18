@@ -12,7 +12,7 @@ Selected Projects
 -----------------
 
 **[Brandcast Platform][]** <span class="projects__time-period">June 2016 – Present</span><br>
-Build and architect experiences across the Brandcast platform, including the page editor, content editor, media library, and team member manager. Work with the rest of the front-end team to plan and then review maintainable solutions for new product needs. Collaborate closely with our lead product designer to design and create new features and UXs.
+Build and architect experiences across the Brandcast platform, from the design studio to the web publishing server. Collaborate closely with our lead product designer to design and build new features and UXs in a scalable and maintainable way.
 
 **[React Iframe Support][]** <span class="projects__time-period">Oct. 2016 – August 2018</span><br>
 Modified the `react-dom` library to make it possible to render React components into an `iframe` and worked with the core React team to land those changes in facebook/react.
@@ -93,27 +93,27 @@ I speak and understand Spanish and French fluently.
 [mailto]: mailto:andrew@acusti.ca
 [acusti.ca]: http://www.acusti.ca
 
-[Brandcast]: https://brandcast.com
+[brandcast]: https://brandcast.com
 
-[Brandcast Platform]: https://app.brandcast.io/signup/
+[brandcast platform]: https://app.brandcast.io/signup/
 [npm-acusti]: https://www.npmjs.com/~acusti
 [react-higher-event]: https://github.com/bloodyowl/react-higher-event
 [onscrolling]: https://github.com/acusti/onscrolling
 [affixing-header]: https://github.com/acusti/affixing-header
-[React Iframe Support]: https://github.com/facebook/react/pull/12037
-[FuelPHP]: http://fuelphp.com/
-[Trica Furniture]: http://www.tricafurniture.com/ "Trica Furniture"
-[cq]: http://collections.cinematheque.qc.ca/fr/ "Collections en ligne | La Cinémathèque québécoise"
+[react iframe support]: https://github.com/facebook/react/pull/12037
+[fuelphp]: http://fuelphp.com/
+[trica furniture]: http://www.tricafurniture.com/ "Trica Furniture"
+[cq]: http://collections.cinematheque.qc.ca/ "Collections en ligne | La Cinémathèque québécoise"
 [cqrecherche]: http://collections.cinematheque.qc.ca/recherche/ "Recherche collections | La Cinémathèque québécoise"
 [jgh]: http://pen.jgh.ca/search/en/ "Montreal Jewish General Hospital"
 
-[React]: https://github.com/facebook/react/pulls?q=is%3Apr+author%3Aacusti
+[react]: https://github.com/facebook/react/pulls?q=is%3Apr+author%3Aacusti
 [immutable.js]: https://github.com/immutable-js/immutable-js/pulls?q=is%3Apr+author%3Aacusti
 [flow]: http://github.com/facebook/flow/pulls?q=is%3Apr+author%3Aacusti
 [jsdom]: https://github.com/jsdom/jsdom/pulls?q=is%3Apr+author%3Aacusti
-[CSSOM]: https://github.com/NV/CSSOM/pulls?q=is%3Apr+author%3Aacusti
+[cssom]: https://github.com/NV/CSSOM/pulls?q=is%3Apr+author%3Aacusti
 [fbjs]: https://github.com/facebook/fbjs/pulls?q=is%3Apr+author%3Aacusti
-[AMP]: https://github.com/ampproject/amphtml/pulls?q=is%3Apr+author%3Aacusti
+[amp]: https://github.com/ampproject/amphtml/pulls?q=is%3Apr+author%3Aacusti
 [react-dnd]: https://github.com/react-dnd/react-dnd/pulls?q=is%3Apr+author%3Aacusti
 [react-draggable]: https://github.com/mzabriskie/react-draggable/pulls?q=is%3Apr+author%3Aacusti
 [draft.js]: https://github.com/facebook/draft-js/pulls?q=is%3Apr+author%3Aacusti
@@ -124,12 +124,12 @@ I speak and understand Spanish and French fluently.
 [grunt-ivantage-svn-changelog]: https://github.com/iVantage/grunt-ivantage-svn-changelog/pulls?q=is%3Apr+author%3Aacusti
 [grunt-svn-tag]: https://github.com/iVantage/grunt-svn-tag/pulls?q=is%3Apr+author%3Aacusti
 
-[GitHub flow]: https://guides.github.com/introduction/flow/
-[BEM]: http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
-[SMACSS]: http://smacss.com/book/
+[github flow]: https://guides.github.com/introduction/flow/
+[bem]: http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+[smacss]: http://smacss.com/book/
 [north]: https://github.com/north/north#components
 [objects in space]: https://medium.com/objects-in-space/objects-in-space-f6f404727
 
-[Sontag Shogun]: http://sontagshogun.bandcamp.com/
-[Slowest Runner]: http://theslowestrunner.bandcamp.com/
+[sontag shogun]: http://sontagshogun.bandcamp.com/
+[slowest runner]: http://theslowestrunner.bandcamp.com/
 [music]: https://soundcloud.com/acusti
