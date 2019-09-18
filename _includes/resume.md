@@ -29,9 +29,9 @@ Built a WordPress-based multilingual product catalogue with a custom responsive 
 **[Jewish General Hospital library search][jgh]** <span class="projects__time-period">Dec. 2013 – March 2014</span><br>
 Built a fast and maintainable multilingual Solr-powered search front end, based on my initial design, for a hospital library using Handlebars and vanilla JS.
 
-### Other Projects
+### Open Source Contributions
 
-My [personal site][acusti], which I designed and built, has [a portfolio][portfolio] of sites and plugins that I’ve created. My [GitHub profile][github] has additional projects.
+[React][], [immutable.js][], [flow][], [jsdom][], [CSSOM][], [fbjs][], [AMP][], [react-dnd][], [react-draggable][], [draft.js][], [react-higher-event][], [react-color][], [gogs (self-hosted git service)][], [node-svn-project-root][], [grunt-ivantage-svn-changelog][], [grunt-svn-tag][]
 
 Programming Languages and Technologies
 --------------------------------------
@@ -102,13 +102,27 @@ I speak and understand Spanish and French fluently.
 [affixing-header]: https://github.com/acusti/affixing-header
 [React Iframe Support]: https://github.com/facebook/react/pull/12037
 [FuelPHP]: http://fuelphp.com/
-[portfolio]: http://www.acusti.ca/work/
-[github]: https://github.com/acusti
-[acusti]: http://www.acusti.ca
 [Trica Furniture]: http://www.tricafurniture.com/ "Trica Furniture"
 [cq]: http://collections.cinematheque.qc.ca/fr/ "Collections en ligne | La Cinémathèque québécoise"
 [cqrecherche]: http://collections.cinematheque.qc.ca/recherche/ "Recherche collections | La Cinémathèque québécoise"
 [jgh]: http://pen.jgh.ca/search/en/ "Montreal Jewish General Hospital"
+
+[React]: https://github.com/facebook/react/pulls?q=is%3Apr+author%3Aacusti
+[immutable.js]: https://github.com/immutable-js/immutable-js/pulls?q=is%3Apr+author%3Aacusti
+[flow]: http://github.com/facebook/flow/pulls?q=is%3Apr+author%3Aacusti
+[jsdom]: https://github.com/jsdom/jsdom/pulls?q=is%3Apr+author%3Aacusti
+[CSSOM]: https://github.com/NV/CSSOM/pulls?q=is%3Apr+author%3Aacusti
+[fbjs]: https://github.com/facebook/fbjs/pulls?q=is%3Apr+author%3Aacusti
+[AMP]: https://github.com/ampproject/amphtml/pulls?q=is%3Apr+author%3Aacusti
+[react-dnd]: https://github.com/react-dnd/react-dnd/pulls?q=is%3Apr+author%3Aacusti
+[react-draggable]: https://github.com/mzabriskie/react-draggable/pulls?q=is%3Apr+author%3Aacusti
+[draft.js]: https://github.com/facebook/draft-js/pulls?q=is%3Apr+author%3Aacusti
+[react-higher-event]: https://github.com/bloodyowl/react-higher-event/pulls?q=is%3Apr+author%3Aacusti
+[react-color]: https://github.com/casesandberg/react-color/pulls?q=is%3Apr+author%3Aacusti
+[gogs (self-hosted git service)]: https://github.com/gogs/gogs/pulls?q=is%3Apr+author%3Aacusti
+[node-svn-project-root]: https://github.com/jtrussell/node-svn-project-root/pulls?q=is%3Apr+author%3Aacusti
+[grunt-ivantage-svn-changelog]: https://github.com/iVantage/grunt-ivantage-svn-changelog/pulls?q=is%3Apr+author%3Aacusti
+[grunt-svn-tag]: https://github.com/iVantage/grunt-svn-tag/pulls?q=is%3Apr+author%3Aacusti
 
 [GitHub flow]: https://guides.github.com/introduction/flow/
 [BEM]: http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
@@ -116,7 +130,6 @@ I speak and understand Spanish and French fluently.
 [north]: https://github.com/north/north#components
 [objects in space]: https://medium.com/objects-in-space/objects-in-space-f6f404727
 
-[WooCommerce]: http://www.woothemes.com/woocommerce/
 [Sontag Shogun]: http://sontagshogun.bandcamp.com/
 [Slowest Runner]: http://theslowestrunner.bandcamp.com/
 [music]: https://soundcloud.com/acusti
