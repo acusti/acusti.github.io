@@ -102,7 +102,7 @@ I speak and understand Spanish and French fluently.
 [affixing-header]: https://github.com/acusti/affixing-header
 [react iframe support]: https://github.com/facebook/react/pull/12037
 [fuelphp]: http://fuelphp.com/
-[trica furniture]: http://www.tricafurniture.com/ "Trica Furniture"
+[trica furniture]: http://www.tricafurniture.com/
 [cq]: http://collections.cinematheque.qc.ca/ "Collections en ligne | La Cinémathèque québécoise"
 [cqrecherche]: http://collections.cinematheque.qc.ca/recherche/ "Recherche collections | La Cinémathèque québécoise"
 [jgh]: http://pen.jgh.ca/search/en/ "Montreal Jewish General Hospital"
