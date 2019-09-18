@@ -12,7 +12,7 @@ Selected Projects
 -----------------
 
 **[Brandcast Platform][]** <span class="projects__time-period">June 2016 – Present</span><br>
-Build and architect experiences across the Brandcast platform, including the page editor, content editor, media library, and team member manager. Work with the rest of the front-end team to plan and code review maintainable solutions for new product needs. Collaborate closely with our lead product designer to create and design new features and UXs.
+Build and architect experiences across the Brandcast platform, including the page editor, content editor, media library, and team member manager. Work with the rest of the front-end team to plan and then review maintainable solutions for new product needs. Collaborate closely with our lead product designer to design and create new features and UXs.
 
 **[React Iframe Support][]** <span class="projects__time-period">Oct. 2016 – August 2018</span><br>
 Modified the `react-dom` library to make it possible to render React components into an `iframe` and worked with the core React team to land those changes in facebook/react.
