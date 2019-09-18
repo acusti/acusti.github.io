@@ -1,6 +1,6 @@
 Andrew Patton
 =============
-[andrew@acusti.ca][mailto] // <span class="nobr">(415) 528-8537</span>
+[andrew@acusti.ca][mailto] // <span class="nobr">(415) 528-8537</span> // [acusti.ca][]
 
 Current Employment
 ------------------
@@ -91,7 +91,10 @@ Languages
 I speak and understand Spanish and French fluently.
 
 [mailto]: mailto:andrew@acusti.ca
+[acusti.ca]: http://www.acusti.ca
+
 [Brandcast]: https://brandcast.com
+
 [Brandcast Platform]: https://app.brandcast.io/signup/
 [npm-acusti]: https://www.npmjs.com/~acusti
 [react-higher-event]: https://github.com/bloodyowl/react-higher-event
