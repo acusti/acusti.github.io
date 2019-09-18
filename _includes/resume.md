@@ -14,8 +14,8 @@ Selected Projects
 **[Brandcast Platform][]** <span class="projects__time-period">June 2016 – Present</span><br>
 Build and architect experiences across the Brandcast platform, including the page editor, content editor, media library, and team member manager. Work with the rest of the front-end team to plan and code review maintainable solutions for new product needs. Collaborate closely with our lead product designer to create and design new features and UXs.
 
-**[React.js Iframe Support][]** <span class="projects__time-period">Oct. 2016 – August 2018</span><br>
-Modified the `react-dom` library to make it possible to render React components into an `iframe` and worked with the core React.js team to land those changes in facebook/react.
+**[React Iframe Support][]** <span class="projects__time-period">Oct. 2016 – August 2018</span><br>
+Modified the `react-dom` library to make it possible to render React components into an `iframe` and worked with the core React team to land those changes in facebook/react.
 
 **[Front-End UI NPM Modules][npm-acusti]** <span class="projects__time-period">March 2015 – Present</span><br>
 Maintain [react-higher-event][], which provides a declarative API to listen to events outside of a React component. Built [onscrolling][] and [affixing-header][] for performant scroll-based interactions.
@@ -46,7 +46,7 @@ Programming Languages and Technologies
             <li>JavaScript
                 <ul>
                     <li>Functional programming with immutable.js for immutability</li>
-                    <li>React.js with Redux and immutable.js for global state</li>
+                    <li>React with Redux and immutable.js for global state</li>
                     <li>Module bundling with webpack</li>
                     <li>Static typing with flow and typescript</li>
                     <li>Unit testing (BDD) with jest</li>
@@ -97,7 +97,7 @@ I speak and understand Spanish and French fluently.
 [react-higher-event]: https://github.com/bloodyowl/react-higher-event
 [onscrolling]: https://github.com/acusti/onscrolling
 [affixing-header]: https://github.com/acusti/affixing-header
-[React.js iframe support]: https://github.com/facebook/react/pull/12037
+[React Iframe Support]: https://github.com/facebook/react/pull/12037
 [FuelPHP]: http://fuelphp.com/
 [portfolio]: http://www.acusti.ca/work/
 [github]: https://github.com/acusti
