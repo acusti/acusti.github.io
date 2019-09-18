@@ -20,11 +20,11 @@ Modified the `react-dom` library to make it possible to render React components 
 **[Front-End UI NPM Modules][npm-acusti]** <span class="projects__time-period">March 2015 – Jan. 2016</span><br>
 Built [onscrolling][] and [affixing-header][], two modules for constructing performant front-end UIs with solid UX. Both modules are tested, with Continuous Integration via Travis and, for Affixing Header, Selenium integration tests run with SauceLabs for cross-browser testing.
 
-**[Primal Multiplication][primal-multiplication]** <span class="projects__time-period">May – June 2015</span><br>
-Built an experimental web app with ReactJS using ES 2015 features that generates a multiplication table of prime numbers, using a [TDD-based process][primal-multiplication-tdd] throughout.
+**[Cinémathèque Québecoise][cq]** <span class="projects__time-period">Oct. 2014 – June 2015</span><br>
+Lead developer and architect of a multilingual Solr-powered [search application][cqrecherche] built with [FuelPHP][] and a sibling WordPress-powered [publication site][cq] for Québec’s official film archives.
 
-**[Cinémathèque Québecoise][cq]** <span class="projects__time-period">Oct. 2013 – June 2014</span><br>
-Lead developer and architect of a Solr-powered MVC search application built with [FuelPHP][] and a sibling WordPress-powered publication site for Québec’s official film archives.
+**[Trica Furniture][]** <span class="projects__time-period">March 2014 - August 2014</span><br>
+Built a WordPress-based multilingual product catalogue with a custom responsive theme, custom interactive sliders and image galleries, and a custom-built authoring experience.
 
 **[Jewish General Hospital library search][jgh]** <span class="projects__time-period">Dec. 2013 – March 2014</span><br>
 Built a fast and maintainable multilingual Solr-powered search front end, based on my initial design, for a hospital library using Handlebars and vanilla JS.
@@ -97,17 +97,14 @@ I speak and understand Spanish and French fluently.
 [onscrolling]: https://github.com/acusti/onscrolling
 [affixing-header]: https://github.com/acusti/affixing-header
 [React.js iframe support]: https://github.com/facebook/react/pull/12037
-
-[primal-multiplication]: https://github.com/acusti/primal-multiplication
-[primal-multiplication-tdd]: https://github.com/acusti/primal-multiplication/commits/master
 [FuelPHP]: http://fuelphp.com/
 [portfolio]: http://www.acusti.ca/work/
 [github]: https://github.com/acusti
 [acusti]: http://www.acusti.ca
-[cq]: http://collections.cinematheque.qc.ca/en/ "The Cinémathèque québécoise - Collections Online"
-[cqrecherche]: http://collections.cinematheque.qc.ca/recherche/en/ "Collections Online - Search"
+[Trica Furniture]: http://www.tricafurniture.com/ "Trica Furniture"
+[cq]: http://collections.cinematheque.qc.ca/fr/ "Collections en ligne | La Cinémathèque québécoise"
+[cqrecherche]: http://collections.cinematheque.qc.ca/recherche/ "Recherche collections | La Cinémathèque québécoise"
 [jgh]: http://pen.jgh.ca/search/en/ "Montreal Jewish General Hospital"
-[trica]: http://www.tricafurniture.com/ "Trica Furniture"
 
 [GitHub flow]: https://guides.github.com/introduction/flow/
 [BEM]: http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
