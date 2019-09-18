@@ -31,7 +31,7 @@ Built a fast and maintainable multilingual Solr-powered search front end, based 
 
 ### Open Source Contributions
 
-[React][], [immutable.js][], [jsdom][], [jest][], [wp-cli][], [AMP][], [vimeo/player.js][], [browserslist][], [CSSOM][], [socket.io][], [flow][], [selection.js][], [react-dnd][], [timeago.js][], [fbjs][], [react-draggable][], [bezier-easing-editor][], [draft.js][], [react-higher-event][], [AtomLinter/linter-jscs][], [react-number-editor][], [basecamp/trix][], [web-animations][], [react-color][], [redux-form][], [react-numeric-input][], [diffDOM][], [hood.ie][], [react-async-script-loader][], [PrestaShop-webservice-lib][], [Automattic/underscores.me][], [gogs (self-hosted git service)][], [nvalt-prime][], [jquery-requestAnimationFrame][], [jquery-smooth-scroll][], [wp-plugin-in-github][], [WordPress-Wiki][]
+[React][], [immutable.js][], [jsdom][], [jest][], [wp-cli][], [AMP][], [vimeo/player.js][], [browserslist][], [CSSOM][], [socket.io][], [flow][], [selection.js][], [react-dnd][], [timeago.js][], [fbjs][], [react-draggable][], [bezier-easing-editor][], [draft.js][], [react-higher-event][], [AtomLinter/linter-jscs][], [react-number-editor][], [basecamp/trix][], [react-color][], [redux-form][], [react-numeric-input][], [diffDOM][], [hood.ie][], [react-async-script-loader][], [PrestaShop-webservice-lib][], [Automattic/underscores.me][], [gogs (self-hosted git service)][], [nvalt-prime][], [jquery-requestAnimationFrame][], [jquery-smooth-scroll][], [wp-plugin-in-github][], [WordPress-Wiki][]
 
 Programming Languages and Technologies
 --------------------------------------
@@ -129,7 +129,6 @@ I speak and understand Spanish and French fluently.
 [atomlinter/linter-jscs]: https://github.com/AtomLinter/linter-jscs/pulls?q=is%3Apr+author%3Aacusti
 [react-number-editor]: https://github.com/tleunen/react-number-editor/pulls?q=is%3Apr+author%3Aacusti
 [basecamp/trix]: https://github.com/basecamp/trix/pulls?q=is%3Apr+author%3Aacusti
-[web-animations]: https://github.com/web-animations/web-animations-demos/pulls?q=is%3Apr+author%3Aacusti
 [react-color]: https://github.com/casesandberg/react-color/pulls?q=is%3Apr+author%3Aacusti
 [redux-form]: https://github.com/erikras/redux-form/pulls?q=is%3Apr+author%3Aacusti
 [react-numeric-input]: https://github.com/vlad-ignatov/react-numeric-input/pulls?q=is%3Apr+author%3Aacusti
