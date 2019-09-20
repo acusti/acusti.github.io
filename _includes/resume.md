@@ -17,7 +17,7 @@ Build and architect experiences across the Brandcast platform, from the design s
 **[React.js][]** <span class="projects__time-period">Oct. 2016 – August 2018</span><br>
 Modified the `react-dom` library to make it possible to render React components into an `iframe` and worked with the core React team to land those changes in facebook/react.
 
-**[Front-End UI NPM Modules][npm-acusti]** <span class="projects__time-period">March 2015 – Present</span><br>
+**[Front-End NPM Modules][npm-acusti]** <span class="projects__time-period">March 2015 – Present</span><br>
 Maintain [react-higher-event][], which provides a declarative API to listen to events outside of a React component. Built [onscrolling][] and [affixing-header][] for performant scroll-based interactions.
 
 **[Cinémathèque Québecoise][cq]** <span class="projects__time-period">Oct. 2014 – June 2015</span><br>
