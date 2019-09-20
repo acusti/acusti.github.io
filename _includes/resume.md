@@ -1,6 +1,6 @@
 Andrew Patton
 =============
-[andrew@acusti.ca][mailto] // [acusti.ca][]
+[acusti.ca][] // [andrew@acusti.ca][mailto] 
 
 Current Employment
 ------------------
@@ -14,7 +14,7 @@ Selected Projects
 **[Brandcast Platform][]** <span class="projects__time-period">June 2016 – Present</span><br>
 Build and architect experiences across the Brandcast platform, from the design studio to the web publishing server. Collaborate closely with our lead product designer to design and build new features and UXs in a scalable and maintainable way.
 
-**[React Iframe Support][]** <span class="projects__time-period">Oct. 2016 – August 2018</span><br>
+**[React.js][]** <span class="projects__time-period">Oct. 2016 – August 2018</span><br>
 Modified the `react-dom` library to make it possible to render React components into an `iframe` and worked with the core React team to land those changes in facebook/react.
 
 **[Front-End UI NPM Modules][npm-acusti]** <span class="projects__time-period">March 2015 – Present</span><br>
@@ -23,10 +23,10 @@ Maintain [react-higher-event][], which provides a declarative API to listen to e
 **[Cinémathèque Québecoise][cq]** <span class="projects__time-period">Oct. 2014 – June 2015</span><br>
 Lead developer and architect of a multilingual Solr-powered [search application][cqrecherche] built with [FuelPHP][] and a sibling WordPress-powered [publication site][cq] for Québec’s official film archives.
 
-**[Trica Furniture][]** <span class="projects__time-period">March 2014 - August 2014</span><br>
+**[Trica Furniture][]** <span class="projects__time-period">March 2014 - Aug. 2014</span><br>
 Built a WordPress-based multilingual product catalogue with a custom responsive theme, custom interactive sliders and image galleries, and a custom-built authoring experience.
 
-**[Jewish General Hospital library search][jgh]** <span class="projects__time-period">Dec. 2013 – March 2014</span><br>
+**[Jewish General Hospital Library Search][jgh]** <span class="projects__time-period">Dec. 2013 – March 2014</span><br>
 Built a fast and maintainable multilingual Solr-powered search front end, based on my initial design, for a hospital library using Handlebars and vanilla JS.
 
 ### Open Source Contributions
@@ -100,7 +100,7 @@ I speak and understand Spanish and French fluently.
 [react-higher-event]: https://github.com/bloodyowl/react-higher-event
 [onscrolling]: https://github.com/acusti/onscrolling
 [affixing-header]: https://github.com/acusti/affixing-header
-[react iframe support]: https://github.com/facebook/react/pull/12037
+[react.js]: https://github.com/facebook/react/pull/12037
 [fuelphp]: http://fuelphp.com/
 [trica furniture]: http://www.tricafurniture.com/
 [cq]: http://collections.cinematheque.qc.ca/ "Collections en ligne | La Cinémathèque québécoise"
