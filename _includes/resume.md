@@ -1,6 +1,6 @@
 Andrew Patton
 =============
-[andrew@acusti.ca][mailto] // <span class="nobr">(415) 528-8537</span> // [acusti.ca][]
+[andrew@acusti.ca][mailto] // [acusti.ca][]
 
 Current Employment
 ------------------
