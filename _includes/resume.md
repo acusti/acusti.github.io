@@ -1,6 +1,6 @@
 Andrew Patton
 =============
-[acusti.ca][] // [andrew@acusti.ca][mailto] 
+[acusti.ca][] // [andrew@acusti.ca][mailto]
 
 Current Employment
 ------------------
@@ -31,7 +31,7 @@ Built a fast and maintainable multilingual Solr-powered search front end, based 
 
 ### Open Source Contributions
 
-[React][], [immutable.js][], [jsdom][], [jest][], [wp-cli][], [AMP][], [flow][], [vimeo/player.js][], [browserslist][], [react-dnd][], [CSSOM][], [react-higher-event][], [selection.js][], [fbjs][], [react-draggable][], [bezier-easing-editor][], [gogs][], [PrestaShop-webservice-lib][], [onscrolling][], [socket.io][], [timeago.js][], [draft.js][], [diffDOM][], [AtomLinter/linter-jscs][], [react-number-editor][], [basecamp/trix][], [react-color][], [redux-form][], [react-numeric-input][], [hood.ie][], [react-async-script-loader][], [Automattic/underscores.me][], [nvalt-prime][], [jquery-requestAnimationFrame][], [jquery-smooth-scroll][], [wp-plugin-in-github][], [WordPress-Wiki][]
+[React][], [immutable.js][], [jsdom][], [wp-cli][], [AMP][], [flow][], [vimeo/player.js][], [browserslist][], [react-dnd][], [CSSOM][], [react-higher-event][], [selection.js][], [jest][], [fbjs][], [react-draggable][], [bezier-easing-editor][], [gogs][], [PrestaShop-webservice-lib][], [onscrolling][], [socket.io][], [timeago.js][], [draft.js][], [diffDOM][], [AtomLinter/linter-jscs][], [react-number-editor][], [basecamp/trix][], [react-color][], [redux-form][], [react-numeric-input][], [hood.ie][], [react-async-script-loader][], [underscores.me][], [nvalt-prime][], [jquery-requestAnimationFrame][], [jquery-smooth-scroll][], [wp-plugin-in-github][], [WordPress-Wiki][]
 
 Programming Languages and Technologies
 --------------------------------------
@@ -136,7 +136,7 @@ I speak and understand Spanish and French fluently.
 [diffdom]: https://github.com/fiduswriter/diffDOM/pulls?q=is%3Apr+author%3Aacusti
 [hood.ie]: https://github.com/hoodiehq/hood.ie/pulls?q=is%3Apr+author%3Aacusti
 [react-async-script-loader]: https://github.com/leozdgao/react-async-script-loader/pulls?q=is%3Apr+author%3Aacusti
-[automattic/underscores.me]: https://github.com/Automattic/underscores.me/pulls?q=is%3Apr+author%3Aacusti
+[underscores.me]: https://github.com/Automattic/underscores.me/pulls?q=is%3Apr+author%3Aacusti
 [nvalt-prime]: https://github.com/bwiggs/nvalt-prime/pulls?q=is%3Apr+author%3Aacusti
 [jquery-requestanimationframe]: https://github.com/gnarf/jquery-requestAnimationFrame/pulls?q=is%3Apr+author%3Aacusti
 [jquery-smooth-scroll]: https://github.com/kswedberg/jquery-smooth-scroll/pulls?q=is%3Apr+author%3Aacusti
