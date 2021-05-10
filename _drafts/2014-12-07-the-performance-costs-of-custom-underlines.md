@@ -25,8 +25,8 @@ Here is the average [SpeedIndex][] (time in ms until page is visually complete) 
 
 [^1]: I also tested IE11 with similar results, with an average time until visually complete of 514ms for the control and 527ms for the custom underlined version, though if you visually compare the median run from both tests, the results are [extremely similar][ie11-visual-comparison]
 
-[underline-post]: http://www.acusti.ca/blog/2014/11/28/towards-a-more-perfect-link-underline/
-[post-comment]: http://www.acusti.ca/blog/2014/11/28/towards-a-more-perfect-link-underline/#comment-1722135447
+[underline-post]: https://www.acusti.ca/blog/2014/11/28/towards-a-more-perfect-link-underline/
+[post-comment]: https://www.acusti.ca/blog/2014/11/28/towards-a-more-perfect-link-underline/#comment-1722135447
 [medium]: https://medium.com/designing-medium/crafting-link-underlines-on-medium-7c03a9274f9#26b3
 [Timeline view]: https://developer.chrome.com/devtools/docs/timeline
 [test-control]: http://s.codepen.io/acusti/debug/dPGOyd

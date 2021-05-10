@@ -91,7 +91,7 @@ Languages
 I speak and understand Spanish and French fluently.
 
 [mailto]: mailto:andrew@acusti.ca
-[acusti.ca]: http://www.acusti.ca
+[acusti.ca]: https://www.acusti.ca
 
 [brandcast]: https://brandcast.com
 

@@ -1,7 +1,7 @@
 # Site environment
 env:         production
 # Jekyll config
-base_url:    http://www.acusti.ca
+base_url:    https://www.acusti.ca
 # http://jekyllrb.com/docs/permalinks/
 permalink:   pretty
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -35,8 +35,8 @@ meta:
 # Prose settings
 prose:
   rooturl: '_posts'
-  siteurl: 'http://www.acusti.ca/'
-  relativeLinks: 'http://www.acusti.ca/links.jsonp'
+  siteurl: 'https://www.acusti.ca/'
+  relativeLinks: 'https://www.acusti.ca/links.jsonp'
   media: 'media'
   metadata:
     _posts:
