@@ -18,7 +18,7 @@ To build the production JS and CSS bundles:
 yarn build
 ```
 
-To start the jekyll server with development configuration and drafts support:
+To start the jekyll server with development configuration, drafts support, and CSS regeneration:
 
 ```bash
 bundle exec yarn serve
