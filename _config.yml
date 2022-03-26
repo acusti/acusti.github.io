@@ -9,7 +9,7 @@ timezone:    America/Montreal
 future:      false
 highlighter: rouge
 markdown:    kramdown
-exclude:     [vendor]
+exclude:     [vendor, node_modules]
 
 # Site metadata
 meta:
