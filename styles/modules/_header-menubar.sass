@@ -23,16 +23,14 @@
 	text-align: left
 	white-space: nowrap
 	a
-		color: $color-accent-dark
+		color: $color-bkg
 		-webkit-font-smoothing: subpixel-antialiased
-		text-shadow: 1px 1px 1px lighten($color-accent, 9%)
 		+adjust-font-size-to(20px, 1.7)
 		@media (max-width: $narrow-width)
 			+adjust-font-size-to(16px, 1.5)
 
 		&:hover
-			background-color: rgba($color-accent-dark, 0.2)
-			text-shadow: 1px 1px 1px $color-accent
+			background-color: rgba($color-accent-dark, 0.25)
 
 	// Don't show home link on mobile
 	@media (max-width: $narrow-width)
@@ -84,9 +82,7 @@ ul.site-nav
 		margin-left: -8px
 		width: 4px
 		height: 4px
-		background-color: $color-accent-dark
-		border-right: 1px solid lighten($color-accent, 9%)
-		border-bottom: 1px solid lighten($color-accent, 9%)
+		background-color: $color-bkg
 
 		@media (max-width: $narrow-width)
 			margin-top: 18px
@@ -102,12 +98,3 @@ ul.site-nav
 
 		@media (max-width: $narrow-width)
 			padding: 0 0.18em
-
-	.home
-		text-indent: -999em
-		background: url(../images/icon-home.png) no-repeat 6px 10px
-		width: 31px
-		margin-right: 1px
-
-		@media (max-width: $narrow-width)
-			background-position: 6px 8px
