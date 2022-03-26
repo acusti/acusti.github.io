@@ -6,6 +6,7 @@
     "build-js": "jspm install && jspm bundle-sfx scripts/main app-built.js --minify",
     "build": "npm run build-css && npm run build-js",
     "serve": "jekyll serve --watch --config _config.yml,_config-local.yml,_config-dev.yml --drafts",
+    "watch:css": "compass watch ./styles",
     "serve:prod": "npm run build && jekyll serve --config _config.yml,_config-local.yml"
   },
   "jspm": {

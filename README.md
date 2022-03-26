@@ -3,17 +3,12 @@ Andrew Patton’s github user page source
 
 [![Build Status](https://travis-ci.org/acusti/acusti.github.io.svg?branch=master)](https://travis-ci.org/acusti/acusti.github.io)
 
-__Requirements__:
-
-- Jekyll: `gem install jekyll`
-- Compass: `gem install compass`
-- Node: `brew install node`
-
 ## First time use
 
-*If you do not have Compass or Jekyll, install them first (see above)*
+*If you’re having ruby troubles on macOS, [check here](https://stackoverflow.com/a/71034303/333625).*
 
-Run `yarn` or `npm install` from the root directory to locally install jspm.
+1. Run `yarn` or `npm install` from the root directory
+2. Run `bundle install` from the root directory to install gem dependencies
 
 ## Workflow
 
@@ -26,13 +21,13 @@ yarn build
 To start the jekyll server with development configuration and drafts support:
 
 ```bash
-yarn serve
+bundle exec yarn serve
 ```
 
 To start the jekyll server with production configuration:
 
 ```bash
-yarn serve:prod
+bundle exec yarn serve:prod
 ```
 
 License
