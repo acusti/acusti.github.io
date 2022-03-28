@@ -142,9 +142,12 @@ article
 	text-shadow: 1px 1px 1px black
 
 article.post,
-article.page,
-article.intro
+article.page
 	> p:first-of-type
+		@extend %drop-cap
+
+article.home__intro
+	> p:last-child
 		@extend %drop-cap
 
 /* =Mobile Safari ( iPad, iPhone and iPod Touch )
