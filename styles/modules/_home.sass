@@ -1,30 +1,19 @@
-.image--home
-	float: left
-	margin-left: -100%
-	max-width: 356px
-	@media (max-width: 720px)
-		margin-left: -113%
+.home__image
 	@media (max-width: $medium-width)
 		display: none
 
-body.page--home
-	.intro
-		@extend %main-column
+.home__intro
+	@extend %main-column
+	display: flex
 
-		> p
-			clear: right
-			width: 52%
-			float: right
-			margin: 0 -3% 1.4em 0
+	> p
+		width: 100%
+		max-width: 100%
 
+		&:first-child
 			@media (max-width: $medium-width)
-				width: auto
-				float: none
-				margin: 0
+				display: none
 
-			@media (max-width: $narrow-width)
-				margin-bottom: 1em
-
-		.link--more
-			margin-top: 24px
-			float: right
+	.link--more
+		margin-top: 0px
+		float: right
