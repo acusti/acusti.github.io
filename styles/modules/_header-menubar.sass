@@ -52,9 +52,9 @@ ul.site-nav
 	text-align: left
 	white-space: nowrap
 
-	// Don't show home link on mobile
+	// Don't show “About Me” link on mobile
 	@media (max-width: $narrow-width)
-		li:first-child
+		li:nth-child(3)
 			display: none
 
 	li
@@ -74,9 +74,7 @@ ul.site-nav
 			background-color: $color-bkg
 
 			@media (max-width: $narrow-width)
-				width: 3px
-				height: 3px
-				margin-left: -5px
+				margin-left: -6px
 
 		&:first-child:before
 			display: none
@@ -90,9 +88,7 @@ ul.site-nav
 		padding: 3px 0.25em 0px
 
 		@media (max-width: $narrow-width)
-			+adjust-font-size-to(18px, 1.8)
-			letter-spacing: -0.5px
-			padding: 3px 0.18em 0px
+			letter-spacing: -0.25px
 
 		&:hover
 			background-color: rgba($color-accent-dark, 0.25)
