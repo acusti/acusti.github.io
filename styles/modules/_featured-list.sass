@@ -51,27 +51,21 @@ article .standout,
 				padding-left: 12px
 
 		// Typography
-		+adjust-font-size-to(16px, 0.95)
+		font-size: 1rem
+
+		code
+			font-size: 0.9rem
 
 		> a:first-child,
 		> p > a:first-child,
 		.title
 			+rhythm(0, 0, 0.25, 0, 18px)
-			+adjust-font-size-to(18px, 0.9)
+			font-size: 1.1rem
 
 		> a:first-child:hover,
 		> p > a:first-child:hover
 			background-image: none
 			text-decoration: underline
-
-		@media (max-width: $narrow-width)
-			+adjust-font-size-to(18px, 1)
-
-			> a:first-child,
-			> p > a:first-child,
-			.title
-				+adjust-font-size-to(20px, 1)
-				+rhythm(0, 0.25, 0.25, 0, 18px)
 
 article
 	.sites li

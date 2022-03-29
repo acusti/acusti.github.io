@@ -39,10 +39,11 @@
 	@media (min-width: 1400px)
 		right: 14%
 
-	/* Adjust nav for samller widths */
+	// Adjust nav for smaller widths
 	@media (max-width: $narrow-width)
 		display: block
-		right: 0.5em
+		right: 0
+		text-align: center
 
 ul.site-nav
 	display: inline-block
@@ -80,15 +81,13 @@ ul.site-nav
 			display: none
 
 	a
-		color: $color-bkg
+		font-size: 1.3rem
+		line-height: 2
 		-webkit-font-smoothing: subpixel-antialiased
-		+adjust-font-size-to(20px, 1.8)
+		color: $color-bkg
 		text-transform: uppercase
 		display: block
 		padding: 3px 0.25em 0px
-
-		@media (max-width: $narrow-width)
-			letter-spacing: -0.25px
 
 		&:hover
 			background-color: rgba($color-accent-dark, 0.25)

@@ -1,25 +1,24 @@
 // = Variables
-// $body-text-family: bitter, Georgia, serif
-$body-text-family: volkhov, Georgia, serif
-$header-text-family: 'Special Elite', $body-text-family
-// $header-text-family: indie-flower, sans-serif
+$body-text-family: ff-avance-pro, georgia, serif
+$header-text-family: $body-text-family
 $mono-family: Menlo, "Andale Mono", "DejaVu Sans Mono", Consolas, monospace
 $base-block-elements: "h5, p, ul, ol, dl"
 
 // Placeholders
 %drop-cap
 	&::first-letter
+		font-family: "times new roman", serif
 		float: left
-		font-size: 5.29em
-		line-height: 1
-		margin: -0.05em 0 -0.15em
-		padding: 0 0.07em 0 0
+		font-size: 6.3rem
+		font-weight: 400
+		line-height: 0.8
+		margin-top: -0.15rem
+		padding-right: 0.4rem
 		color: $color-accent-dark-alt
 		// Once widely supported, use initial letter
 		// initial-letter: 3
 		// @media (max-width: $narrow-width)
 		// 	initial-letter: 2
-
 
 // Vertical rhythm baseline
 +establish-baseline
@@ -28,45 +27,45 @@ body
 	font-family: $body-text-family
 	text-rendering: optimizeLegibility
 	-webkit-font-smoothing: antialiased
-	@media (max-width: $narrow-width)
-		+adjust-font-size-to(18px)
-		header a, #top-nav-fixed a
-			+adjust-font-size-to(18px, 2.78) // 18 x 2.78 = 50
+	font-size: 1.22rem
+	line-height: 1.35
 
 h1, h2, h3, h4, h5
 	color: $color-text
 	text-shadow: 1px 1px 1px black
 	text-align: left
 
-h1, h2
-	font-weight: 400
-	-webkit-font-smoothing: subpixel-antialiased
-
 h3, h4, h5
 	font-weight: 700
 
 h1
 	font-family: $header-text-family
-	font-weight: 400
-	+adjust-font-size-to(48px, 2)
+	font-weight: 700
+	font-size: 3.2rem
+	line-height: 1
 	+rhythm(0, 0, 0, 1)
 	text-shadow: 2px 2px 1px black
 	@media (max-width: $narrow-width)
-		+adjust-font-size-to(38px, 1.5)
+		font-size: 2.5rem
 
 h2
-	+adjust-font-size-to(28px, 1.5)
+	font-weight: 400
+	-webkit-font-smoothing: subpixel-antialiased
+	font-size: 2rem
+	line-height: 1.2
 	+rhythm(0, 0, 0, 1)
 	color: $color-text-muted
 	@media (max-width: $narrow-width)
-		+adjust-font-size-to(24px, 1.25)
+		font-size: 2.2rem
 
 h3
-	+adjust-font-size-to(23px, 1.25)
+	font-size: 1.8rem
+	line-height: 1.2
 	+rhythm(1, 0, 0, 1)
 
 h4
-	+adjust-font-size-to(20px, 1.25)
+	font-size: 1.5rem
+	line-height: 1.23
 	+rhythm(0, 0, 0, 1)
 
 h5
@@ -74,7 +73,6 @@ h5
 
 // = BEGIN - Quotes
 blockquote
-	+adjust-font-size-to(17px, 1)
 	font-style: italic
 	color: $color-text-muted
 	text-align: left
@@ -130,14 +128,14 @@ article
 	ol
 		list-style-type: decimal
 	ul
-		list-style-type: square
+		list-style-type: disc
 	li
 		line-height: inherit
 		margin-bottom: 0.5em
 
 .baseline
-	+adjust-font-size-to(22px)
-	+rhythm-margins(0, 0.5, 22px)
+	font-size: 1.5rem
+	+rhythm-margins(0, 0.5, 26px)
 	font-style: italic
 	color: $color-text-muted
 	text-shadow: 1px 1px 1px black
@@ -150,6 +148,8 @@ article.page
 article.home__intro
 	> p:last-child
 		@extend %drop-cap
+		&::first-letter
+			padding-right: 0.3rem
 
 /* =Mobile Safari ( iPad, iPhone and iPod Touch )
  *-------------------------------------------------------------- */
