@@ -29,9 +29,9 @@ Here is the average [SpeedIndex][] (time in ms until page is visually complete) 
 [post-comment]: https://www.acusti.ca/blog/2014/11/28/towards-a-more-perfect-link-underline/#comment-1722135447
 [medium]: https://medium.com/designing-medium/crafting-link-underlines-on-medium-7c03a9274f9#26b3
 [Timeline view]: https://developer.chrome.com/devtools/docs/timeline
-[test-control]: http://s.codepen.io/acusti/debug/dPGOyd
-[test-custom]: http://s.codepen.io/acusti/debug/myVOvN
-[WebPagetest.org]: http://www.webpagetest.org/
+[test-control]: https://cdpn.io/pen/debug/dPGOyd
+[test-custom]: https://cdpn.io/pen/debug/myVOvN
+[WebPagetest.org]: https://webpagetest.org
 [control-moto-e]: http://www.webpagetest.org/result/141208_VF_65A/
 [SpeedIndex]: https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index
 
