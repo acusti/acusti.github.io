@@ -20,7 +20,7 @@
 		// Tweak position + thickness for high res (1.75x and up) displays
 		@media (-webkit-min-device-pixel-ratio: 1.75), (min-resolution: 168dpi)
 			background-image: linear-gradient(rgba($color-accent, 0.25) 0%, $color-accent 100%)
-			background-position: 0 93%
+			background-position: 0 85%
 
 	// Style selected links (or else text-shadow makes it look crazy ugly)
 	&,
@@ -29,7 +29,6 @@
 			background-color: $color-accent-selection
 			color: $color-text
 			text-shadow: none
-
 
 a
 	color: $color-accent
@@ -44,11 +43,7 @@ footer
 		a
 			background-size: 1px 2px
 			@media (-webkit-min-device-pixel-ratio: 1.75), (min-resolution: 168dpi)
-				background-position: 0 93%
-				background-size: 1px 1px
-
-				&:hover
-					background-image: linear-gradient($color-accent 0%, $color-accent 100%)
+				background-size: 1px 1.5px
 
 .link--more
 	&:after
