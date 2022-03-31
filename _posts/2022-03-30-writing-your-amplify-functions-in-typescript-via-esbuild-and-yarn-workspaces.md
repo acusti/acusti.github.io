@@ -31,7 +31,7 @@ Adding esbuild takes just a few steps:
 
 3. In the root `package.json` for your amplify app, add a run script under the key `"amplify:<functionName>"` to trigger the build script for that lambda function when mocking the function locally or deploying it [(amplify docs reference)][]:
 ```json
-"amplify:<functionName>": "cd amplify/backend/function/<functionName>/src && yarn && yarn build && cd -"
+"amplify:<functionName>": "cd amplify/backend/function/<functionName>/src && yarn && yarn build"
 ```
 
 To make TypeScript work properly, you will also need to include a `tsconfig.json` file alongside your `package.json` in each lambda function’s directory. In order to cut down on duplicate config and duplicate installs, I use the `extends` option to reference my root tsconfig file, then modify a few options for the esbuild use case. As a result, each function’s `tsconfig.json` looks like:
