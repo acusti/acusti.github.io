@@ -2,8 +2,8 @@
 layout: post
 category: blog
 title: Towards a more perfect link underline
-baseline: "progress in underline text-decoration in Safari and iOS"
-splash: "media/new-yorker-link-underlines.png"
+baseline: 'progress in underline text-decoration in Safari and iOS'
+splash: media/new-yorker-link-underlines.png
 tags:
   - typography
   - readability

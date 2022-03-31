@@ -2,8 +2,8 @@
 layout: post
 title: Fixed headers that reveal on scrolling or swiping up
 baseline: Exploring and building a mobile-first solution for optimal reading UX
-credit: "Poe Cheung’s “Looking for the sun”"
-splash: "media/poe-cheung-looking-for-the-sun.jpg"
+credit: 'Poe Cheung’s “Looking for the sun”'
+splash: media/poe-cheung-looking-for-the-sun.jpg
 category: blog
 published: true
 tags: [ux, performance, webdev, mobile, javascript]

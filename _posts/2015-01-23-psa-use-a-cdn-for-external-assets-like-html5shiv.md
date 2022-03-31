@@ -2,9 +2,9 @@
 layout: post
 category: blog
 published: true
-title: "PSA: Use a CDN for external assets like HTML5shiv"
+title: 'PSA: Use a CDN for external assets like HTML5shiv'
 splash: media/rocketship.svg
-credit: "Rocketship created by [Jean-Philippe Cabaroc](http://thenounproject.com/cabaroc/) from the [Noun Project](http://thenounproject.com/term/rocket/7427/)"
+credit: 'Rocketship created by [Jean-Philippe Cabaroc](http://thenounproject.com/cabaroc/) from the [Noun Project](http://thenounproject.com/term/rocket/7427/)'
 tags:
   - performance
   - PSA
