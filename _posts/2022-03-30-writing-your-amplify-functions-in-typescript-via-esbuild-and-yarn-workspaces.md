@@ -72,7 +72,7 @@ The tsconfig.json in the root amplify directory looks like:
 }
 ```
 
-Setting the `baseUrl` option in the root tsconfig means I can then import files in my main amplify app from any of the lambda functions without any `../` parent folder traversal needed (e.g. `import { roundToHundredth } from 'utils/format-numbers.js';`). Both TypeScript and esbuild will be able to find and use the file thanks to the inherited `baseUrl` option.
+Setting the `baseUrl` option in the root tsconfig means I can then import files in my main amplify app from any of the lambda functions without any `../` parent folder traversal needed (e.g. `import { getItem } from 'graphql/queries.js';`). Both TypeScript and esbuild will be able to find and use the file thanks to the inherited `baseUrl` option.
 
 The last piece of my setup involves leveraging yarn workspaces to share dependencies and avoid excessive duplication. This also means that the `node_modules` folder that amplify zips up as a part of your deployed lambda is empty (all imported files are bundled by esbuild). Each of my lambda functions is its own workspace. Assuming your amplify install is called `myapp`, you could put this in your repo’s root package.json:
 ```json
