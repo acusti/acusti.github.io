@@ -11,7 +11,7 @@ tags: [aws, amplify, lambda, typescript, esbuild, yarn workspaces]
 
 AWS Amplify makes writing your front-end application in TypeScript easy. As long as you have a `build` npm run script that takes care of transpiling your TypeScript source code and handling any other build tasks, your application will be deployable via Amplify hosting. However, in order to use TypeScript with Amplify’s lambda functions, you need to do a little more work to compile your source files into plain JS.
 
-The best tool I’ve found for this job is [esbuild][]. Not only is it a very fast way to compile TypeScript with no configuration required, it also allows you to consolidate all of your dependencies into one file while tree-shaking out any unused code, making your lambda functions faster to start and run. Thanks to those features, esbuild also makes it practical to use the latest v3 of the AWS JS SDK, which provides async / await friendly APIs and allows you to include [only the parts of the SDK][] that you need for the particular lambda function you are building, rather than needing to include the entirety of the SDK. That distinction, incidentally, is why AWS has to make v2 of the aws-sdk available out-of-the-box to any node.js lambda. Otherwise, every lambda deployed to the platform would need to include [all 3MB (minified)][] of the `aws-sdk` package.
+The best tool I’ve found for this job is [esbuild][]. Not only does it compile TypeScript very quickly with no configuration required, it also allows you to consolidate all of your dependencies into one file while tree-shaking out any unused code, making your lambda functions faster to start and run. Thanks to those features, esbuild also makes it practical to use the latest v3 of the AWS JS SDK, which provides async / await friendly APIs and allows you to include [only the parts of the SDK][] that you need for the particular lambda function you are building, rather than needing to include the entirety of the SDK. That distinction, incidentally, is why AWS has to make v2 of the aws-sdk available out-of-the-box to any node.js lambda. Otherwise, every lambda deployed to the platform would need to include [all 3MB (minified)][] of the `aws-sdk` package.
 
 Adding esbuild takes just a few steps:
 
@@ -74,7 +74,7 @@ The tsconfig.json in the root amplify directory looks like:
 
 Setting the `baseUrl` option in the root tsconfig means I can then import files in my main amplify app from any of the lambda functions without any `../` parent folder traversal needed (e.g. `import { roundToHundredth } from 'utils/format-numbers.js';`). Both TypeScript and esbuild will be able to find and use the file thanks to the inherited `baseUrl` option.
 
-The last piece of my setup involves leveraging yarn workspaces to share dependencies and avoid excessive duplication. Each of my lambda functions is its own workspace. Assuming your amplify install is called `myapp`, you could put this in your repo’s root package.json:
+The last piece of my setup involves leveraging yarn workspaces to share dependencies and avoid excessive duplication. This also means that the `node_modules` folder that amplify zips up as a part of your deployed lambda is empty (all imported files are bundled by esbuild). Each of my lambda functions is its own workspace. Assuming your amplify install is called `myapp`, you could put this in your repo’s root package.json:
 ```json
   "workspaces": [
     "myapp",
