@@ -19,14 +19,14 @@ Adding esbuild takes just a few steps:
     `yarn add -D esbuild typescript`
 2. Add a `build` npm run script to each lambda function’s `package.json` to check the function with typescript, then bundle it with esbuild (while esbuild understands and transpiles typescript syntax, it doesn’t do any actual type checking, so if you don’t first run `tsc` against your function, you won’t get any of the actual benefits of using typescript). After a lot of testing and tweaking, here’s what I landed on:
 ```json
-"build": "tsc -noEmit && esbuild *.ts --main-fields=module,main --bundle --platform=node --external:@aws-sdk/signature-v4-crt --outdir=./"
+"build": "tsc -noEmit && esbuild *.ts --main-fields=module,main --bundle --platform=node --external:aws-sdk --external:aws-lambda --external:@aws-sdk/signature-v4-crt --outdir=./"
 ```
     Breaking it down, option by option:
 
     [`--bundle`][]: inlines all imported dependencies into the output file to enable tree-shaking and reduce lambda size  
     [`--platform=node`][]: sets output module format to `cjs` (CommonJS) and marks all built-in node modules as externals so that esbuild won’t try to bundle them  
     [`--main-fields=module,main`][]: enables tree-shaking by giving preference to the ES module versions of packages; one result of setting the platform to `node` is that for compatibility reasons, the `main` package.json field (for the CommonJS version of the package) is given priority over the `module` field, which prevents static analysis and tree-shaking  
-    [`--external:@aws-sdk/signature-v4-crt`][]: prevents the @aws-sdk/signature-v4-crt (a dependency of e.g. the S3 client) package from [breaking your build][] or exploding the bundled size of your deployed lambda (here’s a [relevant example issue][])  
+    [`--external:aws-sdk --external:aws-lambda --external:@aws-sdk/signature-v4-crt`][]: prevents the built-in `aws-sdk` v2 package from being included in the bundle, along with the `aws-lambda` CLI tool and `@aws-sdk/signature-v4-crt` (a dependency of e.g. the S3 client), which could otherwise [break your build][] or explode the bundled size of your deployed lambda (here’s a [relevant example issue][])  
     [`--outdir=./`][]: writes the resulting file(s) to the same directory with the same filename but a `.js` extension  
 
 3. In the root `package.json` for your amplify app, add a run script under the key `"amplify:<functionName>"` to trigger the build script for that lambda function when mocking the function locally or deploying it [(amplify docs reference)][]:
@@ -88,8 +88,8 @@ The last piece of my setup involves leveraging yarn workspaces to share dependen
 [`--bundle`]: https://esbuild.github.io/api/#bundle
 [`--platform=node`]: https://esbuild.github.io/api/#platform
 [`--main-fields=module,main`]: https://esbuild.github.io/api/#main-fields
-[`--external:@aws-sdk/signature-v4-crt`]: https://esbuild.github.io/api/#external
-[breaking your build]: https://github.com/aws/aws-sdk-js-v3/issues/2747#issuecomment-912341625
+[`--external:aws-sdk --external:aws-lambda --external:@aws-sdk/signature-v4-crt`]: https://esbuild.github.io/api/#external
+[break your build]: https://github.com/aws/aws-sdk-js-v3/issues/2747#issuecomment-912341625
 [relevant example issue]: https://github.com/aws/aws-sdk-js-v3/issues/2750
 [`--outdir=./`]: https://esbuild.github.io/api/#outdir
 [(amplify docs reference)]: https://docs.amplify.aws/cli/function/build-options/
