@@ -25,7 +25,7 @@ Since the writing of that post, Apple released Safari 8.0 and Safari for iOS 8, 
 
 ![“parapsychologists” as platonic ideal and reality]({{ site.base_url }}/media/medium-example-with-native-underline.png)
 
-You can see another example of the “native” Safari underline in the screenshot at the top of the page, from [The New Yorker][] (with modified text content to illustrate descenders). Overall, the underline is much thicker than Wichary’s ideal and sits too close to the text for my comfort. But most damningly to my mind, the underline does not change weight to adapt to the weight of the font, leading to unfortunate mismatches like with the `:hover` style on [Angel List][]:
+You can see another example of the native Safari underline in the screenshot at the top of the page, from [The New Yorker][] (with modified text content to illustrate descenders). Overall, the underline is much thicker than Wichary’s ideal and sits too close to the text for my comfort. But most damningly to my mind, the underline does not change weight to adapt to the weight of the font, leading to unfortunate mismatches like with the `:hover` style on [Angel List][]:
 
 ![Angel List :hover underline]({{ site.base_url }}/media/angellist-underlines.png)
 
