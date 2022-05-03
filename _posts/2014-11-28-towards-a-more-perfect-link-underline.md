@@ -9,7 +9,7 @@ tags:
   - readability
 ---
 
-I became interested in trying to create the ideal text underline in CSS after reading an [excellent post][medium-post-underlines] about it on (and about) Medium. In that post, Marcin Wichary offers a list of goals for his ideal link underline:
+Marcin Wichary wrote an [excellent post][medium-post-underlines] about creating the ideal text underline in CSS for Medium. In that post, Wichary offers a list of goals to achieve:
 
 > So, the ideal technological solution would allow us to:
 >
