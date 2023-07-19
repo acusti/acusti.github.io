@@ -5,20 +5,20 @@ Andrew Patton
 Current Employment
 ------------------
 
-**Brandcast — Lead Front-End Architect** <span class="projects__time-period">July 2015 – Present</span><br>
-*[Brandcast][] is a collaborative web publishing platform that enables teams to design, build, publish, and maintain their web properties*
+**Time Sites — Principal Front-End Engineer** <span class="projects__time-period">June 2022 – Present</span><br>
+*[Time Sites][] is a collaborative web publishing platform that enables teams to design, build, publish, and maintain their web properties*
 
 Selected Projects
 -----------------
 
-**[Brandcast Platform][]** <span class="projects__time-period">June 2016 – Present</span><br>
-Build and architect experiences across the Brandcast platform, from the design studio to the web publishing server. Collaborate closely with our lead product designer to design and build new features and UXs in a scalable and maintainable way.
+**[Time Sites][]** <span class="projects__time-period">June 2016 – Present</span><br>
+Build and architect experiences across the Time Sites (née “Brandcast”) platform, from the design studio to the web publishing server. Collaborate closely with our lead product designer to design and build new features and UXs in a scalable and maintainable way.
 
 **[React.js][]** <span class="projects__time-period">Oct. 2016 – August 2018</span><br>
 Modified the `react-dom` library to make it possible to render React components into an `iframe` and worked with the core React team to land those changes in facebook/react.
 
-**[Front-End NPM Modules][npm-acusti]** <span class="projects__time-period">March 2015 – Present</span><br>
-Maintain [react-higher-event][], which provides a declarative API to listen to events outside of a React component. Built [onscrolling][] and [affixing-header][] for performant scroll-based interactions.
+**[UIKit (and other modules)][npm-acusti]** <span class="projects__time-period">March 2015 – Present</span><br>
+Maintain [UIKit][], a high-quality UI toolkit, [audile][], a mobile-friendly web audio player, and [react-higher-event][], a declarative API for listening to events outside of a React component.
 
 **[Cinémathèque Québecoise][cq]** <span class="projects__time-period">Oct. 2014 – June 2015</span><br>
 Lead developer and architect of a multilingual Solr-powered [search application][cqrecherche] built with [FuelPHP][] and a sibling WordPress-powered [publication site][cq] for Québec’s official film archives.
@@ -31,7 +31,7 @@ Built a fast and maintainable multilingual Solr-powered search front end, based 
 
 ### Open Source Contributions
 
-[React][], [immutable.js][], [jsdom][], [wp-cli][], [AMP][], [flow][], [vimeo/player.js][], [browserslist][], [react-dnd][], [CSSOM][], [react-higher-event][], [selection.js][], [jest][], [fbjs][], [react-draggable][], [bezier-easing-editor][], [gogs][], [PrestaShop-webservice-lib][], [onscrolling][], [socket.io][], [timeago.js][], [draft.js][], [diffDOM][], [AtomLinter/linter-jscs][], [react-number-editor][], [basecamp/trix][], [react-color][], [redux-form][], [react-numeric-input][], [hood.ie][], [react-async-script-loader][], [underscores.me][], [nvalt-prime][], [jquery-requestAnimationFrame][], [jquery-smooth-scroll][], [wp-plugin-in-github][], [WordPress-Wiki][]
+[React][], [immutable.js][], [jsdom][], [wp-cli][], [AMP][], [flow][], [vimeo/player.js][], [browserslist][], [react-dnd][], [CSSOM][], [jest][], [fbjs][], [react-draggable][], [timeago.js][], [draft.js][], [react-higher-event][], [uikit][], [audile][], [selection.js][], [bezier-easing-editor][], [gogs][], [PrestaShop-webservice-lib][], [affixing-header][], [onscrolling][], [socket.io][], [diffDOM][], [AtomLinter/linter-jscs][], [react-number-editor][], [basecamp/trix][], [react-color][], [redux-form][], [react-numeric-input][], [hood.ie][], [react-async-script-loader][], [underscores.me][], [nvalt-prime][], [jquery-requestAnimationFrame][], [jquery-smooth-scroll][], [wp-plugin-in-github][], [WordPress-Wiki][]
 
 Programming Languages and Technologies
 --------------------------------------
@@ -45,18 +45,19 @@ Programming Languages and Technologies
         <ul>
             <li>JavaScript
                 <ul>
-                    <li>Functional programming with immutable.js for immutability</li>
-                    <li>React with Redux and immutable.js for global state</li>
-                    <li>Module bundling with webpack</li>
-                    <li>Static typing with flow and typescript</li>
-                    <li>Unit testing (BDD) with jest</li>
+                    <li>Functional programming</li>
+                    <li>React with Redux or Jotai for state</li>
+                    <li>Remix, the full stack web framework</li>
+                    <li>Static typing via typescript or flow</li>
+                    <li>BDD/TDD (jest and vitest)</li>
                     <li>End-to-end testing with cypress</li>
                 </ul>
             </li>
             <li>CSS and HTML
                 <ul>
-                    <li>SASS (plain and with frameworks like susy and compass)</li>
-                    <li><a href="http://smacss.com/book/">Modular</a> / <a href="https://github.com/north/north#components">component</a>-based <a href="https://medium.com/objects-in-space/objects-in-space-f6f404727">methodologies</a> for styles and markup</li>
+                    <li>Flexbox and CSS Grid</li>
+                    <li>Web performance and web vitals</li>
+                    <li>Mobile web development</li>
                 </ul>
             </li>
         </ul>
@@ -64,10 +65,10 @@ Programming Languages and Technologies
     <div class="list-blocks__block">
         <h4>Back-End</h4>
         <ul>
+            <li>AWS: DynamoDB, AppSync, Lambdas, S3, Cognito, Amplify</li>
+            <li>Cloudflare Workers and Pages</li>
             <li>Node.js</li>
-            <li>GraphQL (previously REST)</li>
-            <li>PHP and MySQL (using traditional MVC frameworks and CMSs)</li>
-            <li>MongoDB</li>
+            <li>GraphQL and REST</li>
             <li>iOS with Swift</li>
         </ul>
     </div>
@@ -76,13 +77,13 @@ Programming Languages and Technologies
 Other Interests
 ---------------
 
-**Music production and composition**  
+**Music production and composition**
 I love music and play piano. I’ve played a couple of shows in Montreal with a previous iteration of the [Sontag Shogun][] project and was coach of the band [Slowest Runner][]. Also, I like making music, and, when feeling inspired, [sharing the results][music].
 
 Education
 ---------
 
-**McGill University, 2003 – 2007**  
+**McGill University, 2003 – 2007**
 BA in Cultural Studies, with a Minor in Music Technology
 
 Languages
@@ -93,10 +94,12 @@ I speak and understand Spanish and French fluently.
 [mailto]: mailto:andrew@acusti.ca
 [acusti.ca]: https://www.acusti.ca
 
-[brandcast]: https://brandcast.com
+[time sites]: https://timesites.com
 
 [brandcast platform]: https://app.brandcast.io/signup/
 [npm-acusti]: https://www.npmjs.com/~acusti
+[uikit]: https://github.com/acusti/uikit
+[audile]: https://github.com/acusti/audile
 [react-higher-event]: https://github.com/bloodyowl/react-higher-event
 [onscrolling]: https://github.com/acusti/onscrolling
 [affixing-header]: https://github.com/acusti/affixing-header
@@ -142,12 +145,8 @@ I speak and understand Spanish and French fluently.
 [jquery-smooth-scroll]: https://github.com/kswedberg/jquery-smooth-scroll/pulls?q=is%3Apr+author%3Aacusti
 [wp-plugin-in-github]: https://github.com/sudar/wp-plugin-in-github/pulls?q=is%3Apr+author%3Aacusti
 [wordpress-wiki]: https://github.com/mgerring/WordPress-Wiki/pulls?q=is%3Apr+author%3Aacusti
-
 [github flow]: https://guides.github.com/introduction/flow/
-[bem]: http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
-[smacss]: http://smacss.com/book/
-[north]: https://github.com/north/north#components
-[objects in space]: https://medium.com/objects-in-space/objects-in-space-f6f404727
+
 [sontag shogun]: http://sontagshogun.bandcamp.com/
 [slowest runner]: http://theslowestrunner.bandcamp.com/
 [music]: https://soundcloud.com/acusti
