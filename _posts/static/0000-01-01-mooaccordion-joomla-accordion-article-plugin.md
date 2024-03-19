@@ -49,7 +49,6 @@ This plugin is listed on the [Joomla Extensions Directory][jed].
 	<p class="legal bottom">This plugin is offered in the hope it will be useful but without any warranty whatsoever</p>
 </address>
 
-
 [tutorial]: {{ site.base_url }}/mooaccordion-css-show-hide-demo-tutorial/
 [joomlaworks]: http://extensions.joomla.org/extensions/news-display/articles-tabs/1046
 [jed]: http://extensions.joomla.org/extensions/style-a-design/tabs-a-slides/13424 "MooAccordion Joomla Content Plugin on the JED"

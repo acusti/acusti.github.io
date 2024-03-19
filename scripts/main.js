@@ -1,19 +1,14 @@
 'use strict';
-
-// Use ES6 imports
-import insertEmail from './insert-email';
-import initImageComparison from './image-comparison';
-import initImageParallax from './image-parallax';
 import initAffixingHeader from 'affixing-header';
 
-// Polyfills module returns nothing (just polyfills object prototypes where necessary)
-import './polyfills';
+import insertEmail from './insert-email.js';
+import initImageComparison from './image-comparison.js';
+import initImageParallax from './image-parallax.js';
 
-// Poor man's document ready (this is last thing on page, so should work fine)
-window.setTimeout(function() {
-	// Kick it all off
-	insertEmail(document.querySelectorAll('.get-in-touch-link'));
-	initImageComparison();
-	initImageParallax(document.querySelector('.post__splash > img'));
-	initAffixingHeader(document.querySelector('.header-menubar'));
-}, 1);
+addEventListener('DOMContentLoaded', function () {
+    // Kick it all off
+    insertEmail(document.querySelectorAll('.get-in-touch-link'));
+    initImageComparison();
+    initImageParallax(document.querySelector('.post__splash > img'));
+    initAffixingHeader(document.querySelector('.header-menubar'));
+});

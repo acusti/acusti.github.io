@@ -10,13 +10,31 @@
 */
 
 // Body text
-@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-Light.woff", woff), false, 300, normal);
-@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-Regular.woff", woff), false, 400, normal);
+@include font-face(
+    'Source Sans Pro',
+    inline-font-files('SourceSansPro-Light.woff', woff),
+    false,
+    300,
+    normal
+);
+@include font-face(
+    'Source Sans Pro',
+    inline-font-files('SourceSansPro-Regular.woff', woff),
+    false,
+    400,
+    normal
+);
 // Body text italic
 // @include font-face("Source Sans Pro", inline-font-files("SourceSansPro-LightIt.woff", woff), false, 300, italic);
 // @include font-face("Source Sans Pro", inline-font-files("SourceSansPro-It.woff", woff), false, 400, italic);
 // Body text bold
-@include font-face("Source Sans Pro", inline-font-files("SourceSansPro-Bold.woff", woff), false, 700, normal);
+@include font-face(
+    'Source Sans Pro',
+    inline-font-files('SourceSansPro-Bold.woff', woff),
+    false,
+    700,
+    normal
+);
 // Body text bold italic
 // @include font-face("Source Sans Pro", inline-font-files("SourceSansPro-BoldIt.woff", woff), false, 700, italic);
 // Monospace
@@ -26,4 +44,4 @@
 
 // For performance, don't embed italic or monospace fonts
 // Start with enough to quickly render page without FOUT, then add the rest
-@import url("//fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,400italic,700italic|Source+Code+Pro:400,700&subset=latin-ext");
+@import url('//fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,400italic,700italic|Source+Code+Pro:400,700&subset=latin-ext');

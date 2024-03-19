@@ -1,4 +1,4 @@
 language: ruby
 rvm:
-- 3.0
-script: "bundle exec jekyll build"
+    - 3.0
+script: 'bundle exec jekyll build'

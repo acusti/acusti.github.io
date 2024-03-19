@@ -8,437 +8,554 @@
 */
 
 // Normalize
-@import "//cdn.jsdelivr.net/normalize/3.0.2/normalize.min.css";
+@import '//cdn.jsdelivr.net/normalize/3.0.2/normalize.min.css';
 // Compass
-@import "compass";
-@import "compass/css3/user-interface";
-@import "compass/css3/selection";
+@import 'compass';
+@import 'compass/css3/user-interface';
+@import 'compass/css3/selection';
 
 // Syntax highlighting (https://github.com/aahan/pygments-github-style)
-@import "pesto-syntax";
+@import 'pesto-syntax';
 
 // Web fonts
-@import "pesto-fonts";
+@import 'pesto-fonts';
 
 // Breakpoints
-$min-width    : 320px;
-$max-width    : 950px;
-$small-width  : $min-width + ($max-width - $min-width) * 0.2;
-$medium-width : $min-width + ($max-width - $min-width) * 0.4;
-$large-width  : $medium-width + ($max-width - $medium-width) * 0.6;
-$full-width   : $large-width + ($max-width - $large-width) * 0.8;
+$min-width: 320px;
+$max-width: 950px;
+$small-width: $min-width + ($max-width - $min-width) * 0.2;
+$medium-width: $min-width + ($max-width - $min-width) * 0.4;
+$large-width: $medium-width + ($max-width - $medium-width) * 0.6;
+$full-width: $large-width + ($max-width - $large-width) * 0.8;
 // Font step breakpoints
-$medium-fontsize-width : $large-width - 75px;
-$large-fontsize-width  : $full-width - 75px;
+$medium-fontsize-width: $large-width - 75px;
+$large-fontsize-width: $full-width - 75px;
 
 // Structure
-$body-padding-horizontal : (
-	"base"        : 1rem,
-	$small-width  : 1.75rem,
-	$medium-width : 3rem,
-	$large-width  : 4rem,
-	$full-width   : 5rem
+$body-padding-horizontal: (
+    'base': 1rem,
+    $small-width: 1.75rem,
+    $medium-width: 3rem,
+    $large-width: 4rem,
+    $full-width: 5rem,
 );
 
 // Colors
-$color-accent     : rgb(141, 179, 89);
-$color-text-body  : rgb(87, 83, 74);
-$color-text-light : rgb(184, 186, 188);
-$color-ui-light   : lighten($color-text-light, 11%);
+$color-accent: rgb(141, 179, 89);
+$color-text-body: rgb(87, 83, 74);
+$color-text-light: rgb(184, 186, 188);
+$color-ui-light: lighten($color-text-light, 11%);
 
 // Font sizing
-@import "pesto-font-sizing";
+@import 'pesto-font-sizing';
 
 // Set up defaults
 html {
-	box-sizing: border-box;
-	color: $color-text-body;
-	font-family: "Source Sans Pro", "Myriad Set Pro", "Myriad Pro", Myriad, Helvetica, Arial, sans-serif;
-	font-weight: 400;
-	// Use light weight for medium width and up (screen only)
-	@media screen and (min-width: $medium-fontsize-width) {
-		font-weight: 300;
-	}
+    box-sizing: border-box;
+    color: $color-text-body;
+    font-family: 'Source Sans Pro', 'Myriad Set Pro', 'Myriad Pro', Myriad,
+        Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    // Use light weight for medium width and up (screen only)
+    @media screen and (min-width: $medium-fontsize-width) {
+        font-weight: 300;
+    }
 }
 // Let box-sizing inherit from HTML
-*, *:before, *:after {
-	box-sizing: inherit;
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
 }
 
 // Layout
 body {
-	margin: 0 auto;
-	background-color: white;
-	line-height: 1.4;
-	max-width: $max-width;
-	padding: map-get($body-padding-horizontal, "base") 1.25rem;
+    margin: 0 auto;
+    background-color: white;
+    line-height: 1.4;
+    max-width: $max-width;
+    padding: map-get($body-padding-horizontal, 'base') 1.25rem;
 
-	@each $width, $padding in $body-padding-horizontal {
-		@media (min-width: #{$width}) {
-			padding-left  : $padding;
-			padding-right : $padding;
-		}
-	}
-	@media (min-width: $medium-width) {
-		padding-top    : 2rem;
-		padding-bottom : 2rem;
-	}
-	@media print {
-		padding: 3rem !important;
+    @each $width, $padding in $body-padding-horizontal {
+        @media (min-width: #{$width}) {
+            padding-left: $padding;
+            padding-right: $padding;
+        }
+    }
+    @media (min-width: $medium-width) {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    @media print {
+        padding: 3rem !important;
 
-		h1:first-child {
-			margin-top: 0;
-		}
-	}
+        h1:first-child {
+            margin-top: 0;
+        }
+    }
 }
 
-h1, h2, h3, h4, h5, dt {
-	margin: 1rem 0;
-	font-weight: 700;
-	// Should links in bold headings have underlines?
-	// a {
-	// 	background-image: none;
-	// }
-	+ p,
-	+ ul,
-	+ ol,
-	+ dl {
-		margin-top: 0;
-	}
+h1,
+h2,
+h3,
+h4,
+h5,
+dt {
+    margin: 1rem 0;
+    font-weight: 700;
+    // Should links in bold headings have underlines?
+    // a {
+    // 	background-image: none;
+    // }
+    + p,
+    + ul,
+    + ol,
+    + dl {
+        margin-top: 0;
+    }
 }
 
 h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
+    font-size: 2em;
+    margin: 0.67em 0;
 }
 article > h1:first-child {
-	margin-top: 0;
+    margin-top: 0;
 }
 /* BEGIN - Resume-specific styles */
 /* Heading 1 and first block of content immediately following have no margin between them */
 .resume h1 {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 .resume h1 + p,
 .resume h1 + section > :first-child {
-	margin-top: 0;
+    margin-top: 0;
 }
 /* END - Resume-specific styles */
 h2,
 .article-list .article-title {
-	font-size: 1.45em;
-	margin: 1.25rem 0 0.75rem;
+    font-size: 1.45em;
+    margin: 1.25rem 0 0.75rem;
 }
-h3, dt {
-	font-size: 1.17em;
+h3,
+dt {
+    font-size: 1.17em;
 }
 h4 {
-	font-size: 1em;
+    font-size: 1em;
 }
 h5 {
-	font-size: 0.83em;
+    font-size: 0.83em;
 }
 h6 {
-	font-size: 0.75em;
-	margin: 1rem 0;
+    font-size: 0.75em;
+    margin: 1rem 0;
 }
 // Links
 // -----
 a {
-	color: $color-accent;
+    color: $color-accent;
 }
 // Custom underline
 @media not print {
-	a {
-		text-decoration: none;
-		// Underline via gradient background
-		background-image: linear-gradient(rgba($color-accent, 0.25) 0%, $color-accent 100%);
-		background-repeat: repeat-x;
-		background-size: 1px 1px;
-		background-position: 0 95%;
-		// Tweak position + thickness for high res (1.75x and up) displays
-		@media (-webkit-min-device-pixel-ratio: 1.75),
-		       (min-resolution: 168dpi) {
-			background-image: linear-gradient(rgba($color-accent, 0.25) 0%, $color-accent 100%);
-			background-position: 0 93%;
-		}
-		// Clear descendors from underline
-		text-shadow: 3px 0 white, 2px 0 white, 1px 0 white, -1px 0 white, -2px 0 white, -3px 0 white;
-		&:hover {
-			color: darken($color-accent, 11%);
-			background-image: linear-gradient(to bottom, darken($color-accent, 6%) 0%, darken($color-accent, 6%) 100%);
-		}
-		// Style selected links (or else text-shadow makes it look crazy ugly)
-		&,
-		> * {
-			@include selection {
-				background-color: lighten($color-accent, 25%);
-				color: $color-text-body;
-				text-shadow: none;
-			}
-		}
-	}
-	h1, h2, h3 {
-		a {
-			background-size: 1px 2px;
-			@media (-webkit-min-device-pixel-ratio: 1.75),
-			       (min-resolution: 168dpi) {
-				background-position: 0 93%;
-				background-image: linear-gradient($color-accent 0%, $color-accent 100%);
-				background-size: 1px 1px;
-				background-position: 0 93%;
-			}
-		}
-	}
+    a {
+        text-decoration: none;
+        // Underline via gradient background
+        background-image: linear-gradient(
+            rgba($color-accent, 0.25) 0%,
+            $color-accent 100%
+        );
+        background-repeat: repeat-x;
+        background-size: 1px 1px;
+        background-position: 0 95%;
+        // Tweak position + thickness for high res (1.75x and up) displays
+        @media (-webkit-min-device-pixel-ratio: 1.75), (min-resolution: 168dpi) {
+            background-image: linear-gradient(
+                rgba($color-accent, 0.25) 0%,
+                $color-accent 100%
+            );
+            background-position: 0 93%;
+        }
+        // Clear descendors from underline
+        text-shadow:
+            3px 0 white,
+            2px 0 white,
+            1px 0 white,
+            -1px 0 white,
+            -2px 0 white,
+            -3px 0 white;
+        &:hover {
+            color: darken($color-accent, 11%);
+            background-image: linear-gradient(
+                to bottom,
+                darken($color-accent, 6%) 0%,
+                darken($color-accent, 6%) 100%
+            );
+        }
+        // Style selected links (or else text-shadow makes it look crazy ugly)
+        &,
+        > * {
+            @include selection {
+                background-color: lighten($color-accent, 25%);
+                color: $color-text-body;
+                text-shadow: none;
+            }
+        }
+    }
+    h1,
+    h2,
+    h3 {
+        a {
+            background-size: 1px 2px;
+            @media (-webkit-min-device-pixel-ratio: 1.75),
+                (min-resolution: 168dpi) {
+                background-position: 0 93%;
+                background-image: linear-gradient(
+                    $color-accent 0%,
+                    $color-accent 100%
+                );
+                background-size: 1px 1px;
+                background-position: 0 93%;
+            }
+        }
+    }
 }
 
-p, pre {
-	margin: 1em 0;
+p,
+pre {
+    margin: 1em 0;
 }
-code, kbd, pre, samp, tt {
-	font-family: "Source Code Pro", Menlo, Consolas, monospace;
-	font-size: 1em;
-	margin: 0;
-	padding: 0;
+code,
+kbd,
+pre,
+samp,
+tt {
+    font-family: 'Source Code Pro', Menlo, Consolas, monospace;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
 }
 pre {
-	background-color: #f8f8f8;
-	font-size: 0.7rem;
-	overflow-x: auto;
-	padding: 1.3rem;
-	position: relative;
-	white-space: pre;
-	word-wrap: normal;
+    background-color: #f8f8f8;
+    font-size: 0.7rem;
+    overflow-x: auto;
+    padding: 1.3rem;
+    position: relative;
+    white-space: pre;
+    word-wrap: normal;
 }
-code, tt {
-	margin: 0 2px;
-	padding: 0 5px;
-	white-space: nowrap;
-	border: 1px solid #eaeaea;
-	background-color: #f8f8f8;
-	border-radius: 3px;
-	font-size: 0.85em;
-	color: $color-text-body;
-	padding: 0 5px;
+code,
+tt {
+    margin: 0 2px;
+    padding: 0 5px;
+    white-space: nowrap;
+    border: 1px solid #eaeaea;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    font-size: 0.85em;
+    color: $color-text-body;
+    padding: 0 5px;
 }
 pre > code {
-	margin: 0;
-	padding: 0;
-	white-space: pre;
-	border: none;
-	background: transparent;
+    margin: 0;
+    padding: 0;
+    white-space: pre;
+    border: none;
+    background: transparent;
 }
 
 aside {
-	display: block;
-	float: right;
-	width: 390px;
+    display: block;
+    float: right;
+    width: 390px;
 }
 
-
-b, strong {
-	font-weight: bold;
-	color: $color-text-body;
-	font-weight: 700;
-}
-
-blockquote {
-	color: $color-text-body;
-	font-size: 1.25em;
-	font-weight: 700;
-	margin: 1em 40px;
+b,
+strong {
+    font-weight: bold;
+    color: $color-text-body;
+    font-weight: 700;
 }
 
 blockquote {
-	margin-bottom: 2em;
-	margin-top: 2em;
+    color: $color-text-body;
+    font-size: 1.25em;
+    font-weight: 700;
+    margin: 1em 40px;
+}
+
+blockquote {
+    margin-bottom: 2em;
+    margin-top: 2em;
 }
 
 figure {
-	margin-left: map-get($body-padding-horizontal, "base") * -1;
-	margin-right: map-get($body-padding-horizontal, "base") * -1;
-	margin-bottom: 2em;
-	margin-top: 2em;
+    margin-left: map-get($body-padding-horizontal, 'base') * -1;
+    margin-right: map-get($body-padding-horizontal, 'base') * -1;
+    margin-bottom: 2em;
+    margin-top: 2em;
 
-	@each $width, $padding in $body-padding-horizontal {
-		@media (min-width: #{$width}) {
-			margin-left  : ($padding - 0.25) * -1;
-			margin-right : ($padding - 0.25) * -1;
-		}
-	}
+    @each $width, $padding in $body-padding-horizontal {
+        @media (min-width: #{$width}) {
+            margin-left: ($padding - 0.25) * -1;
+            margin-right: ($padding - 0.25) * -1;
+        }
+    }
 }
 
 hr {
-	height: 0;
-	border: 0;
-	padding-top: 1px;
-	margin: 2.5em 0;
-	background: linear-gradient(to right, rgba($color-ui-light, 0) 10%, $color-ui-light 50%, rgba($color-ui-light, 0) 90%);
+    height: 0;
+    border: 0;
+    padding-top: 1px;
+    margin: 2.5em 0;
+    background: linear-gradient(
+        to right,
+        rgba($color-ui-light, 0) 10%,
+        $color-ui-light 50%,
+        rgba($color-ui-light, 0) 90%
+    );
 }
 
 img {
-	max-width: 100%;
-	display: block;
-	border: 0 none;
+    max-width: 100%;
+    display: block;
+    border: 0 none;
 }
 
 ol > li:before {
-	color: $color-text-body;
-	content: counter(ol, decimal) ".";
-	counter-increment: ol;
-	font-weight: 700;
-	margin-right: 0.333em;
-	position: absolute;
-	right: 100%;
+    color: $color-text-body;
+    content: counter(ol, decimal) '.';
+    counter-increment: ol;
+    font-weight: 700;
+    margin-right: 0.333em;
+    position: absolute;
+    right: 100%;
 }
 ul > li:before {
-	background-color: $color-text-body;
-	border-radius: 50%;
-	content: "";
-	height: 4px;
-	width: 4px;
-	margin-right: 0.4rem;
-	margin-top: 0.6rem;
-	position: absolute;
-	right: 100%;
-	@media (min-width: $medium-width) {
-		margin-right: 0.6rem;
-	}
-	@media (min-width: $medium-fontsize-width) {
-		height: 5px;
-		width: 5px;
-	}
-	@media (min-width: $large-fontsize-width) {
-		height: 6px;
-		width: 6px;
-	}
+    background-color: $color-text-body;
+    border-radius: 50%;
+    content: '';
+    height: 4px;
+    width: 4px;
+    margin-right: 0.4rem;
+    margin-top: 0.6rem;
+    position: absolute;
+    right: 100%;
+    @media (min-width: $medium-width) {
+        margin-right: 0.6rem;
+    }
+    @media (min-width: $medium-fontsize-width) {
+        height: 5px;
+        width: 5px;
+    }
+    @media (min-width: $large-fontsize-width) {
+        height: 6px;
+        width: 6px;
+    }
 }
 
-ol, ul, dl {
-	margin-left: 0;
-	padding: 0;
+ol,
+ul,
+dl {
+    margin-left: 0;
+    padding: 0;
 
-	ol, ul, dl {
-		margin-left: 1.25rem;
-	}
-	@media (min-width: $medium-width) {
-		&,
-		ol, ul, dl {
-			margin-left: 1.5rem;
-		}
-
-	}
+    ol,
+    ul,
+    dl {
+        margin-left: 1.25rem;
+    }
+    @media (min-width: $medium-width) {
+        &,
+        ol,
+        ul,
+        dl {
+            margin-left: 1.5rem;
+        }
+    }
 }
 ol {
-	counter-reset: ol;
+    counter-reset: ol;
 }
-li + li, dd + dt {
-	margin-top: 0em;
+li + li,
+dd + dt {
+    margin-top: 0em;
 }
 
 ul > li {
-	position: relative;
+    position: relative;
 }
 
 ol > li {
-	position: relative;
+    position: relative;
 }
 li {
-	list-style: none outside none;
+    list-style: none outside none;
 }
-
 
 figure > figcaption {
-	margin-top: 0.5em;
+    margin-top: 0.5em;
 }
-small, dd, figcaption {
-	color: $color-text-light;
-	display: block;
-	font-size: 0.8rem;
-	font-style: italic;
-	line-height: 1.2;
+small,
+dd,
+figcaption {
+    color: $color-text-light;
+    display: block;
+    font-size: 0.8rem;
+    font-style: italic;
+    line-height: 1.2;
 }
 .footnote {
-	font-size: 0.8rem;
-	vertical-align: super;
+    font-size: 0.8rem;
+    vertical-align: super;
 }
 
-tbody{display:table-row-group}
-tfoot{display:table-footer-group}
-table{margin-bottom:2em;font-size: 0.89em;padding:0;border-collapse:collapse;-webkit-box-shadow:1px 1px 2px rgba(0,0,0,.35);width:91%;margin:0 auto 2em auto}
-table th,table td{padding:10px 10px 9px;line-height:18px;text-align:left}
-table th{
-padding-top:9px;text-transform:uppercase;vertical-align:middle}
-table td{vertical-align:top;border-top:1px solid #ddd;}
-table tbody th{border-top:1px solid #ddd;vertical-align:top}
-table{border:1px solid #ddd;border-collapse:separate;*border-collapse:collapse;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}
-table th+th,table td+td,table th+td{border-left:1px solid #ddd}
-table thead tr:first-child th:first-child,table tbody tr:first-child td:first-child{-webkit-border-radius:4px 0 0 0;-moz-border-radius:4px 0 0 0;border-radius:4px 0 0 0}
-table thead tr:first-child th:last-child,table tbody tr:first-child td:last-child{-webkit-border-radius:0 4px 0 0;-moz-border-radius:0 4px 0 0;border-radius:0 4px 0 0}
-table tbody tr:last-child td:first-child{-webkit-border-radius:0 0 0 4px;-moz-border-radius:0 0 0 4px;border-radius:0 0 0 4px}
-table tbody tr:last-child td:last-child{-webkit-border-radius:0 0 4px 0;-moz-border-radius:0 0 4px 0;border-radius:0 0 4px 0}
-tbody tr:nth-child(odd){background-color:rgba(0,0,0,0.03)}
+tbody {
+    display: table-row-group;
+}
+tfoot {
+    display: table-footer-group;
+}
+table {
+    margin-bottom: 2em;
+    font-size: 0.89em;
+    padding: 0;
+    border-collapse: collapse;
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
+    width: 91%;
+    margin: 0 auto 2em auto;
+}
+table th,
+table td {
+    padding: 10px 10px 9px;
+    line-height: 18px;
+    text-align: left;
+}
+table th {
+    padding-top: 9px;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+table td {
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+table tbody th {
+    border-top: 1px solid #ddd;
+    vertical-align: top;
+}
+table {
+    border: 1px solid #ddd;
+    border-collapse: separate;
+    *border-collapse: collapse;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+table th + th,
+table td + td,
+table th + td {
+    border-left: 1px solid #ddd;
+}
+table thead tr:first-child th:first-child,
+table tbody tr:first-child td:first-child {
+    -webkit-border-radius: 4px 0 0 0;
+    -moz-border-radius: 4px 0 0 0;
+    border-radius: 4px 0 0 0;
+}
+table thead tr:first-child th:last-child,
+table tbody tr:first-child td:last-child {
+    -webkit-border-radius: 0 4px 0 0;
+    -moz-border-radius: 0 4px 0 0;
+    border-radius: 0 4px 0 0;
+}
+table tbody tr:last-child td:first-child {
+    -webkit-border-radius: 0 0 0 4px;
+    -moz-border-radius: 0 0 0 4px;
+    border-radius: 0 0 0 4px;
+}
+table tbody tr:last-child td:last-child {
+    -webkit-border-radius: 0 0 4px 0;
+    -moz-border-radius: 0 0 4px 0;
+    border-radius: 0 0 4px 0;
+}
+tbody tr:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.03);
+}
 
-caption{display:table-caption;font-weight:300;font-size:1.3em;text-transform:uppercase;letter-spacing:2px;word-spacing:.2em;background:rgba(0,0,0,.75);color:#EEE;padding:4px;-webkit-border-radius:4px;margin:4px 0;-webkit-box-shadow:2px 2px 2px rgba(0,0,0,.35)}
+caption {
+    display: table-caption;
+    font-weight: 300;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: 0.2em;
+    background: rgba(0, 0, 0, 0.75);
+    color: #eee;
+    padding: 4px;
+    -webkit-border-radius: 4px;
+    margin: 4px 0;
+    -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.35);
+}
 
 /* grey out placeholders */
 :-moz-placeholder {
-  color: #bfbfbf;
+    color: #bfbfbf;
 }
 ::-webkit-input-placeholder {
-  color: #bfbfbf;
+    color: #bfbfbf;
 }
 
 /* == Custom classes == */
 
 .nobr {
-	white-space: nowrap;
+    white-space: nowrap;
 }
 .article-date {
-	color: #C7C2B8;
-	display: block;
-	font-size: 0.8rem;
+    color: #c7c2b8;
+    display: block;
+    font-size: 0.8rem;
 }
 
 .projects__time-period {
-	display: inline-block;
-	width: 100%;
-	font-style: italic;
-	color: $color-text-light;
+    display: inline-block;
+    width: 100%;
+    font-style: italic;
+    color: $color-text-light;
 
-	@media print, screen and (min-width: $medium-width) {
-		float: right;
-		width: 11em;
-		font-style: normal;
-		font-weight: 700;
-		color: inherit;
-	}
+    @media print, screen and (min-width: $medium-width) {
+        float: right;
+        width: 11em;
+        font-style: normal;
+        font-weight: 700;
+        color: inherit;
+    }
 }
 
 @media print, screen and (min-width: $medium-fontsize-width) {
-	.list-blocks__block {
-		display: inline-block;
-		vertical-align: top;
-		width: 50%;
-		padding-right: 14px;
-		margin-right: -4px;
-	}
+    .list-blocks__block {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+        padding-right: 14px;
+        margin-right: -4px;
+    }
 }
 
 /* == Print -- */
 @media print {
-	html {
-		font-size: 130%;
-	}
-	body {
-		padding-left: 0;
-		padding-right: 0;
-		max-width: 100%;
-		// Prevent Chrome from tweaking text colors
-		-webkit-print-color-adjust: exact;
-	}
-	ul > li:before {
-		height: 0.325em;
-		width: 0.325em;
-	}
+    html {
+        font-size: 130%;
+    }
+    body {
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 100%;
+        // Prevent Chrome from tweaking text colors
+        -webkit-print-color-adjust: exact;
+    }
+    ul > li:before {
+        height: 0.325em;
+        width: 0.325em;
+    }
 }

@@ -1,31 +1,40 @@
 {
-  "license": "CC0-1.0",
-  "scripts": {
-    "start": "npm run serve",
-    "build-css": "compass compile --environment production ./styles",
-    "build-js": "jspm install && jspm bundle-sfx scripts/main app-built.js --minify",
-    "build": "npm run build-css && npm run build-js",
-    "watch:jekyll": "jekyll serve --watch --config _config.yml,_config-local.yml,_config-dev.yml --drafts",
-    "watch:css": "compass watch ./styles",
-    "serve": "run-p 'watch:*'",
-    "serve:prod": "npm run build && jekyll serve --config _config.yml,_config-local.yml"
-  },
-  "jspm": {
-    "directories": {
-      "lib": "scripts"
-    },
-    "dependencies": {
-      "affixing-header": "npm:affixing-header@^0.3.1",
-      "onscrolling": "npm:onscrolling@^0.3.0"
+    "name": "acusti.ca",
+    "license": "CC0-1.0",
+    "scripts": {
+        "format": "prettier --write .",
+        "start": "npm run serve",
+        "build-css": "compass compile --environment production ./styles",
+        "build-js": "esbuild scripts/main.js --bundle --minify --outfile=app-built.js",
+        "build": "npm run build-css && npm run build-js",
+        "watch:jekyll": "jekyll serve --watch --config _config.yml,_config-local.yml,_config-dev.yml --drafts",
+        "watch:css": "compass watch ./styles",
+        "serve": "run-p 'watch:*'",
+        "serve:prod": "npm run build && jekyll serve --config _config.yml,_config-local.yml"
     },
     "devDependencies": {
-      "babel": "npm:babel-core@^5.8.24",
-      "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "core-js": "npm:core-js@^1.1.4"
+        "esbuild": "^0.20.2",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^3.2.5"
+    },
+    "dependencies": {
+        "affixing-header": "^0.3.3",
+        "onscrolling": "^1.0.0"
+    },
+    "prettier": {
+        "arrowParens": "always",
+        "singleQuote": true,
+        "printWidth": 84,
+        "tabWidth": 4,
+        "trailingComma": "all",
+        "useTabs": false,
+        "overrides": [
+            {
+                "files": "*.css",
+                "options": {
+                    "singleQuote": false
+                }
+            }
+        ]
     }
-  },
-  "devDependencies": {
-    "jspm": "^0.16.55",
-    "npm-run-all": "^4.1.5"
-  }
 }

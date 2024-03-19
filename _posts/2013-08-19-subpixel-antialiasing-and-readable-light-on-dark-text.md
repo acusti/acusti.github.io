@@ -17,7 +17,7 @@ I applied that CSS to the Issues page and took before and after screenshots (in 
 
 John Gruber [linked](http://daringfireball.net/linked/2012/11/14/font-smoothing) to [a UsabilityPost piece](http://www.usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/) a while back that asks web developers to stop using and abusing `-webkit-font-smoothing: antialiased;`
 
-And in the piece Gruber linked to, Dmitry Fadeyev observes that  dark text on light backgrounds benefits significantly from the default `subpixel-antialiased` rendering of Chrome and Safari:
+And in the piece Gruber linked to, Dmitry Fadeyev observes that dark text on light backgrounds benefits significantly from the default `subpixel-antialiased` rendering of Chrome and Safari:
 
 > The sharpness of subpixel rendered text makes long portions of body text more readable. Light text on dark background, at least on OS X, is the opposite. Subpixel text tends to spill out and make the font appear bold. Here, the antialiasing mode actually becomes useful in helping refine the lines.
 

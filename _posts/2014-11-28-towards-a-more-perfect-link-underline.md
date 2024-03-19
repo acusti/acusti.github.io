@@ -5,19 +5,19 @@ title: Towards a more perfect link underline
 baseline: 'progress in underline text-decoration in Safari and iOS'
 splash: media/new-yorker-link-underlines.png
 tags:
-  - typography
-  - readability
+    - typography
+    - readability
 ---
 
 Marcin Wichary wrote an [excellent post][medium-post-underlines] about creating the ideal text underline in CSS for Medium. In that post, Wichary offers a list of goals to achieve:
 
 > So, the ideal technological solution would allow us to:
 >
-> - change the width of the line (with additional half-pixel/retina support),
-> - change the distance from the text,
-> - change the color (even if just to simulate thinner width by using lighter grays instead of black),
-> - clear the descenders,
-> - (perhaps) have a separate style for visited links.
+> -   change the width of the line (with additional half-pixel/retina support),
+> -   change the distance from the text,
+> -   change the color (even if just to simulate thinner width by using lighter grays instead of black),
+> -   clear the descenders,
+> -   (perhaps) have a separate style for visited links.
 
 Wichary goes on to detail Medium’s solution, which uses a CSS `background-gradient` to fulfill the first three goals in his list, but does not separate character [descenders][] (e.g. the part of a letter that descends below the baseline) from the underline.
 

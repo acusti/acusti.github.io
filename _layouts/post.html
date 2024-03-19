@@ -3,55 +3,61 @@ layout: default
 ---
 
 <article class="post">
-	{% if page.splash %}
-		{% if page.splash contains 'http' %}
-			{% capture splash_src %}{{ page.splash }}{% endcapture %}
-		{% else %}
-			{% if page.splash[0] == '/' %}
-				{% capture splash_src %}{{ site.base_url }}{{ page.splash }}{% endcapture %}
-			{% else %}
-				{% capture splash_src %}{{ site.base_url }}/{{ page.splash }}{% endcapture %}
-			{% endif %}
-		{% endif %}
-		<div class="post__splash oversized">
-			<img src="{{ splash_src }}" alt="">
-		</div>
-	{% endif %}
-	{% if page.credit %}
-		<div class="post__splash--credit">
-			{{ page.credit | markdownify }}
-		</div>
-	{% endif %}
-	<h1><a href="{{ page.url }}" title="Permalink for this post">{{ page.title }}</a></h1>
-	<h2 class="baseline">{{ page.baseline }}</h2>
-	<div class="post__date">{{ page.date | date: "%-d %b %Y" }}</div>
+    {% if page.splash %} {% if page.splash contains 'http' %} {% capture splash_src
+    %}{{ page.splash }}{% endcapture %} {% else %} {% if page.splash[0] == '/' %} {%
+    capture splash_src %}{{ site.base_url }}{{ page.splash }}{% endcapture %} {%
+    else %} {% capture splash_src %}{{ site.base_url }}/{{ page.splash }}{%
+    endcapture %} {% endif %} {% endif %}
+    <div class="post__splash oversized">
+        <img src="{{ splash_src }}" alt="" />
+    </div>
+    {% endif %} {% if page.credit %}
+    <div class="post__splash--credit">{{ page.credit | markdownify }}</div>
+    {% endif %}
+    <h1>
+        <a href="{{ page.url }}" title="Permalink for this post"
+            >{{ page.title }}</a
+        >
+    </h1>
+    <h2 class="baseline">{{ page.baseline }}</h2>
+    <div class="post__date">{{ page.date | date: "%-d %b %Y" }}</div>
 
-	{{ content }}
-
-	{% include follow-links.html %}
+    {{ content }} {% include follow-links.html %}
 </article>
 
 <ul id="post-navigation">
-	<li class="previous">
-		{% if page.previous %}
-		<a href="{{ page.previous.url }}">{{ page.previous.title }}</a>
-		{% endif %}
-	</li>
-	<li class="next">
-		{% if page.next %}
-		<a href="{{ page.next.url }}">{{ page.next.title }}</a>
-		{% endif %}
-	</li>
+    <li class="previous">
+        {% if page.previous %}
+        <a href="{{ page.previous.url }}">{{ page.previous.title }}</a>
+        {% endif %}
+    </li>
+    <li class="next">
+        {% if page.next %}
+        <a href="{{ page.next.url }}">{{ page.next.title }}</a>
+        {% endif %}
+    </li>
 </ul>
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = '{{ site.meta.disqus_shortname }}';
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
         dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        (
+            document.getElementsByTagName('head')[0] ||
+            document.getElementsByTagName('body')[0]
+        ).appendChild(dsq);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript
+    >Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript"
+        >comments powered by Disqus.</a
+    ></noscript
+>
+<a href="http://disqus.com" class="dsq-brlink"
+    >blog comments powered by <span class="logo-disqus">Disqus</span></a
+>

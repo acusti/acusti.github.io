@@ -4,25 +4,26 @@ title: Home of web developer Andrew Patton
 ---
 
 <article class="home__intro">
-	{% capture content %}{% include home.md %}{% endcapture %}
-	{{ content | markdownify }}
+    {% capture content %}{% include home.md %}{% endcapture %} {{ content |
+    markdownify }}
 </article>
 
 <div class="posts-list--featured">
-	<h3>Latest</h3>
+    <h3>Latest</h3>
 
-	{% for post in site.categories.blog offset: 0 limit: site.meta.homepage_featured %}
-		{% include post_featured.html %}
-	{% endfor %}
+    {% for post in site.categories.blog offset: 0 limit: site.meta.homepage_featured
+    %} {% include post_featured.html %} {% endfor %}
 </div>
 
 <div class="posts-list">
-	<h3>Older thoughts</h3>
+    <h3>Older thoughts</h3>
 
-	<dl>
-	  {% for post in site.categories.blog offset: site.meta.homepage_featured limit: site.meta.homepage_posts %}
-			{% include post_summary.html %}
-	  {% endfor %}
-	</dl>
-	<p><a href="{{ site.base_url }}/archive" class="link--more">View all posts</a></p>
+    <dl>
+        {% for post in site.categories.blog offset: site.meta.homepage_featured
+        limit: site.meta.homepage_posts %} {% include post_summary.html %} {% endfor
+        %}
+    </dl>
+    <p>
+        <a href="{{ site.base_url }}/archive" class="link--more">View all posts</a>
+    </p>
 </div>

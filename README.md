@@ -1,11 +1,10 @@
-Andrew Patton’s github user page source
-=======================================
+# Andrew Patton’s github user page source
 
 [![Build Status](https://travis-ci.org/acusti/acusti.github.io.svg?branch=master)](https://travis-ci.org/acusti/acusti.github.io)
 
 ## First time use
 
-*If you’re having ruby troubles on macOS, [check here](https://stackoverflow.com/a/71034303/333625).*
+_If you’re having ruby troubles on macOS, [check here](https://stackoverflow.com/a/71034303/333625)._
 
 1. Run `yarn` or `npm install` from the root directory
 2. Run `bundle install` from the root directory to install gem dependencies
@@ -30,8 +29,7 @@ To start the jekyll server with production configuration:
 bundle exec yarn serve:prod
 ```
 
-License
--------
+## License
 
 <p xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
   <a rel="license"

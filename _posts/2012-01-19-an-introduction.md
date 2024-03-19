@@ -12,10 +12,10 @@ I am a website programmer and developer. I build pretty great websites for the M
 
 In my free time, I like to mess with music and video projects, and when feeling ambitious, [share][share music] [them][share video]. Also, I make [wine][], and I drink with abandon.
 
-[aboutme]: http://about.me/andrewpatton "Feel free to check it out; it’s a good profile"
+[aboutme]: http://about.me/andrewpatton 'Feel free to check it out; it’s a good profile'
 [Pure Cobalt]: http//www.purecobalt.com
-[github]: http://github.com/acusti "WordPress plugins, mini sites, node.js-related forks, etc."
-[my website]: http://acusti.ca "Includes a list of the most recent websites I have built"
-[share music]: https://soundcloud.com/acusti "Soundcloud. Includes a very wide range of styles and polish, mostly from projects at university"
-[share video]: http://www.youtube.com/user/waveweaverjr "Youtube. I’m most proud of “freedom reruns”"
-[wine]: https://twitter.com/wyattjaster/status/152977050486050816 "The strawberry wine was tasty"
+[github]: http://github.com/acusti 'WordPress plugins, mini sites, node.js-related forks, etc.'
+[my website]: http://acusti.ca 'Includes a list of the most recent websites I have built'
+[share music]: https://soundcloud.com/acusti 'Soundcloud. Includes a very wide range of styles and polish, mostly from projects at university'
+[share video]: http://www.youtube.com/user/waveweaverjr 'Youtube. I’m most proud of “freedom reruns”'
+[wine]: https://twitter.com/wyattjaster/status/152977050486050816 'The strawberry wine was tasty'

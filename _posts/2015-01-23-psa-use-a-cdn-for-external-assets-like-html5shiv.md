@@ -6,12 +6,12 @@ title: 'PSA: Use a CDN for external assets like HTML5shiv'
 splash: media/rocketship.svg
 credit: 'Rocketship created by [Jean-Philippe Cabaroc](http://thenounproject.com/cabaroc/) from the [Noun Project](http://thenounproject.com/term/rocket/7427/)'
 tags:
-  - performance
-  - PSA
-baseline: "The fast, easy, and free way to load external assets"
+    - performance
+    - PSA
+baseline: 'The fast, easy, and free way to load external assets'
 ---
 
-To my fellow builders of websites: when you want to include an external resource on a webpage, do *not* use a publicly-accessible version control system to serve the resource. I see this problem most frequently on sites with the inclusion of the [HTML5 shiv][] (shim) script, used to enable HTML5 elements in IE 8 and older. The script was originally hosted on Google Code, and the project description recommended using a link to the version of the file in SVN at [`html5shiv.googlecode.com​/svn​/trunk​/html5.js`][html5shiv-svn]. This is not a good way to include any resource in a webpage. Check out the response headers for the file:
+To my fellow builders of websites: when you want to include an external resource on a webpage, do _not_ use a publicly-accessible version control system to serve the resource. I see this problem most frequently on sites with the inclusion of the [HTML5 shiv][] (shim) script, used to enable HTML5 elements in IE 8 and older. The script was originally hosted on Google Code, and the project description recommended using a link to the version of the file in SVN at [`html5shiv.googlecode.com​/svn​/trunk​/html5.js`][html5shiv-svn]. This is not a good way to include any resource in a webpage. Check out the response headers for the file:
 
 ```
 HTTP/1.1 200 OK
@@ -51,9 +51,9 @@ JsDelivr serves the file as it should, gzipped with a far-future (60 year) max-a
 
 There are three major free CDN services I know of for including a wide range of third party resources on your site. They are:
 
-- [jsDelivr][], powered by both [Cloudflare][] and [MaxCDN][], with load balancing/failover support provided by [Cedexis][]
-- [CDNJS][], powered by Cloudflare
-- [RawGit][], powered by MaxCDN
+-   [jsDelivr][], powered by both [Cloudflare][] and [MaxCDN][], with load balancing/failover support provided by [Cedexis][]
+-   [CDNJS][], powered by Cloudflare
+-   [RawGit][], powered by MaxCDN
 
 RawGit is different (and special) because it “serves raw files directly from GitHub with proper Content-Type headers”. This makes it particularly suited for use in your own software projects. As long as you host your work in a public GitHub repo, you can then serve those resources using a fast and professional CDN. There are two address schemes you can use: one is for development purposes, and basically serves the files from GitHub, adding proper headers; the other is for production, and only fetches the file from GitHub once, caching it indefinitely from then on. This means you should use a GitHub link with the appropiate commit hash in the URL, like [`https://​github.com/​acusti/​acusti.github.com/​blob/​22fccc69da2363f917a60ab46​ac6cb9018c9981d/​_styles/​Pesto.scss`][pesto-url]. Also, be aware that while the RawGit CDN is powered by MaxCDN, the site and the development version of its service is provided without charge or renumeration by a generous individual named [Ryan Grove][], so be aware that it won’t last forever and in the meantime, don’t abuse it! See the [RawGit FAQ][] to better understand how to use it.
 

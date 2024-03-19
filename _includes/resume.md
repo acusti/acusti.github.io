@@ -1,15 +1,13 @@
-Andrew Patton
-=============
+# Andrew Patton
+
 [acusti.ca][] // [andrew@acusti.ca][mailto]
 
-Current Employment
-------------------
+## Current Employment
 
 **Time Sites — Principal Front-End Engineer** <span class="projects__time-period">June 2022 – Present</span><br>
-*[Time Sites][] is a collaborative web publishing platform that enables teams to design, build, publish, and maintain their web properties*
+_[Time Sites][] is a collaborative web publishing platform that enables teams to design, build, publish, and maintain their web properties_
 
-Selected Projects
------------------
+## Selected Projects
 
 **[Time Sites][]** <span class="projects__time-period">June 2016 – Present</span><br>
 Build and architect experiences across the Time Sites (née “Brandcast”) platform, from the design studio to the web publishing server. Collaborate closely with our lead product designer to design and build new features and UXs in a scalable and maintainable way.
@@ -33,11 +31,10 @@ Built a fast and maintainable multilingual Solr-powered search front end, based 
 
 [React][], [immutable.js][], [jsdom][], [wp-cli][], [AMP][], [flow][], [vimeo/player.js][], [browserslist][], [react-dnd][], [CSSOM][], [jest][], [fbjs][], [react-draggable][], [timeago.js][], [draft.js][], [react-higher-event][], [uikit][], [audile][], [selection.js][], [bezier-easing-editor][], [gogs][], [PrestaShop-webservice-lib][], [affixing-header][], [onscrolling][], [socket.io][], [diffDOM][], [AtomLinter/linter-jscs][], [react-number-editor][], [basecamp/trix][], [react-color][], [redux-form][], [react-numeric-input][], [hood.ie][], [react-async-script-loader][], [underscores.me][], [nvalt-prime][], [jquery-requestAnimationFrame][], [jquery-smooth-scroll][], [wp-plugin-in-github][], [WordPress-Wiki][]
 
-Programming Languages and Technologies
---------------------------------------
+## Programming Languages and Technologies
 
-- Git and the [GitHub flow][], including interactive rebasing, managing remotes, git hygiene
-- The command-line interface (bash)
+-   Git and the [GitHub flow][], including interactive rebasing, managing remotes, git hygiene
+-   The command-line interface (bash)
 
 <div class="list-blocks">
     <div class="list-blocks__block">
@@ -74,28 +71,23 @@ Programming Languages and Technologies
     </div>
 </div>
 
-Other Interests
----------------
+## Other Interests
 
 **Music production and composition**
 I love music and play piano. I’ve played a couple of shows in Montreal with a previous iteration of the [Sontag Shogun][] project and was coach of the band [Slowest Runner][]. Also, I like making music, and, when feeling inspired, [sharing the results][music].
 
-Education
----------
+## Education
 
 **McGill University, 2003 – 2007**
 BA in Cultural Studies, with a Minor in Music Technology
 
-Languages
----------
+## Languages
 
 I speak and understand Spanish and French fluently.
 
 [mailto]: mailto:andrew@acusti.ca
 [acusti.ca]: https://www.acusti.ca
-
 [time sites]: https://timesites.com
-
 [brandcast platform]: https://app.brandcast.io/signup/
 [npm-acusti]: https://www.npmjs.com/~acusti
 [uikit]: https://github.com/acusti/uikit
@@ -106,10 +98,9 @@ I speak and understand Spanish and French fluently.
 [react.js]: https://github.com/facebook/react/pull/12037
 [fuelphp]: http://fuelphp.com/
 [trica furniture]: http://www.tricafurniture.com/
-[cq]: http://collections.cinematheque.qc.ca/ "Collections en ligne | La Cinémathèque québécoise"
-[cqrecherche]: http://collections.cinematheque.qc.ca/recherche/ "Recherche collections | La Cinémathèque québécoise"
-[jgh]: http://pen.jgh.ca/search/en/ "Montreal Jewish General Hospital"
-
+[cq]: http://collections.cinematheque.qc.ca/ 'Collections en ligne | La Cinémathèque québécoise'
+[cqrecherche]: http://collections.cinematheque.qc.ca/recherche/ 'Recherche collections | La Cinémathèque québécoise'
+[jgh]: http://pen.jgh.ca/search/en/ 'Montreal Jewish General Hospital'
 [react]: https://github.com/facebook/react/pulls?q=is%3Apr+author%3Aacusti
 [immutable.js]: https://github.com/immutable-js/immutable-js/pulls?q=is%3Apr+author%3Aacusti
 [jsdom]: https://github.com/jsdom/jsdom/pulls?q=is%3Apr+author%3Aacusti
@@ -146,7 +137,6 @@ I speak and understand Spanish and French fluently.
 [wp-plugin-in-github]: https://github.com/sudar/wp-plugin-in-github/pulls?q=is%3Apr+author%3Aacusti
 [wordpress-wiki]: https://github.com/mgerring/WordPress-Wiki/pulls?q=is%3Apr+author%3Aacusti
 [github flow]: https://guides.github.com/introduction/flow/
-
 [sontag shogun]: http://sontagshogun.bandcamp.com/
 [slowest runner]: http://theslowestrunner.bandcamp.com/
 [music]: https://soundcloud.com/acusti

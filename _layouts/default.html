@@ -1,49 +1,58 @@
 <!doctype html>
 <!--[if lt IE 8]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-	{% include head.html %}
-</head>
-{% comment %}I organized this logic like so because normal if/else was not working{% endcomment %}
-{% assign slug_array = page.permalink | remove_first:'/' | split:'/' %}
-{% if slug_array.size == 0 %}
-	{% assign slug_array = page.url | remove_first:'/' | split:'/' %}
-{% endif %}
-{% assign slug = '' %}
-{% if slug_array.size > 0 %}
-	{% assign slug = slug_array | join:'-' %}
-{% endif %}
-{% if slug == '' %}
-	{% assign slug = 'home' %}
-{% endif %}
-<body class="page--{{ slug }}">
-	<header class="header-menubar">
-		{% include navigation.html %}
-	</header>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+    <!--<![endif]-->
+    <head>
+        {% include head.html %}
+    </head>
+    {% comment %}I organized this logic like so because normal if/else was not
+    working{% endcomment %} {% assign slug_array = page.permalink | remove_first:'/'
+    | split:'/' %} {% if slug_array.size == 0 %} {% assign slug_array = page.url |
+    remove_first:'/' | split:'/' %} {% endif %} {% assign slug = '' %} {% if
+    slug_array.size > 0 %} {% assign slug = slug_array | join:'-' %} {% endif %} {%
+    if slug == '' %} {% assign slug = 'home' %} {% endif %}
+    <body class="page--{{ slug }}">
+        <header class="header-menubar">{% include navigation.html %}</header>
 
-	<div class="main-content{% if page.splash %} has-post__splash{% endif %}{% if page.category == 'blog' %} category-blog{% endif %}">
-		<h1 id="logo"><a href="{{ site.base_url }}/">{{ site.meta.site_name }}</a></h1>
-		{{ content }}
-	</div>
+        <div
+            class="main-content{% if page.splash %} has-post__splash{% endif %}{% if page.category == 'blog' %} category-blog{% endif %}"
+        >
+            <h1 id="logo">
+                <a href="{{ site.base_url }}/">{{ site.meta.site_name }}</a>
+            </h1>
+            {{ content }}
+        </div>
 
-	<footer>
-		<p>Design based on <a href="http://stephan83.github.com">Stephan Florquin</a>’s Jekyll theme. Source available on <a href="https://github.com/acusti/acusti.github.com/">GitHub</a>.</p>
-	</footer>
+        <footer>
+            <p>
+                Design based on
+                <a href="http://stephan83.github.com">Stephan Florquin</a>’s Jekyll
+                theme. Source available on
+                <a href="https://github.com/acusti/acusti.github.com/">GitHub</a>.
+            </p>
+        </footer>
 
-	<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.meta.google_analytics_uid }}"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push(['js', new Date()], ['config', '{{ site.meta.google_analytics_uid }}']);
-    </script>
-	{% if site.env == 'development' %}
-	<script src="{{ site.base_url }}/jspm_packages/system.js"></script>
-	<script src="{{ site.base_url }}/config.js"></script>
-	<script>
-		System.import('scripts/main');
-	</script>
-	{% else %}
-	<script src="{{ site.base_url }}/app-built.js?ver=1.0"></script>
-	{% endif %}
-</body>
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id={{ site.meta.google_analytics_uid }}"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push(
+                ['js', new Date()],
+                ['config', '{{ site.meta.google_analytics_uid }}'],
+            );
+        </script>
+        {% if site.env == 'development' %}
+        <script src="{{ site.base_url }}/jspm_packages/system.js"></script>
+        <script src="{{ site.base_url }}/config.js"></script>
+        <script>
+            System.import('scripts/main');
+        </script>
+        {% else %}
+        <script src="{{ site.base_url }}/app-built.js?ver=1.0"></script>
+        {% endif %}
+    </body>
 </html>

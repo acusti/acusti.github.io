@@ -1,121 +1,120 @@
 # Site environment
-env:         production
+env: production
 # Jekyll config
-base_url:    https://www.acusti.ca
+base_url: https://www.acusti.ca
 # http://jekyllrb.com/docs/permalinks/
-permalink:   pretty
+permalink: pretty
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/Montreal
-future:      false
+timezone: America/Montreal
+future: false
 highlighter: rouge
-markdown:    kramdown
-exclude:     [vendor, node_modules]
+markdown: kramdown
+exclude: [vendor, node_modules]
 
 # Site metadata
 meta:
+    # Site name
+    site_name: acusti.ca
 
-  # Site name
-  site_name: acusti.ca
+    # Google analytics UID
+    google_analytics_uid: G-M3KQ1PER7E
 
-  # Google analytics UID
-  google_analytics_uid: G-M3KQ1PER7E
+    # Disqus shortname, for comments
+    disqus_shortname: acusti-github
 
-  # Disqus shortname, for comments
-  disqus_shortname: acusti-github
+    # Number of featured posts on homepage
+    homepage_featured: 2
 
-  # Number of featured posts on homepage
-  homepage_featured: 2
+    # Number of posts on homepage (in addition to featured posts)
+    homepage_posts: 3
 
-  # Number of posts on homepage (in addition to featured posts)
-  homepage_posts: 3
-
-  # Number of words to display in post summaries
-  featured_wordcount: 30
+    # Number of words to display in post summaries
+    featured_wordcount: 30
 
 # Prose settings
 prose:
-  rooturl: '_posts'
-  siteurl: 'https://www.acusti.ca/'
-  relativeLinks: 'https://www.acusti.ca/links.jsonp'
-  media: 'media'
-  metadata:
-    _posts:
-      - name: "category"
-        field:
-          element: "hidden"
-          value: "blog"
-      - name: "layout"
-        field:
-          element: "hidden"
-          value: "post"
-      - name: "title"
-        field:
-          element: "text"
-          label: "Title"
-          value: ""
-      - name: "baseline"
-        field:
-          element: "text"
-          label: "Subheading"
-          value: ""
-      - name: "splash"
-        field:
-          element: "text"
-          label: "Splash image"
-          value: ""
-      - name: "credit"
-        field:
-          element: "text"
-          label: "Splash image credits"
-          value: ""
-      - name: "tags"
-        field:
-          element: "multiselect"
-          label: "Add Tags"
-          placeholder: "Choose Tags"
-          options:
-            - name: "Thoughts"
-              value: "thoughts"
-            - name: "Code snippet"
-              value: "code-snippet"
-            - name: "Usability"
-              value: "usability"
-            - name: "Readability"
-              value: "readability"
-            - name: "Accessibility"
-              value: "accessibility"
-            - name: "Typography"
-              value: "typography"
-            - name: "Performance"
-              value: "performance"
-            - name: "Architecture"
-              value: "architecture"
-            - name: "Frivolous"
-              value: "frivolous"
-            - name: "Music"
-              value: "music"
-            - name: "Explanation"
-              value: "explanation"
-            - name: "Rant"
-              value: "rant"
-            - name: "PSA"
-              value: "PSA"
-            - name: "Guide"
-              value: "guide"
-            - name: "Backup"
-              value: "backup"
-    _posts/static:
-      - name: "layout"
-        field:
-          element: "hidden"
-          value: "page"
-      - name: "title"
-        field:
-          element: "text"
-          label: "Title"
-          value: ""
-      - name: "permalink"
-        field:
-          element: "text"
-          label: "Permalink"
-          value: ""
+    rooturl: '_posts'
+    siteurl: 'https://www.acusti.ca/'
+    relativeLinks: 'https://www.acusti.ca/links.jsonp'
+    media: 'media'
+    metadata:
+        _posts:
+            - name: 'category'
+              field:
+                  element: 'hidden'
+                  value: 'blog'
+            - name: 'layout'
+              field:
+                  element: 'hidden'
+                  value: 'post'
+            - name: 'title'
+              field:
+                  element: 'text'
+                  label: 'Title'
+                  value: ''
+            - name: 'baseline'
+              field:
+                  element: 'text'
+                  label: 'Subheading'
+                  value: ''
+            - name: 'splash'
+              field:
+                  element: 'text'
+                  label: 'Splash image'
+                  value: ''
+            - name: 'credit'
+              field:
+                  element: 'text'
+                  label: 'Splash image credits'
+                  value: ''
+            - name: 'tags'
+              field:
+                  element: 'multiselect'
+                  label: 'Add Tags'
+                  placeholder: 'Choose Tags'
+                  options:
+                      - name: 'Thoughts'
+                        value: 'thoughts'
+                      - name: 'Code snippet'
+                        value: 'code-snippet'
+                      - name: 'Usability'
+                        value: 'usability'
+                      - name: 'Readability'
+                        value: 'readability'
+                      - name: 'Accessibility'
+                        value: 'accessibility'
+                      - name: 'Typography'
+                        value: 'typography'
+                      - name: 'Performance'
+                        value: 'performance'
+                      - name: 'Architecture'
+                        value: 'architecture'
+                      - name: 'Frivolous'
+                        value: 'frivolous'
+                      - name: 'Music'
+                        value: 'music'
+                      - name: 'Explanation'
+                        value: 'explanation'
+                      - name: 'Rant'
+                        value: 'rant'
+                      - name: 'PSA'
+                        value: 'PSA'
+                      - name: 'Guide'
+                        value: 'guide'
+                      - name: 'Backup'
+                        value: 'backup'
+        _posts/static:
+            - name: 'layout'
+              field:
+                  element: 'hidden'
+                  value: 'page'
+            - name: 'title'
+              field:
+                  element: 'text'
+                  label: 'Title'
+                  value: ''
+            - name: 'permalink'
+              field:
+                  element: 'text'
+                  label: 'Permalink'
+                  value: ''

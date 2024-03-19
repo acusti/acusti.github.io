@@ -4,8 +4,6 @@ title: Résumé
 ---
 
 <article class="page resume">
-
-	{% capture content %}{% include resume.md %}{% endcapture %}
-	{{ content | markdownify }}
-
+    {% capture content %}{% include resume.md %}{% endcapture %} {{ content |
+    markdownify }}
 </article>
