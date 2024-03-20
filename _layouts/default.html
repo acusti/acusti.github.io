@@ -45,14 +45,6 @@
                 ['config', '{{ site.meta.google_analytics_uid }}'],
             );
         </script>
-        {% if site.env == 'development' %}
-        <script src="{{ site.base_url }}/jspm_packages/system.js"></script>
-        <script src="{{ site.base_url }}/config.js"></script>
-        <script>
-            System.import('scripts/main');
-        </script>
-        {% else %}
         <script src="{{ site.base_url }}/app-built.js?ver=1.1"></script>
-        {% endif %}
     </body>
 </html>
