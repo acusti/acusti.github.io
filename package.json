@@ -18,8 +18,8 @@
         "prettier": "^3.2.5"
     },
     "dependencies": {
-        "affixing-header": "^1.0.0-beta.2",
-        "onscrolling": "^2.0.0-beta.6"
+        "affixing-header": "^1.0.0-beta.5",
+        "onscrolling": "^2.0.0-beta.7"
     },
     "prettier": {
         "arrowParens": "always",

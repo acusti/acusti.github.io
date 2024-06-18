@@ -117,12 +117,12 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.20.2.tgz#9c907b21e30a52db959ba4f80bb01a0cc403d5cc"
   integrity sha512-N49X4lJX27+l9jbLKSqZ6bKNjzQvHaT8IIFUy+YIqmXQdjYCToGWwOItDrfby14c78aDd5NHQl29xingXfCdLQ==
 
-affixing-header@^1.0.0-beta.2:
-  version "1.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/affixing-header/-/affixing-header-1.0.0-beta.2.tgz#f2804cb061fccf6bbee74c7525ecd9c8bf49d181"
-  integrity sha512-LooKJaMLOO+g9fLgHktEnst1r0k8eLi7AxKAhpm9Sf51i9BiyRVWQEbdZcKcJokPpIX8X8R3Ndkv5ux5pOPybQ==
+affixing-header@^1.0.0-beta.5:
+  version "1.0.0-beta.5"
+  resolved "https://registry.yarnpkg.com/affixing-header/-/affixing-header-1.0.0-beta.5.tgz#90e9f222bdd428c034f82a6a9167736e76ade6c1"
+  integrity sha512-D+Y6upQBNw1yqOIzCCCxNnvCs8l6N0XT0610DP17cZgGXz5LaGFOQnWNYIY5SN9G+W5/vLvqJ6iPoRyf0DjvYQ==
   dependencies:
-    onscrolling "^2.0.0-beta.6"
+    onscrolling "^2.0.0-beta.7"
 
 ansi-styles@^3.2.1:
   version "3.2.1"
@@ -506,10 +506,10 @@ object.assign@^4.1.2:
     has-symbols "^1.0.1"
     object-keys "^1.1.1"
 
-onscrolling@^2.0.0-beta.6:
-  version "2.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/onscrolling/-/onscrolling-2.0.0-beta.6.tgz#6a52b667dfb3fb446a5e3dbd94219a45f738516b"
-  integrity sha512-Km/lii7UeRTmTkPRP3nna0wqCIbYzCsm7zIx7vTLjMTlftwgGt+0FDY2ckZ6735G/sjw2fYItdtNDPdllz8oFw==
+onscrolling@^2.0.0-beta.7:
+  version "2.0.0-beta.7"
+  resolved "https://registry.yarnpkg.com/onscrolling/-/onscrolling-2.0.0-beta.7.tgz#f710531b3bf5acb48a8bd9f9df227114878f23ad"
+  integrity sha512-pHn/9DCW0X6bSH9mN5TYjZtA3Pv8HElugUFOb1rv6PjUU3nRP/J1I4FCQwLZmveMMPsSBNzCep3CCM8Nq4EkwA==
 
 parse-json@^4.0.0:
   version "4.0.0"
