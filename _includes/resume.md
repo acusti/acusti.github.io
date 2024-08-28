@@ -29,7 +29,7 @@ Built a fast and maintainable multilingual Solr-powered search front end, based 
 
 ### Open Source Contributions
 
-[React][], [immutable.js][], [jsdom][], [wp-cli][], [AMP][], [flow][], [vimeo/player.js][], [browserslist][], [react-dnd][], [CSSOM][], [jest][], [fbjs][], [react-draggable][], [timeago.js][], [draft.js][], [react-higher-event][], [uikit][], [audile][], [selection.js][], [bezier-easing-editor][], [gogs][], [PrestaShop-webservice-lib][], [affixing-header][], [onscrolling][], [socket.io][], [diffDOM][], [AtomLinter/linter-jscs][], [react-number-editor][], [basecamp/trix][], [react-color][], [redux-form][], [react-numeric-input][], [hood.ie][], [react-async-script-loader][], [underscores.me][], [nvalt-prime][], [jquery-requestAnimationFrame][], [jquery-smooth-scroll][], [wp-plugin-in-github][], [WordPress-Wiki][]
+[React][], [remix][] [immutable.js][], [superflare][], [jsdom][], [wp-cli][], [AMP][], [flow][], [vimeo/player.js][], [browserslist][], [react-dnd][], [CSSOM][], [jest][], [fbjs][], [react-draggable][], [timeago.js][], [draft.js][], [react-higher-event][], [uikit][], [audile][], [selection.js][], [bezier-easing-editor][], [gogs][], [PrestaShop-webservice-lib][], [affixing-header][], [onscrolling][], [socket.io][], [diffDOM][], [AtomLinter/linter-jscs][], [react-number-editor][], [basecamp/trix][], [react-color][], [redux-form][], [react-numeric-input][], [hood.ie][], [react-async-script-loader][], [underscores.me][], [nvalt-prime][], [jquery-requestAnimationFrame][], [jquery-smooth-scroll][], [wp-plugin-in-github][], [WordPress-Wiki][]
 
 ## Programming Languages and Technologies
 
@@ -102,7 +102,9 @@ I speak and understand Spanish and French fluently.
 [cqrecherche]: http://collections.cinematheque.qc.ca/recherche/ 'Recherche collections | La Cinémathèque québécoise'
 [jgh]: http://pen.jgh.ca/search/en/ 'Montreal Jewish General Hospital'
 [react]: https://github.com/facebook/react/pulls?q=is%3Apr+author%3Aacusti
+[remix]: https://github.com/remix-run/remix/pulls?q=is%3Apr+is%3Aclosed+author%3Aacusti
 [immutable.js]: https://github.com/immutable-js/immutable-js/pulls?q=is%3Apr+author%3Aacusti
+[superflare]: https://github.com/jplhomer/superflare/pull/66
 [jsdom]: https://github.com/jsdom/jsdom/pulls?q=is%3Apr+author%3Aacusti
 [jest]: https://github.com/facebook/jest/pulls?q=is%3Apr+author%3Aacusti
 [wp-cli]: https://github.com/wp-cli/wp-cli/pulls?q=is%3Apr+author%3Aacusti
