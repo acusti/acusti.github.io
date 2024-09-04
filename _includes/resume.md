@@ -20,17 +20,17 @@ Adapted [Superflare][superflare-docs], a full-stack toolkit for the Cloudflare D
 **[UIKit][npm-acusti]** <span class="projects__time-period">Mar. 2015 – Present</span><br>
 Built and now maintain [UIKit][] (high-quality UI toolkit), [audile][] (mobile-friendly audio player), [react-higher-event][] (declarative document-level event listening), and more.
 
+**[Immutable.js][immutable.js docs]** <span class="projects__time-period">May 2018 – Aug. 2020</span><br>
+[Fixed bugs][immutable.js prs] and [triaged issues][immutable.js issues] in Immutable.js (the canonical JS library for efficient immutable collections) to achieve a stable [4.0 release][immutable.js release].
+
 **[Cinémathèque Québecoise][cq]** <span class="projects__time-period">Oct. 2014 – June 2015</span><br>
-Built a multilingual Solr-powered [search application][cqrecherche] built with [FuelPHP][] and a sibling WordPress-powered [publication site][cq] for Québec’s official film archives.
+Built a multilingual Solr-powered search application and publication website using the web application framework [FuelPHP][].
 
 ### Open Source Contributions
 
-[React][] &nbsp; [remix][] &nbsp; [superflare][] &nbsp; [immutable.js][] &nbsp; [jsdom][] &nbsp; [lexical][] &nbsp; [react-dnd][] &nbsp; [react-draggable][] &nbsp; [tc39/proposal-deep-path-properties-for-record][] &nbsp; [wp-cli][] &nbsp; [AMP][] &nbsp; [flow][] &nbsp; [@vimeo/player][] &nbsp; [fbjs][] &nbsp; [timeago.js][] &nbsp; [browserslist][] &nbsp; [draft.js][] &nbsp; [nvalt-prime][] &nbsp; [react-higher-event][] &nbsp; [uikit][] &nbsp; [audile][] &nbsp; [Viselect][] &nbsp; [gogs][] &nbsp; [affixing-header][] &nbsp; [onscrolling][] &nbsp; [diffDOM][] &nbsp; [CSSOM][] &nbsp; [AtomLinter/linter-jscs][] &nbsp; [WordPress-Wiki][]
+[React][] &nbsp; [remix][] &nbsp; [superflare][] &nbsp; [immutable.js][] &nbsp; [jsdom][] &nbsp; [lexical][] &nbsp; [react-dnd][] &nbsp; [react-draggable][] &nbsp; [tc39/deep-path-properties-for-record][] &nbsp; [wp-cli][] &nbsp; [AMP][] &nbsp; [flow][] &nbsp; [@vimeo/player][] &nbsp; [fbjs][] &nbsp; [timeago.js][] &nbsp; [browserslist][] &nbsp; [draft.js][] &nbsp; [nvalt-prime][] &nbsp; [react-higher-event][] &nbsp; [uikit][] &nbsp; [audile][] &nbsp; [Viselect][] &nbsp; [gogs][] &nbsp; [affixing-header][] &nbsp; [onscrolling][] &nbsp; [diffDOM][] &nbsp; [CSSOM][] &nbsp; [AtomLinter/linter-jscs][] &nbsp; [WordPress-Wiki][]
 
 ## Programming Languages and Technologies
-
--   Git and the [GitHub flow][], including interactive rebasing, managing remotes, git hygiene
--   The command-line interface (zsh/bash)
 
 <div class="list-blocks">
     <div class="list-blocks__block">
@@ -59,10 +59,12 @@ Built a multilingual Solr-powered [search application][cqrecherche] built with [
         <ul>
             <li>Cloudflare: Workers, KV, R2, D1, AI</li>
             <li>AWS: DynamoDB, AppSync, Lambdas, S3, Cognito, Amplify</li>
-            <li>LLM Models and Low-Rank Adaptation (LoRA)</li>
+            <li>LLM Models &amp; Low-Rank Adaptation</li>
             <li>Node.js</li>
             <li>GraphQL and REST</li>
             <li>iOS with Swift</li>
+            <li>Git (rebasing, atomic commits, etc)</li>
+            <li>CLI (zsh/bash)</li>
         </ul>
     </div>
 </div>
@@ -96,15 +98,18 @@ I speak and understand Spanish and French fluently.
 [superflare-docs]: https://superflare.dev 
 [remix-docs]: https://remix.run
 [wrangler]: https://developers.cloudflare.com/workers/wrangler/
-[fuelphp]: http://fuelphp.com/
+[immutable.js docs]: https://immutable-js.com
+[immutable.js prs]: https://github.com/immutable-js/immutable-js/pulls?q=is%3Apr+author%3Aacusti
+[immutable.js issues]: https://github.com/immutable-js/immutable-js/issues/1494#issuecomment-386208338
+[immutable.js release]: https://github.com/immutable-js/immutable-js/releases/tag/v4.0.0
 [cq]: http://collections.cinematheque.qc.ca/ 'Collections en ligne | La Cinémathèque québécoise'
-[cqrecherche]: http://collections.cinematheque.qc.ca/recherche/ 'Recherche collections | La Cinémathèque québécoise'
+[fuelphp]: http://fuelphp.com/
 [react]: https://github.com/facebook/react/pulls?q=is%3Apr+author%3Aacusti
 [remix]: https://github.com/remix-run/remix/pulls?q=is%3Apr+is%3Aclosed+author%3Aacusti
 [immutable.js]: https://github.com/immutable-js/immutable-js/pulls?q=is%3Apr+author%3Aacusti
 [jsdom]: https://github.com/jsdom/jsdom/pull/1621
 [lexical]: https://github.com/facebook/lexical/pull/3209
-[tc39/proposal-deep-path-properties-for-record]: https://github.com/tc39/proposal-deep-path-properties-for-record/pull/14
+[tc39/deep-path-properties-for-record]: https://github.com/tc39/proposal-deep-path-properties-for-record/pull/14
 [react-dnd]: https://github.com/react-dnd/react-dnd/pull/675
 [react-draggable]: https://github.com/mzabriskie/react-draggable/pulls?q=is%3Apr+author%3Aacusti
 [wp-cli]: https://github.com/wp-cli/wp-cli/pulls?q=is%3Apr+author%3Aacusti
