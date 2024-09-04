@@ -524,10 +524,11 @@ caption {
 
     @media print, screen and (min-width: $medium-width) {
         float: right;
-        width: 11em;
+        width: auto;
         font-style: normal;
         font-weight: 700;
         color: inherit;
+        text-wrap: nowrap;
     }
 }
 
