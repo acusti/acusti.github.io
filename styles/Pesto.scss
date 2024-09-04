@@ -53,8 +53,7 @@ $color-ui-light: lighten($color-text-light, 11%);
 html {
     box-sizing: border-box;
     color: $color-text-body;
-    font-family: 'Source Sans Pro', 'Myriad Set Pro', 'Myriad Pro', Myriad,
-        Helvetica, Arial, sans-serif;
+    font-family: 'General Sans', system-ui, sans-serif;
     font-weight: 400;
     // Use light weight for medium width and up (screen only)
     @media screen and (min-width: $medium-fontsize-width) {
