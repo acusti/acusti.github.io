@@ -4,56 +4,51 @@
 
 ## Current Employment
 
-**Time Sites — Principal Front-End Engineer** <span class="projects__time-period">June 2022 – Present</span><br>
-_[Time Sites][] is a collaborative web publishing platform that enables teams to design, build, publish, and maintain their web properties_
+**Principal Engineer — Time Sites** <span class="projects__time-period">June 2022 – Present</span><br>
+_[Time Sites][] (née Brandcast) is a collaborative web publishing platform that enables teams to design, build, publish, and maintain their web properties_
+
+As the principal front-end engineer, I lead the team in building products and features, from the design studio to the web publishing server to the analytics platform.
 
 ## Selected Projects
 
-**[Time Sites][]** <span class="projects__time-period">June 2016 – Present</span><br>
-Build and architect experiences across the Time Sites (née “Brandcast”) platform, from the design studio to the web publishing server. Collaborate closely with our lead product designer to design and build new features and UXs in a scalable and maintainable way.
+**[React.js][]** <span class="projects__time-period">Oct. 2016 – Aug. 2018</span><br>
+Modified the `react-dom` library to make it possible to render React components into an iframe and worked with the core React team to land those changes upstream.
 
-**[React.js][]** <span class="projects__time-period">Oct. 2016 – August 2018</span><br>
-Modified the `react-dom` library to make it possible to render React components into an `iframe` and worked with the core React team to land those changes in facebook/react.
+**[Superflare][]** <span class="projects__time-period">July 2024 – Present</span><br>
+Adapted [Superflare][superflare-docs], a full-stack toolkit for the Cloudflare Developer Platform, to work with the latest versions of [Remix][remix-docs] and [Wrangler][] (the Cloudflare CLI).
 
-**[UIKit (and other modules)][npm-acusti]** <span class="projects__time-period">March 2015 – Present</span><br>
-Maintain [UIKit][], a high-quality UI toolkit, [audile][], a mobile-friendly web audio player, and [react-higher-event][], a declarative API for listening to events outside of a React component.
+**[UIKit][npm-acusti]** <span class="projects__time-period">Mar. 2015 – Present</span><br>
+Built and now maintain [UIKit][] (high-quality UI toolkit), [audile][] (mobile-friendly audio player), [react-higher-event][] (declarative document-level event listening), and more.
 
 **[Cinémathèque Québecoise][cq]** <span class="projects__time-period">Oct. 2014 – June 2015</span><br>
-Lead developer and architect of a multilingual Solr-powered [search application][cqrecherche] built with [FuelPHP][] and a sibling WordPress-powered [publication site][cq] for Québec’s official film archives.
-
-**[Trica Furniture][]** <span class="projects__time-period">March 2014 - Aug. 2014</span><br>
-Built a WordPress-based multilingual product catalogue with a custom responsive theme, custom interactive sliders and image galleries, and a custom-built authoring experience.
-
-**[Jewish General Hospital Library Search][jgh]** <span class="projects__time-period">Dec. 2013 – March 2014</span><br>
-Built a fast and maintainable multilingual Solr-powered search front end, based on my initial design, for a hospital library using Handlebars and vanilla JS.
+Built a multilingual Solr-powered [search application][cqrecherche] built with [FuelPHP][] and a sibling WordPress-powered [publication site][cq] for Québec’s official film archives.
 
 ### Open Source Contributions
 
-[React][], [remix][] [immutable.js][], [superflare][], [jsdom][], [wp-cli][], [AMP][], [flow][], [vimeo/player.js][], [browserslist][], [react-dnd][], [CSSOM][], [jest][], [fbjs][], [react-draggable][], [timeago.js][], [draft.js][], [react-higher-event][], [uikit][], [audile][], [selection.js][], [bezier-easing-editor][], [gogs][], [PrestaShop-webservice-lib][], [affixing-header][], [onscrolling][], [socket.io][], [diffDOM][], [AtomLinter/linter-jscs][], [react-number-editor][], [basecamp/trix][], [react-color][], [redux-form][], [react-numeric-input][], [hood.ie][], [react-async-script-loader][], [underscores.me][], [nvalt-prime][], [jquery-requestAnimationFrame][], [jquery-smooth-scroll][], [wp-plugin-in-github][], [WordPress-Wiki][]
+[React][] &nbsp; [remix][] &nbsp; [superflare][] &nbsp; [immutable.js][] &nbsp; [jsdom][] &nbsp; [lexical][] &nbsp; [react-dnd][] &nbsp; [react-draggable][] &nbsp; [tc39/proposal-deep-path-properties-for-record][] &nbsp; [wp-cli][] &nbsp; [AMP][] &nbsp; [flow][] &nbsp; [@vimeo/player][] &nbsp; [fbjs][] &nbsp; [timeago.js][] &nbsp; [browserslist][] &nbsp; [draft.js][] &nbsp; [nvalt-prime][] &nbsp; [react-higher-event][] &nbsp; [uikit][] &nbsp; [audile][] &nbsp; [Viselect][] &nbsp; [gogs][] &nbsp; [affixing-header][] &nbsp; [onscrolling][] &nbsp; [diffDOM][] &nbsp; [CSSOM][] &nbsp; [AtomLinter/linter-jscs][] &nbsp; [WordPress-Wiki][]
 
 ## Programming Languages and Technologies
 
 -   Git and the [GitHub flow][], including interactive rebasing, managing remotes, git hygiene
--   The command-line interface (bash)
+-   The command-line interface (zsh/bash)
 
 <div class="list-blocks">
     <div class="list-blocks__block">
         <h4>Front-End</h4>
         <ul>
-            <li>JavaScript
+            <li>JavaScript and TypeScript
                 <ul>
-                    <li>Functional programming</li>
-                    <li>React with Redux or Jotai for state</li>
-                    <li>Remix, the full stack web framework</li>
-                    <li>Static typing via typescript or flow</li>
-                    <li>BDD/TDD (jest and vitest)</li>
-                    <li>End-to-end testing with cypress</li>
+                    <li>React (+ Jotai/Redux for state)</li>
+                    <li>Remix (full stack web framework)</li>
+                    <li>Static types (TypeScript + Flow)</li>
+                    <li>BDD/TDD (with vitest and jest)</li>
+                    <li>E2E testing with Cypress</li>
                 </ul>
             </li>
             <li>CSS and HTML
                 <ul>
                     <li>Flexbox and CSS Grid</li>
-                    <li>Web performance and web vitals</li>
+                    <li>Web performance + web vitals</li>
                     <li>Mobile web development</li>
                 </ul>
             </li>
@@ -62,8 +57,9 @@ Built a fast and maintainable multilingual Solr-powered search front end, based 
     <div class="list-blocks__block">
         <h4>Back-End</h4>
         <ul>
+            <li>Cloudflare: Workers, KV, R2, D1, AI</li>
             <li>AWS: DynamoDB, AppSync, Lambdas, S3, Cognito, Amplify</li>
-            <li>Cloudflare Workers and Pages</li>
+            <li>LLM Models and Low-Rank Adaptation (LoRA)</li>
             <li>Node.js</li>
             <li>GraphQL and REST</li>
             <li>iOS with Swift</li>
@@ -73,12 +69,12 @@ Built a fast and maintainable multilingual Solr-powered search front end, based 
 
 ## Other Interests
 
-**Music production and composition**
-I love music and play piano. I’ve played a couple of shows in Montreal with a previous iteration of the [Sontag Shogun][] project and was coach of the band [Slowest Runner][]. Also, I like making music, and, when feeling inspired, [sharing the results][music].
+**Music production and composition**\
+I love music and play piano. I’ve played a couple of shows in Montreal with a previous iteration of the [Sontag Shogun][] project and was coach of the band [Slowest Runner][]. Also, I like making music, and occasionally [sharing the results][music].
 
 ## Education
 
-**McGill University, 2003 – 2007**
+**McGill University, 2003 – 2007**\
 BA in Cultural Studies, with a Minor in Music Technology
 
 ## Languages
@@ -96,47 +92,35 @@ I speak and understand Spanish and French fluently.
 [onscrolling]: https://github.com/acusti/onscrolling
 [affixing-header]: https://github.com/acusti/affixing-header
 [react.js]: https://github.com/facebook/react/pull/12037
+[superflare]: https://github.com/jplhomer/superflare/pull/66
+[superflare-docs]: https://superflare.dev 
+[remix-docs]: https://remix.run
+[wrangler]: https://developers.cloudflare.com/workers/wrangler/
 [fuelphp]: http://fuelphp.com/
-[trica furniture]: http://www.tricafurniture.com/
 [cq]: http://collections.cinematheque.qc.ca/ 'Collections en ligne | La Cinémathèque québécoise'
 [cqrecherche]: http://collections.cinematheque.qc.ca/recherche/ 'Recherche collections | La Cinémathèque québécoise'
-[jgh]: http://pen.jgh.ca/search/en/ 'Montreal Jewish General Hospital'
 [react]: https://github.com/facebook/react/pulls?q=is%3Apr+author%3Aacusti
 [remix]: https://github.com/remix-run/remix/pulls?q=is%3Apr+is%3Aclosed+author%3Aacusti
 [immutable.js]: https://github.com/immutable-js/immutable-js/pulls?q=is%3Apr+author%3Aacusti
-[superflare]: https://github.com/jplhomer/superflare/pull/66
-[jsdom]: https://github.com/jsdom/jsdom/pulls?q=is%3Apr+author%3Aacusti
-[jest]: https://github.com/facebook/jest/pulls?q=is%3Apr+author%3Aacusti
-[wp-cli]: https://github.com/wp-cli/wp-cli/pulls?q=is%3Apr+author%3Aacusti
-[amp]: https://github.com/ampproject/amphtml/pulls?q=is%3Apr+author%3Aacusti
-[flow]: http://github.com/facebook/flow/pulls?q=is%3Apr+author%3Aacusti
-[vimeo/player.js]: https://github.com/vimeo/player.js/pulls?q=is%3Apr+author%3Aacusti
-[browserslist]: https://github.com/browserslist/browserslist/pulls?q=is%3Apr+author%3Aacusti
-[react-dnd]: https://github.com/react-dnd/react-dnd/pulls?q=is%3Apr+author%3Aacusti
-[cssom]: https://github.com/NV/CSSOM/pulls?q=is%3Apr+author%3Aacusti
-[selection.js]: https://github.com/Simonwep/selection/pulls?q=is%3Apr+author%3Aacusti
-[fbjs]: https://github.com/facebook/fbjs/pulls?q=is%3Apr+author%3Aacusti
+[jsdom]: https://github.com/jsdom/jsdom/pull/1621
+[lexical]: https://github.com/facebook/lexical/pull/3209
+[tc39/proposal-deep-path-properties-for-record]: https://github.com/tc39/proposal-deep-path-properties-for-record/pull/14
+[react-dnd]: https://github.com/react-dnd/react-dnd/pull/675
 [react-draggable]: https://github.com/mzabriskie/react-draggable/pulls?q=is%3Apr+author%3Aacusti
-[bezier-easing-editor]: https://github.com/gre/bezier-easing-editor/pulls?q=is%3Apr+author%3Aacusti
+[wp-cli]: https://github.com/wp-cli/wp-cli/pulls?q=is%3Apr+author%3Aacusti
+[amp]: https://github.com/ampproject/amphtml/pull/8055
+[flow]: http://github.com/facebook/flow/pulls?q=is%3Apr+author%3Aacusti
+[@vimeo/player]: https://github.com/vimeo/player.js/pulls?q=is%3Apr+author%3Aacusti
+[cssom]: https://github.com/NV/CSSOM/pull/82
+[Viselect]: https://github.com/Simonwep/selection/pulls?q=is%3Apr+author%3Aacusti
+[fbjs]: https://github.com/facebook/fbjs/pulls?q=is%3Apr+author%3Aacusti
 [gogs]: https://github.com/gogs/gogs/pulls?q=is%3Apr+author%3Aacusti
-[prestashop-webservice-lib]: https://github.com/PrestaShop/PrestaShop-webservice-lib/pulls?q=is%3Apr+author%3Aacusti
-[socket.io]: https://github.com/socketio/socket.io/pulls?q=is%3Apr+author%3Aacusti
+[browserslist]: https://github.com/browserslist/browserslist/pull/206
 [timeago.js]: https://github.com/hustcc/timeago.js/issues/139#issuecomment-422639198
 [draft.js]: https://github.com/facebook/draft-js/pulls?q=is%3Apr+author%3Aacusti
 [atomlinter/linter-jscs]: https://github.com/AtomLinter/linter-jscs/pulls?q=is%3Apr+author%3Aacusti
-[react-number-editor]: https://github.com/tleunen/react-number-editor/pulls?q=is%3Apr+author%3Aacusti
-[basecamp/trix]: https://github.com/basecamp/trix/pulls?q=is%3Apr+author%3Aacusti
-[react-color]: https://github.com/casesandberg/react-color/pulls?q=is%3Apr+author%3Aacusti
-[redux-form]: https://github.com/erikras/redux-form/pulls?q=is%3Apr+author%3Aacusti
-[react-numeric-input]: https://github.com/vlad-ignatov/react-numeric-input/pulls?q=is%3Apr+author%3Aacusti
-[diffdom]: https://github.com/fiduswriter/diffDOM/pulls?q=is%3Apr+author%3Aacusti
-[hood.ie]: https://github.com/hoodiehq/hood.ie/pulls?q=is%3Apr+author%3Aacusti
-[react-async-script-loader]: https://github.com/leozdgao/react-async-script-loader/pulls?q=is%3Apr+author%3Aacusti
-[underscores.me]: https://github.com/Automattic/underscores.me/pulls?q=is%3Apr+author%3Aacusti
-[nvalt-prime]: https://github.com/bwiggs/nvalt-prime/pulls?q=is%3Apr+author%3Aacusti
-[jquery-requestanimationframe]: https://github.com/gnarf/jquery-requestAnimationFrame/pulls?q=is%3Apr+author%3Aacusti
-[jquery-smooth-scroll]: https://github.com/kswedberg/jquery-smooth-scroll/pulls?q=is%3Apr+author%3Aacusti
-[wp-plugin-in-github]: https://github.com/sudar/wp-plugin-in-github/pulls?q=is%3Apr+author%3Aacusti
+[nvalt-prime]: https://github.com/bwiggs/nvalt-prime/pull/5
+[diffdom]: https://github.com/fiduswriter/diffDOM/pull/43
 [wordpress-wiki]: https://github.com/mgerring/WordPress-Wiki/pulls?q=is%3Apr+author%3Aacusti
 [github flow]: https://guides.github.com/introduction/flow/
 [sontag shogun]: http://sontagshogun.bandcamp.com/
