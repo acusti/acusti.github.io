@@ -28,7 +28,7 @@ Built a multilingual Solr-powered search application and publication website usi
 
 ### Open Source Contributions
 
-[React][] &nbsp; [remix][] &nbsp; [superflare][] &nbsp; [immutable.js][] &nbsp; [jsdom][] &nbsp; [lexical][] &nbsp; [react-dnd][] &nbsp; [react-draggable][] &nbsp; [tc39/deep-path-properties-for-record][] &nbsp; [wp-cli][] &nbsp; [AMP][] &nbsp; [flow][] &nbsp; [@vimeo/player][] &nbsp; [fbjs][] &nbsp; [timeago.js][] &nbsp; [browserslist][] &nbsp; [draft.js][] &nbsp; [nvalt-prime][] &nbsp; [react-higher-event][] &nbsp; [uikit][] &nbsp; [audile][] &nbsp; [Viselect][] &nbsp; [gogs][] &nbsp; [affixing-header][] &nbsp; [onscrolling][] &nbsp; [diffDOM][] &nbsp; [CSSOM][] &nbsp; [AtomLinter/linter-jscs][] &nbsp; [WordPress-Wiki][]
+[React][] &nbsp; [remix][] &nbsp; [superflare][] &nbsp; [immutable.js][] &nbsp; [@types/react][] &nbsp; [jsdom][] &nbsp; [lexical][] &nbsp; [react-dnd][] &nbsp; [react-draggable][] &nbsp; [tc39/deep-path-properties-for-record][] &nbsp; [wp-cli][] &nbsp; [AMP][] &nbsp; [flow][] &nbsp; [@vimeo/player][] &nbsp; [fbjs][] &nbsp; [timeago.js][] &nbsp; [browserslist][] &nbsp; [draft.js][] &nbsp; [nvalt-prime][] &nbsp; [react-higher-event][] &nbsp; [uikit][] &nbsp; [audile][] &nbsp; [Viselect][] &nbsp; [gogs][] &nbsp; [affixing-header][] &nbsp; [onscrolling][] &nbsp; [diffDOM][] &nbsp; [CSSOM][] &nbsp; [AtomLinter/linter-jscs][] &nbsp; [WordPress-Wiki][]
 
 ## Programming Languages and Technologies
 
@@ -107,6 +107,7 @@ I speak and understand Spanish and French fluently.
 [react]: https://github.com/facebook/react/pulls?q=is%3Apr+author%3Aacusti
 [remix]: https://github.com/remix-run/remix/pulls?q=is%3Apr+is%3Aclosed+author%3Aacusti
 [immutable.js]: https://github.com/immutable-js/immutable-js/pulls?q=is%3Apr+author%3Aacusti
+[@types/react]: https://github.com/DefinitelyTyped/DefinitelyTyped/pull/70601
 [jsdom]: https://github.com/jsdom/jsdom/pull/1621
 [lexical]: https://github.com/facebook/lexical/pull/3209
 [tc39/deep-path-properties-for-record]: https://github.com/tc39/proposal-deep-path-properties-for-record/pull/14
