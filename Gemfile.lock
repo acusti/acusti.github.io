@@ -267,7 +267,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.7)
     unicode-display_width (1.7.0)
-    webrick (1.7.0)
+    webrick (1.8.2)
     zeitwerk (2.4.2)
 
 PLATFORMS
@@ -277,7 +277,7 @@ DEPENDENCIES
   compass (~> 1.0.3)
   github-pages
   sass (>= 3.3.13, < 3.5)
-  webrick (~> 1.7)
+  webrick (~> 1.8)
 
 BUNDLED WITH
    2.5.11
