@@ -15,8 +15,8 @@ var image = null,
 
 // Initializes parallax and implements it on scroll
 // @uses imageParallaxCalculate
-function imageParallax(scrollYCurrent) {
-    scrollY = scrollYCurrent;
+function imageParallax(update) {
+    scrollY = update.scrollY;
     // Initialize
     if (image_wrap === null) {
         // Adding our calculations to window load doesn't work when command clicking a post link to open it in a new tab in Chrome
