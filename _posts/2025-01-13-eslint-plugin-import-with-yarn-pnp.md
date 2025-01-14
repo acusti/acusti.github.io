@@ -9,15 +9,15 @@ published: true
 tags: [eslint, yarn, pnp, typescript, javascript]
 ---
 
-If you’ve ever worked on a TypeScript project of any significant size, you know how important it is to keep your import statements organized. Random ordering of imports across files makes code harder to read and maintain and frequently leads to duplicate imports, as well as opening the door for a lot more git diff noise from differing opinions about import ordering from members of your team. That’s where [`eslint-plugin-import`][]’s [`import/order` rule][] comes in - it’s a fantastic ESLint plugin that can enforce consistent import ordering.
+When collaborating on larger JavaScript or TypeScript projects, the import preambles can become quite long and unmaintainable if conventions are not adopted and enforced. Random import ordering makes code harder to read and update and leads to duplicate imports, as well as opening the door for a lot more git diff noise from differing opinions about import ordering from members of your team. The [`eslint-plugin-import`][]’s [`import/order` rule][] is a powerful tool to help control import statement entropy, and on projects where I’ve configured it, completely eliminates that class of problems. I wouldn’t want to try to maintain a large codebase without it, in a similar way to how I wouldn’t consider working on a project without Prettier (or equivalent code formatter).
 
-Recently, I upgraded my project to use Yarn’s [Plug'n'Play (PnP) feature], which helps eliminate phantom dependencies and makes package management more reliable. However, this completely broke my import ordering setup, with eslint-plugin-import throwing errors on the first import statement of most files, making the lint step fail across the entire codebase.
+Recently, I upgraded one of my projects to use Yarn’s [Plug'n'Play (PnP) feature][], which helps eliminate phantom dependencies and makes package management more reliable. However, this completely broke my import ordering setup, making the lint step fail across the entire codebase.
 
 If you’ve run into this same issue, or you’re considering using Yarn PnP and want to avoid this headache, here’s how to fix it.
 
 ## The Setup
 
-My project uses ESLint v9 with its new flat config system, which means configuration lives in `eslint.config.js` instead of the older `.eslintrc` format. Since all of my linted code is TypeScript, I set up the import ordering rules in the TypeScript section of my config:
+My project uses ESLint v9 with its new flat config system, which means my configuration lives in `eslint.config.js`. Since all of my linted code is TypeScript, I set up the import ordering rules in the TypeScript section of my config:
 
 ```javascript
 import jsPlugin from '@eslint/js';
@@ -63,11 +63,11 @@ export default [
 ];
 ```
 
-This configuration ensures that imports are consistently grouped and alphabetized: runtime (node.js/bun/workerd/…) builtins first, followed by external packages, internal project imports, and finally relative imports (parent and sibling files). Each group is separated by a newline for clarity.
+This configuration ensures that imports are consistently grouped and alphabetized: runtime (node.js/bun/workerd/…) builtins first, followed by external packages, internal project imports, and finally relative imports (parent and sibling files). Each group is separated by a single newline for readability.
 
-The setup also uses [`eslint-import-resolver-typescript`][] to handle TypeScript-specific import resolution, including path aliases and type imports. This works when using npm or yarn classic (v1) or even yarn v2+ with the `nodeLinker: node-modules` setting in my `.yarnrc.yml` which I used initially for better compatibility.
+The setup also uses [`eslint-import-resolver-typescript`][] to handle TypeScript-specific import resolution, including path aliases and type imports. This works when using npm or yarn classic (v1) or even yarn v2+ with the `nodeLinker: node-modules` setting in my `.yarnrc.yml` which I used initially for better compatibility. Promisingly, the typescript resolver also [supports PnP][].
 
-However, I ran into some issues with my build and realized I had ghost dependencies from some code I copy-pasted from the [lexical rich text editor playground][]. Those transitive dependencies worked in the build, but were causing some headaches with vite dev’s bundle optimization and, more generally, are unstable and best avoided. So I decided to enable Yarn PnP by setting `nodeLinker: pnp` in my `.yarnrc.yml`.
+Recently, I ran into some issues with my build and realized I had ghost dependencies from some code I copy-pasted from the [lexical rich text editor playground][]. Those transitive dependencies worked in the build, but were causing some headaches with vite dev’s bundle optimization and, more generally, are unstable and best avoided. So I decided to enable Yarn PnP by setting `nodeLinker: pnp` in my `.yarnrc.yml`.
 
 ## The Problem
 
@@ -91,7 +91,7 @@ After enabling PnP, running ESLint started producing a flood of errors about imp
 
 These errors appeared regardless of how the imports were actually organized, and confusingly, they didn’t indicate anything about what was actually wrong; they complained about missing newlines between groups when the newlines were there, suggested reordering imports that were already in the correct order, and generally seemed to misinterpret the entire import structure of each file.
 
-Why did this happen? The issue stems from the inability of import plugin to resolve external modules under Yarn PnP. When PnP is enabled, external dependencies are declared in a single file and can no longer be resolved using the default npm-style node_modules-based resolution algorithm. The plugin is unable to differentiate the different types of imports and starts reporting all kinds of erroneous errors.
+Why did this happen? The issue stems from the [inability of import plugin][] to resolve external modules under Yarn PnP. When PnP is enabled, external dependencies are declared in a single file and can no longer be resolved using the default npm-style node_modules-based resolution algorithm. The plugin is unable to differentiate the different types of imports and starts reporting all kinds of erroneous errors.
 
 ## The Solution
 
@@ -125,13 +125,13 @@ export default [
 ];
 ```
 
-That one additional line tells the plugin where to find external dependencies when running under Yarn PnP. With this change, eslint-plugin-import can correctly distinguish between external dependencies (now in `.yarn`) and your internal project modules, allowing it to properly enforce your import ordering rules.
+That one additional line tells the plugin where to find external dependencies when running under Yarn PnP. With this change, eslint-plugin-import can correctly distinguish between external dependencies (now in `.yarn`) and your internal project modules, allowing the `import/order` rule to properly enforce your import ordering conventions.
 
-After adding this setting and running ESLint again, all those misleading errors about import grouping and ordering should disappear, replaced with accurate linting that respects your intended import organization.
-
-[Plug'n'Play (PnP) feature]: https://yarnpkg.com/features/pnp
 [`eslint-plugin-import`]: https://github.com/import-js/eslint-plugin-import
 [`import/order` rule]: https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/order.md
+[Plug'n'Play (PnP) feature]: https://yarnpkg.com/features/pnp
 [`eslint-import-resolver-typescript`]: https://github.com/import-js/eslint-import-resolver-typescript
+[supports PnP]: https://github.com/import-js/eslint-import-resolver-typescript/issues/130#issuecomment-1175389462
 [lexical rich text editor playground]: https://github.com/facebook/lexical/tree/main/packages/lexical-playground
+[inability of import plugin]: https://github.com/import-js/eslint-plugin-import/issues/1434#issuecomment-517881976
 [`import/external-module-folders` setting]: https://github.com/import-js/eslint-plugin-import?tab=readme-ov-file#importexternal-module-folders
