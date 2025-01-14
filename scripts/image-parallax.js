@@ -8,6 +8,7 @@ var image = null,
         image: {},
         image_wrap: {},
     },
+    detachScrollFrame,
     scrollY,
     scrollY_previous,
     resizeTimeoutId;
@@ -53,7 +54,7 @@ function imageParallax(scrollYCurrent) {
 function imageParallaxCalculate() {
     if (image === null || image_wrap === null) {
         // Remove onscroll listener
-        attachScrollFrame.remove(imageParallax);
+        if (detachScrollFrame) detachScrollFrame();
         return;
     }
     dimensions.image.height = image.clientHeight;
@@ -64,13 +65,13 @@ function imageParallaxCalculate() {
         image_wrap.classList.remove('is-full-bleed');
         image_wrap.style.height = '';
         // Remove onscroll listener
-        attachScrollFrame.remove(imageParallax);
+        if (detachScrollFrame) detachScrollFrame();
         return;
     }
 
     // Make sure we're listening
-    attachScrollFrame.remove(imageParallax);
-    attachScrollFrame(imageParallax);
+    if (detachScrollFrame) detachScrollFrame();
+    detachScrollFrame = attachScrollFrame(imageParallax);
 
     // Calculations
     dimensions.image.naturalWidth = image.naturalWidth;
