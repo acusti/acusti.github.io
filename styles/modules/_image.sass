@@ -27,24 +27,23 @@ img
 		@media (max-width: $medium-width)
 			padding: 0
 
-			img
-				position: relative
-				max-width: 150%
-				// Center it horizontally
-				left: 50%
-				+translateX(-50%)
-
 	.post__splash
 		position: relative
+		display: flex
+		align-items: center
+		justify-content: center
 		padding: 0
 		margin-bottom: 1rem
 		overflow: hidden
-		max-height: 400px
+		min-height: 400px
+		height: 35vw
+		max-height: 600px
 
 		> img
-			margin-left: auto
-			margin-right: auto
 			min-width: 100%
+			min-height: 100%
+			max-width: 300%
+			object-fit: cover
 			opacity: 0
 			+transition(opacity 0.25s)
 
@@ -52,37 +51,30 @@ img
 				opacity: 1
 
 		@media (max-width: $medium-width)
-			max-height: 300px
+			min-height: 300px
 
-			> img
-				max-height: 300px
-				margin-left: 0
+		&:after
+			content: ""
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			z-index: 1
+			// -30px spread radius makes it 20px bigger on all sides
+			box-shadow: inset 0 -20px 30px -20px black
 
-		&.is-cropped
-			&:after
-				content: ""
-				position: absolute
-				top: 0
-				bottom: 0
-				left: 0
-				right: 0
-				z-index: 1
-				// -30px spread radius makes it 20px bigger on all sides
-				box-shadow: inset 0 -20px 30px -20px black
+		// Remove box shadow on svgs (which usually have transparency)
+		&.is-svg:after
+			content: normal
 
-			// Remove box shadow on svgs (which usually have transparency)
-			&.is-svg:after
-				content: normal
-
-			> img
-				position: absolute
-				// Center it horizontally
-				left: 50%
-				+translateX(-50%)
-				height: auto
-				// Leave 15px for parallax the other way
-				margin-bottom: -15px
-				bottom: 0
+		> img
+			height: auto
+			// Leave 15px for parallax the other way
+			margin-bottom: -15px
+			
+			@media (max-width: $medium-width)
+				margin-bottom: 0
 
 		.no-js &
 			// With no-js version, compensate for extra padding on title
