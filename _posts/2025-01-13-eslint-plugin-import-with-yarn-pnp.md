@@ -11,7 +11,7 @@ tags: [eslint, yarn, pnp, typescript, javascript]
 
 When collaborating on larger JavaScript or TypeScript projects, the import preambles can become quite long and unmaintainable if conventions are not adopted and enforced. Random import ordering makes code harder to read and update and leads to duplicate imports, as well as opening the door for a lot more git diff noise from differing opinions about import ordering from members of your team. The [`eslint-plugin-import`][]’s [`import/order` rule][] is a powerful tool to help control import statement entropy, and on projects where I’ve configured it, completely eliminates that class of problems. I wouldn’t want to try to maintain a large codebase without it, in a similar way to how I wouldn’t consider working on a project without Prettier (or equivalent code formatter).
 
-Recently, I upgraded one of my projects to use Yarn’s [Plug'n'Play (PnP) feature][], which helps eliminate phantom dependencies and makes package management more reliable. However, this completely broke my import ordering setup, making the lint step fail across the entire codebase.
+Recently, I upgraded one of my projects to use Yarn’s [Plug'n'Play (PnP) feature][], which helps eliminate phantom dependencies and makes package management more reliable. However, this broke my setup, with the import/order rule not working anymore, making the lint step fail across the entire codebase.
 
 If you’ve run into this same issue, or you’re considering using Yarn PnP and want to avoid this headache, here’s how to fix it.
 
