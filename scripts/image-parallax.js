@@ -22,8 +22,8 @@ function imageParallax(update) {
         // Adding our calculations to window load doesn't work when command clicking a post link to open it in a new tab in Chrome
         // So instead, verify we have a usable image object and if not, use a timeout to check again in 150ms
         if (image === null || !image.naturalWidth) {
-            window.setTimeout(imageParallax, 150);
-            return false;
+            window.setTimeout(imageParallax.bind(null, update), 150);
+            return;
         }
         image_wrap = image.parentElement;
         document.body.classList.add('is-loaded');
