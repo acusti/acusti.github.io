@@ -95,7 +95,7 @@ I speak and understand Spanish and French fluently.
 [affixing-header]: https://github.com/acusti/affixing-header
 [react.js]: https://github.com/facebook/react/pull/12037
 [superflare]: https://github.com/jplhomer/superflare/pull/66
-[superflare-docs]: https://superflare.dev 
+[superflare-docs]: https://superflare.dev
 [remix-docs]: https://remix.run
 [wrangler]: https://developers.cloudflare.com/workers/wrangler/
 [immutable.js docs]: https://immutable-js.com

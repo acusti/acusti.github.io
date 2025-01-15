@@ -18,10 +18,12 @@ Adding esbuild takes just a few steps:
 1. Install `esbuild` and `typescript` as a dev dependency for each lambda function. That’s most easily accomplished by `cd`ing into the lambda function directory where the `package.json` is located (`amplify/backend/function/<functionName>/src/`) and running:
    `yarn add -D esbuild typescript`
 2. Add a `build` npm run script to each lambda function’s `package.json` to check the function with typescript, then bundle it with esbuild (while esbuild transpiles typescript syntax, it doesn’t do any actual type checking, so you have to run `tsc` for that). After a lot of testing and tweaking, here’s what I landed on:\
-\
+   \
+
 ```json
 "build": "tsc -noEmit && esbuild *.ts --main-fields=module,main --bundle --platform=node --external:aws-sdk --external:aws-lambda --external:@aws-sdk/signature-v4-crt --outdir=./"
 ```
+
 Breaking it down, option by option:\
 \
 [`--bundle`][]: inlines all imported dependencies into the output file to enable tree-shaking and reduce lambda size\

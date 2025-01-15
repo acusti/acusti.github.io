@@ -35,7 +35,7 @@ Both functions first check for the existence of the `@2x` graphics and won't fal
         require File.join(retina_ext, 'lib', 'sass_extensions.rb')
         add_import_path File.join(retina_ext, 'stylesheets')
 
-3.       Import the mixins into your stylesheet
+3.        Import the mixins into your stylesheet
 
         @import "retina";
 
