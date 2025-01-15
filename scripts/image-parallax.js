@@ -26,7 +26,6 @@ function imageParallax(update) {
             return;
         }
         image_wrap = image.parentElement;
-        document.body.classList.add('is-loaded');
 
         // Special case for svgs
         if (image.src.substring(image.src.length - 4) === '.svg') {
@@ -52,19 +51,16 @@ function imageParallax(update) {
 
 // Function to calculate dimensions and values for parallax
 function imageParallaxCalculate() {
+    if (image && !image_wrap) {
+        image_wrap = image.parentElement;
+    }
+
     if (image === null || image_wrap === null) {
         // Remove onscroll listener
         if (detachScrollFrame) detachScrollFrame();
         return;
     }
     dimensions.image.height = image.clientHeight;
-    // Make sure image is at least 15 pixels too tall to crop it
-    if (dimensions.image.height - 15 < dimensions.image_wrap.height) {
-        image_wrap.classList.remove('is-full-bleed');
-        // Remove onscroll listener
-        if (detachScrollFrame) detachScrollFrame();
-        return;
-    }
 
     // Make sure we're listening
     if (detachScrollFrame) detachScrollFrame();
@@ -77,7 +73,6 @@ function imageParallaxCalculate() {
     if (image.clientWidth < image_wrap.clientWidth) {
         image_wrap.style.width = image.clientWidth + 'px';
     } else {
-        // image_wrap.classList.add('is-full-bleed');
         image_wrap.style.width = '';
         // If image is high-res (double resolution or thereabouts, set max-width at the smallest of clientHeight and full width * 0.5)
         if (
