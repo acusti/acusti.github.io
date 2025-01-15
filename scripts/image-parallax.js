@@ -47,7 +47,7 @@ function imageParallax(update) {
     if (image.clientHeight - 20 < image_wrap.clientHeight) return;
 
     // Parallaxify
-    image.style.bottom = Math.floor(scrollY_previous * parallax_speed * -1) + 'px';
+    image.style.transform = 'translateY(' + Math.floor(scrollY_previous * parallax_speed * -1) + 'px' + ')';
 }
 
 // Function to calculate dimensions and values for parallax
@@ -58,12 +58,9 @@ function imageParallaxCalculate() {
         return;
     }
     dimensions.image.height = image.clientHeight;
-    dimensions.image_wrap.height = image_wrap.clientHeight;
     // Make sure image is at least 15 pixels too tall to crop it
     if (dimensions.image.height - 15 < dimensions.image_wrap.height) {
-        image_wrap.classList.remove('is-cropped');
         image_wrap.classList.remove('is-full-bleed');
-        image_wrap.style.height = '';
         // Remove onscroll listener
         if (detachScrollFrame) detachScrollFrame();
         return;
@@ -77,8 +74,6 @@ function imageParallaxCalculate() {
     dimensions.image.naturalWidth = image.naturalWidth;
     dimensions.image_wrap.width = image_wrap.clientWidth;
 
-    image_wrap.style.height = dimensions.image_wrap.height + 'px';
-    image_wrap.classList.add('is-cropped');
     if (image.clientWidth < image_wrap.clientWidth) {
         image_wrap.style.width = image.clientWidth + 'px';
     } else {
