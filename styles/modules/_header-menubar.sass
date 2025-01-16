@@ -21,8 +21,6 @@
 ul.site-nav
 	display: inline-block
 	vertical-align: top
-	margin-right: -0.5em
-	padding: 0 0.75em 0 0.25em
 	text-align: left
 	white-space: nowrap
 
@@ -35,8 +33,11 @@ ul.site-nav
 		display: inline-block
 		padding-left: 9px
 
-		@media (max-width: $narrow-width)
+		@media (max-width: $medium-width)
 			padding-left: 4px
+
+		@media (max-width: $narrow-width)
+			padding-left: 6px
 
 		&:before
 			position: absolute
@@ -47,6 +48,9 @@ ul.site-nav
 			height: 4px
 			background-color: $color-bkg
 
+			@media (max-width: $medium-width)
+				margin-left: -5px
+
 			@media (max-width: $narrow-width)
 				margin-left: -6px
 
@@ -54,9 +58,9 @@ ul.site-nav
 			display: none
 
 	a
-		font-size: 1.3rem
-		line-height: 2
-		-webkit-font-smoothing: subpixel-antialiased
+		font-size: 1.2rem
+		line-height: 2.1
+		letter-spacing: -1px
 		color: $color-bkg
 		text-transform: uppercase
 		display: block

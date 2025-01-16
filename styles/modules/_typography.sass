@@ -1,6 +1,7 @@
 // = Variables
-$body-text-family: ff-avance-pro, georgia, serif
-$header-text-family: $body-text-family
+$logo-text-family: Blenny, "Arial Black", sans-serif
+$body-text-family: Literata, Georgia, serif
+$header-text-family: Chillax, "Helvetica Neue", Helvetica, Arial, sans-serif
 $mono-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace
 $base-block-elements: "h5, p, ul, ol, dl"
 
@@ -10,7 +11,6 @@ $base-block-elements: "h5, p, ul, ol, dl"
 		-webkit-initial-letter: 3
 		initial-letter: 3
 		padding-right: 0.4rem
-		font-family: "times new roman", serif
 		color: $color-accent-dark-alt
 
 // Vertical rhythm baseline
@@ -19,9 +19,8 @@ $base-block-elements: "h5, p, ul, ol, dl"
 body
 	font-family: $body-text-family
 	text-rendering: optimizeLegibility
-	-webkit-font-smoothing: antialiased
-	font-size: 1.22rem
-	line-height: 1.35
+	font-size: 20px
+	line-height: 1.5
 
 h1, h2, h3, h4, h5
 	color: $color-text
@@ -34,7 +33,7 @@ h3, h4, h5
 h1
 	font-family: $header-text-family
 	font-weight: 700
-	font-size: 3.2rem
+	font-size: 3.1rem
 	line-height: 1
 	+rhythm(0, 0, 0, 1)
 	text-shadow: 2px 2px 1px black
@@ -43,9 +42,8 @@ h1
 
 h2
 	font-weight: 400
-	-webkit-font-smoothing: subpixel-antialiased
 	font-size: 2rem
-	line-height: 1.2
+	line-height: 1.18
 	+rhythm(0, 0, 0, 1)
 	color: $color-text-muted
 	@media (max-width: $narrow-width)
@@ -57,8 +55,8 @@ h3
 	+rhythm(1, 0, 0, 1)
 
 h4
-	font-size: 1.5rem
-	line-height: 1.23
+	font-size: 1.6rem
+	line-height: 1.22
 	+rhythm(0, 0, 0, 1)
 
 h5

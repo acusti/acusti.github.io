@@ -104,13 +104,11 @@
 
 @mixin dark-text($text-color: black, $background-color: false)
 	color: $text-color
-	-webkit-font-smoothing: subpixel-antialiased
 	@if $background-color != false
 		+text-shadow($default-text-shadow-h-offset $default-text-shadow-v-offset $default-text-shadow-blur lighten($background-color, 10%))
 
 @mixin light-text($text-color: white, $background-color: false, $text-shadow-h-offset: $default-text-shadow-h-offset, $text-shadow-v-offset: $default-text-shadow-v-offset, $text-shadow-blur: $default-text-shadow-blur)
 	color: $text-color
-	-webkit-font-smoothing: antialiased
 	@if $background-color != false
 		+text-shadow($text-shadow-h-offset $text-shadow-v-offset $text-shadow-blur darken($background-color, 10%))
 
