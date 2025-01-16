@@ -20,7 +20,7 @@
             class="main-content{% if page.splash %} has-post__splash{% endif %}{% if page.category == 'blog' %} category-blog{% endif %}"
         >
             <h1 id="logo">
-                <a href="{{ site.base_url }}/">{{ site.meta.site_name }}</a>
+                <a href="{{ site.base_url }}/">{% include logo.svg %}</a>
             </h1>
             {{ content }}
         </div>

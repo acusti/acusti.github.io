@@ -31,15 +31,20 @@
 		@extend %main-column
 
 #logo
-	font-family: $logo-text-family
-	// to avoid conflicting with the sass min/max function, capitalize them
-	font-size: Max(78px, Min(120px, 15vw))
-	line-height: Max(66px, Min(110px, 13vw))
-	text-align: center
-	white-space: nowrap
-	+hyphens(none)
-	margin: 2.5rem auto 0
+	margin: 1.5rem auto 1rem
+	
+	a
+		display: block
+		max-width: 560px
+		margin: 0 auto
+		
+		svg
+			fill: $color-accent
+			width: 100%
+	
+		&:hover
+			background-image: none
+			text-decoration: none
 
-	a:hover
-		background-image: none
-		color: $color-accent-dark
+			svg
+				fill: $color-accent-dark
