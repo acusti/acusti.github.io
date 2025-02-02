@@ -6,9 +6,8 @@ title: Force Backblaze on Mac to backup excluded folders
 baseline: How to edit default Backblaze exclusions
 credit: 'Blazing like a [1974 fire department demonstration](https://www.flickr.com/photos/usnationalarchives/4271777745)'
 splash: media/car-on-fire-demo-1974.jpg
-tags:
-    - guide
-    - backup
+tags: [guide, backup]
+disqus: true
 ---
 
 **Update May 4, 2015:** This technique no longer works. A recent Backblaze update has added strict validation controls that prevents their forbidden directories from being enabled. Even if you edit the `bzinfo.xml` file and explicitly Lock it from the Finder’s Get Info pane, Backblaze will not accept the changes into its own config. I will leave the original post here for the record, but the technique is now useless.

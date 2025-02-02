@@ -38,6 +38,7 @@ layout: default
     </li>
 </ul>
 
+{% if page.disqus %}
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = '{{ site.meta.disqus_shortname }}';
@@ -52,12 +53,29 @@ layout: default
         ).appendChild(dsq);
     })();
 </script>
-<noscript
-    >Please enable JavaScript to view the
-    <a href="http://disqus.com/?ref_noscript"
-        >comments powered by Disqus.</a
-    ></noscript
->
-<a href="http://disqus.com" class="dsq-brlink"
-    >blog comments powered by <span class="logo-disqus">Disqus</span></a
->
+<noscript>
+    Please enable JavaScript to view the
+    <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">
+    Blog comments powered by <span class="logo-disqus">Disqus</span>
+</a>
+{% else %}
+<script
+    src="https://giscus.app/client.js"
+    data-repo="acusti/acusti.github.io"
+    data-repo-id="MDEwOlJlcG9zaXRvcnkzMDI0OTg3NA=="
+    data-category="Announcements"
+    data-category-id="DIC_kwDOAc2Tks4Cmj9j"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="dark"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+{% endif %}

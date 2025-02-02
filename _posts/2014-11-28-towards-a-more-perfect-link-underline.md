@@ -4,9 +4,8 @@ category: blog
 title: Towards a more perfect link underline
 baseline: 'progress in underline text-decoration in Safari and iOS'
 splash: media/new-yorker-link-underlines.png
-tags:
-    - typography
-    - readability
+tags: [css, typography, readability]
+disqus: true
 ---
 
 Marcin Wichary wrote an [excellent post][medium-post-underlines] about creating the ideal text underline in CSS for Medium. In that post, Wichary offers a list of goals to achieve:

@@ -7,6 +7,7 @@ splash: media/alex-marc-wagner-5Co5JGwHuV4-unsplash.jpg
 category: blog
 published: true
 tags: [aws, amplify, lambda, typescript, esbuild, yarn workspaces]
+disqus: true
 ---
 
 AWS Amplify makes writing your front-end application in TypeScript easy. As long as you have a `build` npm run script that takes care of transpiling your TypeScript source code and handling any other build tasks, your application will be deployable via Amplify hosting. However, in order to use TypeScript with Amplify’s lambda functions, you need to do a little more work to compile your source files into plain JS.
