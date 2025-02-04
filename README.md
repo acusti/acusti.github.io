@@ -29,6 +29,10 @@ To start the jekyll server with production configuration:
 bundle exec yarn serve:prod
 ```
 
+## Analytics
+
+We use [counterscale](https://counterscale.dev/) for analytics. The dashboard is publically available at: https://counterscale-6p7.pages.dev/dashboard?site=acusti.ca
+
 ## License
 
 <p xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
