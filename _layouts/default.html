@@ -35,16 +35,11 @@
         </footer>
 
         <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id={{ site.meta.google_analytics_uid }}"
+            id="counterscale-script"
+            data-site-id="{{ site.meta.counterscale_site_id }}"
+            src="https://{{ site.meta.counterscale_subdomain }}.pages.dev/tracker.js"
+            defer
         ></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            dataLayer.push(
-                ['js', new Date()],
-                ['config', '{{ site.meta.google_analytics_uid }}'],
-            );
-        </script>
         <script src="{{ site.base_url }}/app-built.js?ver=1.1"></script>
     </body>
 </html>

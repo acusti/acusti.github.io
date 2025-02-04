@@ -3,5 +3,6 @@ base_url: http://127.0.0.1:4000
 
 # Site metadata
 meta:
-    # Disable google analytics UID when running locally
-    google_analytics_uid: no-analytics
+    # Disable counterscale when running locally
+    counterscale_site_id: no-analytics
+    counterscale_subdomain: no-analytics

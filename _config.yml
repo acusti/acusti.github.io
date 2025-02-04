@@ -16,8 +16,9 @@ meta:
     # Site name
     site_name: acusti.ca
 
-    # Google analytics UID
-    google_analytics_uid: G-KH9K0T98YG
+    # Counterscale
+    counterscale_site_id: acusti.ca
+    counterscale_subdomain: counterscale-6p7
 
     # Disqus shortname, for comments
     disqus_shortname: acusti-github
