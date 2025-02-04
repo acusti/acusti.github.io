@@ -40,7 +40,7 @@ type Props = { isLoading: boolean } & ParentProps;
 type Props = ParentProps & { isLoading: boolean };
 ```
 
-The final config they offer is `line-length`, which is very satisfying but also impractical. Its output is quite visually pleasing, but it doesn’t help me find anything. If I want to find an import, I have to scan basically the entire list or do a text search, wherase with natural ordering, I can quickly find it based on its first letter. So my strong recommendation is to use the `natural` config, which you can do so by installing the plugin (`npm i -D eslint-plugin-perfectionist`) and adding the following lines to your `esling.config.js` file:
+The final config they offer is `line-length`, which is very satisfying but also impractical. Its output is quite visually pleasing, but it doesn’t help me find anything. If I want to find an import, I have to scan basically the entire list or do a text search, whereas with natural ordering, I can quickly find it based on its first letter. So my strong recommendation is to use the `natural` config, which you can do so by installing the plugin (`npm i -D eslint-plugin-perfectionist`) and adding the following lines to your `esling.config.js` file:
 
 ```js
 import jsPlugin from '@eslint/js';
