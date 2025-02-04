@@ -15,7 +15,7 @@ They have [three configs][] you can choose from: [`alphabetical`][], [`natural`]
 
 However, as I looked back at the docs to write this post, I decided to check out the `natural` config, and it is *chef’s kiss*. It lives up to the “perfect” part of the plugin’s name. Natural ordering, in this case, means alphabetical ordering in a way that makes sense to a human. Some examples:
 
-```js
+```ts
 // with the alphabetical config:
 import { item10, item2, item4, item6, item8 } from 'module';
 // with the natural config:
