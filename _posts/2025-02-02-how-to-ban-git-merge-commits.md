@@ -35,7 +35,7 @@ The `merge.ff only` config option has a sibling for the `git pull` command:
 git config --global pull.ff only
 ```
 
-Do not use this config option! This makes it so that in the case of a pull that can’t be done as a fast-forward (e.g. if there are remote commits you don’t have locally and you have local commits that haven’t been pushed up), the pull will fail. In that situation, the `pull.rebase true` config option is there to ensure that your local commits are applied after the remote commits, which is what we want. However, this setting will make the `pull` command fail before the `pull.rebase` setting can take effect.
+Do not use this config option! This blocks any `pull` command that can’t be done as a fast-forward (e.g. if there are remote commits you don’t have locally and you have local commits that haven’t been pushed up). In that situation, the `pull.rebase true` config option is there to ensure that your local commits are applied after the remote commits, which is what we want. However, this setting will make the `pull` command fail before the `pull.rebase` setting can take effect.
 
 So that’s it! Just a couple of git config settings and you will avoid merge commits in your repo. The only issue is that there’s no way to ensure that anyone who clones your repo also gets those config settings, which is a limitation that exists for security reasons; gitconfig files can run arbitrary CLI commands, so you might unwittingly kick-off a key logger or any other malicious code when running, say, `git commit`, if the repo owner set up the gitconfig to do so. As a result, you have to add instructions to your README or other documentation and rely on socialization to ensure that everyone on your team is on the same page.
 
