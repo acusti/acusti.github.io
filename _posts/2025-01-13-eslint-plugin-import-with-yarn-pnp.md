@@ -132,7 +132,7 @@ That one additional line tells the plugin where to find external dependencies wh
 [`eslint-plugin-import`]: https://github.com/import-js/eslint-plugin-import
 [`import/order` rule]: https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/order.md
 [Perfectionist plugin]: https://perfectionist.dev/
-[describe here.]: {% link _posts/2025-02-04-eslint-perfectionist-brings-sanity-to-even-the-most-anal-retantitive-programmers.md %}
+[describe here.]: {% link _posts/2025-02-04-eslint-perfectionist-brings-sanity-to-even-the-most-anal-retentive-programmers.md %}
 [Plug'n'Play (PnP) feature]: https://yarnpkg.com/features/pnp
 [`eslint-import-resolver-typescript`]: https://github.com/import-js/eslint-import-resolver-typescript
 [supports PnP]: https://github.com/import-js/eslint-import-resolver-typescript/issues/130#issuecomment-1175389462
