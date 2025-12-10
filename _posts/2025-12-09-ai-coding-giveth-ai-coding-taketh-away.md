@@ -1,17 +1,17 @@
 ---
 layout: post
-title: AI Coding Giveth, AI Coding Taketh Away
-baseline: A cautionary tale on the dangers of relying on AI coding agents and an aside on the power of React Activity
-credit: 'A room designed by Jill Goldberg of Hudson Interior Designs. (Michael J Lee)'
+title: How AI Coding Agents Hid a Timebomb in Our Production App
+baseline: When a deleted comment led to deleted code and React’s Activity component masked the infinite recursion
+credit: ''
 splash: media/bookshelf-organized-by-color-perfectionist.jpg
 category: blog
 published: true
 tags: [coding-agent, typescript, javascript, react]
 ---
 
-We talk endlessly about the massive upside and correspondingly massive downside of coding agents, but the conversation is almost always hypothetical. Today I bring you an entirely concrete, non-theoretical, discussion of the same. First, some context:
+Crash reports started trickling in: users loaded sites, clicked around, edited content. Everything seemed normal, right up until their browser froze and died. Behind the scenes, an infinite React tree was quietly growing in memory, and React 19’s `<Activity>` component was unintentionally keeping it alive long enough to hide the problem. Here’s how an AI coding agent and a deleted comment conspired to bury a timebomb in our codebase.
 
-I’m the primary software developer behind [Outlyne](https://outlyne.com), an AI-powered website builder I’ve been building for a year and a half with product designer (and co-founder and collaborator) [Jeremy Willer](https://willerdesign.com). The primary UI is a Figma-like canvas with the pages of your website lined up horizontally:
+I’m the primary software developer behind [Outlyne](https://outlyne.com), an AI-powered website builder I’ve been building for a year and a half with my co-founder, a product designer. The primary UI is a Figma-like canvas with the pages of your website lined up horizontally:
 
 ![Outlyne Design UI Screenshot]({{ site.base_url }}/media/outlyne-design-ui.avif)
 
@@ -19,42 +19,57 @@ Each page has a header and footer, and each header and footer render an HTML pop
 
 ![Outlyne Footer Sidebar UI Screenshot]({{ site.base_url }}/media/outlyne-footer-sidebar.avif)
 
-The variants are rendered as scaled down versions of the actual header and footer components at those sizes. This means that the page header and footer render a UI inside them that itself renders variants of the header and footer, but with different props. Recursive rendering! What could go wrong?
+The variants are rendered as scaled-down versions of the actual header and footer components, so the page’s header and footer each render a UI that itself renders more headers and footers with different props. That’s inherently recursive, which is fine as long as the recursion bottoms out. But if a preview ever renders the editor UI, which then renders previews again, the recursion never stops, and you end up in an infinite render loop.
 
-All parts of a webpage in Outlyne are rendered by default with only the functionality of the component as it exists on the published page. And editing UI is imported via `React.lazy` and `Suspense`, and are only rendered when in the editor UI. This means they don’t even get included in the JS bundle for published pages. In our preview mode and in the published page, the page and all of its parts are rendered as `readOnly`, meaning no editor UI. So when I implemented the UI and added the part where we render the previews of different versions of the same component, I set `readOnly={true}` for the previews. This meant they render only the content, no editing UI. Perfect! Easy-peasy. But also important, so let’s add a comment warning that ”if this is false, it causes infinite recursion”:
+All parts of a webpage in Outlyne are rendered by default with only the functionality of the component as it exists on the published page. And editing UI is imported via `React.lazy` and `Suspense`, and are only rendered when in the editor UI. This means they don’t even get included in the JS bundle for published pages. In our preview mode and in the published page, the page and all of its parts are rendered as `readOnly`, meaning no editor UI. So when I implemented the UI and added the part where we render the previews of different versions of the same component, I set `readOnly={true}` for the previews. This meant they render only the content, no editing UI. Perfect! Easy-peasy. But also important, so let’s add a comment warning that “if this is false, it causes infinite recursion”:
 
 ![Outlyne GitHub Commit Screenshot]({{ site.base_url }}/media/outlyne-footer-github-commit.png)
 
 ## AI Coding Agents
 
-Jeremy and I use AI coding agents. We’d be crazy not to. Jeremy is a designer, and while he knows HTML and CSS inside and out, he only knows enough to be dangerous when it comes to JavaScript and React. For him, AI coding agents make it possible for him to do so much more without bugging anyone else on the team, which has made it possible for him to create a huge amount of new UI and features end-to-end. A **huge** amount. Like, 5-digits-of-lines–of-code huge. Buuuuut we require that all code be reviewed before we can merge it and ship it. And the PRs coming out of Jeremy’s collaborations with the AI coding agent (generally Claude Sonnet 4 or 4.5) were generally between 5,000–10,000 lines of code. One such PR took me two weeks of review and cleanup to get production ready, at which point we realized we had a problem.
+We use AI coding agents. We’d be crazy not to. They’ve been an enormous productivity multiplier for us, especially in routine refactors and UI cleanup work, and it’s incredibly tempting (and productive) to just trust the changes they make.
 
-Our new policy is that any generated code that can’t be fully understood by the coder who is committing it goes in a branch and is marked as such. If it’s a small amount, someone who can understand the code reviews it, makes any necessary changes, and merges it. If it’s a large amount, that branch becomes a prototype branch that I can use as a reference for implementing the actual feature.
-
-One of the great things about React is that it’s enabled Jeremy, a designer who knows HTML and CSS, to become an extremely productive front-end developer. He can review changes to components and props and verify that things look correct. So when he recently redesigned and improved the UI for editing headers and footers with the help of the AI, things moved around a bit and we got a nice new `PreviewWrapper` component. And the AI removed my comment, I guess as cleanup? Maybe because “infinite recursion” sounds like no big deal? Well anyways, 353 changes lines, LGTM, merge it.
+A couple of months ago, we redesigned and improved the UI for editing headers and footers, things moved around a bit and we got a nice new `PreviewWrapper` component. And the AI removed my comment, I guess as cleanup? Maybe because “infinite recursion” sounds like no big deal? Well anyways, 353 changed lines, LGTM, merge it.
 
 ![Outlyne Footer Editor Redesign GitHub Commit Screenshot]({{ site.base_url }}/media/outlyne-footer-github-commit-2.png)
 
-Four weeks later, we added a cookie consent feature for websites that have cookies and want to be GDPR compliant, which meant updating the footer to pass the new `cookieSettings` prop. While in there, we optimized the previews a bit to use static empty values for some of the props that don’t matter in a preview. And oh, the LLM decided to remove that `readOnly` line. Probably wasn’t doing anything anyways? I don’t see any comments about it, so must be safe to remove.
+Once that comment disappeared, the AI no longer had any signal that readOnly was a structural safety constraint rather than just another prop. From that point forward, the code looked “safe to simplify.”
+
+Sure enough, four weeks later, we added a cookie consent feature for websites that have cookies and want to be GDPR compliant, which meant updating the footer to pass a new `cookieSettings` prop. While in there, we optimized the previews to use static empty values for some of the props that don’t matter in a preview. And oh, the LLM decided to remove that readOnly line. With no comment warning about infinite recursion anymore, I suppose it looked safe to remove.
 
 ![Outlyne Cookie Settings GitHub Commit Screenshot]({{ site.base_url }}/media/outlyne-footer-github-commit-3.png)
 
-## An aside on the power of React’s `<Activity>` component
+## The app kept working
 
-Our app was deployed with several popovers rendering a tree of components that infinitely rendered its own self, and yet it continued to function after loading until the in-memory load of the infinite component tree eventually exhausted the browser’s memory, which would take a few minutes. This is actually quite remarkable. The magic lies in React 19.2’s new [`<Activity>` component](https://react.dev/reference/react/Activity), whose primary purpose is to allow you to hide and show different parts of your app without needing to actually unmount them so that you don’t lose their internal state and don’t incur the cost of recreating the component tree from scratch when it is shown again. But in our case, the part of `<Activity>` that made the app continue to work is our use of it for [“pre-rendering content that’s likely to become visible”:](https://react.dev/reference/react/Activity#pre-rendering-content-thats-likely-to-become-visible)
+We deployed this change. And the app… kept working. Users could load pages, click around, edit their websites. Everything seemed fine. For a few minutes, at least. Then reports started coming in: browsers were freezing and crashing.
 
-> When an Activity boundary is `hidden` during its initial render, its children won’t be visible on the page — but they will *still be rendered,* albeit at a lower priority than the visible content, and without mounting their Effects.
+When I opened the app to investigate, I expected an immediate crash. Instead, it loaded normally. I could navigate, open popovers, edit content. The app was completely responsive and usable. It took several minutes before my browser finally gave up and crashed.
 
-We wrap the editing popovers in `<Activity mode={popoverState === 'closed' ? 'hidden' : 'visible'}>{...}</Activity>`, where `popoverState` represents the [`event.newState`](https://developer.mozilla.org/en-US/docs/Web/API/ToggleEvent/newState) of the popover. Both the popover and the Activity are hidden during initial render, so it was rendered at a low-priority, scheduled over time, such that the app continued to function and seemed responsive and usable for minutes before the low-priority in-memory rendering finally exhausted the browser’s available memory.
+This shouldn’t have been possible. We had popovers rendering infinite trees of components, each footer preview rendering another footer, which rendered another preview, which rendered another footer, and so on. Normally, React would try to render that entire tree immediately and the app would crash on load. But React 19.2’s new [`<Activity>` component](https://react.dev/reference/react/Activity) changes how hidden UI is rendered. In our case, it didn’t just hide the UI—it hid the bug.
 
-## Back to the main story
+We wrap our editing popovers in `<Activity mode={popoverState === 'closed' ? 'hidden' : 'visible'}>`, so when the popover is closed on initial load, the entire editor UI is rendered in hidden, low-priority mode. React still renders it, but very slowly, spread out over time, and without effects or DOM commits. That meant the infinite tree was quietly expanding in memory in the background while the visible UI stayed perfectly responsive. The bug was there immediately, but `<Activity>` shielded the user from seeing it until the browser finally ran out of memory minutes later.
 
-But in our case, `Activity`’s extremely efficient implementation of component pre-rendering masked the timebomb that had been introduced into our app, so we might’ve been better served by a less effective implementation. In fact, it took removing the `<Activity>` wrapper from the page footer editor popover for me to finally figure out that the footer was the culprit, because after that was removed, the app of course started immediately crashing on load. And I only thought to try that because I was pursuing a red herring, in which I thought that I may have been running into an incompatibility between `<Activity>` and whatever magic and optimizations are used by [motion](https://motion.dev) to track component visibility and layout changes and such.
+`<Activity>`’s extremely efficient implementation of component pre-rendering had masked the timebomb we’d introduced into our codebase.
 
+## Finding the culprit
+
+The debugging process was a nightmare. The infinite rendering was all happening in memory. No DOM nodes, no visual artifacts, nothing to grab onto. Just the browser slowly consuming RAM until it crashed. And it wasn’t an immediate crash, which made things worse: I’d load the page, poke around, everything looked normal… then 2–3 minutes later, the tab would blow up.
+
+Chrome’s debugger would occasionally pause automatically with “Paused before potential out-of-memory crash.” Every time, it stopped in the same place: [deep inside Motion’s code](https://github.com/motiondivision/motion/blob/main/packages/framer-motion/src/projection/node/create-projection-node.ts#L416) where it creates projection nodes.
+
+That sent me down a rabbit hole for days. The stack traces were 10,000 parents deep and completely anonymous. Motion looked guilty. I became convinced something about how we were rendering components was causing it to generate an invalid projection tree and then repeatedly attach to it, maybe because it was trying to attach to an unmounted DOM node, maybe because we were keying components based on editing state.
+
+I even managed to prevent the crash by patching Motion locally and adding guards to stop the runaway projection node creation. But it was becoming obvious the projection nodes were a symptom, not the cause.
+
+The real clue came from combing through the massive Motion ancestry path at the point the browser was about to run out of memory. Buried in the chain were a few `layoutId` values I recognized from the footer editor component tree. That gave me my first real lead.
+
+On a hunch, I tried removing the `<Activity>` wrapper from the page footer editor popover. The app immediately crashed on load. That was the turning point. Without Activity’s low-priority hidden rendering, the infinite recursion revealed itself instantly.
+
+Easy enough from there to trace back through the history of commits touching the footer editor file and find where the `readOnly` prop had been removed.
 
 ## Lessons and Learnings
 
-My biggest takeaway from this experience is that comments are now, more than ever, not a reliable way to ensure an important piece of logic or behavior is maintained. The proliferation of entities editing our code in this new era make it more likely than ever that important comments will be orphaned or deleted out-right during unrelated code restructuring. The solution, of course, is tests. Ensuring that the `readOnly` prop is set to true when the footer VariantPicker renders its footer previews is pretty straightforward:
+My biggest takeaway from this experience is that comments are no longer a reliable way to ensure critical logic is maintained. In a codebase edited by multiple humans and AI coding agents, important comments will get orphaned or deleted during unrelated restructuring. I wrote that comment about infinite recursion, saw it as important enough to document, but didn’t take the next step of writing a test—even though it only takes about 20 lines:
 
 ```tsx
 // mock PageFooter to capture its props
@@ -86,3 +101,7 @@ describe('VariantPickerFooter', () => {
     });
 });
 ```
+
+I’ve always been somewhat cavalier about testing. I write tests when they’re useful—especially for utils where TDD actually helps me implement the logic—but I’ve never been rigorous about testing everything. That worked fine when I was the only one touching the code, or when changes were deliberate and careful.
+
+But AI coding agents and vibe coding change the calculus. When you realize something is important enough to warrant a comment like “if this is false, it causes infinite recursion,” that’s the moment to catch yourself and write a test instead. Comments are documentation; tests are enforcement. The comment got deleted, then the prop. Nobody noticed either deletion. A test would have failed.
