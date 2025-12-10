@@ -9,7 +9,7 @@ published: true
 tags: [coding-agent, typescript, javascript, react]
 ---
 
-Crash reports started trickling in: users loaded sites, clicked around, edited content. Everything seemed normal, right up until their browser froze and died. Behind the scenes, an infinite React component tree was quietly growing in memory, and React 19’s `<Activity>` was keeping it alive long enough to hide the problem. Here’s how an AI coding agent and a deleted comment conspired to bury a timebomb in our codebase.
+Crash reports started trickling in. Users would be working as normal in the app until, without warning, the browser locked up. Behind the scenes, an infinite React component tree was quietly growing in memory, and React 19’s `<Activity>` was keeping it alive long enough to hide the problem. Here’s how an AI coding agent and a deleted comment conspired to bury a timebomb in our codebase.
 
 I’m the primary software developer behind [Outlyne](https://outlyne.com), an AI-powered website builder I’ve been building for a year and a half with my co-founder, a product designer. The primary UI is a Figma-like canvas with the pages of your website lined up horizontally:
 
@@ -35,15 +35,15 @@ A couple of months ago, we redesigned and improved the UI for editing headers an
 
 Once that comment disappeared, the AI no longer had any signal that `readOnly` was a structural safety constraint rather than just another prop.
 
-Sure enough, four weeks later, we added a cookie consent feature for websites that have cookies and want to be GDPR compliant, which meant updating the footer to pass a new `cookieSettings` prop. While in there, we optimized the previews to use static empty values for some of the props that don’t matter in a preview. And oh, the LLM decided to remove that `readOnly` line also. With no comment warning about infinite recursion anymore, I suppose it looked safe to remove.
+Sure enough, four weeks later, we added a cookie consent feature for websites that have cookies and want to be GDPR compliant, which meant updating the footer to pass a new `cookieSettings` prop. While in there, we optimized the previews to use static empty values for some of the props that don’t matter in a preview. Oh, and the LLM decided to remove that `readOnly` prop. With no comment providing context, there was nothing to signal this wasn’t safe to touch.
 
 ![Outlyne Cookie Settings GitHub Commit Screenshot]({{ site.base_url }}/media/outlyne-footer-github-commit-3.png)
 
-## The app kept working
+## The App Kept Working
 
-We tested the changes, things looked good, we deployed. Users could load pages, click around, edit their websites. Everything seemed fine. For a few minutes, at least. Then reports started coming in: browsers were freezing and crashing.
+We tested the changes, things looked good, we deployed. Everything seemed fine. Then reports started coming in: browsers were freezing and crashing.
 
-When I opened the app to investigate, I expected an immediate crash. Instead, it loaded normally. I could navigate, open popovers, edit content. The app was completely responsive and usable. It took several minutes before my browser finally gave up and crashed.
+When I opened the app to investigate, I expected an immediate crash. Instead, it loaded normally. I could navigate around, edit content, everything worked as usual. It took several minutes before my browser finally gave up and crashed.
 
 This shouldn’t have been possible. We had popovers rendering infinite trees of components, each footer preview rendering another footer, which rendered another preview, which rendered another footer, and so on. Normally, React would try to render that entire tree immediately and the app would crash on load. But React 19.2’s new [`<Activity>` component](https://react.dev/reference/react/Activity) changes how hidden UI is rendered. In our case, it didn’t just hide the UI—it hid the bug.
 
@@ -51,7 +51,7 @@ We wrap our editing popovers in `<Activity mode={popoverState === 'closed' ? 'hi
 
 `<Activity>`’s extremely efficient implementation of component pre-rendering had masked the timebomb we’d introduced into our codebase.
 
-## Finding the culprit
+## Finding the Culprit
 
 The debugging process was a nightmare. The infinite rendering was all happening in memory. No DOM nodes, no visual artifacts, nothing to grab onto. Just the browser slowly consuming RAM until it crashed. And it wasn’t an immediate crash, which made things worse: I’d load the page, poke around, everything looked normal… then 2–3 minutes later, the tab would blow up.
 
