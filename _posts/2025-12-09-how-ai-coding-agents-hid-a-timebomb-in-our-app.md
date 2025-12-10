@@ -9,9 +9,9 @@ published: true
 tags: [coding-agent, typescript, javascript, react]
 ---
 
-Crash reports started trickling in. Users would be working as normal in the app until, without warning, the browser locked up. Behind the scenes, an infinite React component tree was quietly growing in memory, and React 19’s `<Activity>` was keeping it alive long enough to hide the problem. Here’s how an AI coding agent and a deleted comment conspired to bury a timebomb in our codebase.
+Crash reports started trickling in. Users would be working as normal in the app until, without warning, the browser locked up. Behind the scenes, an infinite React component tree was quietly growing in memory, and React 19’s `<Activity>` was keeping it alive long enough to hide the problem. The culprit? An AI coding agent and a deleted comment.
 
-I’m the primary software developer behind [Outlyne](https://outlyne.com), an AI-powered website builder I’ve been building for a year and a half with my co-founder, a product designer. The primary UI is a Figma-like canvas with the pages of your website lined up horizontally:
+I’ve been building [Outlyne](https://outlyne.com), an AI-powered website builder, with my co-founder for the last year and a half. The primary UI is a Figma-like canvas with the pages of your website lined up horizontally:
 
 ![Outlyne Design UI Screenshot]({{ site.base_url }}/media/outlyne-design-ui.avif)
 
