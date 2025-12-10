@@ -9,7 +9,7 @@ published: true
 tags: [coding-agent, typescript, javascript, react]
 ---
 
-Crash reports started trickling in: users loaded sites, clicked around, edited content. Everything seemed normal, right up until their browser froze and died. Behind the scenes, an infinite React tree was quietly growing in memory, and React 19’s `<Activity>` component was unintentionally keeping it alive long enough to hide the problem. Here’s how an AI coding agent and a deleted comment conspired to bury a timebomb in our codebase.
+Crash reports started trickling in: users loaded sites, clicked around, edited content. Everything seemed normal, right up until their browser froze and died. Behind the scenes, an infinite React component tree was quietly growing in memory, and React 19’s `<Activity>` was keeping it alive long enough to hide the problem. Here’s how an AI coding agent and a deleted comment conspired to bury a timebomb in our codebase.
 
 I’m the primary software developer behind [Outlyne](https://outlyne.com), an AI-powered website builder I’ve been building for a year and a half with my co-founder, a product designer. The primary UI is a Figma-like canvas with the pages of your website lined up horizontally:
 
@@ -21,7 +21,7 @@ Each page has a header and footer, and each header and footer render an HTML pop
 
 The variants are rendered as scaled-down versions of the actual header and footer components, so the page’s header and footer each render a UI that itself renders more headers and footers with different props. That’s inherently recursive, which is fine as long as the recursion bottoms out. But if a preview ever renders the editor UI, which then renders previews again, the recursion never stops, and you end up in an infinite render loop.
 
-All parts of a webpage in Outlyne are rendered by default with only the functionality of the component as it exists on the published page. Editing UI is imported via `React.lazy` and `Suspense` and not rendered at all when `readOnly` (i.e. not editable). This means it doesn’t even get included in the JS bundle for published pages. So when I implemented the header and footer editing UI and added the part where we render the previews of different versions of the same component, I set `readOnly={true}` for the previews. This meant they render only the content, no editing UI. Perfect! Easy-peasy. But also important, so let’s add a comment warning that “if this is false, it causes infinite recursion”:
+Outlyne’s architecture made the solution straightforward. Webpage components only include the content and functionality needed for the published page. The editing UI is completely separate, imported via `React.lazy` and `Suspense` and only rendered when the page is editable. Published pages get zero editing UI in their JS bundle. So when I implemented the header and footer variant previews, I set `readOnly={true}` for the previews. They render only the content, no editing UI. Perfect! Easy-peasy. But also important, so let’s add a comment warning that “if this is false, it causes infinite recursion”:
 
 ![Outlyne GitHub Commit Screenshot]({{ site.base_url }}/media/outlyne-footer-github-commit.png)
 
@@ -29,7 +29,7 @@ All parts of a webpage in Outlyne are rendered by default with only the function
 
 We use AI coding agents. We’d be crazy not to. They’ve been an enormous productivity multiplier for us, especially in routine refactors and UI cleanup work, and it’s incredibly tempting (and productive) to just trust the changes they make.
 
-A couple of months ago, we redesigned and improved the UI for editing headers and footers. Things moved around a bit, and we got a nice new `PreviewWrapper` component. And the AI removed my comment, I guess as cleanup? Maybe because “infinite recursion” sounds like no big deal? Well anyways, 353 changed lines, LGTM, merge it.
+A couple of months ago, we redesigned and improved the UI for editing headers and footers. We created a tabbed interface to hold the variant and color options and wrapped the previews in a new `PreviewWrapper` component. And the AI removed my comment, I guess as cleanup? Maybe because “infinite recursion” sounds like no big deal? Well anyways, 353 changed lines, LGTM, merge it.
 
 ![Outlyne Footer Editor Redesign GitHub Commit Screenshot]({{ site.base_url }}/media/outlyne-footer-github-commit-2.png)
 
