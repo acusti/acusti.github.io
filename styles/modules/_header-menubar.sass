@@ -24,9 +24,15 @@ ul.site-nav
 	text-align: left
 	white-space: nowrap
 
-	// Don't show “About Me” link on mobile
+	// Don't show “Blog” and “About Me” links on mobile
 	@media (max-width: $narrow-width)
+		li:nth-child(2),
 		li:nth-child(3)
+			display: none
+
+	// Don't show “Blog” link at medium width
+	@media (max-width: $medium-width)
+		li:nth-child(2)
 			display: none
 
 	li
@@ -68,3 +74,7 @@ ul.site-nav
 
 		&:hover
 			color: $color-text
+    
+	svg
+		width: 22px
+		height: 22px
