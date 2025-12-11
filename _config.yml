@@ -18,7 +18,7 @@ meta:
 
     # Counterscale
     counterscale_site_id: acusti.ca
-    counterscale_subdomain: counterscale-6p7
+    counterscale_subdomain: counterscale.andrew-ab6
 
     # Disqus shortname, for comments
     disqus_shortname: acusti-github
