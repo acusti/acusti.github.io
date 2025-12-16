@@ -117,7 +117,14 @@ export default [
     plugins: { 'react-hooks': reactHooks },
     // ...
     rules: {
+      // https://github.com/facebook/react/blob/3640f38/compiler/packages/babel-plugin-react-compiler/src/CompilerError.ts#L807-L1111
       'react-hooks/todo': 'error',
+      // other useful rules:
+      'react-hooks/capitalized-calls': 'error', // avoid calling capitalized functions (should use JSX)
+      'react-hooks/hooks': 'error', // largely reimplements the "rules-of-hooks" non-compiler rule
+      'react-hooks/rule-suppression': 'error', // validates against suppression of other rules
+      'react-hooks/syntax': 'error', // validates against invalid syntax
+      'react-hooks/unsupported-syntax': 'error',// `warn` by default, use `error` to break the build
       // ...
     }
   },
