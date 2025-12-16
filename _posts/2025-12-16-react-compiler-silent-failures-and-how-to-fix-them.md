@@ -9,26 +9,26 @@ published: true
 tags: [react, typescript, javascript, react-compiler, performance, memoization]
 ---
 
-I’ve been building highly interactive React UIs since 2017—visual editors, design tools, the kind of applications where users are dragging elements, adjusting properties in real-time, and expecting every interaction to feel as responsive as Figma or Photoshop. An unnecessary re-render could break the illusion of direct manipulation, making the experience laggy and unpleasant, e.g. an un-memoized callback causing the color picker to lag behind the cursor.
+I have been building highly interactive React UIs since 2017: visual editors, design tools, the kind of applications where users are dragging elements, adjusting properties in real-time, and expecting every interaction to feel as responsive as Figma or Photoshop. An unnecessary re-render could break the illusion of direct manipulation, making the experience laggy and unpleasant, e.g. an un-memoized callback causing the color picker to lag behind the cursor.
 
 For eight years, I trained myself to think in `useMemo` and `useCallback`. I developed an internal compiler in my head that would flag any value that might cause excessive re-rendering. It was second nature.
 
 Then React Compiler erased all of it in a matter of weeks.
 
-## The Problem with Manual Memoization
+## The Manual Memoization Problem
 
 Manual memoization isn’t just tedious, it’s a cognitive tax on every component you write. You need to consider:
 
 - Does this event handler need `useCallback`?
 - Do I need to extract this into a separate `ComponentItem.tsx` file just to stabilize props in a `.map(...)`?
 - Do I need to hoist this style object or wrap it in `useMemo`?
-- Will this context provider value trigger unnecessary re-renders downstream?
+- Will this context provider trigger unnecessary re-renders downstream?
 
 Get it wrong and you either tank performance or litter your codebase with premature optimizations. Get it right and you’ve still spent mental energy on plumbing instead of product.
 
-React Compiler eliminates this entirely. At Outlyne, we’ve been running it in production for over six months. It’s become the kind of indispensable tool I can no longer imagine working without, like hot module replacement or TypeScript.
+React Compiler eliminates this entirely. At Outlyne, we’ve been running it in production for over six months. It’s become the kind of indispensable tool I can no longer imagine working without, like hot module replacement or automatic code formatters.
 
-I don’t think about memoization anymore. Those grooves of years of habit have been wiped smooth.
+I don’t think about memoization anymore. Those grooves from years of habit have been wiped smooth.
 
 ## The Silent Failure Problem
 
@@ -36,15 +36,15 @@ That’s the good news. Here’s what surprised me: when React Compiler can’t 
 
 The philosophy makes sense. The compiler exists to make your code work *better*, not to make it work at all. If it can’t optimize something, it falls back to standard React behavior. Your app still runs.
 
-But now that I no longer manually memoize anything, it’s become clear that manual memoization is a form of code debt. It’s added complexity that makes your component logic harder to follow. And in a world with React Compiler, it’s premature optimization, the root of, if not all, at least a lot of evil. I don’t want it anywhere in my codebase.
+But now that I no longer manually memoize anything, it’s become clear that manual memoization is a form of code debt. It’s unnecessary complexity that makes your component logic harder to follow, while dependency arrays are a maintenance burden. And in a world with React Compiler, it’s premature optimization, the [root of all evil.](https://www.laws-of-software.com/laws/knuth/) I don’t want it anywhere in my codebase.
 
-Which means I now *depend* on the compiler successfully processing certain components, particularly the ones powering high-frequency interactions or managing expensive context providers. If it silently fails on those, the user experience degrades and can even break some UXs entirely. I discovered this when the typewriter animation broke on our homepage. We refactored it from SSE to vanilla `fetch`, adding a `try`/`catch` with a conditional in the `try` block. That made it incompatible with React Compiler, causing it to continually re-render and repeatedly restart the animation.
+Which means I now depend on the compiler successfully processing certain components, particularly the ones powering high-frequency interactions or managing expensive context providers. If it silently fails on those, the user experience degrades and can even break some UXs entirely. I discovered this when the typewriter animation broke on our homepage. We refactored it from SSE to vanilla `fetch`, adding a try/catch with a conditional in the try block. That made it incompatible with React Compiler, causing it to continually re-render and repeatedly restart the animation.
 
 I realized that I needed a way to know when compilation fails. And I needed it to break my build.
 
 ## The Undocumented ESLint Rule
 
-After digging through the `react-compiler-babel-plugin` source code, [I found it:](https://github.com/facebook/react/blob/3640f38a728f3a057649cf7aec65a6ce14c2eac0/compiler/packages/babel-plugin-react-compiler/src/CompilerError.ts#L1041-L1049)
+After digging through the `react-compiler-babel-plugin` source code, [I found the solution:](https://github.com/facebook/react/blob/3640f38a728f3a057649cf7aec65a6ce14c2eac0/compiler/packages/babel-plugin-react-compiler/src/CompilerError.ts#L1041-L1049)
 
 ```js
     case ErrorCategory.Todo: {
@@ -58,7 +58,7 @@ After digging through the `react-compiler-babel-plugin` source code, [I found it
     }
 ```
 
-The rule name is `todo`, so in most configs (unless you’ve configured `eslint-plugin-react-hooks` with a different name), the full name of the rule is `react-hooks/todo`. It’s not documented anywhere I could find (here’s the [documented React Compiler ESLint rules](https://github.com/facebook/react/blob/main/packages/eslint-plugin-react-hooks/README.md#flat-config-eslintconfigjsts-1)), but enabling it as an error will break your build on any component that has syntax the compiler can’t yet handle.
+The rule name is `todo`, so in most configs (unless you’ve configured `eslint-plugin-react-hooks` with a different name), the full name of the rule is `react-hooks/todo`. It’s not documented anywhere I could find (e.g. [these React Compiler ESLint rules](https://github.com/facebook/react/blob/main/packages/eslint-plugin-react-hooks/README.md#flat-config-eslintconfigjsts-1)), but enabling it as an error will break your build on any component that has syntax the compiler can’t yet handle.
 
 With that in place, in my homepage example, this code:
 
@@ -114,7 +114,7 @@ export default [
 ];
 ```
 
-Turn this on and you’ll be surprised how many components fail. Before I learned the patterns React Compiler doesn’t yet support, roughly half of my components couldn’t be compiled.
+Turn this on and you’ll be surprised how many components fail. Before I learned the patterns React Compiler doesn’t yet support, I had more than a hundred components that couldn’t be compiled.
 
 ## What Breaks the Compiler
 
