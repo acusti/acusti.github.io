@@ -9,7 +9,7 @@ published: true
 tags: [react, typescript, javascript, react-compiler, performance, memoization]
 ---
 
-I have been building highly interactive React UIs since 2017: visual editors, design tools, the kind of applications where users are dragging elements, adjusting properties in real-time, and expecting every interaction to feel as responsive as Figma or Photoshop. An unnecessary re-render could break the illusion of direct manipulation, making the experience laggy and unpleasant, e.g. an un-memoized callback causing the color picker to lag behind the cursor.
+I have been building highly interactive React UIs since 2017: visual editors, design tools, the kind of applications where users are dragging elements, adjusting properties in real-time, and expecting every interaction to feel as responsive as Figma or Photoshop. An unnecessary re-render can break the illusion of direct manipulation, making the experience laggy and unpleasant.
 
 For eight years, I trained myself to think in `useMemo` and `useCallback`. I developed an internal compiler in my head that would flag any value that might cause excessive re-rendering. It was second nature.
 
@@ -26,7 +26,7 @@ Manual memoization isn’t just tedious, it’s a cognitive tax on every compone
 
 Get it wrong and you either tank performance or litter your codebase with premature optimizations. Get it right and you’ve still spent mental energy on plumbing instead of product.
 
-React Compiler eliminates this entirely. At Outlyne, we’ve been running it in production for over six months. It’s become the kind of indispensable tool I can no longer imagine working without, like hot module replacement or automatic code formatters.
+React Compiler eliminates this entirely. At [Outlyne](https://outlyne.com), we’ve been running it in production for over six months. It’s become the kind of indispensable tool I can no longer imagine working without, like hot module replacement or automatic code formatters.
 
 I don’t think about memoization anymore. Those grooves from years of habit have been wiped smooth.
 
@@ -36,11 +36,21 @@ That’s the good news. Here’s what surprised me: when React Compiler can’t 
 
 The philosophy makes sense. The compiler exists to make your code work *better*, not to make it work at all. If it can’t optimize something, it falls back to standard React behavior. Your app still runs.
 
-But now that I no longer manually memoize anything, it’s become clear that manual memoization is a form of code debt. It’s unnecessary complexity that makes your component logic harder to follow, while dependency arrays are a maintenance burden. And in a world with React Compiler, it’s premature optimization, the [root of all evil.](https://www.laws-of-software.com/laws/knuth/) I don’t want it anywhere in my codebase.
+But now that I no longer manually memoize anything, it’s become clear that manual memoization is a form of code debt. It’s unnecessary complexity that makes your component logic harder to follow, while dependency arrays are a maintenance burden. And in a world with React Compiler, it’s premature optimization, [the root of all evil.](https://www.laws-of-software.com/laws/knuth/) I don’t want it anywhere in my codebase.
 
-Which means I now depend on the compiler successfully processing certain components, particularly the ones powering high-frequency interactions or managing expensive context providers. If it silently fails on those, the user experience degrades and can even break some UXs entirely. I discovered this when the typewriter animation broke on our homepage. We refactored it from SSE to vanilla `fetch`, adding a try/catch with a conditional in the try block. That made it incompatible with React Compiler, causing it to continually re-render and repeatedly restart the animation.
+Which means I now depend on the compiler successfully processing certain components, particularly the ones powering high-frequency interactions or managing expensive context providers. If it silently fails on those, the user experience degrades and can even break some UXs entirely. I discovered this with [our homepage](https://outlyne.com) typewriter animation.
 
-I realized that I needed a way to know when compilation fails. And I needed it to break my build.
+<p><video width="100%" autoplay loop muted playsinline>
+  <source src="/media/outlyne-typewriter-animation.mp4" type="video/mp4">
+</video></p>
+
+We refactored it from SSE to vanilla `fetch`, adding a try/catch with nullish coalescing in the try block. That made it incompatible with React Compiler, resulting in a weird re-render loop where the ref callback for the input was being thrashed.
+
+<p><video width="100%" autoplay loop muted playsinline>
+  <source src="/media/outlyne-typewriter-animation-broken.mp4" type="video/mp4">
+</video></p>
+
+I realized that I needed a way to know when compilation fails, and I needed it to break my build.
 
 ## The Undocumented ESLint Rule
 
