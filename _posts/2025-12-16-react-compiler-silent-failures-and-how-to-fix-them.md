@@ -2,8 +2,8 @@
 layout: post
 title: React Compiler’s Silent Failures (And How to Fix Them)
 baseline: Depending on React Compiler means knowing when it fails
-credit: 'Photo by <a href="https://unsplash.com/@shahabya?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">shahab yazdi</a> on <a href="https://unsplash.com/photos/gray-dessert-land-YRsTbKFKLrg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
-splash: media/shahab-yazdi-YRsTbKFKLrg-unsplash.avif
+credit: 'Photo by <a href="https://www.pexels.com/photo/desert-sand-with-ripples-with-night-sky-13620627/">Marjan Taghipour</a>'
+splash: media/pexels-marjan-taghipour-306415692-13620627.avif
 category: blog
 published: true
 tags: [react, typescript, javascript, react-compiler, performance, memoization]
