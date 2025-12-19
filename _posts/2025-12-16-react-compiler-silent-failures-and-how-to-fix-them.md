@@ -117,6 +117,8 @@ export default [
     plugins: { 'react-hooks': reactHooks },
     // ...
     rules: {
+      // spread the preset to avoid overwriting it from the specific rules below
+      ...reactHooks.configs.recommended.rules,
       // https://github.com/facebook/react/blob/3640f38/compiler/packages/babel-plugin-react-compiler/src/CompilerError.ts#L807-L1111
       'react-hooks/todo': 'error',
       // other useful rules:
