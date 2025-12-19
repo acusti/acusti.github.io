@@ -107,7 +107,7 @@ I speak and understand Spanish and French fluently.
 [react]: https://github.com/facebook/react/pulls?q=is%3Apr+author%3Aacusti
 [remix]: https://github.com/remix-run/remix/pulls?q=is%3Apr+is%3Aclosed+author%3Aacusti
 [immutable.js]: https://github.com/immutable-js/immutable-js/pulls?q=is%3Apr+author%3Aacusti
-[better-auth]: https://github.com/better-auth/better-auth/pull/3357
+[better-auth]: https://github.com/better-auth/better-auth/pulls?q=is%3Apr+author%3Aacusti+is%3Aclosed
 [@types/react]: https://github.com/DefinitelyTyped/DefinitelyTyped/pull/70601
 [jsdom]: https://github.com/jsdom/jsdom/pull/1621
 [lexical]: https://github.com/facebook/lexical/pull/3209
