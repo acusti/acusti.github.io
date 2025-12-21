@@ -10,11 +10,11 @@ While reading the recent 24 ways article about [“Crafting the front-end”][cr
 
 [crafting]: http://24ways.org/2011/crafting-the-front-end
 
-> -   An appreciation of **good** work, in both the work of others and their own. And not just good as in ‘hey, that’s pretty neat’, I mean a goodness like a shining purity – the kind of good that feels right when you see it.
-> -   A belief in quality at every level: every facet of the craftsperson’s product is as crucial as any other, without exception, even those normally hidden from view.
-> -   Vision: an ability to visualize their path ahead, pre-empting the obstacles that may be encountered to plan a route around them.
-> -   A preference for simplicity: an almost Bauhausesque devotion to undecorated functionality, with no unjustifiable parts included.
-> -   Sincerity: producing work that speaks directly to its purpose with flawless clarity.
+> - An appreciation of **good** work, in both the work of others and their own. And not just good as in ‘hey, that’s pretty neat’, I mean a goodness like a shining purity – the kind of good that feels right when you see it.
+> - A belief in quality at every level: every facet of the craftsperson’s product is as crucial as any other, without exception, even those normally hidden from view.
+> - Vision: an ability to visualize their path ahead, pre-empting the obstacles that may be encountered to plan a route around them.
+> - A preference for simplicity: an almost Bauhausesque devotion to undecorated functionality, with no unjustifiable parts included.
+> - Sincerity: producing work that speaks directly to its purpose with flawless clarity.
 
 Though a “devotion to undecorated functionality” strikes me as being a particular subset of craftsmanship, not a requirement (ornamentation has it’s place in craft), the list rings true to me. Undoubtedly, this is partially because it validates my ideal view of myself. I originally found myself in this field largely by accident, having only taken a single university course in computer programming to serve as my educational grounding. After a bit of hurried self-directed studying, I landed a job and started learning in earnest. As my history would suggest, I do not consider myself an engineer. But I am a coder, and I believe strongly in the passionate pursuit of excellence, and in doing the best job possible. A “code craftsman”, then. I can believe in that.
 

@@ -34,7 +34,7 @@ I don’t think about memoization anymore. Those grooves from years of habit hav
 
 That’s the good news. Here’s what surprised me: when React Compiler can’t compile a component, it fails silently.
 
-The philosophy makes sense. The compiler exists to make your code work *better*, not to make it work at all. If it can’t optimize something, it falls back to standard React behavior. Your app still runs.
+The philosophy makes sense. The compiler exists to make your code work _better_, not to make it work at all. If it can’t optimize something, it falls back to standard React behavior. Your app still runs.
 
 But now that I no longer manually memoize anything, it’s become clear that manual memoization is a form of code debt. It’s unnecessary complexity that makes your component logic harder to follow, while dependency arrays are a maintenance burden. And in a world with React Compiler, it’s premature optimization, [the root of all evil.](https://www.laws-of-software.com/laws/knuth/) I don’t want it anywhere in my codebase.
 
@@ -73,25 +73,26 @@ The rule name is `todo`, so in most configs (unless you’ve configured `eslint-
 With that in place, in my homepage example, this code:
 
 ```tsx
-    const handleGeneration = useEffectEvent(async (fetchURL: string) => {
-        try {
-            const response = await fetch(fetchURL);
-            const data = (await response.json()) as { response?: string };
-            const finalResult = (data.response ?? '').trim();
-            const prompt = getPromptFromResponse(finalResult);
-            if (!prompt) {
-                handleError();
-            } else {
-                setPromptSuggestion(prompt);
-                setEventSourceURL('');
-            }
-        } catch (error) {
-            logError('Home fetch error', error);
+const handleGeneration = useEffectEvent(async (fetchURL: string) => {
+    try {
+        const response = await fetch(fetchURL);
+        const data = (await response.json()) as { response?: string };
+        const finalResult = (data.response ?? '').trim();
+        const prompt = getPromptFromResponse(finalResult);
+        if (!prompt) {
+            handleError();
+        } else {
+            setPromptSuggestion(prompt);
+            setEventSourceURL('');
         }
-    });
+    } catch (error) {
+        logError('Home fetch error', error);
+    }
+});
 ```
 
 Results in this lint error:
+
 ```
 /outlyne/app/components/Home.tsx
   86:34  error  Todo: Support value blocks (conditional, logical, optional chaining, etc) within a try/catch statement
@@ -112,24 +113,24 @@ Here’s how to set it up:
 import reactHooks from 'eslint-plugin-react-hooks';
 
 export default [
-  {
-    files: ['**/*.{js,jsx,ts,tsx}'],
-    plugins: { 'react-hooks': reactHooks },
-    // ...
-    rules: {
-      // spread the preset to avoid overwriting it from the specific rules below
-      ...reactHooks.configs.recommended.rules,
-      // https://github.com/facebook/react/blob/3640f38/compiler/packages/babel-plugin-react-compiler/src/CompilerError.ts#L807-L1111
-      'react-hooks/todo': 'error',
-      // other useful rules:
-      'react-hooks/capitalized-calls': 'error', // avoid calling capitalized functions (should use JSX)
-      'react-hooks/hooks': 'error', // largely reimplements the "rules-of-hooks" non-compiler rule
-      'react-hooks/rule-suppression': 'error', // validates against suppression of other rules
-      'react-hooks/syntax': 'error', // validates against invalid syntax
-      'react-hooks/unsupported-syntax': 'error',// `warn` by default, use `error` to break the build
-      // ...
-    }
-  },
+    {
+        files: ['**/*.{js,jsx,ts,tsx}'],
+        plugins: { 'react-hooks': reactHooks },
+        // ...
+        rules: {
+            // spread the preset to avoid overwriting it from the specific rules below
+            ...reactHooks.configs.recommended.rules,
+            // https://github.com/facebook/react/blob/3640f38/compiler/packages/babel-plugin-react-compiler/src/CompilerError.ts#L807-L1111
+            'react-hooks/todo': 'error',
+            // other useful rules:
+            'react-hooks/capitalized-calls': 'error', // avoid calling capitalized functions (should use JSX)
+            'react-hooks/hooks': 'error', // largely reimplements the "rules-of-hooks" non-compiler rule
+            'react-hooks/rule-suppression': 'error', // validates against suppression of other rules
+            'react-hooks/syntax': 'error', // validates against invalid syntax
+            'react-hooks/unsupported-syntax': 'error', // `warn` by default, use `error` to break the build
+            // ...
+        },
+    },
 ];
 ```
 
@@ -143,13 +144,13 @@ This breaks compilation:
 
 ```jsx
 function MyComponent({ value }) {
-  // If value is undefined, fall back to state
-  value = value ?? someStateValue;
-  
-  // Or normalize the value
-  value = normalizeValue(value);
-  
-  // Use value...
+    // If value is undefined, fall back to state
+    value = value ?? someStateValue;
+
+    // Or normalize the value
+    value = normalizeValue(value);
+
+    // Use value...
 }
 ```
 
@@ -157,8 +158,8 @@ Thankfully, the fix is clean and arguably an improvement, just create a new vari
 
 ```jsx
 function MyComponent({ value: valueFromProps }) {
-  const value = valueFromProps ?? someStateValue;
-  // Use value...
+    const value = valueFromProps ?? someStateValue;
+    // Use value...
 }
 ```
 
@@ -172,14 +173,15 @@ The “no conditionals” part of this is a real pain. More often than not, when
 
 ```jsx
 try {
-  const response = await fetch(url);
-  if (response.ok) { // Breaks compilation
-    setResponse(await response.json());
-  } else {
-    setError(`Error ${response.status}`);
-  }
+    const response = await fetch(url);
+    if (response.ok) {
+        // Breaks compilation
+        setResponse(await response.json());
+    } else {
+        setError(`Error ${response.status}`);
+    }
 } catch (error) {
-  setError(`${error}`);
+    setError(`${error}`);
 }
 ```
 
@@ -206,14 +208,14 @@ For those, I explicitly disable the rule:
 ```jsx
 /* eslint-disable react-hooks/todo */
 function NonCriticalPathComponent() {
-  // This component doesn't need to be compiled for the app to perform well, and I'm not
-  // willing to refactor the try/catch logic
+    // This component doesn't need to be compiled for the app to perform well, and I'm not
+    // willing to refactor the try/catch logic
 }
 ```
 
 This approach gives me the best of both worlds:
 
-- Critical components *must* compile or the build breaks
+- Critical components _must_ compile or the build breaks
 - Non-critical components can use whatever patterns make the code clearest
 - I don’t think about memoization at all
 

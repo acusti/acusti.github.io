@@ -13,7 +13,7 @@ Since I [published a post][] about how to get the `eslint-plugin-import` working
 
 They have [three configs][] you can choose from: [`alphabetical`][], [`natural`][], and [`line-length`][]. I started with the alphabetical one, but it results in some odd choices, especially around the order of the different parts of intersection and union types (with TypeScript) and in switch cases. But again, because it does all the work for me, I was fine letting it have its opinions.
 
-However, as I looked back at the docs to write this post, I decided to check out the `natural` config, and it is *chef’s kiss*. It lives up to the “perfect” part of the plugin’s name. Natural ordering, in this case, means alphabetical ordering in a way that makes sense to a human. Some examples:
+However, as I looked back at the docs to write this post, I decided to check out the `natural` config, and it is _chef’s kiss_. It lives up to the “perfect” part of the plugin’s name. Natural ordering, in this case, means alphabetical ordering in a way that makes sense to a human. Some examples:
 
 ```ts
 // with the alphabetical config:
@@ -22,17 +22,9 @@ import { item10, item2, item4, item6, item8 } from 'module';
 import { item2, item4, item6, item8, item10 } from 'module';
 
 // with the alphabetical config:
-type Status =
-    | 'DEFAULTED'
-    | 'HIDDEN_BY_DEFAULT'
-    | 'HIDDEN'
-    | 'REQUIRED';
+type Status = 'DEFAULTED' | 'HIDDEN_BY_DEFAULT' | 'HIDDEN' | 'REQUIRED';
 // with the natural config:
-type Status =
-    | 'DEFAULTED'
-    | 'HIDDEN'
-    | 'HIDDEN_BY_DEFAULT'
-    | 'REQUIRED';
+type Status = 'DEFAULTED' | 'HIDDEN' | 'HIDDEN_BY_DEFAULT' | 'REQUIRED';
 
 // with the alphabetical config:
 type Props = { isLoading: boolean } & ParentProps;

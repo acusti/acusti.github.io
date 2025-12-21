@@ -51,9 +51,9 @@ JsDelivr serves the file as it should, gzipped with a far-future (60 year) max-a
 
 There are three major free CDN services I know of for including a wide range of third party resources on your site. They are:
 
--   [jsDelivr][], powered by both [Cloudflare][] and [MaxCDN][], with load balancing/failover support provided by [Cedexis][]
--   [CDNJS][], powered by Cloudflare
--   [RawGit][], powered by MaxCDN
+- [jsDelivr][], powered by both [Cloudflare][] and [MaxCDN][], with load balancing/failover support provided by [Cedexis][]
+- [CDNJS][], powered by Cloudflare
+- [RawGit][], powered by MaxCDN
 
 RawGit is different (and special) because it “serves raw files directly from GitHub with proper Content-Type headers”. This makes it particularly suited for use in your own software projects. As long as you host your work in a public GitHub repo, you can then serve those resources using a fast and professional CDN. There are two address schemes you can use: one is for development purposes, and basically serves the files from GitHub, adding proper headers; the other is for production, and only fetches the file from GitHub once, caching it indefinitely from then on. This means you should use a GitHub link with the appropiate commit hash in the URL, like [`https://​github.com/​acusti/​acusti.github.com/​blob/​22fccc69da2363f917a60ab46​ac6cb9018c9981d/​_styles/​Pesto.scss`][pesto-url]. Also, be aware that while the RawGit CDN is powered by MaxCDN, the site and the development version of its service is provided without charge or renumeration by a generous individual named [Ryan Grove][], so be aware that it won’t last forever and in the meantime, don’t abuse it! See the [RawGit FAQ][] to better understand how to use it.
 
