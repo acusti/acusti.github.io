@@ -58,7 +58,12 @@ Here’s an excerpt from a review of an auth flow refactor:
 >   will fail the Playwright specs around avatar menu auth
 >   `(tests/e2e/avatar-menu-auth.spec.ts`).
 
-I really cannot overstate how useful this is. It’s become an essential part of my workflow and I use it as both the first and last reviewer on any changeset. I also assign GitHub Copilot as a reviewer on every substantial PR. It typically makes at least 5 suggestions per PR, and 1-2 are genuinely useful - recent examples include catching an edgecase with non-unique fallback IDs for a checkbox component, or spotting validation state interactions where clearing custom validity might inadvertently clear errors set by other validation logic. That’s enough signal to justify the tedious process of dismissing invalid suggestions. But Copilot's suggestions are always localized to the changed code and its immediate surroundings. It’s never caught an architectural issue like the auth redirect loop above - those require the kind of system-level reasoning that only codex demonstrates.
+This is a superpower. It’s become an essential part of my workflow and I use it as both the first and last reviewer on any changeset. I also assign GitHub Copilot as a reviewer on every substantial PR. It typically makes 5+ suggestions per PR with 1-2 useful ones. Two recent examples:
+
+1. Non-unique fallback `id` attributes for a checkbox component
+2. Validation state interactions where clearing one thing could inadvertently clear errors from unrelated validation logic
+
+That’s enough signal to justify the tedious process of dismissing invalid suggestions. But Copilot’s suggestions are always localized to the change and its immediate surroundings. It’s never caught an architectural issue like the auth redirect loop above - those require the kind of system-level reasoning that only codex demonstrates.
 
 That’s how I’m using AI coding agents today. It will almost certainly change in a few months. I’m already suspicious—though not yet confident—that `gpt-5.2-codex` is a less thorough reviewer than `gpt-5.1-codex-max` based on how quickly it completes reviews and the scenarios it seems to consider.
 
