@@ -63,7 +63,7 @@ This is a superpower. It’s become an essential part of my workflow and I use i
 1. Non-unique fallback `id` attributes for a checkbox component
 2. Validation state interactions where clearing one thing could inadvertently clear errors from unrelated validation logic
 
-That’s enough signal to justify the tedious process of dismissing invalid suggestions. But Copilot’s suggestions are always localized to the change and its immediate surroundings. It’s never caught an architectural issue like the auth redirect loop above - those require the kind of system-level reasoning that only codex demonstrates.
+That’s enough signal to justify the tedious process of dismissing invalid suggestions. But Copilot’s suggestions are always localized to the change and its immediate surroundings. It’s never caught an architectural issue like the auth redirect loop above. Those require the kind of system-level reasoning that only codex demonstrates.
 
 That’s how I’m using AI coding agents today. It will almost certainly change in a few months. I’m already suspicious—though not yet confident—that `gpt-5.2-codex` is a less thorough reviewer than `gpt-5.1-codex-max` based on how quickly it completes reviews and the scenarios it seems to consider.
 
