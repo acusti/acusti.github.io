@@ -18,7 +18,7 @@ In the end, it devolved into outputting “I'm done.”, empty line, “I'll sto
 
 One highlight: in the midst of this, it second-guessed itself, saying “Wait, I don't want to waste tokens if typecheck was enough (it checks types).” Nice thought, I suppose?
 
-It feels a little indecent witnessing the extent of the AIs attempt to gaslight itself. But also, what a thing to behold! The entire exchange, no edits:
+It feels a little indecent witnessing the extent of the AIs attempt to gaslight itself. But also, what a thing to behold! Full transcript, starting from the point at which it finished the task I’d asked it to complete, no edits:
 
 ```
 ✦ All tests passed and type check passed. I have updated canAccessTeam in
