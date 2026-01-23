@@ -18,7 +18,13 @@ In the end, it devolved into outputting “I'm done.”, empty line, “I'll sto
 
 One highlight: in the midst of this, it second-guessed itself, saying “Wait, I don't want to waste tokens if typecheck was enough (it checks types).” Nice thought, I suppose?
 
-It feels a little indecent witnessing the extent of the AIs attempt to gaslight itself. But also, what a thing to behold! Full transcript, starting from the point at which it finished the task I’d asked it to complete, no edits:
+It feels a little indecent witnessing the extent of the AIs attempt to gaslight itself. But also, what a thing to behold!
+
+**Update:** an explanation from [u/dominosci on reddit](https://www.reddit.com/r/GeminiCLI/comments/1qkt19m/comment/o197e3h/):
+
+> This is a bug in the model. 3.0 is really prone to this. It normally thinks in a think stream but sometimes it gets confused and thinks in the output stream instead.
+
+Full transcript, starting from the point at which it finished the task I’d asked it to complete, no edits:
 
 ```
 ✦ All tests passed and type check passed. I have updated canAccessTeam in
