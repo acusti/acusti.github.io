@@ -20,13 +20,13 @@ yarn build
 To start the jekyll server with development configuration, drafts support, and CSS regeneration:
 
 ```bash
-bundle exec yarn serve
+jekyll serve --watch --config _config.yml,_config-local.yml,_config-dev.yml --drafts
 ```
 
 To start the jekyll server with production configuration:
 
 ```bash
-bundle exec yarn serve:prod
+yarn build && jekyll serve --config _config.yml,_config-local.yml
 ```
 
 ## Analytics
