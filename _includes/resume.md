@@ -4,10 +4,17 @@
 
 ## Current Employment
 
-**Principal Engineer — Time Sites** <span class="projects__time-period">June 2022 – Present</span><br>
+**Founder & CEO — Outlyne** <span class="projects__time-period">Feb. 2025 – Present</span><br>
+_[Outlyne][] is an AI-powered website builder for small businesses, built on Cloudflare's developer platform_
+
+As founder and lead developer, I architect and build the full-stack product — from the Cloudflare-native infrastructure (Workers, D1, R2, Queues) to the React Router v7 frontend with [LiveStore][] for local-first event-sourced data sync — while leading business development and growing the team.
+
+## Previous Employment
+
+**Principal Engineer — Time Sites** <span class="projects__time-period">June 2022 – Jan. 2025</span><br>
 _[Time Sites][] (née Brandcast) is a collaborative web publishing platform that enables teams to design, build, publish, and maintain their web properties_
 
-As the principal front-end engineer, I lead the team in building products and features, from the design studio to the web publishing server to the analytics platform.
+As the principal front-end engineer, I led the team in building products and features, from the design studio to the web publishing server to the analytics platform.
 
 ## Selected Projects
 
@@ -28,43 +35,29 @@ Built a multilingual Solr-powered search application and publication website usi
 
 ### Open Source Contributions
 
-[React][] &nbsp; [better-auth][] &nbsp; [react-router][] &nbsp; [remix][] &nbsp; [superflare][] &nbsp; [immutable.js][] &nbsp; [@types/react][] &nbsp; [jsdom][] &nbsp; [lexical][] &nbsp; [react-dnd][] &nbsp; [react-draggable][] &nbsp; [tc39/deep-path-properties-for-record][] &nbsp; [wp-cli][] &nbsp; [AMP][] &nbsp; [flow][] &nbsp; [@vimeo/player][] &nbsp; [fbjs][] &nbsp; [timeago.js][] &nbsp; [browserslist][] &nbsp; [draft.js][] &nbsp; [nvalt-prime][] &nbsp; [react-higher-event][] &nbsp; [uikit][] &nbsp; [audile][] &nbsp; [Viselect][] &nbsp; [gogs][] &nbsp; [affixing-header][] &nbsp; [onscrolling][] &nbsp; [diffDOM][] &nbsp; [CSSOM][] &nbsp; [AtomLinter/linter-jscs][] &nbsp; [WordPress-Wiki][]
+[React][] &nbsp; [better-auth][] &nbsp; [storybook][] &nbsp; [react-router][] &nbsp; [remix][] &nbsp; [superflare][] &nbsp; [immutable.js][] &nbsp; [@types/react][] &nbsp; [jsdom][] &nbsp; [lexical][] &nbsp; [react-dnd][] &nbsp; [react-draggable][] &nbsp; [tc39/deep-path-properties-for-record][] &nbsp; [wp-cli][] &nbsp; [AMP][] &nbsp; [flow][] &nbsp; [@vimeo/player][] &nbsp; [fbjs][] &nbsp; [timeago.js][] &nbsp; [browserslist][] &nbsp; [draft.js][] &nbsp; [nvalt-prime][] &nbsp; [react-higher-event][] &nbsp; [uikit][] &nbsp; [audile][] &nbsp; [Viselect][] &nbsp; [gogs][] &nbsp; [affixing-header][] &nbsp; [onscrolling][] &nbsp; [diffDOM][] &nbsp; [CSSOM][] &nbsp; [WordPress-Wiki][]
 
-## Programming Languages and Technologies
+## Recent Technologies
 
 <div class="list-blocks">
     <div class="list-blocks__block">
         <h4>Front-End</h4>
         <ul>
-            <li>JavaScript and TypeScript
-                <ul>
-                    <li>React (+ Jotai/Redux for state)</li>
-                    <li>Remix (full stack web framework)</li>
-                    <li>Static types (TypeScript + Flow)</li>
-                    <li>BDD/TDD (with vitest and jest)</li>
-                    <li>E2E testing with Cypress</li>
-                </ul>
-            </li>
-            <li>CSS and HTML
-                <ul>
-                    <li>Flexbox and CSS Grid</li>
-                    <li>Web performance + web vitals</li>
-                    <li>Mobile web development</li>
-                </ul>
-            </li>
+            <li>React and TypeScript</li>
+            <li>React Router v7 and TanStack Start</li>
+            <li>LiveStore (local-first event sourcing)</li>
+            <li>Storybook</li>
+            <li>Playwright and vitest</li>
+            <li>Streams API</li>
         </ul>
     </div>
     <div class="list-blocks__block">
         <h4>Back-End</h4>
         <ul>
-            <li>Cloudflare: Workers, KV, R2, D1, AI</li>
-            <li>AWS: DynamoDB, AppSync, Lambdas, S3, Cognito, Amplify</li>
-            <li>LLM Models &amp; Low-Rank Adaptation</li>
-            <li>Node.js</li>
-            <li>GraphQL and REST</li>
-            <li>iOS with Swift</li>
-            <li>Git (rebasing, atomic commits, etc)</li>
-            <li>CLI (zsh/bash)</li>
+            <li>Cloudflare: Workers, Durable Objects, D1, KV, R2, Analytics Engine</li>
+            <li>Drizzle ORM</li>
+            <li>Better Auth</li>
+            <li>AI/LLM integration</li>
         </ul>
     </div>
 </div>
@@ -85,6 +78,8 @@ I speak and understand Spanish and French fluently.
 
 [mailto]: mailto:andrew@acusti.ca
 [acusti.ca]: https://www.acusti.ca
+[outlyne]: https://outlyne.com
+[livestore]: https://livestore.dev
 [time sites]: https://timesites.com
 [brandcast platform]: https://app.brandcast.io/signup/
 [npm-acusti]: https://www.npmjs.com/~acusti
@@ -109,6 +104,7 @@ I speak and understand Spanish and French fluently.
 [remix]: https://github.com/remix-run/remix/pulls?q=is%3Apr+author%3Aacusti
 [immutable.js]: https://github.com/immutable-js/immutable-js/pulls?q=is%3Apr+author%3Aacusti
 [better-auth]: https://github.com/better-auth/better-auth/pulls?q=is%3Apr+author%3Aacusti
+[storybook]: https://github.com/storybookjs/storybook/pulls?q=is%3Apr+author%3Aacusti+is%3Aclosed
 [@types/react]: https://github.com/DefinitelyTyped/DefinitelyTyped/pull/70601
 [jsdom]: https://github.com/jsdom/jsdom/pull/1621
 [lexical]: https://github.com/facebook/lexical/pull/3209
@@ -126,7 +122,6 @@ I speak and understand Spanish and French fluently.
 [browserslist]: https://github.com/browserslist/browserslist/pull/206
 [timeago.js]: https://github.com/hustcc/timeago.js/issues/139#issuecomment-422639198
 [draft.js]: https://github.com/facebook/draft-js/pulls?q=is%3Apr+author%3Aacusti
-[atomlinter/linter-jscs]: https://github.com/AtomLinter/linter-jscs/pulls?q=is%3Apr+author%3Aacusti
 [nvalt-prime]: https://github.com/bwiggs/nvalt-prime/pull/5
 [diffdom]: https://github.com/fiduswriter/diffDOM/pull/43
 [wordpress-wiki]: https://github.com/mgerring/WordPress-Wiki/pulls?q=is%3Apr+author%3Aacusti
