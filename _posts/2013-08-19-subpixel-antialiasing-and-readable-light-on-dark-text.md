@@ -10,8 +10,8 @@ While browsing the [Issues](https://github.com/videojs/video.js/issues) page for
 
 I applied that CSS to the Issues page and took before and after screenshots (in Chrome v30). Toggle the “Apply `-webkit-font-smoothing: antialiased`” control to see how it is rendered with and without subpixel antialiasing.
 
-![With subpixel-antialiasing]({{ site.base_url }}/media/github-issues-subpixel-antialiasing.png)
-![With only antialiasing]({{ site.base_url }}/media/github-issues-antialiasing.png)
+![With subpixel-antialiasing](/media/github-issues-subpixel-antialiasing.png)
+![With only antialiasing](/media/github-issues-antialiasing.png)
 
 <button class="image-comparison-toggle" data-text-toggled="Restore default font smoothing">Apply <code>-webkit-font-smoothing: antialiased</code></button>
 

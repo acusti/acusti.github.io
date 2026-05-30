@@ -12,7 +12,7 @@ There is a tendency in contemporary audio recording and mixing to use a lot of d
 
 As a result of this trend, a lot of contemporary music will give the impression of a build-up without it being very visible in the waveform. This is accomplished through song writing, lyrical inflection (the singer or saxophonist or guitarist or whoever getting clearly passionate or intense in their playing), more notes or drum hits, an _[accelerando][]_, building to a fuller (though not louder) sound, etc., and some of that seems to be at play in _BadBadNotGood_’s “Flashing Lights”. To see what that looks like, here are waveforms of a few tracks for comparison:
 
-<p class="oversized"><img src="{{ site.base_url }}/media/waveform-comparison-full.png" alt="Dynamic range waveform comparison of four songs"></p>
+<p class="oversized"><img src="/media/waveform-comparison-full.png" alt="Dynamic range waveform comparison of four songs"></p>
 
 As you can see, the most highly compressed and normalized track is [“Flashing Lights”][], more so even than _BadBadNotGood_’s other tracks, such as [“Rotten Decay”][]. _Portico Quartet_’s [“Window Seat”][] is radically different with lots of visible crescendos and decrescendos and a very wide dynamic range. The bottom track, [“Spinner”][] is more of a fair comparison, because it also has some of the noisy distorted droniness of the BBNG track. But if you follow just the middle solid section (and more or less ignore the periodic spikes, which are the result of regular, loud percussive hits), you can still see a lot more dynamic variation.
 

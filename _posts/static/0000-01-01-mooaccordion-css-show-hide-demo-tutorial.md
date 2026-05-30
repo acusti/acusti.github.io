@@ -11,11 +11,11 @@ In order to achieve this effect on your own site, you will need to put a copy of
 
 These are the image files used:
 
-[<img class="demo" src="{{ site.base_url }}/images/icon-showhide1.png" alt="">][icon1] [<img class="demo" src="{{ site.base_url }}/images/icon-showhide2.png" alt="">][icon2]
+[<img class="demo" src="/images/icon-showhide1.png" alt="">][icon1] [<img class="demo" src="/images/icon-showhide2.png" alt="">][icon2]
 
-[mooaccordion]: {{ site.base_url }}/mooaccordion-joomla-accordion-article-plugin/
-[icon1]: {{ site.base_url }}/images/icon-showhide1.png
-[icon2]: {{ site.base_url }}/images/icon-showhide2.png
+[mooaccordion]: /mooaccordion-joomla-accordion-article-plugin/
+[icon1]: /images/icon-showhide1.png
+[icon2]: /images/icon-showhide2.png
 
 Here is an example of what the final product looks like:
 
@@ -79,9 +79,9 @@ The CSS for adding the second icon is almost the same, though both background po
 As you can see from the CSS code, the class that is added to the title elements when they are expanded is, appropriately, `expanded`. You can specify any styles you want only for that class, and they will apply only to active titles. Also, the general class for all titles is `mooblock-title`, and for all show/hide blocks is `mooblock-el`
 
 <ul class="links-bottom">
-	<li><a href="{{ site.base_url }}/mooaccordion-joomla-accordion-article-plugin">MooAccordion show/hide (in articles) Joomla plugin</a></li>
+	<li><a href="/mooaccordion-joomla-accordion-article-plugin">MooAccordion show/hide (in articles) Joomla plugin</a></li>
 </ul>
-<script src="{{ site.base_url }}/js/mootools-core+more.js"></script>
+<script src="/js/mootools-core+more.js"></script>
 <script>
 	var mooBlock = new Fx.Accordion($$('.mb1_1t'), $$('.mb1_1e'), {
 		display: -1,

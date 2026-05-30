@@ -13,17 +13,17 @@ Crash reports started trickling in. Users would be working as normal in the app 
 
 I’ve been building [Outlyne](https://outlyne.com), an AI-powered website builder, with my co-founder for the last year and a half. The primary UI is a Figma-like canvas with the pages of your website lined up horizontally:
 
-![Outlyne Design UI Screenshot]({{ site.base_url }}/media/outlyne-design-ui.avif)
+![Outlyne Design UI Screenshot](/media/outlyne-design-ui.avif)
 
 Each page has a header and footer, and each header and footer render an HTML popover that opens as a sidebar on the right so that users can choose between header and footer variants and decide what content to include:
 
-![Outlyne Footer Sidebar UI Screenshot]({{ site.base_url }}/media/outlyne-footer-sidebar.avif)
+![Outlyne Footer Sidebar UI Screenshot](/media/outlyne-footer-sidebar.avif)
 
 The variants are rendered as scaled-down versions of the actual header and footer components, so the page’s header and footer each render a UI that itself renders more headers and footers with different props. That’s inherently recursive, which is fine as long as the recursion bottoms out. But if a preview ever renders the editor UI, which then renders previews again, the recursion never stops, and you end up in an infinite render loop.
 
 Outlyne’s architecture made the solution straightforward. Webpage components only include the content and functionality needed for the published page. The editing UI is completely separate, imported via `React.lazy` and `Suspense` and only rendered when the page is editable. Published pages get zero editing UI in their JS bundle. So when I implemented the header and footer variant previews, I set `readOnly={true}` for the previews. They render only the content, no editing UI. Perfect! Easy-peasy. But also important, so let’s add a comment warning that “if this is false, it causes infinite recursion”:
 
-![Outlyne GitHub Commit Screenshot]({{ site.base_url }}/media/outlyne-footer-github-commit.png)
+![Outlyne GitHub Commit Screenshot](/media/outlyne-footer-github-commit.png)
 
 ## AI Coding Agents
 
@@ -31,13 +31,13 @@ We use AI coding agents. We’d be crazy not to. They’ve been an enormous prod
 
 A couple of months ago, we redesigned and improved the UI for editing headers and footers. We created a tabbed interface to hold the variant and color options and wrapped the previews in a new `PreviewWrapper` component. And the AI removed my comment, I guess as cleanup? Maybe because “infinite recursion” sounds like no big deal? Well anyways, 353 changed lines, LGTM, merge it.
 
-![Outlyne Footer Editor Redesign GitHub Commit Screenshot]({{ site.base_url }}/media/outlyne-footer-github-commit-2.png)
+![Outlyne Footer Editor Redesign GitHub Commit Screenshot](/media/outlyne-footer-github-commit-2.png)
 
 Once that comment disappeared, the AI no longer had any signal that `readOnly` was a structural safety constraint rather than just another prop.
 
 Sure enough, four weeks later, we added a cookie consent feature for websites that have cookies and want to be GDPR compliant, which meant updating the footer to pass a new `cookieSettings` prop. While in there, we optimized the previews to use static empty values for some of the props that don’t matter in a preview. Oh, and the LLM decided to remove that `readOnly` prop. With no comment providing context, there was nothing to signal this wasn’t safe to touch.
 
-![Outlyne Cookie Settings GitHub Commit Screenshot]({{ site.base_url }}/media/outlyne-footer-github-commit-3.png)
+![Outlyne Cookie Settings GitHub Commit Screenshot](/media/outlyne-footer-github-commit-3.png)
 
 ## The App Kept Working
 

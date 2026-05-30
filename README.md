@@ -43,12 +43,12 @@ We use [counterscale](https://counterscale.dev/) for analytics. The dashboard is
   <br />
   To the extent possible under law,
   <a rel="dct:publisher"
-     href="https://www.acusti.ca">
+     href="https://acusti.ca">
     <span property="dct:title">Andrew Patton</span></a>
   has waived all copyright and related or neighboring rights to
   <span property="dct:title">acusti.ca</span>.
 This work is published from:
 <span property="vcard:Country" datatype="dct:ISO3166"
-      content="CA" about="https://www.acusti.ca">
+      content="CA" about="https://acusti.ca">
   Canada</span>.
 </p>

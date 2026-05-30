@@ -77,7 +77,7 @@ BA in Cultural Studies, with a Minor in Music Technology
 I speak and understand Spanish and French fluently.
 
 [mailto]: mailto:andrew@acusti.ca
-[acusti.ca]: https://www.acusti.ca
+[acusti.ca]: https://acusti.ca
 [outlyne]: https://outlyne.com
 [livestore]: https://livestore.dev
 [time sites]: https://timesites.com

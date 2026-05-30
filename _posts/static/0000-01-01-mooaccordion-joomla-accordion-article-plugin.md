@@ -27,7 +27,7 @@ Each part of the mooblock should be on a separate line. Here’s how you can cre
 <ul class="standout features">
 	<li>adds minimal markup (and intelligently strips unnecessary markup added by editors like tinyMCE and JCE, if present) to keep the html clean and valid</li>
 	<li>uses Joomla core MooTools library, which means this plugin adds <i>no</i> HTTP requests, minimizes dependencies, prevents JS conflicts, and is very lightweight</li>
-	<li>adds CSS class for active block title, allowing you to <span></span><a href="{{ site.base_url }}/mooaccordion-css-show-hide-demo-tutorial/">toggle it’s icon (e.g., from a + to a - icon)</a>; more generally, the markup is fully CSS customizable</li>
+	<li>adds CSS class for active block title, allowing you to <span></span><a href="/mooaccordion-css-show-hide-demo-tutorial/">toggle it’s icon (e.g., from a + to a - icon)</a>; more generally, the markup is fully CSS customizable</li>
 	<li>easy for anyone to use (without technical knowledge) and flexible</li>
 	<li>the show/hide effects and other settings are easily customizable from the plugin‘s configuration</li>
 	<li>compatible with Internet Explorer 6+, Firefox, Chrome, Safari, Opera, etc.</li>
@@ -41,7 +41,7 @@ This plugin is listed on the [Joomla Extensions Directory][jed].
 
 ### You can download it here (currently v1.0.4):
 
-<p class="action-buttons"><a href="{{ site.base_url }}/extensions/plg_mooaccordion_v1_0_4_UNZIPFIRST.zip" class="download download--target"><img src="{{ site.base_url }}/media/mooaccordion.png" alt="" title="MooAccordion Content Plugin" style="max-width: 250px"></a></p>
+<p class="action-buttons"><a href="/extensions/plg_mooaccordion_v1_0_4_UNZIPFIRST.zip" class="download download--target"><img src="/media/mooaccordion.png" alt="" title="MooAccordion Content Plugin" style="max-width: 250px"></a></p>
 
 <address class="vcard">
 	<p class="top">If you have any problems using the plugin, wish to report a bug, or have any feature requests, please contact me, <span class="fn">Andrew Patton</span>, at:</p>
@@ -49,6 +49,6 @@ This plugin is listed on the [Joomla Extensions Directory][jed].
 	<p class="legal bottom">This plugin is offered in the hope it will be useful but without any warranty whatsoever</p>
 </address>
 
-[tutorial]: {{ site.base_url }}/mooaccordion-css-show-hide-demo-tutorial/
+[tutorial]: /mooaccordion-css-show-hide-demo-tutorial/
 [joomlaworks]: http://extensions.joomla.org/extensions/news-display/articles-tabs/1046
 [jed]: http://extensions.joomla.org/extensions/style-a-design/tabs-a-slides/13424 "MooAccordion Joomla Content Plugin on the JED"

@@ -38,13 +38,13 @@ Where it consistently fails, however, is code review. It rarely finds any import
 
 A couple of months ago, I was persuaded by Peter Steinberger’s [“Just Talk To It” blog post](https://steipete.me/posts/just-talk-to-it) to try out the `codex` CLI. Coming from `claude`, I was genuinely perplexed by Peter’s enthusiasm. I frequently found myself asking codex to do something clear and straightforward, checking in on something else in the meantime, then coming back to find that it had thought through a plan, listed a few bullet points, said it was _going to start…_ and then stopped. I kept having to encourage it onward. I tried queueing up “commit and continue” commands like Peter recommends in that post, but I can’t get `codex` to git commit successfully. See this exchange, where `codex` tells me “Starting on this now”, then stops until I prompt it with “go”. Truly confounding.
 
-![Screenshot of codex saying “Starting on this now.” then doing nothing]({{ site.base_url }}/media/starting-on-this-now.png)
+![Screenshot of codex saying “Starting on this now.” then doing nothing](/media/starting-on-this-now.png)
 
 All that said, I have very much come to appreciate `codex` (mostly using `gpt-5.1-codex-max`). It has never told me that a PR is “production-ready”, nor does it constantly blow smoke up my ass. It’s much more reserved with praise and enthusiasm. It just feels like a more serious coding partner. I don’t use it as often for pure coding tasks, because I still find there’s more friction in the process. However, it occurred to me that the more serious nature of codex could lend itself to more effective code review. I then discovered that `codex` has a `/review` slash command that lets you review the current branch “PR-style” (against the base branch of your choosing), uncommitted changes, or a specific commit.
 
 So I tried it out and holy crap. It’s sooooo much better than Claude or Gemini. Watching it go through the code changes is a trip. It will say _I’m reviewing `SectionContentEditor` and related hooks for handling undefined data safely, and considering stale data risks from `useEffect` dependencies and `useEffectEvent` usage. I’m also checking event schema changes, especially optional fields affecting migrations, and assessing whether materializers and tests properly incorporate new event fields like `websiteId`._ And then I will say _thank god someone is paying attention._
 
-![Example of a codex review]({{ site.base_url }}/media/codex-review-screenshot.avif)
+![Example of a codex review](/media/codex-review-screenshot.avif)
 
 Here’s an excerpt from a review of an auth flow refactor:
 

@@ -5,7 +5,7 @@ callback([
 {% for post in posts %}
   {
     "text": "{{post.title | replace:'"','\"'}}",
-    "href": "{{site.base_url}}{{post.url}}"
+    "href": "{{post.url}}"
   } {% unless forloop.last %},{% endunless%}
 {% endfor %}
 ])

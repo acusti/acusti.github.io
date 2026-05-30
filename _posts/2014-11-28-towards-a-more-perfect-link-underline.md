@@ -22,11 +22,11 @@ Wichary goes on to detail Medium’s solution, which uses a CSS `background-grad
 
 Since the writing of that post, Apple released Safari 8.0 and Safari for iOS 8, which modifies the rendering of the venerable `text-decoration: underline` property to fulfill Wichary’s fourth goal by clearing the descenders. I grabbed a screenshot of Wichary’s ideal vision with the way the same word as a link is rendered in Safari 8.0:
 
-![“parapsychologists” as platonic ideal and reality]({{ site.base_url }}/media/medium-example-with-native-underline.png)
+![“parapsychologists” as platonic ideal and reality](/media/medium-example-with-native-underline.png)
 
 You can see another example of the native Safari underline in the screenshot at the top of the page, from [The New Yorker][] (with modified text content to illustrate descenders). Overall, the underline is much thicker than Wichary’s ideal and sits too close to the text for my comfort. But most damningly to my mind, the underline does not change weight to adapt to the weight of the font, leading to unfortunate mismatches like with the `:hover` style on [Angel List][]:
 
-![Angel List :hover underline]({{ site.base_url }}/media/angellist-underlines.png)
+![Angel List :hover underline](/media/angellist-underlines.png)
 
 In that example, those fat underlines are sitting right underneath text rendered with `font-weight: 100`. All of which is to say that there is plenty of room for the use of custom text underlines to improve the readability and aesthetics of links in WebKit, not to mention every other browser. Still, I have been frequently delighted by the change in rendering, particularly because any app using a WebView automatically gets the newly cleared descenders. Underlined text in my mail applications and elsewhere now looks cleaner, more readable, and less cluttered.
 

@@ -5,8 +5,8 @@ layout: default
 <article class="post">
     {% if page.splash %} {% if page.splash contains 'http' %} {% capture splash_src
     %}{{ page.splash }}{% endcapture %} {% else %} {% if page.splash[0] == '/' %} {%
-    capture splash_src %}{{ site.base_url }}{{ page.splash }}{% endcapture %} {%
-    else %} {% capture splash_src %}{{ site.base_url }}/{{ page.splash }}{%
+    capture splash_src %}{{ page.splash }}{% endcapture %} {%
+    else %} {% capture splash_src %}/{{ page.splash }}{%
     endcapture %} {% endif %} {% endif %}
     <div class="post__splash oversized">
         <img src="{{ splash_src }}" alt="" />
