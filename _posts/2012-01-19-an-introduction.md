@@ -15,6 +15,6 @@ In my free time, I like to mess with music and video projects, and when feeling 
 [aboutme]: http://about.me/andrewpatton 'Feel free to check it out; it’s a good profile'
 [Pure Cobalt]: http//www.purecobalt.com
 [github]: http://github.com/acusti 'WordPress plugins, mini sites, node.js-related forks, etc.'
-[my website]: http://acusti.ca 'Includes a list of the most recent websites I have built'
+[my website]: / 'Includes a list of the most recent websites I have built'
 [share music]: https://soundcloud.com/acusti 'Soundcloud. Includes a very wide range of styles and polish, mostly from projects at university'
 [share video]: http://www.youtube.com/user/waveweaverjr 'Youtube. I’m most proud of “freedom reruns”'
